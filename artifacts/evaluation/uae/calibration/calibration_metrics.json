@@ -1,0 +1,6 @@
+{
+  "ece": 0.785768,
+  "brier_score": 0.737633,
+  "n_bins": 10,
+  "note": "Brier score is the mean squared error of probability predictions. ECE measures the weighted mean absolute difference between predicted confidence and observed fraction of positives (calibration error). High ECE reflects the prevalence mismatch (UCI ~62% vs UAE 11.4% CKD) \u2014 the model outputs probabilities calibrated for a higher-prevalence population."
+}

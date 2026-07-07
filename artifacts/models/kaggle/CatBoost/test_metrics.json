@@ -1,0 +1,62 @@
+{
+  "test_accuracy": 0.875,
+  "test_balanced_accuracy": 0.842857,
+  "test_macro_precision": 0.928571,
+  "test_macro_recall": 0.842857,
+  "test_macro_f1": 0.856522,
+  "test_weighted_f1": 0.87192,
+  "test_cohen_kappa": 0.840128,
+  "test_confusion_matrix": [
+    [
+      11,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      7,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      3,
+      3,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      9,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      2,
+      5
+    ]
+  ],
+  "test_class0_f1": 1.0,
+  "test_class0_recall": 1.0,
+  "test_class0_precision": 1.0,
+  "test_class1_f1": 1.0,
+  "test_class1_recall": 1.0,
+  "test_class1_precision": 1.0,
+  "test_class2_f1": 0.666667,
+  "test_class2_recall": 0.5,
+  "test_class2_precision": 1.0,
+  "test_class3_f1": 0.782609,
+  "test_class3_recall": 1.0,
+  "test_class3_precision": 0.642857,
+  "test_class4_f1": 0.833333,
+  "test_class4_recall": 0.714286,
+  "test_class4_precision": 1.0,
+  "test_macro_roc_auc": 0.955189
+}

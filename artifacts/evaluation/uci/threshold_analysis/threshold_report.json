@@ -1,0 +1,16 @@
+{
+  "youden": {
+    "threshold": 0.959,
+    "sensitivity": 1.0,
+    "specificity": 1.0,
+    "youden_j": 1.0
+  },
+  "f1_optimal": {
+    "threshold": 0.959,
+    "f1": 1.0
+  },
+  "mcc_optimal": {
+    "threshold": 0.08,
+    "mcc": 1.0
+  }
+}

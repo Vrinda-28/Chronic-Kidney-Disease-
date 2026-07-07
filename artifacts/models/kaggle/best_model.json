@@ -1,0 +1,73 @@
+{
+  "best_model": "RandomForest",
+  "primary_metric": "balanced_accuracy",
+  "best_cv_score": 0.841933,
+  "test_metrics": {
+    "test_accuracy": 0.825,
+    "test_balanced_accuracy": 0.780952,
+    "test_macro_precision": 0.9125,
+    "test_macro_recall": 0.780952,
+    "test_macro_f1": 0.789455,
+    "test_weighted_f1": 0.814273,
+    "test_cohen_kappa": 0.775281,
+    "test_confusion_matrix": [
+      [
+        11,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        7,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        4,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        9,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        3,
+        4
+      ]
+    ],
+    "test_class0_f1": 1.0,
+    "test_class0_recall": 1.0,
+    "test_class0_precision": 1.0,
+    "test_class1_f1": 1.0,
+    "test_class1_recall": 1.0,
+    "test_class1_precision": 1.0,
+    "test_class2_f1": 0.5,
+    "test_class2_recall": 0.333333,
+    "test_class2_precision": 1.0,
+    "test_class3_f1": 0.72,
+    "test_class3_recall": 1.0,
+    "test_class3_precision": 0.5625,
+    "test_class4_f1": 0.727273,
+    "test_class4_recall": 0.571429,
+    "test_class4_precision": 1.0,
+    "test_macro_roc_auc": 0.952812
+  },
+  "all_model_cv_scores": {
+    "RandomForest": 0.841933,
+    "XGBoost": 0.822895,
+    "LightGBM": 0.810575,
+    "CatBoost": 0.840924
+  }
+}

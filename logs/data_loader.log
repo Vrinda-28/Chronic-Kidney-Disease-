@@ -1,0 +1,361 @@
+2026-06-21 12:09:54 | INFO     | ckd_data_loader | [UCI] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/uci_ckd.csv
+2026-06-21 12:09:54 | INFO     | ckd_data_loader | [UCI] Raw file loaded: 400 rows, 25 columns.
+2026-06-21 12:09:54 | WARNING  | ckd_data_loader | [UCI] 2 raw column(s) had no schema mapping entry and were passed through normalized but unmapped: ['wbcc', 'rbcc']
+2026-06-21 12:09:54 | INFO     | ckd_data_loader | [UCI] Target column 'ckd_label' (declared type: binary) — observed labels: ['ckd', 'ckd\t', 'notckd']
+2026-06-21 12:09:54 | WARNING  | ckd_data_loader | [UCI] Dataset is declared 'binary' but 3 distinct label values were observed: ['ckd', 'ckd\t', 'notckd']. Labels are preserved as-is — no automatic collapsing/inference is performed here.
+2026-06-21 12:09:54 | INFO     | ckd_data_loader | [uci] Standardized shape: 400 rows x 27 cols | role=train_candidate | target=ckd_label
+2026-06-21 12:09:54 | INFO     | ckd_data_loader | [uci] Class distribution: {'ckd': 248, 'notckd': 150, 'ckd\t': 2}
+2026-06-21 12:09:54 | INFO     | ckd_data_loader | [uci] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-06-21 12:09:54 | INFO     | ckd_data_loader | [uci] Columns with missing values: {'age': 9, 'blood_pressure': 12, 'specific_gravity': 47, 'albumin': 46, 'sugar': 49, 'red_blood_cells': 152, 'pus_cell': 65, 'pus_cell_clumps': 4, 'bacteria': 4, 'blood_glucose_random': 44, 'blood_urea': 19, 'serum_creatinine': 17, 'sodium': 87, 'potassium': 88, 'hemoglobin': 52, 'packed_cell_volume': 71, 'wbcc': 106, 'rbcc': 131, 'hypertension': 2, 'diabetes_mellitus': 2, 'coronary_artery_disease': 2, 'appetite': 1, 'pedal_edema': 1, 'anemia': 1}
+2026-06-21 12:09:54 | INFO     | ckd_data_loader | [uci] Columns with IQR-flagged outliers: {'age': 10, 'blood_pressure': 36, 'blood_glucose_random': 34, 'blood_urea': 38, 'serum_creatinine': 51, 'sodium': 16, 'potassium': 4, 'hemoglobin': 1, 'packed_cell_volume': 1}
+2026-06-21 12:09:54 | INFO     | ckd_data_loader | [uci] Routed to TRAIN-CANDIDATE set.
+2026-06-21 12:09:54 | INFO     | ckd_data_loader | [Kaggle] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/kaggle_ckd_stages.csv
+2026-06-21 12:09:54 | INFO     | ckd_data_loader | [Kaggle] Raw file loaded: 202 rows, 29 columns.
+2026-06-21 12:09:54 | WARNING  | ckd_data_loader | [Kaggle] Schema mapping produced duplicate standardized column names: ['ckd_stage_label']. Inspect config/datasets.yaml schema_mapping.
+2026-06-21 12:09:54 | WARNING  | ckd_data_loader | [Kaggle] 18 raw column(s) had no schema mapping entry and were passed through normalized but unmapped: ['bp (Diastolic)', 'bp limit', 'rbc', 'su', 'pc', 'pcc', 'ba', 'bgr', 'pcv', 'rbcc', 'wbcc', 'dm', 'cad', 'appet', 'pe', 'ane', 'grf', 'affected']
+2026-06-21 12:09:54 | WARNING  | ckd_data_loader | [Kaggle] Missing 1 required column(s) after standardization: ['blood_pressure']
+2026-06-21 12:17:51 | INFO     | ckd_data_loader | [UCI] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/uci_ckd.csv
+2026-06-21 12:17:51 | INFO     | ckd_data_loader | [UCI] Raw file loaded: 400 rows, 25 columns.
+2026-06-21 12:17:51 | INFO     | ckd_data_loader | [UCI] Target column 'ckd_label' (declared type: binary) — observed labels: ['ckd', 'ckd\t', 'notckd']
+2026-06-21 12:17:51 | WARNING  | ckd_data_loader | [UCI] Dataset is declared 'binary' but 3 distinct label values were observed: ['ckd', 'ckd\t', 'notckd']. Labels are preserved as-is — no automatic collapsing/inference is performed here.
+2026-06-21 12:17:51 | INFO     | ckd_data_loader | [uci] Standardized shape: 400 rows x 27 cols | role=train_candidate | target=ckd_label
+2026-06-21 12:17:51 | INFO     | ckd_data_loader | [uci] Class distribution: {'ckd': 248, 'notckd': 150, 'ckd\t': 2}
+2026-06-21 12:17:51 | INFO     | ckd_data_loader | [uci] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-06-21 12:17:51 | INFO     | ckd_data_loader | [uci] Columns with missing values: {'age': 9, 'blood_pressure': 12, 'specific_gravity': 47, 'albumin': 46, 'sugar': 49, 'red_blood_cells': 152, 'pus_cell': 65, 'pus_cell_clumps': 4, 'bacteria': 4, 'blood_glucose_random': 44, 'blood_urea': 19, 'serum_creatinine': 17, 'sodium': 87, 'potassium': 88, 'hemoglobin': 52, 'packed_cell_volume': 71, 'white_blood_cell_count': 106, 'red_blood_cell_count': 131, 'hypertension': 2, 'diabetes_mellitus': 2, 'coronary_artery_disease': 2, 'appetite': 1, 'pedal_edema': 1, 'anemia': 1}
+2026-06-21 12:17:51 | INFO     | ckd_data_loader | [uci] Columns with IQR-flagged outliers: {'age': 10, 'blood_pressure': 36, 'blood_glucose_random': 34, 'blood_urea': 38, 'serum_creatinine': 51, 'sodium': 16, 'potassium': 4, 'hemoglobin': 1, 'packed_cell_volume': 1, 'white_blood_cell_count': 10, 'red_blood_cell_count': 1}
+2026-06-21 12:17:51 | INFO     | ckd_data_loader | [uci] Routed to TRAIN-CANDIDATE set.
+2026-06-21 12:17:51 | INFO     | ckd_data_loader | [Kaggle] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/kaggle_ckd_stages.csv
+2026-06-21 12:17:51 | INFO     | ckd_data_loader | [Kaggle] Raw file loaded: 202 rows, 29 columns.
+2026-06-21 12:17:51 | WARNING  | ckd_data_loader | [Kaggle] 17 raw column(s) had no schema mapping entry and were passed through normalized but unmapped: ['bp limit', 'rbc', 'su', 'pc', 'pcc', 'ba', 'bgr', 'pcv', 'rbcc', 'wbcc', 'dm', 'cad', 'appet', 'pe', 'ane', 'grf', 'affected']
+2026-06-21 12:17:51 | INFO     | ckd_data_loader | [Kaggle] Target column 'ckd_stage_label' (declared type: multiclass) — observed labels: ['discrete', 's1', 's2', 's3', 's4', 's5']
+2026-06-21 12:17:51 | INFO     | ckd_data_loader | [kaggle] Standardized shape: 202 rows x 31 cols | role=train_candidate | target=ckd_stage_label
+2026-06-21 12:17:51 | INFO     | ckd_data_loader | [kaggle] Class distribution: {'s1': 54, 's4': 45, 's2': 35, 's5': 35, 's3': 31, 'discrete': 1, nan: 1}
+2026-06-21 12:17:51 | INFO     | ckd_data_loader | [kaggle] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-06-21 12:17:51 | INFO     | ckd_data_loader | [kaggle] Columns with missing values: {'blood_pressure': 1, 'bp_limit': 1, 'specific_gravity': 1, 'albumin': 1, 'ckd_binary_label': 1, 'rbc': 1, 'su': 1, 'pc': 1, 'pcc': 1, 'ba': 1, 'bgr': 1, 'blood_urea': 1, 'sodium': 1, 'serum_creatinine': 1, 'potassium': 1, 'hemoglobin': 1, 'pcv': 1, 'rbcc': 1, 'wbcc': 1, 'hypertension': 1, 'dm': 1, 'cad': 1, 'appet': 1, 'pe': 1, 'ane': 1, 'grf': 1, 'ckd_stage_label': 1}
+2026-06-21 12:17:51 | INFO     | ckd_data_loader | [kaggle] Routed to TRAIN-CANDIDATE set.
+2026-06-21 12:17:51 | INFO     | ckd_data_loader | [UAE] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/uae_ckd_cohort.csv
+2026-06-21 12:17:51 | INFO     | ckd_data_loader | [UAE] Raw file loaded: 491 rows, 22 columns.
+2026-06-21 12:17:51 | WARNING  | ckd_data_loader | [UAE] 16 raw column(s) had no schema mapping entry and were passed through normalized but unmapped: ['Sex', 'HistoryDiabetes', 'HistoryCHD', 'HistoryVascular', 'HistorySmoking', 'HistoryHTN ', 'HistoryDLD', 'HistoryObesity', 'DLDmeds', 'DMmeds', 'HTNmeds', 'ACEIARB', 'CholesterolBaseline', 'BMIBaseline', 'TimeToEventMonths', 'TIME_YEAR']
+2026-06-21 12:17:51 | INFO     | ckd_data_loader | [UAE] Target column 'ckd_label' (declared type: unknown) — observed labels: [0, 1]
+2026-06-21 12:17:51 | INFO     | ckd_data_loader | [uae] Standardized shape: 491 rows x 24 cols | role=external_validation | target=ckd_label
+2026-06-21 12:17:51 | INFO     | ckd_data_loader | [uae] Class distribution: {0: 435, 1: 56}
+2026-06-21 12:17:51 | INFO     | ckd_data_loader | [uae] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-06-21 12:17:51 | INFO     | ckd_data_loader | [uae] Columns with IQR-flagged outliers: {'serum_creatinine': 2}
+2026-06-21 12:17:51 | INFO     | ckd_data_loader | [uae] Routed to EXTERNAL VALIDATION set (isolated from training).
+2026-06-21 12:17:51 | INFO     | ckd_data_loader | Load complete. train_candidate_datasets=['uci', 'kaggle'] | external_validation_dataset=['uae']
+2026-06-21 12:40:01 | INFO     | ckd_data_loader | [UCI] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/uci_ckd.csv
+2026-06-21 12:40:01 | INFO     | ckd_data_loader | [UCI] Raw file loaded: 400 rows, 25 columns.
+2026-06-21 12:40:01 | INFO     | ckd_data_loader | [UCI] Target column 'ckd_label' (declared type: binary) — observed labels: ['ckd', 'ckd\t', 'notckd']
+2026-06-21 12:40:01 | WARNING  | ckd_data_loader | [UCI] Dataset is declared 'binary' but 3 distinct label values were observed: ['ckd', 'ckd\t', 'notckd']. Labels are preserved as-is — no automatic collapsing/inference is performed here.
+2026-06-21 12:40:01 | INFO     | ckd_data_loader | [uci] Standardized shape: 400 rows x 27 cols | role=train_candidate | target=ckd_label
+2026-06-21 12:40:01 | INFO     | ckd_data_loader | [uci] Class distribution: {'ckd': 248, 'notckd': 150, 'ckd\t': 2}
+2026-06-21 12:40:01 | INFO     | ckd_data_loader | [uci] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-06-21 12:40:01 | INFO     | ckd_data_loader | [uci] Columns with missing values: {'age': 9, 'blood_pressure': 12, 'specific_gravity': 47, 'albumin': 46, 'sugar': 49, 'red_blood_cells': 152, 'pus_cell': 65, 'pus_cell_clumps': 4, 'bacteria': 4, 'blood_glucose_random': 44, 'blood_urea': 19, 'serum_creatinine': 17, 'sodium': 87, 'potassium': 88, 'hemoglobin': 52, 'packed_cell_volume': 71, 'white_blood_cell_count': 106, 'red_blood_cell_count': 131, 'hypertension': 2, 'diabetes_mellitus': 2, 'coronary_artery_disease': 2, 'appetite': 1, 'pedal_edema': 1, 'anemia': 1}
+2026-06-21 12:40:01 | INFO     | ckd_data_loader | [uci] Columns with IQR-flagged outliers: {'age': 10, 'blood_pressure': 36, 'blood_glucose_random': 34, 'blood_urea': 38, 'serum_creatinine': 51, 'sodium': 16, 'potassium': 4, 'hemoglobin': 1, 'packed_cell_volume': 1, 'white_blood_cell_count': 10, 'red_blood_cell_count': 1}
+2026-06-21 12:40:01 | INFO     | ckd_data_loader | [uci] Routed to TRAIN-CANDIDATE set.
+2026-06-21 12:40:01 | INFO     | ckd_data_loader | [Kaggle] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/kaggle_ckd_stages.csv
+2026-06-21 12:40:01 | INFO     | ckd_data_loader | [Kaggle] Raw file loaded: 202 rows, 29 columns.
+2026-06-21 12:40:01 | WARNING  | ckd_data_loader | [Kaggle] 17 raw column(s) had no schema mapping entry and were passed through normalized but unmapped: ['bp limit', 'rbc', 'su', 'pc', 'pcc', 'ba', 'bgr', 'pcv', 'rbcc', 'wbcc', 'dm', 'cad', 'appet', 'pe', 'ane', 'grf', 'affected']
+2026-06-21 12:40:01 | INFO     | ckd_data_loader | [Kaggle] Target column 'ckd_stage_label' (declared type: multiclass) — observed labels: ['discrete', 's1', 's2', 's3', 's4', 's5']
+2026-06-21 12:40:01 | INFO     | ckd_data_loader | [kaggle] Standardized shape: 202 rows x 31 cols | role=train_candidate | target=ckd_stage_label
+2026-06-21 12:40:01 | INFO     | ckd_data_loader | [kaggle] Class distribution: {'s1': 54, 's4': 45, 's2': 35, 's5': 35, 's3': 31, 'discrete': 1, nan: 1}
+2026-06-21 12:40:01 | INFO     | ckd_data_loader | [kaggle] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-06-21 12:40:01 | INFO     | ckd_data_loader | [kaggle] Columns with missing values: {'blood_pressure': 1, 'bp_limit': 1, 'specific_gravity': 1, 'albumin': 1, 'ckd_binary_label': 1, 'rbc': 1, 'su': 1, 'pc': 1, 'pcc': 1, 'ba': 1, 'bgr': 1, 'blood_urea': 1, 'sodium': 1, 'serum_creatinine': 1, 'potassium': 1, 'hemoglobin': 1, 'pcv': 1, 'rbcc': 1, 'wbcc': 1, 'hypertension': 1, 'dm': 1, 'cad': 1, 'appet': 1, 'pe': 1, 'ane': 1, 'grf': 1, 'ckd_stage_label': 1}
+2026-06-21 12:40:01 | INFO     | ckd_data_loader | [kaggle] Routed to TRAIN-CANDIDATE set.
+2026-06-21 12:40:01 | INFO     | ckd_data_loader | [UAE] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/uae_ckd_cohort.csv
+2026-06-21 12:40:01 | INFO     | ckd_data_loader | [UAE] Raw file loaded: 491 rows, 22 columns.
+2026-06-21 12:40:01 | WARNING  | ckd_data_loader | [UAE] 5 raw column(s) had no schema mapping entry and were passed through normalized but unmapped: ['Sex', 'CholesterolBaseline', 'BMIBaseline', 'TimeToEventMonths', 'TIME_YEAR']
+2026-06-21 12:40:01 | INFO     | ckd_data_loader | [UAE] Target column 'ckd_label' (declared type: unknown) — observed labels: [0, 1]
+2026-06-21 12:40:01 | INFO     | ckd_data_loader | [uae] Standardized shape: 491 rows x 24 cols | role=external_validation | target=ckd_label
+2026-06-21 12:40:01 | INFO     | ckd_data_loader | [uae] Class distribution: {0: 435, 1: 56}
+2026-06-21 12:40:01 | INFO     | ckd_data_loader | [uae] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-06-21 12:40:01 | INFO     | ckd_data_loader | [uae] Columns with IQR-flagged outliers: {'serum_creatinine': 2}
+2026-06-21 12:40:01 | INFO     | ckd_data_loader | [uae] Routed to EXTERNAL VALIDATION set (isolated from training).
+2026-06-21 12:40:01 | INFO     | ckd_data_loader | Load complete. train_candidate_datasets=['uci', 'kaggle'] | external_validation_dataset=['uae']
+2026-06-21 12:46:55 | INFO     | ckd_data_loader | [UCI] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/uci_ckd.csv
+2026-06-21 12:46:55 | INFO     | ckd_data_loader | [UCI] Raw file loaded: 400 rows, 25 columns.
+2026-06-21 12:46:55 | INFO     | ckd_data_loader | [UCI] Target column 'ckd_label' (declared type: binary) — observed labels: ['ckd', 'notckd']
+2026-06-21 12:46:55 | INFO     | ckd_data_loader | [uci] Standardized shape: 400 rows x 27 cols | role=train_candidate | target=ckd_label
+2026-06-21 12:46:55 | INFO     | ckd_data_loader | [uci] Class distribution: {'ckd': 250, 'notckd': 150}
+2026-06-21 12:46:55 | INFO     | ckd_data_loader | [uci] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-06-21 12:46:55 | INFO     | ckd_data_loader | [uci] Columns with missing values: {'age': 9, 'blood_pressure': 12, 'specific_gravity': 47, 'albumin': 46, 'sugar': 49, 'red_blood_cells': 152, 'pus_cell': 65, 'pus_cell_clumps': 4, 'bacteria': 4, 'blood_glucose_random': 44, 'blood_urea': 19, 'serum_creatinine': 17, 'sodium': 87, 'potassium': 88, 'hemoglobin': 52, 'packed_cell_volume': 71, 'white_blood_cell_count': 106, 'red_blood_cell_count': 131, 'hypertension': 2, 'diabetes_mellitus': 2, 'coronary_artery_disease': 2, 'appetite': 1, 'pedal_edema': 1, 'anemia': 1}
+2026-06-21 12:46:55 | INFO     | ckd_data_loader | [uci] Columns with IQR-flagged outliers: {'age': 10, 'blood_pressure': 36, 'blood_glucose_random': 34, 'blood_urea': 38, 'serum_creatinine': 51, 'sodium': 16, 'potassium': 4, 'hemoglobin': 1, 'packed_cell_volume': 1, 'white_blood_cell_count': 10, 'red_blood_cell_count': 1}
+2026-06-21 12:46:55 | INFO     | ckd_data_loader | [uci] Routed to TRAIN-CANDIDATE set.
+2026-06-21 12:46:55 | INFO     | ckd_data_loader | [Kaggle] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/kaggle_ckd_stages.csv
+2026-06-21 12:46:55 | INFO     | ckd_data_loader | [Kaggle] Raw file loaded: 202 rows, 29 columns.
+2026-06-21 12:46:55 | WARNING  | ckd_data_loader | [Kaggle] 1 raw column(s) had no schema mapping entry and were passed through normalized but unmapped: ['bp limit']
+2026-06-21 12:46:55 | INFO     | ckd_data_loader | [Kaggle] Target column 'ckd_stage_label' (declared type: multiclass) — observed labels: ['discrete', 's1', 's2', 's3', 's4', 's5']
+2026-06-21 12:46:55 | INFO     | ckd_data_loader | [kaggle] Standardized shape: 202 rows x 31 cols | role=train_candidate | target=ckd_stage_label
+2026-06-21 12:46:55 | INFO     | ckd_data_loader | [kaggle] Class distribution: {'s1': 54, 's4': 45, 's2': 35, 's5': 35, 's3': 31, 'discrete': 1, nan: 1}
+2026-06-21 12:46:55 | INFO     | ckd_data_loader | [kaggle] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-06-21 12:46:55 | INFO     | ckd_data_loader | [kaggle] Columns with missing values: {'blood_pressure': 1, 'bp_limit': 1, 'specific_gravity': 1, 'albumin': 1, 'ckd_binary_label': 1, 'red_blood_cells': 1, 'sugar': 1, 'pus_cell': 1, 'pus_cell_clumps': 1, 'bacteria': 1, 'blood_glucose_random': 1, 'blood_urea': 1, 'sodium': 1, 'serum_creatinine': 1, 'potassium': 1, 'hemoglobin': 1, 'packed_cell_volume': 1, 'red_blood_cell_count': 1, 'white_blood_cell_count': 1, 'hypertension': 1, 'diabetes_mellitus': 1, 'coronary_artery_disease': 1, 'appetite': 1, 'pedal_edema': 1, 'anemia': 1, 'egfr': 1, 'ckd_stage_label': 1}
+2026-06-21 12:46:55 | INFO     | ckd_data_loader | [kaggle] Routed to TRAIN-CANDIDATE set.
+2026-06-21 12:46:55 | INFO     | ckd_data_loader | [UAE] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/uae_ckd_cohort.csv
+2026-06-21 12:46:55 | INFO     | ckd_data_loader | [UAE] Raw file loaded: 491 rows, 22 columns.
+2026-06-21 12:46:55 | INFO     | ckd_data_loader | [UAE] Target column 'ckd_label' (declared type: unknown) — observed labels: ['0', '1']
+2026-06-21 12:46:55 | INFO     | ckd_data_loader | [uae] Standardized shape: 491 rows x 24 cols | role=external_validation | target=ckd_label
+2026-06-21 12:46:55 | INFO     | ckd_data_loader | [uae] Class distribution: {'0': 435, '1': 56}
+2026-06-21 12:46:55 | INFO     | ckd_data_loader | [uae] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-06-21 12:46:55 | INFO     | ckd_data_loader | [uae] Columns with IQR-flagged outliers: {'serum_creatinine': 2}
+2026-06-21 12:46:55 | INFO     | ckd_data_loader | [uae] Routed to EXTERNAL VALIDATION set (isolated from training).
+2026-06-21 12:46:55 | INFO     | ckd_data_loader | Load complete. train_candidate_datasets=['uci', 'kaggle'] | external_validation_dataset=['uae']
+2026-06-21 18:37:14 | INFO     | ckd_data_loader | [UCI] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/uci_ckd.csv
+2026-06-21 18:37:14 | INFO     | ckd_data_loader | [UCI] Raw file SHA-256: b2a110ee4fe787629ab726d427fc91783f6e42857bf75a646810bceb5989ee10
+2026-06-21 18:37:14 | INFO     | ckd_data_loader | [UCI] Raw file loaded: 400 rows, 25 columns.
+2026-06-21 18:37:14 | INFO     | ckd_data_loader | [UCI] Target column 'ckd_label' (declared type: binary) - observed labels: ['ckd', 'ckd\t', 'notckd']
+2026-06-21 18:37:14 | WARNING  | ckd_data_loader | [UCI] Dataset is declared 'binary' but 3 distinct label values were observed: ['ckd', 'ckd\t', 'notckd']. Labels are preserved as-is - no automatic collapsing/inference is performed here.
+2026-06-21 18:37:14 | INFO     | ckd_data_loader | [uci] Standardized shape: 400 rows x 27 cols | role=train_candidate | target=ckd_label
+2026-06-21 18:37:14 | INFO     | ckd_data_loader | [uci] Class distribution: {'ckd': 248, 'notckd': 150, 'ckd\t': 2}
+2026-06-21 18:37:14 | INFO     | ckd_data_loader | [uci] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-06-21 18:37:14 | INFO     | ckd_data_loader | [uci] Columns with missing values: {'age': 9, 'blood_pressure': 12, 'specific_gravity': 47, 'albumin': 46, 'sugar': 49, 'red_blood_cells': 152, 'pus_cell': 65, 'pus_cell_clumps': 4, 'bacteria': 4, 'blood_glucose_random': 44, 'blood_urea': 19, 'serum_creatinine': 17, 'sodium': 87, 'potassium': 88, 'hemoglobin': 52, 'packed_cell_volume': 71, 'white_blood_cell_count': 106, 'red_blood_cell_count': 131, 'hypertension': 2, 'diabetes_mellitus': 2, 'coronary_artery_disease': 2, 'appetite': 1, 'pedal_edema': 1, 'anemia': 1}
+2026-06-21 18:37:14 | INFO     | ckd_data_loader | [uci] Columns with IQR-flagged outliers: {'age': 10, 'blood_pressure': 36, 'blood_glucose_random': 34, 'blood_urea': 38, 'serum_creatinine': 51, 'sodium': 16, 'potassium': 4, 'hemoglobin': 1, 'packed_cell_volume': 1, 'white_blood_cell_count': 10, 'red_blood_cell_count': 1}
+2026-06-21 18:37:14 | WARNING  | ckd_data_loader | [uci] Target distribution: Severe class imbalance detected: majority/minority ratio is 124.0:1 across classes {'ckd': 248, 'notckd': 150, 'ckd\t': 2}. Flagged for the (separate, future) imbalance-handling stage - no resampling performed in this loader.
+2026-06-21 18:37:14 | WARNING  | ckd_data_loader | [uci] 2 target label value(s) have leading/trailing whitespace (reported only, not modified by this loader).
+2026-06-21 18:37:14 | INFO     | ckd_data_loader | [uci] Routed to TRAIN-CANDIDATE set.
+2026-06-21 18:37:14 | INFO     | ckd_data_loader | [Kaggle] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/kaggle_ckd_stages.csv
+2026-06-21 18:37:14 | INFO     | ckd_data_loader | [Kaggle] Raw file SHA-256: f24075f420b0f271bfddf3844a40061dbe9e2cb1c2336daa64463122344ea84a
+2026-06-21 18:37:14 | INFO     | ckd_data_loader | [Kaggle] Raw file loaded: 202 rows, 29 columns.
+2026-06-21 18:37:14 | WARNING  | ckd_data_loader | [Kaggle] 1 raw column(s) had no schema mapping entry and were passed through normalized but unmapped: ['bp limit']
+2026-06-21 18:37:14 | WARNING  | ckd_data_loader | [Kaggle] Missing 1 required column(s) after standardization: ['blood_pressure']
+2026-06-21 18:37:14 | INFO     | ckd_data_loader | [Kaggle] Target column 'ckd_stage_label' (declared type: multiclass) - observed labels: ['discrete', 's1', 's2', 's3', 's4', 's5']
+2026-06-21 18:37:14 | WARNING  | ckd_data_loader | [Kaggle] 1 row(s) have a MISSING target label ('ckd_stage_label'). These rows are preserved (no automatic removal) - they must be explicitly excluded or imputed in a downstream preprocessing step before training.
+2026-06-21 18:37:14 | INFO     | ckd_data_loader | [kaggle] Standardized shape: 202 rows x 31 cols | role=train_candidate | target=ckd_stage_label
+2026-06-21 18:37:14 | INFO     | ckd_data_loader | [kaggle] Class distribution: {'s1': 54, 's4': 45, 's2': 35, 's5': 35, 's3': 31, 'discrete': 1, nan: 1}
+2026-06-21 18:37:14 | INFO     | ckd_data_loader | [kaggle] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-06-21 18:37:14 | INFO     | ckd_data_loader | [kaggle] Columns with missing values: {'blood_pressure_diastolic': 1, 'bp_limit': 1, 'specific_gravity': 1, 'albumin': 1, 'ckd_binary_label': 1, 'red_blood_cells': 1, 'sugar': 1, 'pus_cell': 1, 'pus_cell_clumps': 1, 'bacteria': 1, 'blood_glucose_random': 1, 'blood_urea': 1, 'sodium': 1, 'serum_creatinine': 1, 'potassium': 1, 'hemoglobin': 1, 'packed_cell_volume': 1, 'red_blood_cell_count': 1, 'white_blood_cell_count': 1, 'hypertension': 1, 'diabetes_mellitus': 1, 'coronary_artery_disease': 1, 'appetite': 1, 'pedal_edema': 1, 'anemia': 1, 'egfr': 1, 'ckd_stage_label': 1}
+2026-06-21 18:37:14 | WARNING  | ckd_data_loader | [kaggle] Target distribution: 2 class(es) have only 1 sample: ['discrete', nan]. Stratified train/test splitting will fail on these classes until addressed in preprocessing.
+2026-06-21 18:37:14 | WARNING  | ckd_data_loader | [kaggle] Target distribution: Severe class imbalance detected: majority/minority ratio is 54.0:1 across classes {'s1': 54, 's4': 45, 's2': 35, 's5': 35, 's3': 31, 'discrete': 1, nan: 1}. Flagged for the (separate, future) imbalance-handling stage - no resampling performed in this loader.
+2026-06-21 18:37:14 | WARNING  | ckd_data_loader | [kaggle] Target distribution: 1 row(s) (0.5%) have a missing target label and cannot be used for supervised training as-is. Rows are preserved per the loader's no-row-removal policy; resolve (drop/impute/exclude) explicitly in a preprocessing step.
+2026-06-21 18:37:14 | INFO     | ckd_data_loader | [kaggle] Routed to TRAIN-CANDIDATE set.
+2026-06-21 18:37:14 | INFO     | ckd_data_loader | [UAE] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/uae_ckd_cohort.csv
+2026-06-21 18:37:14 | INFO     | ckd_data_loader | [UAE] Raw file SHA-256: 9c0f208b6323aebd06754eced1f6df758af3eee48108969568f181542ca6331f
+2026-06-21 18:37:14 | INFO     | ckd_data_loader | [UAE] Raw file loaded: 491 rows, 22 columns.
+2026-06-21 18:37:14 | INFO     | ckd_data_loader | [UAE] Target column 'ckd_label' (declared type: unknown) - observed labels: [0, 1]
+2026-06-21 18:37:14 | INFO     | ckd_data_loader | [uae] Standardized shape: 491 rows x 24 cols | role=external_validation | target=ckd_label
+2026-06-21 18:37:14 | INFO     | ckd_data_loader | [uae] Class distribution: {0: 435, 1: 56}
+2026-06-21 18:37:14 | INFO     | ckd_data_loader | [uae] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-06-21 18:37:14 | INFO     | ckd_data_loader | [uae] Columns with IQR-flagged outliers: {'serum_creatinine': 2, 'egfr': 2, 'systolic_bp': 6, 'diastolic_bp': 8, 'cholesterol': 2, 'bmi': 19}
+2026-06-21 18:37:14 | INFO     | ckd_data_loader | [uae] Routed to EXTERNAL VALIDATION set (isolated from training).
+2026-06-21 18:37:14 | INFO     | ckd_data_loader | Load complete. train_candidate_datasets=['uci', 'kaggle'] | external_validation_dataset=['uae']
+2026-06-21 18:40:23 | INFO     | ckd_data_loader | [UCI] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/uci_ckd.csv
+2026-06-21 18:40:23 | INFO     | ckd_data_loader | [UCI] Raw file SHA-256: b2a110ee4fe787629ab726d427fc91783f6e42857bf75a646810bceb5989ee10
+2026-06-21 18:40:23 | INFO     | ckd_data_loader | [UCI] Raw file loaded: 400 rows, 25 columns.
+2026-06-21 18:40:23 | INFO     | ckd_data_loader | [UCI] Target column 'ckd_label' (declared type: binary) - observed labels: ['ckd', 'ckd\t', 'notckd']
+2026-06-21 18:40:23 | WARNING  | ckd_data_loader | [UCI] Dataset is declared 'binary' but 3 distinct label values were observed: ['ckd', 'ckd\t', 'notckd']. Labels are preserved as-is - no automatic collapsing/inference is performed here.
+2026-06-21 18:40:23 | INFO     | ckd_data_loader | [uci] Standardized shape: 400 rows x 27 cols | role=train_candidate | target=ckd_label
+2026-06-21 18:40:23 | INFO     | ckd_data_loader | [uci] Class distribution: {'ckd': 248, 'notckd': 150, 'ckd\t': 2}
+2026-06-21 18:40:23 | INFO     | ckd_data_loader | [uci] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-06-21 18:40:23 | INFO     | ckd_data_loader | [uci] Columns with missing values: {'age': 9, 'blood_pressure': 12, 'specific_gravity': 47, 'albumin': 46, 'sugar': 49, 'red_blood_cells': 152, 'pus_cell': 65, 'pus_cell_clumps': 4, 'bacteria': 4, 'blood_glucose_random': 44, 'blood_urea': 19, 'serum_creatinine': 17, 'sodium': 87, 'potassium': 88, 'hemoglobin': 52, 'packed_cell_volume': 71, 'white_blood_cell_count': 106, 'red_blood_cell_count': 131, 'hypertension': 2, 'diabetes_mellitus': 2, 'coronary_artery_disease': 2, 'appetite': 1, 'pedal_edema': 1, 'anemia': 1}
+2026-06-21 18:40:23 | INFO     | ckd_data_loader | [uci] Columns with IQR-flagged outliers: {'age': 10, 'blood_pressure': 36, 'blood_glucose_random': 34, 'blood_urea': 38, 'serum_creatinine': 51, 'sodium': 16, 'potassium': 4, 'hemoglobin': 1, 'packed_cell_volume': 1, 'white_blood_cell_count': 10, 'red_blood_cell_count': 1}
+2026-06-21 18:40:23 | WARNING  | ckd_data_loader | [uci] Target distribution: Severe class imbalance detected: majority/minority ratio is 124.0:1 across classes {'ckd': 248, 'notckd': 150, 'ckd\t': 2}. Flagged for the (separate, future) imbalance-handling stage - no resampling performed in this loader.
+2026-06-21 18:40:23 | WARNING  | ckd_data_loader | [uci] 2 target label value(s) have leading/trailing whitespace (reported only, not modified by this loader).
+2026-06-21 18:40:23 | INFO     | ckd_data_loader | [uci] Routed to TRAIN-CANDIDATE set.
+2026-06-21 18:40:23 | INFO     | ckd_data_loader | [Kaggle] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/kaggle_ckd_stages.csv
+2026-06-21 18:40:23 | INFO     | ckd_data_loader | [Kaggle] Raw file SHA-256: f24075f420b0f271bfddf3844a40061dbe9e2cb1c2336daa64463122344ea84a
+2026-06-21 18:40:23 | INFO     | ckd_data_loader | [Kaggle] Raw file loaded: 202 rows, 29 columns.
+2026-06-21 18:40:23 | WARNING  | ckd_data_loader | [Kaggle] 1 raw column(s) had no schema mapping entry and were passed through normalized but unmapped: ['bp limit']
+2026-06-21 18:40:23 | INFO     | ckd_data_loader | [Kaggle] Target column 'ckd_stage_label' (declared type: multiclass) - observed labels: ['discrete', 's1', 's2', 's3', 's4', 's5']
+2026-06-21 18:40:23 | WARNING  | ckd_data_loader | [Kaggle] 1 row(s) have a MISSING target label ('ckd_stage_label'). These rows are preserved (no automatic removal) - they must be explicitly excluded or imputed in a downstream preprocessing step before training.
+2026-06-21 18:40:23 | INFO     | ckd_data_loader | [kaggle] Standardized shape: 202 rows x 31 cols | role=train_candidate | target=ckd_stage_label
+2026-06-21 18:40:23 | INFO     | ckd_data_loader | [kaggle] Class distribution: {'s1': 54, 's4': 45, 's2': 35, 's5': 35, 's3': 31, 'discrete': 1, nan: 1}
+2026-06-21 18:40:23 | INFO     | ckd_data_loader | [kaggle] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-06-21 18:40:23 | INFO     | ckd_data_loader | [kaggle] Columns with missing values: {'blood_pressure_diastolic': 1, 'bp_limit': 1, 'specific_gravity': 1, 'albumin': 1, 'ckd_binary_label': 1, 'red_blood_cells': 1, 'sugar': 1, 'pus_cell': 1, 'pus_cell_clumps': 1, 'bacteria': 1, 'blood_glucose_random': 1, 'blood_urea': 1, 'sodium': 1, 'serum_creatinine': 1, 'potassium': 1, 'hemoglobin': 1, 'packed_cell_volume': 1, 'red_blood_cell_count': 1, 'white_blood_cell_count': 1, 'hypertension': 1, 'diabetes_mellitus': 1, 'coronary_artery_disease': 1, 'appetite': 1, 'pedal_edema': 1, 'anemia': 1, 'egfr': 1, 'ckd_stage_label': 1}
+2026-06-21 18:40:23 | WARNING  | ckd_data_loader | [kaggle] Target distribution: 2 class(es) have only 1 sample: ['discrete', nan]. Stratified train/test splitting will fail on these classes until addressed in preprocessing.
+2026-06-21 18:40:23 | WARNING  | ckd_data_loader | [kaggle] Target distribution: Severe class imbalance detected: majority/minority ratio is 54.0:1 across classes {'s1': 54, 's4': 45, 's2': 35, 's5': 35, 's3': 31, 'discrete': 1, nan: 1}. Flagged for the (separate, future) imbalance-handling stage - no resampling performed in this loader.
+2026-06-21 18:40:23 | WARNING  | ckd_data_loader | [kaggle] Target distribution: 1 row(s) (0.5%) have a missing target label and cannot be used for supervised training as-is. Rows are preserved per the loader's no-row-removal policy; resolve (drop/impute/exclude) explicitly in a preprocessing step.
+2026-06-21 18:40:23 | INFO     | ckd_data_loader | [kaggle] Routed to TRAIN-CANDIDATE set.
+2026-06-21 18:40:23 | INFO     | ckd_data_loader | [UAE] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/uae_ckd_cohort.csv
+2026-06-21 18:40:23 | INFO     | ckd_data_loader | [UAE] Raw file SHA-256: 9c0f208b6323aebd06754eced1f6df758af3eee48108969568f181542ca6331f
+2026-06-21 18:40:23 | INFO     | ckd_data_loader | [UAE] Raw file loaded: 491 rows, 22 columns.
+2026-06-21 18:40:23 | INFO     | ckd_data_loader | [UAE] Target column 'ckd_label' (declared type: unknown) - observed labels: [0, 1]
+2026-06-21 18:40:23 | INFO     | ckd_data_loader | [uae] Standardized shape: 491 rows x 24 cols | role=external_validation | target=ckd_label
+2026-06-21 18:40:23 | INFO     | ckd_data_loader | [uae] Class distribution: {0: 435, 1: 56}
+2026-06-21 18:40:23 | INFO     | ckd_data_loader | [uae] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-06-21 18:40:23 | INFO     | ckd_data_loader | [uae] Columns with IQR-flagged outliers: {'serum_creatinine': 2, 'egfr': 2, 'systolic_bp': 6, 'diastolic_bp': 8, 'cholesterol': 2, 'bmi': 19}
+2026-06-21 18:40:23 | INFO     | ckd_data_loader | [uae] Routed to EXTERNAL VALIDATION set (isolated from training).
+2026-06-21 18:40:23 | INFO     | ckd_data_loader | Load complete. train_candidate_datasets=['uci', 'kaggle'] | external_validation_dataset=['uae']
+2026-06-21 23:01:19 | INFO     | ckd_data_loader | [UCI] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/uci_ckd.csv
+2026-06-21 23:01:19 | INFO     | ckd_data_loader | [UCI] Raw file SHA-256: b2a110ee4fe787629ab726d427fc91783f6e42857bf75a646810bceb5989ee10
+2026-06-21 23:01:19 | INFO     | ckd_data_loader | [UCI] Raw file loaded: 400 rows, 25 columns.
+2026-06-21 23:01:19 | INFO     | ckd_data_loader | [UCI] Target column 'ckd_label' (declared type: binary) - observed labels: ['ckd', 'ckd\t', 'notckd']
+2026-06-21 23:01:19 | WARNING  | ckd_data_loader | [UCI] Dataset is declared 'binary' but 3 distinct label values were observed: ['ckd', 'ckd\t', 'notckd']. Labels are preserved as-is - no automatic collapsing/inference is performed here.
+2026-06-21 23:01:19 | INFO     | ckd_data_loader | [uci] Standardized shape: 400 rows x 27 cols | role=train_candidate | target=ckd_label
+2026-06-21 23:01:19 | INFO     | ckd_data_loader | [uci] Class distribution: {'ckd': 248, 'notckd': 150, 'ckd\t': 2}
+2026-06-21 23:01:19 | INFO     | ckd_data_loader | [uci] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-06-21 23:01:19 | INFO     | ckd_data_loader | [uci] Columns with missing values: {'age': 9, 'blood_pressure': 12, 'specific_gravity': 47, 'albumin': 46, 'sugar': 49, 'red_blood_cells': 152, 'pus_cell': 65, 'pus_cell_clumps': 4, 'bacteria': 4, 'blood_glucose_random': 44, 'blood_urea': 19, 'serum_creatinine': 17, 'sodium': 87, 'potassium': 88, 'hemoglobin': 52, 'packed_cell_volume': 71, 'white_blood_cell_count': 106, 'red_blood_cell_count': 131, 'hypertension': 2, 'diabetes_mellitus': 2, 'coronary_artery_disease': 2, 'appetite': 1, 'pedal_edema': 1, 'anemia': 1}
+2026-06-21 23:01:19 | INFO     | ckd_data_loader | [uci] Columns with IQR-flagged outliers: {'age': 10, 'blood_pressure': 36, 'blood_glucose_random': 34, 'blood_urea': 38, 'serum_creatinine': 51, 'sodium': 16, 'potassium': 4, 'hemoglobin': 1, 'packed_cell_volume': 1, 'white_blood_cell_count': 10, 'red_blood_cell_count': 1}
+2026-06-21 23:01:19 | WARNING  | ckd_data_loader | [uci] Target distribution: Severe class imbalance detected: majority/minority ratio is 124.0:1 across classes {'ckd': 248, 'notckd': 150, 'ckd\t': 2}. Flagged for the (separate, future) imbalance-handling stage - no resampling performed in this loader.
+2026-06-21 23:01:19 | WARNING  | ckd_data_loader | [uci] 2 target label value(s) have leading/trailing whitespace (reported only, not modified by this loader).
+2026-06-21 23:01:19 | INFO     | ckd_data_loader | [uci] Routed to TRAIN-CANDIDATE set.
+2026-06-21 23:01:19 | INFO     | ckd_data_loader | [Kaggle] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/kaggle_ckd_stages.csv
+2026-06-21 23:01:19 | INFO     | ckd_data_loader | [Kaggle] Raw file SHA-256: f24075f420b0f271bfddf3844a40061dbe9e2cb1c2336daa64463122344ea84a
+2026-06-21 23:01:19 | INFO     | ckd_data_loader | [Kaggle] Raw file loaded: 202 rows, 29 columns.
+2026-06-21 23:01:19 | WARNING  | ckd_data_loader | [Kaggle] 1 raw column(s) had no schema mapping entry and were passed through normalized but unmapped: ['bp limit']
+2026-06-21 23:01:19 | INFO     | ckd_data_loader | [Kaggle] Target column 'ckd_stage_label' (declared type: multiclass) - observed labels: ['discrete', 's1', 's2', 's3', 's4', 's5']
+2026-06-21 23:01:19 | WARNING  | ckd_data_loader | [Kaggle] 1 row(s) have a MISSING target label ('ckd_stage_label'). These rows are preserved (no automatic removal) - they must be explicitly excluded or imputed in a downstream preprocessing step before training.
+2026-06-21 23:01:19 | INFO     | ckd_data_loader | [kaggle] Standardized shape: 202 rows x 31 cols | role=train_candidate | target=ckd_stage_label
+2026-06-21 23:01:19 | INFO     | ckd_data_loader | [kaggle] Class distribution: {'s1': 54, 's4': 45, 's2': 35, 's5': 35, 's3': 31, 'discrete': 1, nan: 1}
+2026-06-21 23:01:19 | INFO     | ckd_data_loader | [kaggle] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-06-21 23:01:19 | INFO     | ckd_data_loader | [kaggle] Columns with missing values: {'blood_pressure_diastolic': 1, 'bp_limit': 1, 'specific_gravity': 1, 'albumin': 1, 'ckd_binary_label': 1, 'red_blood_cells': 1, 'sugar': 1, 'pus_cell': 1, 'pus_cell_clumps': 1, 'bacteria': 1, 'blood_glucose_random': 1, 'blood_urea': 1, 'sodium': 1, 'serum_creatinine': 1, 'potassium': 1, 'hemoglobin': 1, 'packed_cell_volume': 1, 'red_blood_cell_count': 1, 'white_blood_cell_count': 1, 'hypertension': 1, 'diabetes_mellitus': 1, 'coronary_artery_disease': 1, 'appetite': 1, 'pedal_edema': 1, 'anemia': 1, 'egfr': 1, 'ckd_stage_label': 1}
+2026-06-21 23:01:19 | WARNING  | ckd_data_loader | [kaggle] Target distribution: 2 class(es) have only 1 sample: ['discrete', nan]. Stratified train/test splitting will fail on these classes until addressed in preprocessing.
+2026-06-21 23:01:19 | WARNING  | ckd_data_loader | [kaggle] Target distribution: Severe class imbalance detected: majority/minority ratio is 54.0:1 across classes {'s1': 54, 's4': 45, 's2': 35, 's5': 35, 's3': 31, 'discrete': 1, nan: 1}. Flagged for the (separate, future) imbalance-handling stage - no resampling performed in this loader.
+2026-06-21 23:01:19 | WARNING  | ckd_data_loader | [kaggle] Target distribution: 1 row(s) (0.5%) have a missing target label and cannot be used for supervised training as-is. Rows are preserved per the loader's no-row-removal policy; resolve (drop/impute/exclude) explicitly in a preprocessing step.
+2026-06-21 23:01:19 | INFO     | ckd_data_loader | [kaggle] Routed to TRAIN-CANDIDATE set.
+2026-06-21 23:01:19 | INFO     | ckd_data_loader | [UAE] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/uae_ckd_cohort.csv
+2026-06-21 23:01:19 | INFO     | ckd_data_loader | [UAE] Raw file SHA-256: 9c0f208b6323aebd06754eced1f6df758af3eee48108969568f181542ca6331f
+2026-06-21 23:01:19 | INFO     | ckd_data_loader | [UAE] Raw file loaded: 491 rows, 22 columns.
+2026-06-21 23:01:19 | INFO     | ckd_data_loader | [UAE] Target column 'ckd_label' (declared type: unknown) - observed labels: [0, 1]
+2026-06-21 23:01:19 | INFO     | ckd_data_loader | [uae] Standardized shape: 491 rows x 24 cols | role=external_validation | target=ckd_label
+2026-06-21 23:01:19 | INFO     | ckd_data_loader | [uae] Class distribution: {0: 435, 1: 56}
+2026-06-21 23:01:19 | INFO     | ckd_data_loader | [uae] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-06-21 23:01:19 | INFO     | ckd_data_loader | [uae] Columns with IQR-flagged outliers: {'serum_creatinine': 2, 'egfr': 2, 'systolic_bp': 6, 'diastolic_bp': 8, 'cholesterol': 2, 'bmi': 19}
+2026-06-21 23:01:19 | INFO     | ckd_data_loader | [uae] Routed to EXTERNAL VALIDATION set (isolated from training).
+2026-06-21 23:01:19 | INFO     | ckd_data_loader | Load complete. train_candidate_datasets=['uci', 'kaggle'] | external_validation_dataset=['uae']
+2026-06-21 23:15:51 | INFO     | ckd_data_loader | [UCI] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/uci_ckd.csv
+2026-06-21 23:15:51 | INFO     | ckd_data_loader | [UCI] Raw file SHA-256: b2a110ee4fe787629ab726d427fc91783f6e42857bf75a646810bceb5989ee10
+2026-06-21 23:15:51 | INFO     | ckd_data_loader | [UCI] Raw file loaded: 400 rows, 25 columns.
+2026-06-21 23:15:51 | INFO     | ckd_data_loader | [UCI] Target column 'ckd_label' (declared type: binary) - observed labels: ['ckd', 'ckd\t', 'notckd']
+2026-06-21 23:15:51 | WARNING  | ckd_data_loader | [UCI] Dataset is declared 'binary' but 3 distinct label values were observed: ['ckd', 'ckd\t', 'notckd']. Labels are preserved as-is - no automatic collapsing/inference is performed here.
+2026-06-21 23:15:51 | INFO     | ckd_data_loader | [uci] Standardized shape: 400 rows x 27 cols | role=train_candidate | target=ckd_label
+2026-06-21 23:15:51 | INFO     | ckd_data_loader | [uci] Class distribution: {'ckd': 248, 'notckd': 150, 'ckd\t': 2}
+2026-06-21 23:15:51 | INFO     | ckd_data_loader | [uci] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-06-21 23:15:51 | INFO     | ckd_data_loader | [uci] Columns with missing values: {'age': 9, 'blood_pressure': 12, 'specific_gravity': 47, 'albumin': 46, 'sugar': 49, 'red_blood_cells': 152, 'pus_cell': 65, 'pus_cell_clumps': 4, 'bacteria': 4, 'blood_glucose_random': 44, 'blood_urea': 19, 'serum_creatinine': 17, 'sodium': 87, 'potassium': 88, 'hemoglobin': 52, 'packed_cell_volume': 71, 'white_blood_cell_count': 106, 'red_blood_cell_count': 131, 'hypertension': 2, 'diabetes_mellitus': 2, 'coronary_artery_disease': 2, 'appetite': 1, 'pedal_edema': 1, 'anemia': 1}
+2026-06-21 23:15:51 | INFO     | ckd_data_loader | [uci] Columns with IQR-flagged outliers: {'age': 10, 'blood_pressure': 36, 'blood_glucose_random': 34, 'blood_urea': 38, 'serum_creatinine': 51, 'sodium': 16, 'potassium': 4, 'hemoglobin': 1, 'packed_cell_volume': 1, 'white_blood_cell_count': 10, 'red_blood_cell_count': 1}
+2026-06-21 23:15:51 | WARNING  | ckd_data_loader | [uci] Target distribution: Severe class imbalance detected: majority/minority ratio is 124.0:1 across classes {'ckd': 248, 'notckd': 150, 'ckd\t': 2}. Flagged for the (separate, future) imbalance-handling stage - no resampling performed in this loader.
+2026-06-21 23:15:51 | WARNING  | ckd_data_loader | [uci] 2 target label value(s) have leading/trailing whitespace (reported only, not modified by this loader).
+2026-06-21 23:15:51 | INFO     | ckd_data_loader | [uci] Routed to TRAIN-CANDIDATE set.
+2026-06-21 23:15:51 | INFO     | ckd_data_loader | [Kaggle] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/kaggle_ckd_stages.csv
+2026-06-21 23:15:51 | INFO     | ckd_data_loader | [Kaggle] Raw file SHA-256: f24075f420b0f271bfddf3844a40061dbe9e2cb1c2336daa64463122344ea84a
+2026-06-21 23:15:51 | INFO     | ckd_data_loader | [Kaggle] Raw file loaded: 202 rows, 29 columns.
+2026-06-21 23:15:51 | WARNING  | ckd_data_loader | [Kaggle] 1 raw column(s) had no schema mapping entry and were passed through normalized but unmapped: ['bp limit']
+2026-06-21 23:15:51 | INFO     | ckd_data_loader | [Kaggle] Target column 'ckd_stage_label' (declared type: multiclass) - observed labels: ['discrete', 's1', 's2', 's3', 's4', 's5']
+2026-06-21 23:15:51 | WARNING  | ckd_data_loader | [Kaggle] 1 row(s) have a MISSING target label ('ckd_stage_label'). These rows are preserved (no automatic removal) - they must be explicitly excluded or imputed in a downstream preprocessing step before training.
+2026-06-21 23:15:51 | INFO     | ckd_data_loader | [kaggle] Standardized shape: 202 rows x 31 cols | role=train_candidate | target=ckd_stage_label
+2026-06-21 23:15:51 | INFO     | ckd_data_loader | [kaggle] Class distribution: {'s1': 54, 's4': 45, 's2': 35, 's5': 35, 's3': 31, 'discrete': 1, nan: 1}
+2026-06-21 23:15:51 | INFO     | ckd_data_loader | [kaggle] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-06-21 23:15:51 | INFO     | ckd_data_loader | [kaggle] Columns with missing values: {'blood_pressure_diastolic': 1, 'bp_limit': 1, 'specific_gravity': 1, 'albumin': 1, 'ckd_binary_label': 1, 'red_blood_cells': 1, 'sugar': 1, 'pus_cell': 1, 'pus_cell_clumps': 1, 'bacteria': 1, 'blood_glucose_random': 1, 'blood_urea': 1, 'sodium': 1, 'serum_creatinine': 1, 'potassium': 1, 'hemoglobin': 1, 'packed_cell_volume': 1, 'red_blood_cell_count': 1, 'white_blood_cell_count': 1, 'hypertension': 1, 'diabetes_mellitus': 1, 'coronary_artery_disease': 1, 'appetite': 1, 'pedal_edema': 1, 'anemia': 1, 'egfr': 1, 'ckd_stage_label': 1}
+2026-06-21 23:15:51 | WARNING  | ckd_data_loader | [kaggle] Target distribution: 2 class(es) have only 1 sample: ['discrete', nan]. Stratified train/test splitting will fail on these classes until addressed in preprocessing.
+2026-06-21 23:15:51 | WARNING  | ckd_data_loader | [kaggle] Target distribution: Severe class imbalance detected: majority/minority ratio is 54.0:1 across classes {'s1': 54, 's4': 45, 's2': 35, 's5': 35, 's3': 31, 'discrete': 1, nan: 1}. Flagged for the (separate, future) imbalance-handling stage - no resampling performed in this loader.
+2026-06-21 23:15:51 | WARNING  | ckd_data_loader | [kaggle] Target distribution: 1 row(s) (0.5%) have a missing target label and cannot be used for supervised training as-is. Rows are preserved per the loader's no-row-removal policy; resolve (drop/impute/exclude) explicitly in a preprocessing step.
+2026-06-21 23:15:51 | INFO     | ckd_data_loader | [kaggle] Routed to TRAIN-CANDIDATE set.
+2026-06-21 23:15:51 | INFO     | ckd_data_loader | [UAE] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/uae_ckd_cohort.csv
+2026-06-21 23:15:51 | INFO     | ckd_data_loader | [UAE] Raw file SHA-256: 9c0f208b6323aebd06754eced1f6df758af3eee48108969568f181542ca6331f
+2026-06-21 23:15:51 | INFO     | ckd_data_loader | [UAE] Raw file loaded: 491 rows, 22 columns.
+2026-06-21 23:15:51 | INFO     | ckd_data_loader | [UAE] Target column 'ckd_label' (declared type: unknown) - observed labels: [0, 1]
+2026-06-21 23:15:51 | INFO     | ckd_data_loader | [uae] Standardized shape: 491 rows x 24 cols | role=external_validation | target=ckd_label
+2026-06-21 23:15:51 | INFO     | ckd_data_loader | [uae] Class distribution: {0: 435, 1: 56}
+2026-06-21 23:15:51 | INFO     | ckd_data_loader | [uae] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-06-21 23:15:51 | INFO     | ckd_data_loader | [uae] Columns with IQR-flagged outliers: {'serum_creatinine': 2, 'egfr': 2, 'systolic_bp': 6, 'diastolic_bp': 8, 'cholesterol': 2, 'bmi': 19}
+2026-06-21 23:15:51 | INFO     | ckd_data_loader | [uae] Routed to EXTERNAL VALIDATION set (isolated from training).
+2026-06-21 23:15:51 | INFO     | ckd_data_loader | Load complete. train_candidate_datasets=['uci', 'kaggle'] | external_validation_dataset=['uae']
+2026-06-24 14:06:32 | INFO     | ckd_data_loader | [UCI] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/uci_ckd.csv
+2026-06-24 14:06:32 | INFO     | ckd_data_loader | [UCI] Raw file SHA-256: b2a110ee4fe787629ab726d427fc91783f6e42857bf75a646810bceb5989ee10
+2026-06-24 14:06:32 | INFO     | ckd_data_loader | [UCI] Raw file loaded: 400 rows, 25 columns.
+2026-06-24 14:06:32 | INFO     | ckd_data_loader | [UCI] Target column 'ckd_label' (declared type: binary) - observed labels: ['ckd', 'ckd\t', 'notckd']
+2026-06-24 14:06:32 | WARNING  | ckd_data_loader | [UCI] Dataset is declared 'binary' but 3 distinct label values were observed: ['ckd', 'ckd\t', 'notckd']. Labels are preserved as-is - no automatic collapsing/inference is performed here.
+2026-06-24 14:06:32 | INFO     | ckd_data_loader | [uci] Standardized shape: 400 rows x 27 cols | role=train_candidate | target=ckd_label
+2026-06-24 14:06:32 | INFO     | ckd_data_loader | [uci] Class distribution: {'ckd': 248, 'notckd': 150, 'ckd\t': 2}
+2026-06-24 14:06:32 | INFO     | ckd_data_loader | [uci] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-06-24 14:06:32 | INFO     | ckd_data_loader | [uci] Columns with missing values: {'age': 9, 'blood_pressure': 12, 'specific_gravity': 47, 'albumin': 46, 'sugar': 49, 'red_blood_cells': 152, 'pus_cell': 65, 'pus_cell_clumps': 4, 'bacteria': 4, 'blood_glucose_random': 44, 'blood_urea': 19, 'serum_creatinine': 17, 'sodium': 87, 'potassium': 88, 'hemoglobin': 52, 'packed_cell_volume': 71, 'white_blood_cell_count': 106, 'red_blood_cell_count': 131, 'hypertension': 2, 'diabetes_mellitus': 2, 'coronary_artery_disease': 2, 'appetite': 1, 'pedal_edema': 1, 'anemia': 1}
+2026-06-24 14:06:32 | INFO     | ckd_data_loader | [uci] Columns with IQR-flagged outliers: {'age': 10, 'blood_pressure': 36, 'blood_glucose_random': 34, 'blood_urea': 38, 'serum_creatinine': 51, 'sodium': 16, 'potassium': 4, 'hemoglobin': 1, 'packed_cell_volume': 1, 'white_blood_cell_count': 10, 'red_blood_cell_count': 1}
+2026-06-24 14:06:32 | WARNING  | ckd_data_loader | [uci] Target distribution: Severe class imbalance detected: majority/minority ratio is 124.0:1 across classes {'ckd': 248, 'notckd': 150, 'ckd\t': 2}. Flagged for the (separate, future) imbalance-handling stage - no resampling performed in this loader.
+2026-06-24 14:06:32 | WARNING  | ckd_data_loader | [uci] 2 target label value(s) have leading/trailing whitespace (reported only, not modified by this loader).
+2026-06-24 14:06:32 | INFO     | ckd_data_loader | [uci] Routed to TRAIN-CANDIDATE set.
+2026-06-24 14:06:32 | INFO     | ckd_data_loader | [Kaggle] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/kaggle_ckd_stages.csv
+2026-06-24 14:06:32 | INFO     | ckd_data_loader | [Kaggle] Raw file SHA-256: f24075f420b0f271bfddf3844a40061dbe9e2cb1c2336daa64463122344ea84a
+2026-06-24 14:06:32 | INFO     | ckd_data_loader | [Kaggle] Raw file loaded: 202 rows, 29 columns.
+2026-06-24 14:06:32 | WARNING  | ckd_data_loader | [Kaggle] 1 raw column(s) had no schema mapping entry and were passed through normalized but unmapped: ['bp limit']
+2026-06-24 14:06:32 | INFO     | ckd_data_loader | [Kaggle] Target column 'ckd_stage_label' (declared type: multiclass) - observed labels: ['discrete', 's1', 's2', 's3', 's4', 's5']
+2026-06-24 14:06:32 | WARNING  | ckd_data_loader | [Kaggle] 1 row(s) have a MISSING target label ('ckd_stage_label'). These rows are preserved (no automatic removal) - they must be explicitly excluded or imputed in a downstream preprocessing step before training.
+2026-06-24 14:06:33 | INFO     | ckd_data_loader | [kaggle] Standardized shape: 202 rows x 31 cols | role=train_candidate | target=ckd_stage_label
+2026-06-24 14:06:33 | INFO     | ckd_data_loader | [kaggle] Class distribution: {'s1': 54, 's4': 45, 's2': 35, 's5': 35, 's3': 31, 'discrete': 1, nan: 1}
+2026-06-24 14:06:33 | INFO     | ckd_data_loader | [kaggle] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-06-24 14:06:33 | INFO     | ckd_data_loader | [kaggle] Columns with missing values: {'blood_pressure_diastolic': 1, 'bp_limit': 1, 'specific_gravity': 1, 'albumin': 1, 'ckd_binary_label': 1, 'red_blood_cells': 1, 'sugar': 1, 'pus_cell': 1, 'pus_cell_clumps': 1, 'bacteria': 1, 'blood_glucose_random': 1, 'blood_urea': 1, 'sodium': 1, 'serum_creatinine': 1, 'potassium': 1, 'hemoglobin': 1, 'packed_cell_volume': 1, 'red_blood_cell_count': 1, 'white_blood_cell_count': 1, 'hypertension': 1, 'diabetes_mellitus': 1, 'coronary_artery_disease': 1, 'appetite': 1, 'pedal_edema': 1, 'anemia': 1, 'egfr': 1, 'ckd_stage_label': 1}
+2026-06-24 14:06:33 | WARNING  | ckd_data_loader | [kaggle] Target distribution: 2 class(es) have only 1 sample: ['discrete', nan]. Stratified train/test splitting will fail on these classes until addressed in preprocessing.
+2026-06-24 14:06:33 | WARNING  | ckd_data_loader | [kaggle] Target distribution: Severe class imbalance detected: majority/minority ratio is 54.0:1 across classes {'s1': 54, 's4': 45, 's2': 35, 's5': 35, 's3': 31, 'discrete': 1, nan: 1}. Flagged for the (separate, future) imbalance-handling stage - no resampling performed in this loader.
+2026-06-24 14:06:33 | WARNING  | ckd_data_loader | [kaggle] Target distribution: 1 row(s) (0.5%) have a missing target label and cannot be used for supervised training as-is. Rows are preserved per the loader's no-row-removal policy; resolve (drop/impute/exclude) explicitly in a preprocessing step.
+2026-06-24 14:06:33 | INFO     | ckd_data_loader | [kaggle] Routed to TRAIN-CANDIDATE set.
+2026-06-24 14:06:33 | INFO     | ckd_data_loader | [UAE] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/uae_ckd_cohort.csv
+2026-06-24 14:06:33 | INFO     | ckd_data_loader | [UAE] Raw file SHA-256: 9c0f208b6323aebd06754eced1f6df758af3eee48108969568f181542ca6331f
+2026-06-24 14:06:33 | INFO     | ckd_data_loader | [UAE] Raw file loaded: 491 rows, 22 columns.
+2026-06-24 14:06:33 | INFO     | ckd_data_loader | [UAE] Target column 'ckd_label' (declared type: unknown) - observed labels: [0, 1]
+2026-06-24 14:06:33 | INFO     | ckd_data_loader | [uae] Standardized shape: 491 rows x 24 cols | role=external_validation | target=ckd_label
+2026-06-24 14:06:33 | INFO     | ckd_data_loader | [uae] Class distribution: {0: 435, 1: 56}
+2026-06-24 14:06:33 | INFO     | ckd_data_loader | [uae] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-06-24 14:06:33 | INFO     | ckd_data_loader | [uae] Columns with IQR-flagged outliers: {'serum_creatinine': 2, 'egfr': 2, 'systolic_bp': 6, 'diastolic_bp': 8, 'cholesterol': 2, 'bmi': 19}
+2026-06-24 14:06:33 | INFO     | ckd_data_loader | [uae] Routed to EXTERNAL VALIDATION set (isolated from training).
+2026-06-24 14:06:33 | INFO     | ckd_data_loader | Load complete. train_candidate_datasets=['uci', 'kaggle'] | external_validation_dataset=['uae']
+2026-07-06 11:44:24 | INFO     | ckd_data_loader | [UCI] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/uci_ckd.csv
+2026-07-06 11:44:24 | INFO     | ckd_data_loader | [UCI] Raw file SHA-256: b2a110ee4fe787629ab726d427fc91783f6e42857bf75a646810bceb5989ee10
+2026-07-06 11:44:24 | INFO     | ckd_data_loader | [UCI] Raw file loaded: 400 rows, 25 columns.
+2026-07-06 11:44:24 | INFO     | ckd_data_loader | [UCI] Target column 'ckd_label' (declared type: binary) - observed labels: ['ckd', 'ckd\t', 'notckd']
+2026-07-06 11:44:24 | WARNING  | ckd_data_loader | [UCI] Dataset is declared 'binary' but 3 distinct label values were observed: ['ckd', 'ckd\t', 'notckd']. Labels are preserved as-is - no automatic collapsing/inference is performed here.
+2026-07-06 11:44:24 | INFO     | ckd_data_loader | [uci] Standardized shape: 400 rows x 27 cols | role=train_candidate | target=ckd_label
+2026-07-06 11:44:24 | INFO     | ckd_data_loader | [uci] Class distribution: {'ckd': 248, 'notckd': 150, 'ckd\t': 2}
+2026-07-06 11:44:24 | INFO     | ckd_data_loader | [uci] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-07-06 11:44:24 | INFO     | ckd_data_loader | [uci] Columns with missing values: {'age': 9, 'blood_pressure': 12, 'specific_gravity': 47, 'albumin': 46, 'sugar': 49, 'red_blood_cells': 152, 'pus_cell': 65, 'pus_cell_clumps': 4, 'bacteria': 4, 'blood_glucose_random': 44, 'blood_urea': 19, 'serum_creatinine': 17, 'sodium': 87, 'potassium': 88, 'hemoglobin': 52, 'packed_cell_volume': 71, 'white_blood_cell_count': 106, 'red_blood_cell_count': 131, 'hypertension': 2, 'diabetes_mellitus': 2, 'coronary_artery_disease': 2, 'appetite': 1, 'pedal_edema': 1, 'anemia': 1}
+2026-07-06 11:44:24 | INFO     | ckd_data_loader | [uci] Columns with IQR-flagged outliers: {'age': 10, 'blood_pressure': 36, 'blood_glucose_random': 34, 'blood_urea': 38, 'serum_creatinine': 51, 'sodium': 16, 'potassium': 4, 'hemoglobin': 1, 'packed_cell_volume': 1, 'white_blood_cell_count': 10, 'red_blood_cell_count': 1}
+2026-07-06 11:44:24 | WARNING  | ckd_data_loader | [uci] Target distribution: Severe class imbalance detected: majority/minority ratio is 124.0:1 across classes {'ckd': 248, 'notckd': 150, 'ckd\t': 2}. Flagged for the (separate, future) imbalance-handling stage - no resampling performed in this loader.
+2026-07-06 11:44:24 | WARNING  | ckd_data_loader | [uci] 2 target label value(s) have leading/trailing whitespace (reported only, not modified by this loader).
+2026-07-06 11:44:24 | INFO     | ckd_data_loader | [uci] Routed to TRAIN-CANDIDATE set.
+2026-07-06 11:44:24 | INFO     | ckd_data_loader | [Kaggle] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/kaggle_ckd_stages.csv
+2026-07-06 11:44:24 | INFO     | ckd_data_loader | [Kaggle] Raw file SHA-256: f24075f420b0f271bfddf3844a40061dbe9e2cb1c2336daa64463122344ea84a
+2026-07-06 11:44:24 | INFO     | ckd_data_loader | [Kaggle] Raw file loaded: 202 rows, 29 columns.
+2026-07-06 11:44:24 | WARNING  | ckd_data_loader | [Kaggle] 1 raw column(s) had no schema mapping entry and were passed through normalized but unmapped: ['bp limit']
+2026-07-06 11:44:24 | INFO     | ckd_data_loader | [Kaggle] Target column 'ckd_stage_label' (declared type: multiclass) - observed labels: ['discrete', 's1', 's2', 's3', 's4', 's5']
+2026-07-06 11:44:24 | WARNING  | ckd_data_loader | [Kaggle] 1 row(s) have a MISSING target label ('ckd_stage_label'). These rows are preserved (no automatic removal) - they must be explicitly excluded or imputed in a downstream preprocessing step before training.
+2026-07-06 11:44:24 | INFO     | ckd_data_loader | [kaggle] Standardized shape: 202 rows x 31 cols | role=train_candidate | target=ckd_stage_label
+2026-07-06 11:44:24 | INFO     | ckd_data_loader | [kaggle] Class distribution: {'s1': 54, 's4': 45, 's2': 35, 's5': 35, 's3': 31, 'discrete': 1, nan: 1}
+2026-07-06 11:44:24 | INFO     | ckd_data_loader | [kaggle] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-07-06 11:44:24 | INFO     | ckd_data_loader | [kaggle] Columns with missing values: {'blood_pressure_diastolic': 1, 'bp_limit': 1, 'specific_gravity': 1, 'albumin': 1, 'ckd_binary_label': 1, 'red_blood_cells': 1, 'sugar': 1, 'pus_cell': 1, 'pus_cell_clumps': 1, 'bacteria': 1, 'blood_glucose_random': 1, 'blood_urea': 1, 'sodium': 1, 'serum_creatinine': 1, 'potassium': 1, 'hemoglobin': 1, 'packed_cell_volume': 1, 'red_blood_cell_count': 1, 'white_blood_cell_count': 1, 'hypertension': 1, 'diabetes_mellitus': 1, 'coronary_artery_disease': 1, 'appetite': 1, 'pedal_edema': 1, 'anemia': 1, 'egfr': 1, 'ckd_stage_label': 1}
+2026-07-06 11:44:24 | WARNING  | ckd_data_loader | [kaggle] Target distribution: 2 class(es) have only 1 sample: ['discrete', nan]. Stratified train/test splitting will fail on these classes until addressed in preprocessing.
+2026-07-06 11:44:24 | WARNING  | ckd_data_loader | [kaggle] Target distribution: Severe class imbalance detected: majority/minority ratio is 54.0:1 across classes {'s1': 54, 's4': 45, 's2': 35, 's5': 35, 's3': 31, 'discrete': 1, nan: 1}. Flagged for the (separate, future) imbalance-handling stage - no resampling performed in this loader.
+2026-07-06 11:44:24 | WARNING  | ckd_data_loader | [kaggle] Target distribution: 1 row(s) (0.5%) have a missing target label and cannot be used for supervised training as-is. Rows are preserved per the loader's no-row-removal policy; resolve (drop/impute/exclude) explicitly in a preprocessing step.
+2026-07-06 11:44:24 | INFO     | ckd_data_loader | [kaggle] Routed to TRAIN-CANDIDATE set.
+2026-07-06 11:44:24 | INFO     | ckd_data_loader | [UAE] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/uae_ckd_cohort.csv
+2026-07-06 11:44:24 | INFO     | ckd_data_loader | [UAE] Raw file SHA-256: 9c0f208b6323aebd06754eced1f6df758af3eee48108969568f181542ca6331f
+2026-07-06 11:44:24 | INFO     | ckd_data_loader | [UAE] Raw file loaded: 491 rows, 22 columns.
+2026-07-06 11:44:24 | INFO     | ckd_data_loader | [UAE] Target column 'ckd_label' (declared type: unknown) - observed labels: [0, 1]
+2026-07-06 11:44:24 | INFO     | ckd_data_loader | [uae] Standardized shape: 491 rows x 24 cols | role=external_validation | target=ckd_label
+2026-07-06 11:44:24 | INFO     | ckd_data_loader | [uae] Class distribution: {0: 435, 1: 56}
+2026-07-06 11:44:24 | INFO     | ckd_data_loader | [uae] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-07-06 11:44:24 | INFO     | ckd_data_loader | [uae] Columns with IQR-flagged outliers: {'serum_creatinine': 2, 'egfr': 2, 'systolic_bp': 6, 'diastolic_bp': 8, 'cholesterol': 2, 'bmi': 19}
+2026-07-06 11:44:24 | INFO     | ckd_data_loader | [uae] Routed to EXTERNAL VALIDATION set (isolated from training).
+2026-07-06 11:44:24 | INFO     | ckd_data_loader | Load complete. train_candidate_datasets=['uci', 'kaggle'] | external_validation_dataset=['uae']
+2026-07-07 16:13:00 | INFO     | ckd_data_loader | [UCI] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/uci_ckd.csv
+2026-07-07 16:13:00 | INFO     | ckd_data_loader | [UCI] Raw file SHA-256: b2a110ee4fe787629ab726d427fc91783f6e42857bf75a646810bceb5989ee10
+2026-07-07 16:13:00 | INFO     | ckd_data_loader | [UCI] Raw file loaded: 400 rows, 25 columns.
+2026-07-07 16:13:00 | INFO     | ckd_data_loader | [UCI] Target column 'ckd_label' (declared type: binary) - observed labels: ['ckd', 'ckd\t', 'notckd']
+2026-07-07 16:13:00 | WARNING  | ckd_data_loader | [UCI] Dataset is declared 'binary' but 3 distinct label values were observed: ['ckd', 'ckd\t', 'notckd']. Labels are preserved as-is - no automatic collapsing/inference is performed here.
+2026-07-07 16:13:00 | INFO     | ckd_data_loader | [uci] Standardized shape: 400 rows x 27 cols | role=train_candidate | target=ckd_label
+2026-07-07 16:13:00 | INFO     | ckd_data_loader | [uci] Class distribution: {'ckd': 248, 'notckd': 150, 'ckd\t': 2}
+2026-07-07 16:13:00 | INFO     | ckd_data_loader | [uci] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-07-07 16:13:00 | INFO     | ckd_data_loader | [uci] Columns with missing values: {'age': 9, 'blood_pressure': 12, 'specific_gravity': 47, 'albumin': 46, 'sugar': 49, 'red_blood_cells': 152, 'pus_cell': 65, 'pus_cell_clumps': 4, 'bacteria': 4, 'blood_glucose_random': 44, 'blood_urea': 19, 'serum_creatinine': 17, 'sodium': 87, 'potassium': 88, 'hemoglobin': 52, 'packed_cell_volume': 71, 'white_blood_cell_count': 106, 'red_blood_cell_count': 131, 'hypertension': 2, 'diabetes_mellitus': 2, 'coronary_artery_disease': 2, 'appetite': 1, 'pedal_edema': 1, 'anemia': 1}
+2026-07-07 16:13:00 | INFO     | ckd_data_loader | [uci] Columns with IQR-flagged outliers: {'age': 10, 'blood_pressure': 36, 'blood_glucose_random': 34, 'blood_urea': 38, 'serum_creatinine': 51, 'sodium': 16, 'potassium': 4, 'hemoglobin': 1, 'packed_cell_volume': 1, 'white_blood_cell_count': 10, 'red_blood_cell_count': 1}
+2026-07-07 16:13:00 | WARNING  | ckd_data_loader | [uci] Target distribution: Severe class imbalance detected: majority/minority ratio is 124.0:1 across classes {'ckd': 248, 'notckd': 150, 'ckd\t': 2}. Flagged for the (separate, future) imbalance-handling stage - no resampling performed in this loader.
+2026-07-07 16:13:00 | WARNING  | ckd_data_loader | [uci] 2 target label value(s) have leading/trailing whitespace (reported only, not modified by this loader).
+2026-07-07 16:13:00 | INFO     | ckd_data_loader | [uci] Routed to TRAIN-CANDIDATE set.
+2026-07-07 16:13:00 | INFO     | ckd_data_loader | [Kaggle] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/kaggle_ckd_stages.csv
+2026-07-07 16:13:00 | INFO     | ckd_data_loader | [Kaggle] Raw file SHA-256: f24075f420b0f271bfddf3844a40061dbe9e2cb1c2336daa64463122344ea84a
+2026-07-07 16:13:00 | INFO     | ckd_data_loader | [Kaggle] Raw file loaded: 202 rows, 29 columns.
+2026-07-07 16:13:00 | WARNING  | ckd_data_loader | [Kaggle] 1 raw column(s) had no schema mapping entry and were passed through normalized but unmapped: ['bp limit']
+2026-07-07 16:13:00 | INFO     | ckd_data_loader | [Kaggle] Target column 'ckd_stage_label' (declared type: multiclass) - observed labels: ['discrete', 's1', 's2', 's3', 's4', 's5']
+2026-07-07 16:13:00 | WARNING  | ckd_data_loader | [Kaggle] 1 row(s) have a MISSING target label ('ckd_stage_label'). These rows are preserved (no automatic removal) - they must be explicitly excluded or imputed in a downstream preprocessing step before training.
+2026-07-07 16:13:00 | INFO     | ckd_data_loader | [kaggle] Standardized shape: 202 rows x 31 cols | role=train_candidate | target=ckd_stage_label
+2026-07-07 16:13:00 | INFO     | ckd_data_loader | [kaggle] Class distribution: {'s1': 54, 's4': 45, 's2': 35, 's5': 35, 's3': 31, 'discrete': 1, nan: 1}
+2026-07-07 16:13:00 | INFO     | ckd_data_loader | [kaggle] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-07-07 16:13:00 | INFO     | ckd_data_loader | [kaggle] Columns with missing values: {'blood_pressure_diastolic': 1, 'bp_limit': 1, 'specific_gravity': 1, 'albumin': 1, 'ckd_binary_label': 1, 'red_blood_cells': 1, 'sugar': 1, 'pus_cell': 1, 'pus_cell_clumps': 1, 'bacteria': 1, 'blood_glucose_random': 1, 'blood_urea': 1, 'sodium': 1, 'serum_creatinine': 1, 'potassium': 1, 'hemoglobin': 1, 'packed_cell_volume': 1, 'red_blood_cell_count': 1, 'white_blood_cell_count': 1, 'hypertension': 1, 'diabetes_mellitus': 1, 'coronary_artery_disease': 1, 'appetite': 1, 'pedal_edema': 1, 'anemia': 1, 'egfr': 1, 'ckd_stage_label': 1}
+2026-07-07 16:13:00 | WARNING  | ckd_data_loader | [kaggle] Target distribution: 2 class(es) have only 1 sample: ['discrete', nan]. Stratified train/test splitting will fail on these classes until addressed in preprocessing.
+2026-07-07 16:13:00 | WARNING  | ckd_data_loader | [kaggle] Target distribution: Severe class imbalance detected: majority/minority ratio is 54.0:1 across classes {'s1': 54, 's4': 45, 's2': 35, 's5': 35, 's3': 31, 'discrete': 1, nan: 1}. Flagged for the (separate, future) imbalance-handling stage - no resampling performed in this loader.
+2026-07-07 16:13:00 | WARNING  | ckd_data_loader | [kaggle] Target distribution: 1 row(s) (0.5%) have a missing target label and cannot be used for supervised training as-is. Rows are preserved per the loader's no-row-removal policy; resolve (drop/impute/exclude) explicitly in a preprocessing step.
+2026-07-07 16:13:00 | INFO     | ckd_data_loader | [kaggle] Routed to TRAIN-CANDIDATE set.
+2026-07-07 16:13:00 | INFO     | ckd_data_loader | [UAE] Loading dataset from: /Users/vrinda/Desktop/Mom Kidney CKD/data/raw/uae_ckd_cohort.csv
+2026-07-07 16:13:00 | INFO     | ckd_data_loader | [UAE] Raw file SHA-256: 9c0f208b6323aebd06754eced1f6df758af3eee48108969568f181542ca6331f
+2026-07-07 16:13:00 | INFO     | ckd_data_loader | [UAE] Raw file loaded: 491 rows, 22 columns.
+2026-07-07 16:13:00 | INFO     | ckd_data_loader | [UAE] Target column 'ckd_label' (declared type: unknown) - observed labels: [0, 1]
+2026-07-07 16:13:00 | INFO     | ckd_data_loader | [uae] Standardized shape: 491 rows x 24 cols | role=external_validation | target=ckd_label
+2026-07-07 16:13:00 | INFO     | ckd_data_loader | [uae] Class distribution: {0: 435, 1: 56}
+2026-07-07 16:13:00 | INFO     | ckd_data_loader | [uae] Duplicate rows: 0 | Duplicate patient IDs: None
+2026-07-07 16:13:00 | INFO     | ckd_data_loader | [uae] Columns with IQR-flagged outliers: {'serum_creatinine': 2, 'egfr': 2, 'systolic_bp': 6, 'diastolic_bp': 8, 'cholesterol': 2, 'bmi': 19}
+2026-07-07 16:13:00 | INFO     | ckd_data_loader | [uae] Routed to EXTERNAL VALIDATION set (isolated from training).
+2026-07-07 16:13:00 | INFO     | ckd_data_loader | Load complete. train_candidate_datasets=['uci', 'kaggle'] | external_validation_dataset=['uae']

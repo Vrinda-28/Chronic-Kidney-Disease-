@@ -1,0 +1,508 @@
+{
+  "pipeline_stage": "model_training",
+  "random_seed": 42,
+  "tasks": {
+    "uci": {
+      "best_model": "CatBoost",
+      "primary_metric": "roc_auc",
+      "best_cv_score": 0.999583,
+      "test_metrics": {
+        "test_accuracy": 1.0,
+        "test_balanced_accuracy": 1.0,
+        "test_precision": 1.0,
+        "test_recall": 1.0,
+        "test_sensitivity": 1.0,
+        "test_specificity": 1.0,
+        "test_f1": 1.0,
+        "test_mcc": 1.0,
+        "test_tp": 50,
+        "test_tn": 30,
+        "test_fp": 0,
+        "test_fn": 0,
+        "test_roc_auc": 1.0,
+        "test_pr_auc": 1.0
+      },
+      "all_model_cv_scores": {
+        "LogisticRegression": 0.999375,
+        "RandomForest": 0.99875,
+        "XGBoost": 0.997917,
+        "LightGBM": 0.999167,
+        "CatBoost": 0.999583
+      },
+      "uae_external_validation": {
+        "validation_methodology": "Track A (primary): reduced-feature UCI model trained on UCI training set using only features available in UAE. Track B (supplementary, caveated): full UCI model with training-median imputation for unavailable features (NOT zero-fill). Both tracks documented for transparency.",
+        "track_a": {
+          "valid": true,
+          "description": "PRIMARY external validation result. UCI model retrained using only UCI-UAE aligned features. No imputation needed. This is the result to report in the paper.",
+          "n_features": 8,
+          "features_used": [
+            "serum_creatinine",
+            "age",
+            "cardiovascular_burden_score",
+            "age_creatinine_interaction",
+            "bp_risk_score",
+            "hypertension",
+            "diabetes_mellitus",
+            "coronary_artery_disease"
+          ],
+          "model_name": "CatBoost_reduced",
+          "uci_cv_metrics": {
+            "accuracy": {
+              "mean": 0.934375,
+              "std": 0.034799
+            },
+            "balanced_accuracy": {
+              "mean": 0.935833,
+              "std": 0.027839
+            },
+            "precision": {
+              "mean": 0.963976,
+              "std": 0.011524
+            },
+            "recall": {
+              "mean": 0.93,
+              "std": 0.057879
+            },
+            "sensitivity": {
+              "mean": 0.93,
+              "std": 0.057879
+            },
+            "specificity": {
+              "mean": 0.941667,
+              "std": 0.020412
+            },
+            "f1": {
+              "mean": 0.945653,
+              "std": 0.030664
+            },
+            "mcc": {
+              "mean": 0.866188,
+              "std": 0.065511
+            },
+            "tp": {
+              "mean": 37.2,
+              "std": 2.315167
+            },
+            "tn": {
+              "mean": 22.6,
+              "std": 0.489898
+            },
+            "fp": {
+              "mean": 1.4,
+              "std": 0.489898
+            },
+            "fn": {
+              "mean": 2.8,
+              "std": 2.315167
+            },
+            "roc_auc": {
+              "mean": 0.971354,
+              "std": 0.017897
+            },
+            "pr_auc": {
+              "mean": 0.986511,
+              "std": 0.00842
+            },
+            "fold_num": {
+              "mean": 2.0,
+              "std": 1.414214
+            }
+          },
+          "uci_test_metrics": {
+            "reduced_test_accuracy": 0.975,
+            "reduced_test_balanced_accuracy": 0.98,
+            "reduced_test_precision": 1.0,
+            "reduced_test_recall": 0.96,
+            "reduced_test_sensitivity": 0.96,
+            "reduced_test_specificity": 1.0,
+            "reduced_test_f1": 0.979592,
+            "reduced_test_mcc": 0.948683,
+            "reduced_test_tp": 48,
+            "reduced_test_tn": 30,
+            "reduced_test_fp": 0,
+            "reduced_test_fn": 2,
+            "reduced_test_roc_auc": 0.994667,
+            "reduced_test_pr_auc": 0.997241
+          },
+          "uae_metrics": {
+            "uae_accuracy": 0.181263,
+            "uae_balanced_accuracy": 0.537931,
+            "uae_precision": 0.122271,
+            "uae_recall": 1.0,
+            "uae_sensitivity": 1.0,
+            "uae_specificity": 0.075862,
+            "uae_f1": 0.217899,
+            "uae_mcc": 0.09631,
+            "uae_tp": 56,
+            "uae_tn": 33,
+            "uae_fp": 402,
+            "uae_fn": 0,
+            "uae_roc_auc": 0.775657,
+            "uae_pr_auc": 0.280901,
+            "uae_n_rows": 491,
+            "uae_features_used": [
+              "serum_creatinine",
+              "age",
+              "cardiovascular_burden_score",
+              "age_creatinine_interaction",
+              "bp_risk_score",
+              "hypertension",
+              "diabetes_mellitus",
+              "coronary_artery_disease"
+            ],
+            "uae_n_features": 8,
+            "uae_unavailable_features": [],
+            "uae_model_name": "CatBoost_reduced"
+          }
+        },
+        "track_b": {
+          "valid": true,
+          "description": "SUPPLEMENTARY result only. Full UCI model with training-median imputation (NOT zero-fill) for missing features. Report as approximate upper bound, with caveats. DO NOT report as primary external validation.",
+          "features_used": [
+            "blood_pressure",
+            "specific_gravity",
+            "albumin",
+            "blood_glucose_random",
+            "blood_urea",
+            "serum_creatinine",
+            "sodium",
+            "potassium",
+            "hemoglobin",
+            "packed_cell_volume",
+            "white_blood_cell_count",
+            "red_blood_cell_count",
+            "hypertension",
+            "diabetes_mellitus",
+            "bun_creatinine_ratio",
+            "sodium_potassium_ratio",
+            "bp_risk_score",
+            "anemia_risk_score",
+            "cardiovascular_burden_score",
+            "age_creatinine_interaction",
+            "urea_creatinine_product",
+            "hemoglobin_creatinine_ratio",
+            "albumin_specific_gravity_interaction"
+          ],
+          "features_imputed_with_train_median": [
+            "blood_pressure",
+            "specific_gravity",
+            "albumin",
+            "blood_glucose_random",
+            "blood_urea",
+            "sodium",
+            "potassium",
+            "hemoglobin",
+            "packed_cell_volume",
+            "white_blood_cell_count",
+            "red_blood_cell_count",
+            "bun_creatinine_ratio",
+            "sodium_potassium_ratio",
+            "anemia_risk_score",
+            "urea_creatinine_product",
+            "hemoglobin_creatinine_ratio",
+            "albumin_specific_gravity_interaction"
+          ],
+          "uae_metrics": {
+            "uae_b_accuracy": 0.114053,
+            "uae_b_balanced_accuracy": 0.5,
+            "uae_b_precision": 0.114053,
+            "uae_b_recall": 1.0,
+            "uae_b_sensitivity": 1.0,
+            "uae_b_specificity": 0.0,
+            "uae_b_f1": 0.204753,
+            "uae_b_mcc": 0.0,
+            "uae_b_tp": 56,
+            "uae_b_tn": 0,
+            "uae_b_fp": 435,
+            "uae_b_fn": 0,
+            "uae_b_roc_auc": 0.5,
+            "uae_b_pr_auc": 0.114053,
+            "uae_n_rows": 491,
+            "features_from_uae": [
+              "serum_creatinine",
+              "hypertension",
+              "diabetes_mellitus",
+              "bp_risk_score",
+              "cardiovascular_burden_score",
+              "age_creatinine_interaction"
+            ],
+            "features_imputed_from_uci_train_median": [
+              "blood_pressure",
+              "specific_gravity",
+              "albumin",
+              "blood_glucose_random",
+              "blood_urea",
+              "sodium",
+              "potassium",
+              "hemoglobin",
+              "packed_cell_volume",
+              "white_blood_cell_count",
+              "red_blood_cell_count",
+              "bun_creatinine_ratio",
+              "sodium_potassium_ratio",
+              "anemia_risk_score",
+              "urea_creatinine_product",
+              "hemoglobin_creatinine_ratio",
+              "albumin_specific_gravity_interaction"
+            ],
+            "imputation_note": "CAVEATED: Features imputed from UCI training-set median. The model was not trained expecting median-valued inputs for these clinical variables. Do NOT report this as the primary external validation result. Use Track A instead."
+          }
+        },
+        "feature_alignment": {
+          "direct_overlaps": [
+            "serum_creatinine",
+            "age",
+            "cardiovascular_burden_score",
+            "age_creatinine_interaction",
+            "bp_risk_score"
+          ],
+          "semantic_mappings": {
+            "hypertension": "history_hypertension",
+            "diabetes_mellitus": "history_diabetes",
+            "coronary_artery_disease": "history_chd"
+          },
+          "caveats": {
+            "bp_risk_score": "UCI: derived from single blood_pressure reading. UAE: derived as (systolic_bp + diastolic_bp) / 2. Both are mean BP proxies; formula difference noted as limitation.",
+            "cardiovascular_burden_score": "UCI: uses current binary flags (hypertension, CAD, DM). UAE: uses history flags (history_hypertension, history_chd, history_diabetes). Semantically equivalent comorbidity counts; noted as limitation.",
+            "hypertension": "UCI: current binary hypertension flag. UAE: history_hypertension (past diagnosis). Mapped as semantic equivalent.",
+            "diabetes_mellitus": "UCI: current binary diabetes flag. UAE: history_diabetes (past diagnosis). Mapped as semantic equivalent.",
+            "coronary_artery_disease": "UCI: current binary CAD flag. UAE: history_chd (past diagnosis). Mapped as semantic equivalent."
+          },
+          "features_absent_in_uae": [
+            "blood_pressure",
+            "specific_gravity",
+            "albumin",
+            "blood_glucose_random",
+            "blood_urea",
+            "sodium",
+            "potassium",
+            "hemoglobin",
+            "packed_cell_volume",
+            "white_blood_cell_count",
+            "red_blood_cell_count",
+            "bun_creatinine_ratio",
+            "sodium_potassium_ratio",
+            "anemia_risk_score",
+            "urea_creatinine_product",
+            "hemoglobin_creatinine_ratio",
+            "albumin_specific_gravity_interaction"
+          ]
+        },
+        "uae_cohort": {
+          "n_rows": 491,
+          "target_distribution": {
+            "0": 435,
+            "1": 56
+          }
+        },
+        "original_zero_fill_diagnosis": {
+          "diagnosis": "CRITICAL: Zero-fill imputation causes every UAE patient to be predicted as CKD. Root cause: 19 features are zero-filled. Zero is not a neutral value \u2014 for clinical lab measurements (e.g. hemoglobin=0, sodium=0, blood_pressure=0), zero lies far in the CKD tail of the UCI training distribution. The model maps these extreme values to CKD correctly given its training distribution. The zero-fill result should NOT be reported as an external validation result.",
+          "zero_fill_result": {
+            "tp": 56,
+            "tn": 0,
+            "fp": 435,
+            "fn": 0,
+            "accuracy": 0.114053,
+            "specificity": 0.0,
+            "sensitivity": 1.0
+          },
+          "n_features_zeroed": 17,
+          "zero_vs_uci_train_median_for_zeroed_features": {
+            "blood_pressure": {
+              "zero_fill_value": 0.0,
+              "uci_train_median": 80.0,
+              "deviation_from_median": 80.0
+            },
+            "specific_gravity": {
+              "zero_fill_value": 0.0,
+              "uci_train_median": 1.02,
+              "deviation_from_median": 1.02
+            },
+            "albumin": {
+              "zero_fill_value": 0.0,
+              "uci_train_median": 0.0,
+              "deviation_from_median": 0.0
+            },
+            "blood_glucose_random": {
+              "zero_fill_value": 0.0,
+              "uci_train_median": 121.0,
+              "deviation_from_median": 121.0
+            },
+            "blood_urea": {
+              "zero_fill_value": 0.0,
+              "uci_train_median": 42.0,
+              "deviation_from_median": 42.0
+            },
+            "sodium": {
+              "zero_fill_value": 0.0,
+              "uci_train_median": 138.0,
+              "deviation_from_median": 138.0
+            },
+            "potassium": {
+              "zero_fill_value": 0.0,
+              "uci_train_median": 4.4,
+              "deviation_from_median": 4.4
+            },
+            "hemoglobin": {
+              "zero_fill_value": 0.0,
+              "uci_train_median": 12.65,
+              "deviation_from_median": 12.65
+            },
+            "packed_cell_volume": {
+              "zero_fill_value": 0.0,
+              "uci_train_median": 40.0,
+              "deviation_from_median": 40.0
+            },
+            "white_blood_cell_count": {
+              "zero_fill_value": 0.0,
+              "uci_train_median": 8000.0,
+              "deviation_from_median": 8000.0
+            },
+            "red_blood_cell_count": {
+              "zero_fill_value": 0.0,
+              "uci_train_median": 4.8,
+              "deviation_from_median": 4.8
+            },
+            "bun_creatinine_ratio": {
+              "zero_fill_value": 0.0,
+              "uci_train_median": 25.6753,
+              "deviation_from_median": 25.6753
+            },
+            "sodium_potassium_ratio": {
+              "zero_fill_value": 0.0,
+              "uci_train_median": 31.3636,
+              "deviation_from_median": 31.3636
+            },
+            "anemia_risk_score": {
+              "zero_fill_value": 0.0,
+              "uci_train_median": 0.3078,
+              "deviation_from_median": 0.3078
+            },
+            "urea_creatinine_product": {
+              "zero_fill_value": 0.0,
+              "uci_train_median": 53.7,
+              "deviation_from_median": 53.7
+            },
+            "hemoglobin_creatinine_ratio": {
+              "zero_fill_value": 0.0,
+              "uci_train_median": 9.75,
+              "deviation_from_median": 9.75
+            },
+            "albumin_specific_gravity_interaction": {
+              "zero_fill_value": 0.0,
+              "uci_train_median": 0.0,
+              "deviation_from_median": 0.0
+            }
+          },
+          "recommendation": "Use Track A (reduced-feature model) as the primary external validation result in the paper."
+        }
+      },
+      "uae_primary_result": {
+        "note": "Track A: reduced-feature UCI model (8 features). This is the valid, reportable external validation result.",
+        "metrics": {
+          "uae_accuracy": 0.181263,
+          "uae_balanced_accuracy": 0.537931,
+          "uae_precision": 0.122271,
+          "uae_recall": 1.0,
+          "uae_sensitivity": 1.0,
+          "uae_specificity": 0.075862,
+          "uae_f1": 0.217899,
+          "uae_mcc": 0.09631,
+          "uae_tp": 56,
+          "uae_tn": 33,
+          "uae_fp": 402,
+          "uae_fn": 0,
+          "uae_roc_auc": 0.775657,
+          "uae_pr_auc": 0.280901,
+          "uae_n_rows": 491,
+          "uae_features_used": [
+            "serum_creatinine",
+            "age",
+            "cardiovascular_burden_score",
+            "age_creatinine_interaction",
+            "bp_risk_score",
+            "hypertension",
+            "diabetes_mellitus",
+            "coronary_artery_disease"
+          ],
+          "uae_n_features": 8,
+          "uae_unavailable_features": [],
+          "uae_model_name": "CatBoost_reduced"
+        }
+      }
+    },
+    "kaggle": {
+      "best_model": "RandomForest",
+      "primary_metric": "balanced_accuracy",
+      "best_cv_score": 0.841933,
+      "test_metrics": {
+        "test_accuracy": 0.825,
+        "test_balanced_accuracy": 0.780952,
+        "test_macro_precision": 0.9125,
+        "test_macro_recall": 0.780952,
+        "test_macro_f1": 0.789455,
+        "test_weighted_f1": 0.814273,
+        "test_cohen_kappa": 0.775281,
+        "test_confusion_matrix": [
+          [
+            11,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            7,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            2,
+            4,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            3,
+            4
+          ]
+        ],
+        "test_class0_f1": 1.0,
+        "test_class0_recall": 1.0,
+        "test_class0_precision": 1.0,
+        "test_class1_f1": 1.0,
+        "test_class1_recall": 1.0,
+        "test_class1_precision": 1.0,
+        "test_class2_f1": 0.5,
+        "test_class2_recall": 0.333333,
+        "test_class2_precision": 1.0,
+        "test_class3_f1": 0.72,
+        "test_class3_recall": 1.0,
+        "test_class3_precision": 0.5625,
+        "test_class4_f1": 0.727273,
+        "test_class4_recall": 0.571429,
+        "test_class4_precision": 1.0,
+        "test_macro_roc_auc": 0.952812
+      },
+      "all_model_cv_scores": {
+        "RandomForest": 0.841933,
+        "XGBoost": 0.822895,
+        "LightGBM": 0.810575,
+        "CatBoost": 0.840924
+      }
+    }
+  }
+}

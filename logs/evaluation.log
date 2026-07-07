@@ -1,0 +1,330 @@
+2026-07-05 23:38:33 | INFO     | ckd_evaluator | ======================================================================
+2026-07-05 23:38:33 | INFO     | ckd_evaluator | CKD Evaluation Pipeline — START
+2026-07-05 23:38:33 | INFO     | ckd_evaluator | Tasks: ['uci', 'kaggle'] | SHAP: True | Bootstrap CI: False
+2026-07-05 23:38:33 | INFO     | ckd_evaluator | ======================================================================
+2026-07-05 23:38:33 | INFO     | ckd_evaluator | ============================================================
+2026-07-05 23:38:33 | INFO     | ckd_evaluator | [UCI] Starting evaluation — model: CatBoost
+2026-07-05 23:38:33 | INFO     | ckd_evaluator | [Load] Loaded calibrated model from artifacts/models/uci/CatBoost/calibrated_model.joblib
+2026-07-05 23:38:34 | INFO     | ckd_evaluator | [UCI] Test set: 80 rows × 23 features
+2026-07-05 23:38:34 | INFO     | ckd_evaluator | [UCI] Computing metrics …
+2026-07-05 23:38:34 | INFO     | ckd_evaluator | [UCI] JSON artifacts saved to artifacts/evaluation/uci
+2026-07-05 23:38:34 | INFO     | ckd_evaluator | Saved ROC curve → artifacts/evaluation/uci/roc_curves/roc_curve.png
+2026-07-05 23:38:34 | INFO     | ckd_evaluator | Saved PR curve → artifacts/evaluation/uci/pr_curves/pr_curve.png
+2026-07-05 23:38:34 | INFO     | ckd_evaluator | Saved confusion matrix → artifacts/evaluation/uci/confusion_matrix/confusion_matrix.png
+2026-07-05 23:38:34 | INFO     | ckd_evaluator | Saved calibration curve → artifacts/evaluation/uci/calibration/calibration_curve.png
+2026-07-05 23:38:35 | INFO     | ckd_evaluator | Saved threshold sweep → artifacts/evaluation/uci/threshold_analysis/threshold_sweep.png
+2026-07-05 23:38:35 | INFO     | ckd_evaluator | Saved feature importance → artifacts/evaluation/uci/feature_importance/feature_importance.png
+2026-07-05 23:38:35 | INFO     | ckd_evaluator | [UCI] Computing SHAP values …
+2026-07-05 23:38:36 | INFO     | ckd_evaluator | [SHAP] Using TreeExplainer for CatBoost
+2026-07-05 23:38:36 | INFO     | ckd_evaluator | Saved SHAP summary → artifacts/evaluation/uci/shap/shap_summary.png
+2026-07-05 23:38:36 | INFO     | ckd_evaluator | Saved SHAP bar → artifacts/evaluation/uci/shap/shap_bar.png
+2026-07-05 23:38:36 | INFO     | ckd_evaluator | [UCI] SHAP values saved.
+2026-07-05 23:38:36 | INFO     | ckd_evaluator | [UCI] Evaluation complete. Outputs: /Users/vrinda/Desktop/Mom Kidney CKD/artifacts/evaluation/uci
+2026-07-05 23:38:36 | INFO     | ckd_evaluator | ============================================================
+2026-07-05 23:38:36 | INFO     | ckd_evaluator | [KAGGLE] Starting evaluation — model: RandomForest
+2026-07-05 23:38:36 | INFO     | ckd_evaluator | [Load] Loaded calibrated model from artifacts/models/kaggle/RandomForest/calibrated_model.joblib
+2026-07-05 23:38:36 | INFO     | ckd_evaluator | [KAGGLE] Test set: 40 rows × 34 features
+2026-07-05 23:38:36 | INFO     | ckd_evaluator | [KAGGLE] Computing multiclass metrics …
+2026-07-05 23:38:36 | INFO     | ckd_evaluator | [KAGGLE] JSON artifacts saved to artifacts/evaluation/kaggle
+2026-07-05 23:38:36 | INFO     | ckd_evaluator | Saved multiclass confusion matrix → artifacts/evaluation/kaggle/confusion_matrix/confusion_matrix.png
+2026-07-05 23:38:36 | INFO     | ckd_evaluator | Saved OvR ROC → artifacts/evaluation/kaggle/roc_curves/roc_ovr.png
+2026-07-05 23:38:36 | INFO     | ckd_evaluator | Saved feature importance → artifacts/evaluation/kaggle/feature_importance/feature_importance.png
+2026-07-05 23:38:36 | INFO     | ckd_evaluator | [KAGGLE] Computing SHAP values …
+2026-07-05 23:38:36 | INFO     | ckd_evaluator | [SHAP] Using TreeExplainer for RandomForest
+2026-07-05 23:38:37 | INFO     | ckd_evaluator | Saved SHAP summary → artifacts/evaluation/kaggle/shap/shap_summary.png
+2026-07-05 23:38:37 | INFO     | ckd_evaluator | Saved SHAP bar → artifacts/evaluation/kaggle/shap/shap_bar.png
+2026-07-05 23:38:37 | INFO     | ckd_evaluator | [KAGGLE] Evaluation complete. Outputs: /Users/vrinda/Desktop/Mom Kidney CKD/artifacts/evaluation/kaggle
+2026-07-05 23:38:37 | WARNING  | ckd_evaluator | Summary report generation failed: Invalid format specifier '.4f if isinstance(pv, float) else 'N/A'' for object of type 'float'
+2026-07-05 23:38:37 | INFO     | ckd_evaluator | ======================================================================
+2026-07-05 23:38:37 | INFO     | ckd_evaluator | CKD Evaluation Pipeline — COMPLETE
+2026-07-05 23:38:37 | INFO     | ckd_evaluator | All outputs in: artifacts/evaluation/
+2026-07-05 23:38:37 | INFO     | ckd_evaluator | ======================================================================
+2026-07-05 23:39:18 | INFO     | ckd_evaluator | ======================================================================
+2026-07-05 23:39:18 | INFO     | ckd_evaluator | CKD Evaluation Pipeline — START
+2026-07-05 23:39:18 | INFO     | ckd_evaluator | Tasks: ['uci', 'kaggle'] | SHAP: False | Bootstrap CI: True
+2026-07-05 23:39:18 | INFO     | ckd_evaluator | ======================================================================
+2026-07-05 23:39:18 | INFO     | ckd_evaluator | ============================================================
+2026-07-05 23:39:18 | INFO     | ckd_evaluator | [UCI] Starting evaluation — model: CatBoost
+2026-07-05 23:39:18 | INFO     | ckd_evaluator | [Load] Loaded calibrated model from artifacts/models/uci/CatBoost/calibrated_model.joblib
+2026-07-05 23:39:18 | INFO     | ckd_evaluator | [UCI] Test set: 80 rows × 23 features
+2026-07-05 23:39:18 | INFO     | ckd_evaluator | [UCI] Computing metrics + 1000-iteration bootstrap CI …
+2026-07-05 23:39:21 | INFO     | ckd_evaluator | [UCI] JSON artifacts saved to artifacts/evaluation/uci
+2026-07-05 23:39:21 | INFO     | ckd_evaluator | Saved ROC curve → artifacts/evaluation/uci/roc_curves/roc_curve.png
+2026-07-05 23:39:21 | INFO     | ckd_evaluator | Saved PR curve → artifacts/evaluation/uci/pr_curves/pr_curve.png
+2026-07-05 23:39:21 | INFO     | ckd_evaluator | Saved confusion matrix → artifacts/evaluation/uci/confusion_matrix/confusion_matrix.png
+2026-07-05 23:39:21 | INFO     | ckd_evaluator | Saved calibration curve → artifacts/evaluation/uci/calibration/calibration_curve.png
+2026-07-05 23:39:21 | INFO     | ckd_evaluator | Saved threshold sweep → artifacts/evaluation/uci/threshold_analysis/threshold_sweep.png
+2026-07-05 23:39:21 | INFO     | ckd_evaluator | Saved feature importance → artifacts/evaluation/uci/feature_importance/feature_importance.png
+2026-07-05 23:39:21 | INFO     | ckd_evaluator | [UCI] Evaluation complete. Outputs: /Users/vrinda/Desktop/Mom Kidney CKD/artifacts/evaluation/uci
+2026-07-05 23:39:21 | INFO     | ckd_evaluator | ============================================================
+2026-07-05 23:39:21 | INFO     | ckd_evaluator | [KAGGLE] Starting evaluation — model: RandomForest
+2026-07-05 23:39:21 | INFO     | ckd_evaluator | [Load] Loaded calibrated model from artifacts/models/kaggle/RandomForest/calibrated_model.joblib
+2026-07-05 23:39:21 | INFO     | ckd_evaluator | [KAGGLE] Test set: 40 rows × 34 features
+2026-07-05 23:39:21 | INFO     | ckd_evaluator | [KAGGLE] Computing multiclass metrics …
+2026-07-05 23:39:21 | INFO     | ckd_evaluator | [KAGGLE] JSON artifacts saved to artifacts/evaluation/kaggle
+2026-07-05 23:39:21 | INFO     | ckd_evaluator | Saved multiclass confusion matrix → artifacts/evaluation/kaggle/confusion_matrix/confusion_matrix.png
+2026-07-05 23:39:22 | INFO     | ckd_evaluator | Saved OvR ROC → artifacts/evaluation/kaggle/roc_curves/roc_ovr.png
+2026-07-05 23:39:22 | INFO     | ckd_evaluator | Saved feature importance → artifacts/evaluation/kaggle/feature_importance/feature_importance.png
+2026-07-05 23:39:22 | INFO     | ckd_evaluator | [KAGGLE] Evaluation complete. Outputs: /Users/vrinda/Desktop/Mom Kidney CKD/artifacts/evaluation/kaggle
+2026-07-05 23:39:22 | INFO     | ckd_evaluator | Saved summary report → artifacts/evaluation/summary_report.md
+2026-07-05 23:39:22 | INFO     | ckd_evaluator | ======================================================================
+2026-07-05 23:39:22 | INFO     | ckd_evaluator | CKD Evaluation Pipeline — COMPLETE
+2026-07-05 23:39:22 | INFO     | ckd_evaluator | All outputs in: artifacts/evaluation/
+2026-07-05 23:39:22 | INFO     | ckd_evaluator | ======================================================================
+2026-07-05 23:39:28 | INFO     | ckd_ext_val | ======================================================================
+2026-07-05 23:39:28 | INFO     | ckd_ext_val | [UAE] External Validation — START
+2026-07-05 23:39:28 | INFO     | ckd_ext_val | [UAE] ⚠ UAE cohort was NEVER used during training, CV, or model selection.
+2026-07-05 23:39:28 | INFO     | ckd_ext_val | ======================================================================
+2026-07-05 23:39:28 | INFO     | ckd_ext_val | [UAE] Loaded predictions from artifacts/models/uci/uae_validation/uae_predictions.csv — 491 rows
+2026-07-05 23:39:28 | INFO     | ckd_ext_val | [UAE] Label distribution: CKD=56, Non-CKD=435 (prevalence=11.4%)
+2026-07-05 23:39:28 | INFO     | ckd_ext_val | [UAE] Computing metrics at threshold = 0.5 …
+2026-07-05 23:39:28 | INFO     | ckd_ext_val | [UAE] Running threshold sweep and Youden's J optimization …
+2026-07-05 23:39:28 | INFO     | ckd_ext_val | [UAE] Youden's J threshold: τ=0.9335 | Sensitivity=0.9643 | Specificity=0.2736 | J=0.2378
+2026-07-05 23:39:28 | INFO     | ckd_ext_val | [UAE] Computing metrics at Youden's J threshold (τ=0.9335) …
+2026-07-05 23:39:29 | INFO     | ckd_ext_val | [UAE] Generating population shift analysis …
+2026-07-05 23:39:29 | INFO     | ckd_ext_val | [UAE] External validation complete. Outputs: /Users/vrinda/Desktop/Mom Kidney CKD/artifacts/evaluation/uae
+2026-07-05 23:39:29 | INFO     | ckd_ext_val | ======================================================================
+2026-07-05 23:39:29 | INFO     | ckd_ext_val | [UAE] ═══════ RESULTS SUMMARY ═══════
+2026-07-05 23:39:29 | INFO     | ckd_ext_val | [UAE] ROC-AUC  (primary, threshold-free) : 0.5445
+2026-07-05 23:39:29 | INFO     | ckd_ext_val | [UAE] PR-AUC   (prevalence-sensitive)    : 0.1353
+2026-07-05 23:39:29 | INFO     | ckd_ext_val | [UAE]
+2026-07-05 23:39:29 | INFO     | ckd_ext_val | [UAE] ── At threshold = 0.50 (default, miscalibrated for UAE) ──
+2026-07-05 23:39:29 | INFO     | ckd_ext_val | [UAE]    Sensitivity : 1.0000
+2026-07-05 23:39:29 | INFO     | ckd_ext_val | [UAE]    Specificity : 0.0000
+2026-07-05 23:39:29 | INFO     | ckd_ext_val | [UAE]    F1          : 0.2048
+2026-07-05 23:39:29 | INFO     | ckd_ext_val | [UAE]    MCC         : 0.0000
+2026-07-05 23:39:29 | INFO     | ckd_ext_val | [UAE]    Accuracy    : 0.1141
+2026-07-05 23:39:29 | INFO     | ckd_ext_val | [UAE]
+2026-07-05 23:39:29 | INFO     | ckd_ext_val | [UAE] ── At Youden's J threshold (τ=0.9335, post-hoc optimized) ──
+2026-07-05 23:39:29 | INFO     | ckd_ext_val | [UAE]    Sensitivity : 0.9643
+2026-07-05 23:39:29 | INFO     | ckd_ext_val | [UAE]    Specificity : 0.2736
+2026-07-05 23:39:29 | INFO     | ckd_ext_val | [UAE]    F1          : 0.2535
+2026-07-05 23:39:29 | INFO     | ckd_ext_val | [UAE]    MCC         : 0.1754
+2026-07-05 23:39:29 | INFO     | ckd_ext_val | [UAE]    Accuracy    : 0.3523
+2026-07-05 23:39:29 | INFO     | ckd_ext_val | [UAE]
+2026-07-05 23:39:29 | INFO     | ckd_ext_val | [UAE] Calibration — ECE: 0.8332 | Brier: 0.7938
+2026-07-05 23:39:29 | INFO     | ckd_ext_val | [UAE] Population — UAE prevalence: 11.4% vs UCI training: 62.5%
+2026-07-05 23:39:29 | INFO     | ckd_ext_val | [UAE] ════════════════════════════════
+2026-07-05 23:39:29 | INFO     | ckd_ext_val | ======================================================================
+2026-07-05 23:39:45 | INFO     | ckd_ext_val | ======================================================================
+2026-07-05 23:39:45 | INFO     | ckd_ext_val | [UAE] External Validation — START
+2026-07-05 23:39:45 | INFO     | ckd_ext_val | [UAE] ⚠ UAE cohort was NEVER used during training, CV, or model selection.
+2026-07-05 23:39:45 | INFO     | ckd_ext_val | ======================================================================
+2026-07-05 23:39:45 | INFO     | ckd_ext_val | [UAE] Loaded predictions from artifacts/models/uci/uae_validation/uae_predictions.csv — 491 rows
+2026-07-05 23:39:45 | INFO     | ckd_ext_val | [UAE] Label distribution: CKD=56, Non-CKD=435 (prevalence=11.4%)
+2026-07-05 23:39:45 | INFO     | ckd_ext_val | [UAE] Computing metrics at threshold = 0.5 …
+2026-07-05 23:39:45 | INFO     | ckd_ext_val | [UAE] Running threshold sweep and Youden's J optimization …
+2026-07-05 23:39:45 | INFO     | ckd_ext_val | [UAE] Youden's J threshold: τ=0.9335 | Sensitivity=0.9643 | Specificity=0.2736 | J=0.2378
+2026-07-05 23:39:45 | INFO     | ckd_ext_val | [UAE] Computing metrics at Youden's J threshold (τ=0.9335) …
+2026-07-05 23:39:46 | INFO     | ckd_ext_val | [UAE] Generating population shift analysis …
+2026-07-05 23:39:46 | INFO     | ckd_ext_val | [UAE] External validation complete. Outputs: /Users/vrinda/Desktop/Mom Kidney CKD/artifacts/evaluation/uae
+2026-07-05 23:39:46 | INFO     | ckd_ext_val | ======================================================================
+2026-07-05 23:39:46 | INFO     | ckd_ext_val | [UAE] ═══════ RESULTS SUMMARY ═══════
+2026-07-05 23:39:46 | INFO     | ckd_ext_val | [UAE] ROC-AUC  (primary, threshold-free) : 0.5445
+2026-07-05 23:39:46 | INFO     | ckd_ext_val | [UAE] PR-AUC   (prevalence-sensitive)    : 0.1353
+2026-07-05 23:39:46 | INFO     | ckd_ext_val | [UAE]
+2026-07-05 23:39:46 | INFO     | ckd_ext_val | [UAE] ── At threshold = 0.50 (default, miscalibrated for UAE) ──
+2026-07-05 23:39:46 | INFO     | ckd_ext_val | [UAE]    Sensitivity : 1.0000
+2026-07-05 23:39:46 | INFO     | ckd_ext_val | [UAE]    Specificity : 0.0000
+2026-07-05 23:39:46 | INFO     | ckd_ext_val | [UAE]    F1          : 0.2048
+2026-07-05 23:39:46 | INFO     | ckd_ext_val | [UAE]    MCC         : 0.0000
+2026-07-05 23:39:46 | INFO     | ckd_ext_val | [UAE]    Accuracy    : 0.1141
+2026-07-05 23:39:46 | INFO     | ckd_ext_val | [UAE]
+2026-07-05 23:39:46 | INFO     | ckd_ext_val | [UAE] ── At Youden's J threshold (τ=0.9335, post-hoc optimized) ──
+2026-07-05 23:39:46 | INFO     | ckd_ext_val | [UAE]    Sensitivity : 0.9643
+2026-07-05 23:39:46 | INFO     | ckd_ext_val | [UAE]    Specificity : 0.2736
+2026-07-05 23:39:46 | INFO     | ckd_ext_val | [UAE]    F1          : 0.2535
+2026-07-05 23:39:46 | INFO     | ckd_ext_val | [UAE]    MCC         : 0.1754
+2026-07-05 23:39:46 | INFO     | ckd_ext_val | [UAE]    Accuracy    : 0.3523
+2026-07-05 23:39:46 | INFO     | ckd_ext_val | [UAE]
+2026-07-05 23:39:46 | INFO     | ckd_ext_val | [UAE] Calibration — ECE: 0.8332 | Brier: 0.7938
+2026-07-05 23:39:46 | INFO     | ckd_ext_val | [UAE] Population — UAE prevalence: 11.4% vs UCI training: 62.5%
+2026-07-05 23:39:46 | INFO     | ckd_ext_val | [UAE] ════════════════════════════════
+2026-07-05 23:39:46 | INFO     | ckd_ext_val | ======================================================================
+2026-07-05 23:40:16 | INFO     | ckd_ext_val | ======================================================================
+2026-07-05 23:40:16 | INFO     | ckd_ext_val | [UAE] External Validation — START
+2026-07-05 23:40:16 | INFO     | ckd_ext_val | [UAE] ⚠ UAE cohort was NEVER used during training, CV, or model selection.
+2026-07-05 23:40:16 | INFO     | ckd_ext_val | ======================================================================
+2026-07-05 23:40:16 | INFO     | ckd_ext_val | [UAE] Loaded predictions from artifacts/models/uci/uae_validation/track_a/track_a_uae_predictions.csv — 491 rows
+2026-07-05 23:40:16 | INFO     | ckd_ext_val | [UAE] Label distribution: CKD=56, Non-CKD=435 (prevalence=11.4%)
+2026-07-05 23:40:16 | INFO     | ckd_ext_val | [UAE] Computing metrics at threshold = 0.5 …
+2026-07-05 23:40:16 | INFO     | ckd_ext_val | [UAE] Running threshold sweep and Youden's J optimization …
+2026-07-05 23:40:16 | INFO     | ckd_ext_val | [UAE] Youden's J threshold: τ=0.9891 | Sensitivity=0.7500 | Specificity=0.7034 | J=0.4534
+2026-07-05 23:40:16 | INFO     | ckd_ext_val | [UAE] Computing metrics at Youden's J threshold (τ=0.9891) …
+2026-07-05 23:40:16 | INFO     | ckd_ext_val | [UAE] Generating population shift analysis …
+2026-07-05 23:40:17 | INFO     | ckd_ext_val | [UAE] External validation complete. Outputs: /Users/vrinda/Desktop/Mom Kidney CKD/artifacts/evaluation/uae
+2026-07-05 23:40:17 | INFO     | ckd_ext_val | ======================================================================
+2026-07-05 23:40:17 | INFO     | ckd_ext_val | [UAE] ═══════ RESULTS SUMMARY ═══════
+2026-07-05 23:40:17 | INFO     | ckd_ext_val | [UAE] ROC-AUC  (primary, threshold-free) : 0.7757
+2026-07-05 23:40:17 | INFO     | ckd_ext_val | [UAE] PR-AUC   (prevalence-sensitive)    : 0.2809
+2026-07-05 23:40:17 | INFO     | ckd_ext_val | [UAE]
+2026-07-05 23:40:17 | INFO     | ckd_ext_val | [UAE] ── At threshold = 0.50 (default, miscalibrated for UAE) ──
+2026-07-05 23:40:17 | INFO     | ckd_ext_val | [UAE]    Sensitivity : 1.0000
+2026-07-05 23:40:17 | INFO     | ckd_ext_val | [UAE]    Specificity : 0.0759
+2026-07-05 23:40:17 | INFO     | ckd_ext_val | [UAE]    F1          : 0.2179
+2026-07-05 23:40:17 | INFO     | ckd_ext_val | [UAE]    MCC         : 0.0963
+2026-07-05 23:40:17 | INFO     | ckd_ext_val | [UAE]    Accuracy    : 0.1813
+2026-07-05 23:40:17 | INFO     | ckd_ext_val | [UAE]
+2026-07-05 23:40:17 | INFO     | ckd_ext_val | [UAE] ── At Youden's J threshold (τ=0.9891, post-hoc optimized) ──
+2026-07-05 23:40:17 | INFO     | ckd_ext_val | [UAE]    Sensitivity : 0.7500
+2026-07-05 23:40:17 | INFO     | ckd_ext_val | [UAE]    Specificity : 0.7034
+2026-07-05 23:40:17 | INFO     | ckd_ext_val | [UAE]    F1          : 0.3700
+2026-07-05 23:40:17 | INFO     | ckd_ext_val | [UAE]    MCC         : 0.3025
+2026-07-05 23:40:17 | INFO     | ckd_ext_val | [UAE]    Accuracy    : 0.7088
+2026-07-05 23:40:17 | INFO     | ckd_ext_val | [UAE]
+2026-07-05 23:40:17 | INFO     | ckd_ext_val | [UAE] Calibration — ECE: 0.7858 | Brier: 0.7376
+2026-07-05 23:40:17 | INFO     | ckd_ext_val | [UAE] Population — UAE prevalence: 11.4% vs UCI training: 62.5%
+2026-07-05 23:40:17 | INFO     | ckd_ext_val | [UAE] ════════════════════════════════
+2026-07-05 23:40:17 | INFO     | ckd_ext_val | ======================================================================
+2026-07-06 11:45:43 | INFO     | ckd_evaluator | ======================================================================
+2026-07-06 11:45:43 | INFO     | ckd_evaluator | CKD Evaluation Pipeline — START
+2026-07-06 11:45:43 | INFO     | ckd_evaluator | Tasks: ['uci', 'kaggle'] | SHAP: True | Bootstrap CI: True
+2026-07-06 11:45:43 | INFO     | ckd_evaluator | ======================================================================
+2026-07-06 11:45:43 | INFO     | ckd_evaluator | ============================================================
+2026-07-06 11:45:43 | INFO     | ckd_evaluator | [UCI] Starting evaluation — model: CatBoost
+2026-07-06 11:45:43 | INFO     | ckd_evaluator | [Load] Loaded calibrated model from artifacts/models/uci/CatBoost/calibrated_model.joblib
+2026-07-06 11:45:43 | INFO     | ckd_evaluator | [UCI] Test set: 80 rows × 23 features
+2026-07-06 11:45:43 | INFO     | ckd_evaluator | [UCI] Computing metrics + 1000-iteration bootstrap CI …
+2026-07-06 11:45:46 | INFO     | ckd_evaluator | [UCI] JSON artifacts saved to artifacts/evaluation/uci
+2026-07-06 11:45:47 | INFO     | ckd_evaluator | Saved ROC curve → artifacts/evaluation/uci/roc_curves/roc_curve.png
+2026-07-06 11:45:47 | INFO     | ckd_evaluator | Saved PR curve → artifacts/evaluation/uci/pr_curves/pr_curve.png
+2026-07-06 11:45:47 | INFO     | ckd_evaluator | Saved confusion matrix → artifacts/evaluation/uci/confusion_matrix/confusion_matrix.png
+2026-07-06 11:45:47 | INFO     | ckd_evaluator | Saved calibration curve → artifacts/evaluation/uci/calibration/calibration_curve.png
+2026-07-06 11:45:47 | INFO     | ckd_evaluator | Saved threshold sweep → artifacts/evaluation/uci/threshold_analysis/threshold_sweep.png
+2026-07-06 11:45:47 | INFO     | ckd_evaluator | Saved feature importance → artifacts/evaluation/uci/feature_importance/feature_importance.png
+2026-07-06 11:45:47 | INFO     | ckd_evaluator | [UCI] Computing SHAP values …
+2026-07-06 11:45:47 | INFO     | ckd_evaluator | [SHAP] Using TreeExplainer for CatBoost
+2026-07-06 11:45:48 | INFO     | ckd_evaluator | Saved SHAP summary → artifacts/evaluation/uci/shap/shap_summary.png
+2026-07-06 11:45:48 | INFO     | ckd_evaluator | Saved SHAP bar → artifacts/evaluation/uci/shap/shap_bar.png
+2026-07-06 11:45:48 | INFO     | ckd_evaluator | [UCI] SHAP values saved.
+2026-07-06 11:45:48 | INFO     | ckd_evaluator | [UCI] Evaluation complete. Outputs: /Users/vrinda/Desktop/Mom Kidney CKD/artifacts/evaluation/uci
+2026-07-06 11:45:48 | INFO     | ckd_evaluator | ============================================================
+2026-07-06 11:45:48 | INFO     | ckd_evaluator | [KAGGLE] Starting evaluation — model: RandomForest
+2026-07-06 11:45:48 | INFO     | ckd_evaluator | [Load] Loaded calibrated model from artifacts/models/kaggle/RandomForest/calibrated_model.joblib
+2026-07-06 11:45:48 | INFO     | ckd_evaluator | [KAGGLE] Test set: 40 rows × 34 features
+2026-07-06 11:45:48 | INFO     | ckd_evaluator | [KAGGLE] Computing multiclass metrics …
+2026-07-06 11:45:48 | INFO     | ckd_evaluator | [KAGGLE] JSON artifacts saved to artifacts/evaluation/kaggle
+2026-07-06 11:45:48 | INFO     | ckd_evaluator | Saved multiclass confusion matrix → artifacts/evaluation/kaggle/confusion_matrix/confusion_matrix.png
+2026-07-06 11:45:48 | INFO     | ckd_evaluator | Saved OvR ROC → artifacts/evaluation/kaggle/roc_curves/roc_ovr.png
+2026-07-06 11:45:48 | INFO     | ckd_evaluator | Saved feature importance → artifacts/evaluation/kaggle/feature_importance/feature_importance.png
+2026-07-06 11:45:48 | INFO     | ckd_evaluator | [KAGGLE] Computing SHAP values …
+2026-07-06 11:45:48 | INFO     | ckd_evaluator | [SHAP] Using TreeExplainer for RandomForest
+2026-07-06 11:45:48 | INFO     | ckd_evaluator | Saved SHAP summary → artifacts/evaluation/kaggle/shap/shap_summary.png
+2026-07-06 11:45:48 | INFO     | ckd_evaluator | Saved SHAP bar → artifacts/evaluation/kaggle/shap/shap_bar.png
+2026-07-06 11:45:48 | INFO     | ckd_evaluator | [KAGGLE] Evaluation complete. Outputs: /Users/vrinda/Desktop/Mom Kidney CKD/artifacts/evaluation/kaggle
+2026-07-06 11:45:48 | INFO     | ckd_evaluator | Saved summary report → artifacts/evaluation/summary_report.md
+2026-07-06 11:45:48 | INFO     | ckd_evaluator | ======================================================================
+2026-07-06 11:45:48 | INFO     | ckd_evaluator | CKD Evaluation Pipeline — COMPLETE
+2026-07-06 11:45:48 | INFO     | ckd_evaluator | All outputs in: artifacts/evaluation/
+2026-07-06 11:45:48 | INFO     | ckd_evaluator | ======================================================================
+2026-07-06 11:45:49 | INFO     | ckd_ext_val | ======================================================================
+2026-07-06 11:45:49 | INFO     | ckd_ext_val | [UAE] External Validation — START
+2026-07-06 11:45:49 | INFO     | ckd_ext_val | [UAE] ⚠ UAE cohort was NEVER used during training, CV, or model selection.
+2026-07-06 11:45:49 | INFO     | ckd_ext_val | ======================================================================
+2026-07-06 11:45:49 | INFO     | ckd_ext_val | [UAE] Loaded predictions from artifacts/models/uci/uae_validation/track_a/track_a_uae_predictions.csv — 491 rows
+2026-07-06 11:45:49 | INFO     | ckd_ext_val | [UAE] Label distribution: CKD=56, Non-CKD=435 (prevalence=11.4%)
+2026-07-06 11:45:49 | INFO     | ckd_ext_val | [UAE] Computing metrics at threshold = 0.5 …
+2026-07-06 11:45:52 | INFO     | ckd_ext_val | [UAE] Running threshold sweep and Youden's J optimization …
+2026-07-06 11:45:52 | INFO     | ckd_ext_val | [UAE] Youden's J threshold: τ=0.9891 | Sensitivity=0.7500 | Specificity=0.7034 | J=0.4534
+2026-07-06 11:45:52 | INFO     | ckd_ext_val | [UAE] Computing metrics at Youden's J threshold (τ=0.9891) …
+2026-07-06 11:45:56 | INFO     | ckd_ext_val | [UAE] Generating population shift analysis …
+2026-07-06 11:45:56 | INFO     | ckd_ext_val | [UAE] External validation complete. Outputs: /Users/vrinda/Desktop/Mom Kidney CKD/artifacts/evaluation/uae
+2026-07-06 11:45:56 | INFO     | ckd_ext_val | ======================================================================
+2026-07-06 11:45:56 | INFO     | ckd_ext_val | [UAE] ═══════ RESULTS SUMMARY ═══════
+2026-07-06 11:45:56 | INFO     | ckd_ext_val | [UAE] ROC-AUC  (primary, threshold-free) : 0.7757
+2026-07-06 11:45:56 | INFO     | ckd_ext_val | [UAE] PR-AUC   (prevalence-sensitive)    : 0.2809
+2026-07-06 11:45:56 | INFO     | ckd_ext_val | [UAE]
+2026-07-06 11:45:56 | INFO     | ckd_ext_val | [UAE] ── At threshold = 0.50 (default, miscalibrated for UAE) ──
+2026-07-06 11:45:56 | INFO     | ckd_ext_val | [UAE]    Sensitivity : 1.0000
+2026-07-06 11:45:56 | INFO     | ckd_ext_val | [UAE]    Specificity : 0.0759
+2026-07-06 11:45:56 | INFO     | ckd_ext_val | [UAE]    F1          : 0.2179
+2026-07-06 11:45:56 | INFO     | ckd_ext_val | [UAE]    MCC         : 0.0963
+2026-07-06 11:45:56 | INFO     | ckd_ext_val | [UAE]    Accuracy    : 0.1813
+2026-07-06 11:45:56 | INFO     | ckd_ext_val | [UAE]
+2026-07-06 11:45:56 | INFO     | ckd_ext_val | [UAE] ── At Youden's J threshold (τ=0.9891, post-hoc optimized) ──
+2026-07-06 11:45:56 | INFO     | ckd_ext_val | [UAE]    Sensitivity : 0.7500
+2026-07-06 11:45:56 | INFO     | ckd_ext_val | [UAE]    Specificity : 0.7034
+2026-07-06 11:45:56 | INFO     | ckd_ext_val | [UAE]    F1          : 0.3700
+2026-07-06 11:45:56 | INFO     | ckd_ext_val | [UAE]    MCC         : 0.3025
+2026-07-06 11:45:56 | INFO     | ckd_ext_val | [UAE]    Accuracy    : 0.7088
+2026-07-06 11:45:56 | INFO     | ckd_ext_val | [UAE]
+2026-07-06 11:45:56 | INFO     | ckd_ext_val | [UAE] Calibration — ECE: 0.7858 | Brier: 0.7376
+2026-07-06 11:45:56 | INFO     | ckd_ext_val | [UAE] Population — UAE prevalence: 11.4% vs UCI training: 62.5%
+2026-07-06 11:45:56 | INFO     | ckd_ext_val | [UAE] ════════════════════════════════
+2026-07-06 11:45:56 | INFO     | ckd_ext_val | ======================================================================
+2026-07-07 16:14:26 | INFO     | ckd_evaluator | ======================================================================
+2026-07-07 16:14:26 | INFO     | ckd_evaluator | CKD Evaluation Pipeline — START
+2026-07-07 16:14:26 | INFO     | ckd_evaluator | Tasks: ['uci', 'kaggle'] | SHAP: True | Bootstrap CI: True
+2026-07-07 16:14:26 | INFO     | ckd_evaluator | ======================================================================
+2026-07-07 16:14:26 | INFO     | ckd_evaluator | ============================================================
+2026-07-07 16:14:26 | INFO     | ckd_evaluator | [UCI] Starting evaluation — model: CatBoost
+2026-07-07 16:14:26 | INFO     | ckd_evaluator | [Load] Loaded calibrated model from artifacts/models/uci/CatBoost/calibrated_model.joblib
+2026-07-07 16:14:26 | INFO     | ckd_evaluator | [UCI] Test set: 80 rows × 23 features
+2026-07-07 16:14:26 | INFO     | ckd_evaluator | [UCI] Computing metrics + 1000-iteration bootstrap CI …
+2026-07-07 16:14:29 | INFO     | ckd_evaluator | [UCI] JSON artifacts saved to artifacts/evaluation/uci
+2026-07-07 16:14:29 | INFO     | ckd_evaluator | Saved ROC curve → artifacts/evaluation/uci/roc_curves/roc_curve.png
+2026-07-07 16:14:29 | INFO     | ckd_evaluator | Saved PR curve → artifacts/evaluation/uci/pr_curves/pr_curve.png
+2026-07-07 16:14:29 | INFO     | ckd_evaluator | Saved confusion matrix → artifacts/evaluation/uci/confusion_matrix/confusion_matrix.png
+2026-07-07 16:14:29 | INFO     | ckd_evaluator | Saved calibration curve → artifacts/evaluation/uci/calibration/calibration_curve.png
+2026-07-07 16:14:29 | INFO     | ckd_evaluator | Saved threshold sweep → artifacts/evaluation/uci/threshold_analysis/threshold_sweep.png
+2026-07-07 16:14:29 | INFO     | ckd_evaluator | Saved feature importance → artifacts/evaluation/uci/feature_importance/feature_importance.png
+2026-07-07 16:14:29 | INFO     | ckd_evaluator | [UCI] Computing SHAP values …
+2026-07-07 16:14:30 | INFO     | ckd_evaluator | [SHAP] Using TreeExplainer for CatBoost
+2026-07-07 16:14:30 | INFO     | ckd_evaluator | Saved SHAP summary → artifacts/evaluation/uci/shap/shap_summary.png
+2026-07-07 16:14:30 | INFO     | ckd_evaluator | Saved SHAP bar → artifacts/evaluation/uci/shap/shap_bar.png
+2026-07-07 16:14:30 | INFO     | ckd_evaluator | [UCI] SHAP values saved.
+2026-07-07 16:14:30 | INFO     | ckd_evaluator | [UCI] Evaluation complete. Outputs: /Users/vrinda/Desktop/Mom Kidney CKD/artifacts/evaluation/uci
+2026-07-07 16:14:30 | INFO     | ckd_evaluator | ============================================================
+2026-07-07 16:14:30 | INFO     | ckd_evaluator | [KAGGLE] Starting evaluation — model: RandomForest
+2026-07-07 16:14:30 | INFO     | ckd_evaluator | [Load] Loaded calibrated model from artifacts/models/kaggle/RandomForest/calibrated_model.joblib
+2026-07-07 16:14:30 | INFO     | ckd_evaluator | [KAGGLE] Test set: 40 rows × 34 features
+2026-07-07 16:14:30 | INFO     | ckd_evaluator | [KAGGLE] Computing multiclass metrics …
+2026-07-07 16:14:30 | INFO     | ckd_evaluator | [KAGGLE] JSON artifacts saved to artifacts/evaluation/kaggle
+2026-07-07 16:14:30 | INFO     | ckd_evaluator | Saved multiclass confusion matrix → artifacts/evaluation/kaggle/confusion_matrix/confusion_matrix.png
+2026-07-07 16:14:30 | INFO     | ckd_evaluator | Saved OvR ROC → artifacts/evaluation/kaggle/roc_curves/roc_ovr.png
+2026-07-07 16:14:30 | INFO     | ckd_evaluator | Saved feature importance → artifacts/evaluation/kaggle/feature_importance/feature_importance.png
+2026-07-07 16:14:30 | INFO     | ckd_evaluator | [KAGGLE] Computing SHAP values …
+2026-07-07 16:14:30 | INFO     | ckd_evaluator | [SHAP] Using TreeExplainer for RandomForest
+2026-07-07 16:14:31 | INFO     | ckd_evaluator | Saved SHAP summary → artifacts/evaluation/kaggle/shap/shap_summary.png
+2026-07-07 16:14:31 | INFO     | ckd_evaluator | Saved SHAP bar → artifacts/evaluation/kaggle/shap/shap_bar.png
+2026-07-07 16:14:31 | INFO     | ckd_evaluator | [KAGGLE] Evaluation complete. Outputs: /Users/vrinda/Desktop/Mom Kidney CKD/artifacts/evaluation/kaggle
+2026-07-07 16:14:31 | INFO     | ckd_evaluator | Saved summary report → artifacts/evaluation/summary_report.md
+2026-07-07 16:14:31 | INFO     | ckd_evaluator | ======================================================================
+2026-07-07 16:14:31 | INFO     | ckd_evaluator | CKD Evaluation Pipeline — COMPLETE
+2026-07-07 16:14:31 | INFO     | ckd_evaluator | All outputs in: artifacts/evaluation/
+2026-07-07 16:14:31 | INFO     | ckd_evaluator | ======================================================================
+2026-07-07 16:14:36 | INFO     | ckd_ext_val | ======================================================================
+2026-07-07 16:14:36 | INFO     | ckd_ext_val | [UAE] External Validation — START
+2026-07-07 16:14:36 | INFO     | ckd_ext_val | [UAE] ⚠ UAE cohort was NEVER used during training, CV, or model selection.
+2026-07-07 16:14:36 | INFO     | ckd_ext_val | ======================================================================
+2026-07-07 16:14:36 | INFO     | ckd_ext_val | [UAE] Loaded predictions from artifacts/models/uci/uae_validation/track_a/track_a_uae_predictions.csv — 491 rows
+2026-07-07 16:14:36 | INFO     | ckd_ext_val | [UAE] Label distribution: CKD=56, Non-CKD=435 (prevalence=11.4%)
+2026-07-07 16:14:36 | INFO     | ckd_ext_val | [UAE] Computing metrics at threshold = 0.5 …
+2026-07-07 16:14:39 | INFO     | ckd_ext_val | [UAE] Running threshold sweep and Youden's J optimization …
+2026-07-07 16:14:39 | INFO     | ckd_ext_val | [UAE] Youden's J threshold: τ=0.9891 | Sensitivity=0.7500 | Specificity=0.7034 | J=0.4534
+2026-07-07 16:14:39 | INFO     | ckd_ext_val | [UAE] Computing metrics at Youden's J threshold (τ=0.9891) …
+2026-07-07 16:14:43 | INFO     | ckd_ext_val | [UAE] Generating population shift analysis …
+2026-07-07 16:14:43 | INFO     | ckd_ext_val | [UAE] External validation complete. Outputs: /Users/vrinda/Desktop/Mom Kidney CKD/artifacts/evaluation/uae
+2026-07-07 16:14:43 | INFO     | ckd_ext_val | ======================================================================
+2026-07-07 16:14:43 | INFO     | ckd_ext_val | [UAE] ═══════ RESULTS SUMMARY ═══════
+2026-07-07 16:14:43 | INFO     | ckd_ext_val | [UAE] ROC-AUC  (primary, threshold-free) : 0.7757
+2026-07-07 16:14:43 | INFO     | ckd_ext_val | [UAE] PR-AUC   (prevalence-sensitive)    : 0.2809
+2026-07-07 16:14:43 | INFO     | ckd_ext_val | [UAE]
+2026-07-07 16:14:43 | INFO     | ckd_ext_val | [UAE] ── At threshold = 0.50 (default, miscalibrated for UAE) ──
+2026-07-07 16:14:43 | INFO     | ckd_ext_val | [UAE]    Sensitivity : 1.0000
+2026-07-07 16:14:43 | INFO     | ckd_ext_val | [UAE]    Specificity : 0.0759
+2026-07-07 16:14:43 | INFO     | ckd_ext_val | [UAE]    F1          : 0.2179
+2026-07-07 16:14:43 | INFO     | ckd_ext_val | [UAE]    MCC         : 0.0963
+2026-07-07 16:14:43 | INFO     | ckd_ext_val | [UAE]    Accuracy    : 0.1813
+2026-07-07 16:14:43 | INFO     | ckd_ext_val | [UAE]
+2026-07-07 16:14:43 | INFO     | ckd_ext_val | [UAE] ── At Youden's J threshold (τ=0.9891, post-hoc optimized) ──
+2026-07-07 16:14:43 | INFO     | ckd_ext_val | [UAE]    Sensitivity : 0.7500
+2026-07-07 16:14:43 | INFO     | ckd_ext_val | [UAE]    Specificity : 0.7034
+2026-07-07 16:14:43 | INFO     | ckd_ext_val | [UAE]    F1          : 0.3700
+2026-07-07 16:14:43 | INFO     | ckd_ext_val | [UAE]    MCC         : 0.3025
+2026-07-07 16:14:43 | INFO     | ckd_ext_val | [UAE]    Accuracy    : 0.7088
+2026-07-07 16:14:43 | INFO     | ckd_ext_val | [UAE]
+2026-07-07 16:14:43 | INFO     | ckd_ext_val | [UAE] Calibration — ECE: 0.7858 | Brier: 0.7376
+2026-07-07 16:14:43 | INFO     | ckd_ext_val | [UAE] Population — UAE prevalence: 11.4% vs UCI training: 62.5%
+2026-07-07 16:14:43 | INFO     | ckd_ext_val | [UAE] ════════════════════════════════
+2026-07-07 16:14:43 | INFO     | ckd_ext_val | ======================================================================

@@ -1,0 +1,370 @@
+2026-07-06 11:45:58 | INFO     | ckd_ablation | ======================================================================
+2026-07-06 11:45:58 | INFO     | ckd_ablation | CKD ABLATION STUDY
+2026-07-06 11:45:58 | INFO     | ckd_ablation | Models  : ['CatBoost', 'XGBoost', 'RandomForest', 'LightGBM', 'LogisticRegression']
+2026-07-06 11:45:58 | INFO     | ckd_ablation | Subsets : Top [3, 5, 10, 15, 20] SHAP features
+2026-07-06 11:45:58 | INFO     | ckd_ablation | Output  : artifacts/ablation
+2026-07-06 11:45:58 | INFO     | ckd_ablation | ======================================================================
+2026-07-06 11:45:58 | INFO     | ckd_ablation | --------------------------------------------------
+2026-07-06 11:45:58 | INFO     | ckd_ablation | [CatBoost] Loading model and data...
+2026-07-06 11:45:58 | WARNING  | ckd_ablation | [CatBoost] Skipping (data): Test split not found: data/splits/uci/test.csv
+2026-07-06 11:45:58 | INFO     | ckd_ablation | --------------------------------------------------
+2026-07-06 11:45:58 | INFO     | ckd_ablation | [XGBoost] Loading model and data...
+2026-07-06 11:45:58 | WARNING  | ckd_ablation | [XGBoost] Skipping (data): Test split not found: data/splits/uci/test.csv
+2026-07-06 11:45:58 | INFO     | ckd_ablation | --------------------------------------------------
+2026-07-06 11:45:58 | INFO     | ckd_ablation | [RandomForest] Loading model and data...
+2026-07-06 11:45:58 | WARNING  | ckd_ablation | [RandomForest] Skipping (data): Test split not found: data/splits/uci/test.csv
+2026-07-06 11:45:58 | INFO     | ckd_ablation | --------------------------------------------------
+2026-07-06 11:45:58 | INFO     | ckd_ablation | [LightGBM] Loading model and data...
+2026-07-06 11:45:58 | WARNING  | ckd_ablation | [LightGBM] Skipping (data): Test split not found: data/splits/uci/test.csv
+2026-07-06 11:45:58 | INFO     | ckd_ablation | --------------------------------------------------
+2026-07-06 11:45:58 | INFO     | ckd_ablation | [LogisticRegression] Loading model and data...
+2026-07-06 11:45:58 | WARNING  | ckd_ablation | [LogisticRegression] Skipping (data): Test split not found: data/splits/uci/test.csv
+2026-07-06 11:45:58 | ERROR    | ckd_ablation | No ablation results produced. Check model artifacts and data splits.
+2026-07-07 16:11:52 | INFO     | ckd_ablation | ======================================================================
+2026-07-07 16:11:52 | INFO     | ckd_ablation | CKD ABLATION STUDY
+2026-07-07 16:11:52 | INFO     | ckd_ablation | Models  : ['CatBoost', 'XGBoost', 'RandomForest', 'LightGBM', 'LogisticRegression']
+2026-07-07 16:11:52 | INFO     | ckd_ablation | Subsets : Top [3, 5, 10, 15, 20] SHAP features
+2026-07-07 16:11:52 | INFO     | ckd_ablation | Output  : artifacts/ablation
+2026-07-07 16:11:52 | INFO     | ckd_ablation | ======================================================================
+2026-07-07 16:12:24 | INFO     | ckd_ablation | ======================================================================
+2026-07-07 16:12:24 | INFO     | ckd_ablation | CKD ABLATION STUDY
+2026-07-07 16:12:24 | INFO     | ckd_ablation | Models  : ['CatBoost', 'XGBoost', 'RandomForest', 'LightGBM', 'LogisticRegression']
+2026-07-07 16:12:24 | INFO     | ckd_ablation | Subsets : Top [3, 5, 10, 15, 20] SHAP features
+2026-07-07 16:12:24 | INFO     | ckd_ablation | Output  : artifacts/ablation
+2026-07-07 16:12:24 | INFO     | ckd_ablation | ======================================================================
+2026-07-07 16:12:24 | INFO     | ckd_ablation | --------------------------------------------------
+2026-07-07 16:12:24 | INFO     | ckd_ablation | [CatBoost] Loading model and data...
+2026-07-07 16:12:25 | INFO     | ckd_ablation | [CatBoost] Test CSV: data/splits/uci_test.csv  (80 rows)
+2026-07-07 16:12:25 | DEBUG    | ckd_ablation | [CatBoost] Train CSV: data/splits/uci_train.csv  (320 rows)
+2026-07-07 16:12:25 | INFO     | ckd_ablation | [CatBoost] Feature matrix: 80 rows × 23 features
+2026-07-07 16:12:25 | INFO     | ckd_ablation | [CatBoost] SHAP ranking: loading pre-computed values from artifacts/explainability/uci/CatBoost/shap_values.csv
+2026-07-07 16:12:25 | INFO     | ckd_ablation | [CatBoost] Evaluating 7 feature subsets...
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [CatBoost] All Features               n_features=23
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=1.0000  F1=1.0000  MCC=1.0000  BalAcc=1.0000
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [CatBoost] Top 20 SHAP                n_features=20
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=1.0000  F1=1.0000  MCC=1.0000  BalAcc=1.0000
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [CatBoost] Top 15 SHAP                n_features=15
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=1.0000  F1=1.0000  MCC=1.0000  BalAcc=1.0000
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [CatBoost] Top 10 SHAP                n_features=10
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=1.0000  F1=1.0000  MCC=1.0000  BalAcc=1.0000
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [CatBoost] Top 5 SHAP                 n_features=5
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=0.9833  F1=0.9901  MCC=0.9735  BalAcc=0.9833
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [CatBoost] Top 3 SHAP                 n_features=3
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=0.8833  F1=0.7692  MCC=0.0000  BalAcc=0.5000
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [CatBoost] Clinical Baseline          n_features=7
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=0.5000  F1=0.7692  MCC=0.0000  BalAcc=0.5000
+2026-07-07 16:12:25 | INFO     | ckd_ablation | --------------------------------------------------
+2026-07-07 16:12:25 | INFO     | ckd_ablation | [XGBoost] Loading model and data...
+2026-07-07 16:12:25 | INFO     | ckd_ablation | [XGBoost] Test CSV: data/splits/uci_test.csv  (80 rows)
+2026-07-07 16:12:25 | DEBUG    | ckd_ablation | [XGBoost] Train CSV: data/splits/uci_train.csv  (320 rows)
+2026-07-07 16:12:25 | INFO     | ckd_ablation | [XGBoost] Feature matrix: 80 rows × 23 features
+2026-07-07 16:12:25 | INFO     | ckd_ablation | [XGBoost] SHAP ranking: loading pre-computed values from artifacts/explainability/uci/XGBoost/shap_values.csv
+2026-07-07 16:12:25 | INFO     | ckd_ablation | [XGBoost] Evaluating 7 feature subsets...
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [XGBoost] All Features               n_features=23
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=0.9830  F1=0.9800  MCC=0.9467  BalAcc=0.9733
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [XGBoost] Top 20 SHAP                n_features=20
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=0.9830  F1=0.9800  MCC=0.9467  BalAcc=0.9733
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [XGBoost] Top 15 SHAP                n_features=15
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=0.9830  F1=0.9800  MCC=0.9467  BalAcc=0.9733
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [XGBoost] Top 10 SHAP                n_features=10
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=0.9830  F1=0.9800  MCC=0.9467  BalAcc=0.9733
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [XGBoost] Top 5 SHAP                 n_features=5
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=0.9667  F1=0.9709  MCC=0.9214  BalAcc=0.9500
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [XGBoost] Top 3 SHAP                 n_features=3
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=0.9500  F1=0.9346  MCC=0.8201  BalAcc=0.8833
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [XGBoost] Clinical Baseline          n_features=7
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=0.5000  F1=0.7692  MCC=0.0000  BalAcc=0.5000
+2026-07-07 16:12:25 | INFO     | ckd_ablation | --------------------------------------------------
+2026-07-07 16:12:25 | INFO     | ckd_ablation | [RandomForest] Loading model and data...
+2026-07-07 16:12:25 | INFO     | ckd_ablation | [RandomForest] Test CSV: data/splits/uci_test.csv  (80 rows)
+2026-07-07 16:12:25 | DEBUG    | ckd_ablation | [RandomForest] Train CSV: data/splits/uci_train.csv  (320 rows)
+2026-07-07 16:12:25 | INFO     | ckd_ablation | [RandomForest] Feature matrix: 80 rows × 24 features
+2026-07-07 16:12:25 | INFO     | ckd_ablation | [RandomForest] SHAP ranking: loading pre-computed values from artifacts/explainability/uci/RandomForest/shap_values.csv
+2026-07-07 16:12:25 | INFO     | ckd_ablation | [RandomForest] Evaluating 7 feature subsets...
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [RandomForest] All Features               n_features=24
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=0.9830  F1=0.9901  MCC=0.9735  BalAcc=0.9833
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [RandomForest] Top 20 SHAP                n_features=20
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=0.9830  F1=0.9901  MCC=0.9735  BalAcc=0.9833
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [RandomForest] Top 15 SHAP                n_features=15
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=0.9830  F1=0.9901  MCC=0.9735  BalAcc=0.9833
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [RandomForest] Top 10 SHAP                n_features=10
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=0.9833  F1=0.9804  MCC=0.9473  BalAcc=0.9667
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [RandomForest] Top 5 SHAP                 n_features=5
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=0.5000  F1=0.7692  MCC=0.0000  BalAcc=0.5000
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [RandomForest] Top 3 SHAP                 n_features=3
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=0.5000  F1=0.7692  MCC=0.0000  BalAcc=0.5000
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [RandomForest] Clinical Baseline          n_features=7
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=0.5000  F1=0.7692  MCC=0.0000  BalAcc=0.5000
+2026-07-07 16:12:25 | INFO     | ckd_ablation | --------------------------------------------------
+2026-07-07 16:12:25 | INFO     | ckd_ablation | [LightGBM] Loading model and data...
+2026-07-07 16:12:25 | INFO     | ckd_ablation | [LightGBM] Test CSV: data/splits/uci_test.csv  (80 rows)
+2026-07-07 16:12:25 | DEBUG    | ckd_ablation | [LightGBM] Train CSV: data/splits/uci_train.csv  (320 rows)
+2026-07-07 16:12:25 | INFO     | ckd_ablation | [LightGBM] Feature matrix: 80 rows × 23 features
+2026-07-07 16:12:25 | INFO     | ckd_ablation | [LightGBM] SHAP ranking: loading pre-computed values from artifacts/explainability/uci/LightGBM/shap_values.csv
+2026-07-07 16:12:25 | INFO     | ckd_ablation | [LightGBM] Evaluating 7 feature subsets...
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [LightGBM] All Features               n_features=23
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=0.9900  F1=0.9899  MCC=0.9739  BalAcc=0.9900
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [LightGBM] Top 20 SHAP                n_features=20
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=0.9900  F1=0.9899  MCC=0.9739  BalAcc=0.9900
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [LightGBM] Top 15 SHAP                n_features=15
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=0.9900  F1=0.9899  MCC=0.9739  BalAcc=0.9900
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [LightGBM] Top 10 SHAP                n_features=10
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=1.0000  F1=1.0000  MCC=1.0000  BalAcc=1.0000
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [LightGBM] Top 5 SHAP                 n_features=5
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=0.9667  F1=0.9804  MCC=0.9473  BalAcc=0.9667
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [LightGBM] Top 3 SHAP                 n_features=3
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=0.8833  F1=0.8475  MCC=0.5423  BalAcc=0.7000
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [LightGBM] Clinical Baseline          n_features=7
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=0.5000  F1=0.7692  MCC=0.0000  BalAcc=0.5000
+2026-07-07 16:12:25 | INFO     | ckd_ablation | --------------------------------------------------
+2026-07-07 16:12:25 | INFO     | ckd_ablation | [LogisticRegression] Loading model and data...
+2026-07-07 16:12:25 | INFO     | ckd_ablation | [LogisticRegression] Test CSV: data/splits/uci_test.csv  (80 rows)
+2026-07-07 16:12:25 | DEBUG    | ckd_ablation | [LogisticRegression] Train CSV: data/splits/uci_train.csv  (320 rows)
+2026-07-07 16:12:25 | INFO     | ckd_ablation | [LogisticRegression] Feature matrix: 80 rows × 24 features
+2026-07-07 16:12:25 | INFO     | ckd_ablation | [LogisticRegression] SHAP ranking: loading pre-computed values from artifacts/explainability/uci/LogisticRegression/shap_values.csv
+2026-07-07 16:12:25 | INFO     | ckd_ablation | [LogisticRegression] Evaluating 7 feature subsets...
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [LogisticRegression] All Features               n_features=24
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=0.5000  F1=0.7692  MCC=0.0000  BalAcc=0.5000
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [LogisticRegression] Top 20 SHAP                n_features=20
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=0.5000  F1=0.7692  MCC=0.0000  BalAcc=0.5000
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [LogisticRegression] Top 15 SHAP                n_features=15
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=0.5000  F1=0.7692  MCC=0.0000  BalAcc=0.5000
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [LogisticRegression] Top 10 SHAP                n_features=10
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=0.5000  F1=0.7692  MCC=0.0000  BalAcc=0.5000
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [LogisticRegression] Top 5 SHAP                 n_features=5
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=0.5000  F1=0.7692  MCC=0.0000  BalAcc=0.5000
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [LogisticRegression] Top 3 SHAP                 n_features=3
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=0.5000  F1=0.7692  MCC=0.0000  BalAcc=0.5000
+2026-07-07 16:12:25 | INFO     | ckd_ablation |   [LogisticRegression] Clinical Baseline          n_features=7
+2026-07-07 16:12:25 | INFO     | ckd_ablation |     AUC=0.5000  F1=0.7692  MCC=0.0000  BalAcc=0.5000
+2026-07-07 16:12:25 | INFO     | ckd_ablation | [Ablation] Results CSV → artifacts/ablation/ablation_results.csv
+2026-07-07 16:12:25 | INFO     | ckd_ablation | [Ablation] Generating plots...
+2026-07-07 16:12:25 | INFO     | ckd_ablation | [Plot] Saved → artifacts/ablation/ablation_roc_auc.png
+2026-07-07 16:12:25 | INFO     | ckd_ablation | [Plot] Saved → artifacts/ablation/ablation_f1.png
+2026-07-07 16:12:25 | INFO     | ckd_ablation | [Plot] Saved → artifacts/ablation/ablation_mcc.png
+2026-07-07 16:12:25 | INFO     | ckd_ablation | [Plot] Saved → artifacts/ablation/ablation_balanced_acc.png
+2026-07-07 16:12:26 | INFO     | ckd_ablation | [Plot] Saved → artifacts/ablation/ablation_heatmap.png
+2026-07-07 16:12:26 | INFO     | ckd_ablation | [Plot] Saved → artifacts/ablation/ablation_roc_auc_bar.png
+2026-07-07 16:12:26 | INFO     | ckd_ablation | [Ablation] Generating Markdown report...
+2026-07-07 16:12:26 | INFO     | ckd_ablation | [Report] Ablation report → artifacts/ablation/ablation_report.md
+2026-07-07 16:12:26 | INFO     | ckd_ablation | ======================================================================
+2026-07-07 16:12:26 | INFO     | ckd_ablation | ABLATION SUMMARY
+2026-07-07 16:12:26 | INFO     | ckd_ablation | ======================================================================
+2026-07-07 16:12:26 | INFO     | ckd_ablation | 
+  Model: CatBoost  (Full AUC = 1.0000)
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     All Features               n= 23  AUC=1.0000  F1=1.0000  Δ=+0.0000
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     Top 20 SHAP                n= 20  AUC=1.0000  F1=1.0000  Δ=+0.0000
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     Top 15 SHAP                n= 15  AUC=1.0000  F1=1.0000  Δ=+0.0000
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     Top 10 SHAP                n= 10  AUC=1.0000  F1=1.0000  Δ=+0.0000
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     Clinical Baseline          n=  7  AUC=0.5000  F1=0.7692  Δ=+0.5000
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     Top 5 SHAP                 n=  5  AUC=0.9833  F1=0.9901  Δ=+0.0167
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     Top 3 SHAP                 n=  3  AUC=0.8833  F1=0.7692  Δ=+0.1167
+2026-07-07 16:12:26 | INFO     | ckd_ablation | 
+  Model: XGBoost  (Full AUC = 0.9830)
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     All Features               n= 23  AUC=0.9830  F1=0.9800  Δ=+0.0000
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     Top 20 SHAP                n= 20  AUC=0.9830  F1=0.9800  Δ=+0.0000
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     Top 15 SHAP                n= 15  AUC=0.9830  F1=0.9800  Δ=+0.0000
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     Top 10 SHAP                n= 10  AUC=0.9830  F1=0.9800  Δ=+0.0000
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     Clinical Baseline          n=  7  AUC=0.5000  F1=0.7692  Δ=+0.4830
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     Top 5 SHAP                 n=  5  AUC=0.9667  F1=0.9709  Δ=+0.0163
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     Top 3 SHAP                 n=  3  AUC=0.9500  F1=0.9346  Δ=+0.0330
+2026-07-07 16:12:26 | INFO     | ckd_ablation | 
+  Model: RandomForest  (Full AUC = 0.9830)
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     All Features               n= 24  AUC=0.9830  F1=0.9901  Δ=+0.0000
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     Top 20 SHAP                n= 20  AUC=0.9830  F1=0.9901  Δ=+0.0000
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     Top 15 SHAP                n= 15  AUC=0.9830  F1=0.9901  Δ=+0.0000
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     Top 10 SHAP                n= 10  AUC=0.9833  F1=0.9804  Δ=-0.0003
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     Clinical Baseline          n=  7  AUC=0.5000  F1=0.7692  Δ=+0.4830
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     Top 5 SHAP                 n=  5  AUC=0.5000  F1=0.7692  Δ=+0.4830
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     Top 3 SHAP                 n=  3  AUC=0.5000  F1=0.7692  Δ=+0.4830
+2026-07-07 16:12:26 | INFO     | ckd_ablation | 
+  Model: LightGBM  (Full AUC = 0.9900)
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     All Features               n= 23  AUC=0.9900  F1=0.9899  Δ=+0.0000
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     Top 20 SHAP                n= 20  AUC=0.9900  F1=0.9899  Δ=+0.0000
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     Top 15 SHAP                n= 15  AUC=0.9900  F1=0.9899  Δ=+0.0000
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     Top 10 SHAP                n= 10  AUC=1.0000  F1=1.0000  Δ=-0.0100
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     Clinical Baseline          n=  7  AUC=0.5000  F1=0.7692  Δ=+0.4900
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     Top 5 SHAP                 n=  5  AUC=0.9667  F1=0.9804  Δ=+0.0233
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     Top 3 SHAP                 n=  3  AUC=0.8833  F1=0.8475  Δ=+0.1067
+2026-07-07 16:12:26 | INFO     | ckd_ablation | 
+  Model: LogisticRegression  (Full AUC = 0.5000)
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     All Features               n= 24  AUC=0.5000  F1=0.7692  Δ=+0.0000
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     Top 20 SHAP                n= 20  AUC=0.5000  F1=0.7692  Δ=+0.0000
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     Top 15 SHAP                n= 15  AUC=0.5000  F1=0.7692  Δ=+0.0000
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     Top 10 SHAP                n= 10  AUC=0.5000  F1=0.7692  Δ=+0.0000
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     Clinical Baseline          n=  7  AUC=0.5000  F1=0.7692  Δ=+0.0000
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     Top 5 SHAP                 n=  5  AUC=0.5000  F1=0.7692  Δ=+0.0000
+2026-07-07 16:12:26 | INFO     | ckd_ablation |     Top 3 SHAP                 n=  3  AUC=0.5000  F1=0.7692  Δ=+0.0000
+2026-07-07 16:12:26 | INFO     | ckd_ablation | ======================================================================
+2026-07-07 16:12:26 | INFO     | ckd_ablation | ABLATION COMPLETE → /Users/vrinda/Desktop/Mom Kidney CKD/artifacts/ablation
+2026-07-07 16:14:57 | INFO     | ckd_ablation | ======================================================================
+2026-07-07 16:14:57 | INFO     | ckd_ablation | CKD ABLATION STUDY
+2026-07-07 16:14:57 | INFO     | ckd_ablation | Models  : ['CatBoost', 'XGBoost', 'RandomForest', 'LightGBM', 'LogisticRegression']
+2026-07-07 16:14:57 | INFO     | ckd_ablation | Subsets : Top [3, 5, 10, 15, 20] SHAP features
+2026-07-07 16:14:57 | INFO     | ckd_ablation | Output  : artifacts/ablation
+2026-07-07 16:14:57 | INFO     | ckd_ablation | ======================================================================
+2026-07-07 16:14:57 | INFO     | ckd_ablation | --------------------------------------------------
+2026-07-07 16:14:57 | INFO     | ckd_ablation | [CatBoost] Loading model and data...
+2026-07-07 16:14:57 | INFO     | ckd_ablation | [CatBoost] Test CSV: data/splits/uci_test.csv  (80 rows)
+2026-07-07 16:14:57 | DEBUG    | ckd_ablation | [CatBoost] Train CSV: data/splits/uci_train.csv  (320 rows)
+2026-07-07 16:14:57 | INFO     | ckd_ablation | [CatBoost] Feature matrix: 80 rows × 23 features
+2026-07-07 16:14:57 | INFO     | ckd_ablation | [CatBoost] SHAP ranking: loading pre-computed values from artifacts/explainability/uci/CatBoost/shap_values.csv
+2026-07-07 16:14:57 | INFO     | ckd_ablation | [CatBoost] Evaluating 7 feature subsets...
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [CatBoost] All Features               n_features=23
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=1.0000  F1=1.0000  MCC=1.0000  BalAcc=1.0000
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [CatBoost] Top 20 SHAP                n_features=20
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=1.0000  F1=1.0000  MCC=1.0000  BalAcc=1.0000
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [CatBoost] Top 15 SHAP                n_features=15
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=1.0000  F1=1.0000  MCC=1.0000  BalAcc=1.0000
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [CatBoost] Top 10 SHAP                n_features=10
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=1.0000  F1=1.0000  MCC=1.0000  BalAcc=1.0000
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [CatBoost] Top 5 SHAP                 n_features=5
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=0.9833  F1=0.9901  MCC=0.9735  BalAcc=0.9833
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [CatBoost] Top 3 SHAP                 n_features=3
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=0.8833  F1=0.7692  MCC=0.0000  BalAcc=0.5000
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [CatBoost] Clinical Baseline          n_features=7
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=0.5000  F1=0.7692  MCC=0.0000  BalAcc=0.5000
+2026-07-07 16:14:57 | INFO     | ckd_ablation | --------------------------------------------------
+2026-07-07 16:14:57 | INFO     | ckd_ablation | [XGBoost] Loading model and data...
+2026-07-07 16:14:57 | INFO     | ckd_ablation | [XGBoost] Test CSV: data/splits/uci_test.csv  (80 rows)
+2026-07-07 16:14:57 | DEBUG    | ckd_ablation | [XGBoost] Train CSV: data/splits/uci_train.csv  (320 rows)
+2026-07-07 16:14:57 | INFO     | ckd_ablation | [XGBoost] Feature matrix: 80 rows × 23 features
+2026-07-07 16:14:57 | INFO     | ckd_ablation | [XGBoost] SHAP ranking: loading pre-computed values from artifacts/explainability/uci/XGBoost/shap_values.csv
+2026-07-07 16:14:57 | INFO     | ckd_ablation | [XGBoost] Evaluating 7 feature subsets...
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [XGBoost] All Features               n_features=23
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=0.9830  F1=0.9800  MCC=0.9467  BalAcc=0.9733
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [XGBoost] Top 20 SHAP                n_features=20
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=0.9830  F1=0.9800  MCC=0.9467  BalAcc=0.9733
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [XGBoost] Top 15 SHAP                n_features=15
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=0.9830  F1=0.9800  MCC=0.9467  BalAcc=0.9733
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [XGBoost] Top 10 SHAP                n_features=10
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=0.9830  F1=0.9800  MCC=0.9467  BalAcc=0.9733
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [XGBoost] Top 5 SHAP                 n_features=5
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=0.9667  F1=0.9709  MCC=0.9214  BalAcc=0.9500
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [XGBoost] Top 3 SHAP                 n_features=3
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=0.9500  F1=0.9346  MCC=0.8201  BalAcc=0.8833
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [XGBoost] Clinical Baseline          n_features=7
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=0.5000  F1=0.7692  MCC=0.0000  BalAcc=0.5000
+2026-07-07 16:14:57 | INFO     | ckd_ablation | --------------------------------------------------
+2026-07-07 16:14:57 | INFO     | ckd_ablation | [RandomForest] Loading model and data...
+2026-07-07 16:14:57 | INFO     | ckd_ablation | [RandomForest] Test CSV: data/splits/uci_test.csv  (80 rows)
+2026-07-07 16:14:57 | DEBUG    | ckd_ablation | [RandomForest] Train CSV: data/splits/uci_train.csv  (320 rows)
+2026-07-07 16:14:57 | INFO     | ckd_ablation | [RandomForest] Feature matrix: 80 rows × 24 features
+2026-07-07 16:14:57 | INFO     | ckd_ablation | [RandomForest] SHAP ranking: loading pre-computed values from artifacts/explainability/uci/RandomForest/shap_values.csv
+2026-07-07 16:14:57 | INFO     | ckd_ablation | [RandomForest] Evaluating 7 feature subsets...
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [RandomForest] All Features               n_features=24
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=0.9830  F1=0.9901  MCC=0.9735  BalAcc=0.9833
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [RandomForest] Top 20 SHAP                n_features=20
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=0.9830  F1=0.9901  MCC=0.9735  BalAcc=0.9833
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [RandomForest] Top 15 SHAP                n_features=15
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=0.9830  F1=0.9901  MCC=0.9735  BalAcc=0.9833
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [RandomForest] Top 10 SHAP                n_features=10
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=0.9833  F1=0.9804  MCC=0.9473  BalAcc=0.9667
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [RandomForest] Top 5 SHAP                 n_features=5
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=0.5000  F1=0.7692  MCC=0.0000  BalAcc=0.5000
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [RandomForest] Top 3 SHAP                 n_features=3
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=0.5000  F1=0.7692  MCC=0.0000  BalAcc=0.5000
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [RandomForest] Clinical Baseline          n_features=7
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=0.5000  F1=0.7692  MCC=0.0000  BalAcc=0.5000
+2026-07-07 16:14:57 | INFO     | ckd_ablation | --------------------------------------------------
+2026-07-07 16:14:57 | INFO     | ckd_ablation | [LightGBM] Loading model and data...
+2026-07-07 16:14:57 | INFO     | ckd_ablation | [LightGBM] Test CSV: data/splits/uci_test.csv  (80 rows)
+2026-07-07 16:14:57 | DEBUG    | ckd_ablation | [LightGBM] Train CSV: data/splits/uci_train.csv  (320 rows)
+2026-07-07 16:14:57 | INFO     | ckd_ablation | [LightGBM] Feature matrix: 80 rows × 23 features
+2026-07-07 16:14:57 | INFO     | ckd_ablation | [LightGBM] SHAP ranking: loading pre-computed values from artifacts/explainability/uci/LightGBM/shap_values.csv
+2026-07-07 16:14:57 | INFO     | ckd_ablation | [LightGBM] Evaluating 7 feature subsets...
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [LightGBM] All Features               n_features=23
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=0.9900  F1=0.9899  MCC=0.9739  BalAcc=0.9900
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [LightGBM] Top 20 SHAP                n_features=20
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=0.9900  F1=0.9899  MCC=0.9739  BalAcc=0.9900
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [LightGBM] Top 15 SHAP                n_features=15
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=0.9900  F1=0.9899  MCC=0.9739  BalAcc=0.9900
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [LightGBM] Top 10 SHAP                n_features=10
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=1.0000  F1=1.0000  MCC=1.0000  BalAcc=1.0000
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [LightGBM] Top 5 SHAP                 n_features=5
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=0.9667  F1=0.9804  MCC=0.9473  BalAcc=0.9667
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [LightGBM] Top 3 SHAP                 n_features=3
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=0.8833  F1=0.8475  MCC=0.5423  BalAcc=0.7000
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [LightGBM] Clinical Baseline          n_features=7
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=0.5000  F1=0.7692  MCC=0.0000  BalAcc=0.5000
+2026-07-07 16:14:57 | INFO     | ckd_ablation | --------------------------------------------------
+2026-07-07 16:14:57 | INFO     | ckd_ablation | [LogisticRegression] Loading model and data...
+2026-07-07 16:14:57 | INFO     | ckd_ablation | [LogisticRegression] Test CSV: data/splits/uci_test.csv  (80 rows)
+2026-07-07 16:14:57 | DEBUG    | ckd_ablation | [LogisticRegression] Train CSV: data/splits/uci_train.csv  (320 rows)
+2026-07-07 16:14:57 | INFO     | ckd_ablation | [LogisticRegression] Feature matrix: 80 rows × 24 features
+2026-07-07 16:14:57 | INFO     | ckd_ablation | [LogisticRegression] SHAP ranking: loading pre-computed values from artifacts/explainability/uci/LogisticRegression/shap_values.csv
+2026-07-07 16:14:57 | INFO     | ckd_ablation | [LogisticRegression] Evaluating 7 feature subsets...
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [LogisticRegression] All Features               n_features=24
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=0.5000  F1=0.7692  MCC=0.0000  BalAcc=0.5000
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [LogisticRegression] Top 20 SHAP                n_features=20
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=0.5000  F1=0.7692  MCC=0.0000  BalAcc=0.5000
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [LogisticRegression] Top 15 SHAP                n_features=15
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=0.5000  F1=0.7692  MCC=0.0000  BalAcc=0.5000
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [LogisticRegression] Top 10 SHAP                n_features=10
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=0.5000  F1=0.7692  MCC=0.0000  BalAcc=0.5000
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [LogisticRegression] Top 5 SHAP                 n_features=5
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=0.5000  F1=0.7692  MCC=0.0000  BalAcc=0.5000
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [LogisticRegression] Top 3 SHAP                 n_features=3
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=0.5000  F1=0.7692  MCC=0.0000  BalAcc=0.5000
+2026-07-07 16:14:57 | INFO     | ckd_ablation |   [LogisticRegression] Clinical Baseline          n_features=7
+2026-07-07 16:14:57 | INFO     | ckd_ablation |     AUC=0.5000  F1=0.7692  MCC=0.0000  BalAcc=0.5000
+2026-07-07 16:14:57 | INFO     | ckd_ablation | [Ablation] Results CSV → artifacts/ablation/ablation_results.csv
+2026-07-07 16:14:57 | INFO     | ckd_ablation | [Ablation] Generating plots...
+2026-07-07 16:14:58 | INFO     | ckd_ablation | [Plot] Saved → artifacts/ablation/ablation_roc_auc.png
+2026-07-07 16:14:58 | INFO     | ckd_ablation | [Plot] Saved → artifacts/ablation/ablation_f1.png
+2026-07-07 16:14:58 | INFO     | ckd_ablation | [Plot] Saved → artifacts/ablation/ablation_mcc.png
+2026-07-07 16:14:58 | INFO     | ckd_ablation | [Plot] Saved → artifacts/ablation/ablation_balanced_acc.png
+2026-07-07 16:14:58 | INFO     | ckd_ablation | [Plot] Saved → artifacts/ablation/ablation_heatmap.png
+2026-07-07 16:14:58 | INFO     | ckd_ablation | [Plot] Saved → artifacts/ablation/ablation_roc_auc_bar.png
+2026-07-07 16:14:58 | INFO     | ckd_ablation | [Ablation] Generating Markdown report...
+2026-07-07 16:14:58 | INFO     | ckd_ablation | [Report] Ablation report → artifacts/ablation/ablation_report.md
+2026-07-07 16:14:58 | INFO     | ckd_ablation | ======================================================================
+2026-07-07 16:14:58 | INFO     | ckd_ablation | ABLATION SUMMARY
+2026-07-07 16:14:58 | INFO     | ckd_ablation | ======================================================================
+2026-07-07 16:14:58 | INFO     | ckd_ablation | 
+  Model: CatBoost  (Full AUC = 1.0000)
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     All Features               n= 23  AUC=1.0000  F1=1.0000  Δ=+0.0000
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     Top 20 SHAP                n= 20  AUC=1.0000  F1=1.0000  Δ=+0.0000
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     Top 15 SHAP                n= 15  AUC=1.0000  F1=1.0000  Δ=+0.0000
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     Top 10 SHAP                n= 10  AUC=1.0000  F1=1.0000  Δ=+0.0000
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     Clinical Baseline          n=  7  AUC=0.5000  F1=0.7692  Δ=+0.5000
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     Top 5 SHAP                 n=  5  AUC=0.9833  F1=0.9901  Δ=+0.0167
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     Top 3 SHAP                 n=  3  AUC=0.8833  F1=0.7692  Δ=+0.1167
+2026-07-07 16:14:58 | INFO     | ckd_ablation | 
+  Model: XGBoost  (Full AUC = 0.9830)
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     All Features               n= 23  AUC=0.9830  F1=0.9800  Δ=+0.0000
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     Top 20 SHAP                n= 20  AUC=0.9830  F1=0.9800  Δ=+0.0000
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     Top 15 SHAP                n= 15  AUC=0.9830  F1=0.9800  Δ=+0.0000
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     Top 10 SHAP                n= 10  AUC=0.9830  F1=0.9800  Δ=+0.0000
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     Clinical Baseline          n=  7  AUC=0.5000  F1=0.7692  Δ=+0.4830
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     Top 5 SHAP                 n=  5  AUC=0.9667  F1=0.9709  Δ=+0.0163
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     Top 3 SHAP                 n=  3  AUC=0.9500  F1=0.9346  Δ=+0.0330
+2026-07-07 16:14:58 | INFO     | ckd_ablation | 
+  Model: RandomForest  (Full AUC = 0.9830)
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     All Features               n= 24  AUC=0.9830  F1=0.9901  Δ=+0.0000
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     Top 20 SHAP                n= 20  AUC=0.9830  F1=0.9901  Δ=+0.0000
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     Top 15 SHAP                n= 15  AUC=0.9830  F1=0.9901  Δ=+0.0000
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     Top 10 SHAP                n= 10  AUC=0.9833  F1=0.9804  Δ=-0.0003
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     Clinical Baseline          n=  7  AUC=0.5000  F1=0.7692  Δ=+0.4830
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     Top 5 SHAP                 n=  5  AUC=0.5000  F1=0.7692  Δ=+0.4830
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     Top 3 SHAP                 n=  3  AUC=0.5000  F1=0.7692  Δ=+0.4830
+2026-07-07 16:14:58 | INFO     | ckd_ablation | 
+  Model: LightGBM  (Full AUC = 0.9900)
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     All Features               n= 23  AUC=0.9900  F1=0.9899  Δ=+0.0000
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     Top 20 SHAP                n= 20  AUC=0.9900  F1=0.9899  Δ=+0.0000
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     Top 15 SHAP                n= 15  AUC=0.9900  F1=0.9899  Δ=+0.0000
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     Top 10 SHAP                n= 10  AUC=1.0000  F1=1.0000  Δ=-0.0100
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     Clinical Baseline          n=  7  AUC=0.5000  F1=0.7692  Δ=+0.4900
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     Top 5 SHAP                 n=  5  AUC=0.9667  F1=0.9804  Δ=+0.0233
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     Top 3 SHAP                 n=  3  AUC=0.8833  F1=0.8475  Δ=+0.1067
+2026-07-07 16:14:58 | INFO     | ckd_ablation | 
+  Model: LogisticRegression  (Full AUC = 0.5000)
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     All Features               n= 24  AUC=0.5000  F1=0.7692  Δ=+0.0000
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     Top 20 SHAP                n= 20  AUC=0.5000  F1=0.7692  Δ=+0.0000
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     Top 15 SHAP                n= 15  AUC=0.5000  F1=0.7692  Δ=+0.0000
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     Top 10 SHAP                n= 10  AUC=0.5000  F1=0.7692  Δ=+0.0000
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     Clinical Baseline          n=  7  AUC=0.5000  F1=0.7692  Δ=+0.0000
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     Top 5 SHAP                 n=  5  AUC=0.5000  F1=0.7692  Δ=+0.0000
+2026-07-07 16:14:58 | INFO     | ckd_ablation |     Top 3 SHAP                 n=  3  AUC=0.5000  F1=0.7692  Δ=+0.0000
+2026-07-07 16:14:58 | INFO     | ckd_ablation | ======================================================================
+2026-07-07 16:14:58 | INFO     | ckd_ablation | ABLATION COMPLETE → /Users/vrinda/Desktop/Mom Kidney CKD/artifacts/ablation

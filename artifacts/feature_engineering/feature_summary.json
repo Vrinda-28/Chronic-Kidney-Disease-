@@ -1,0 +1,733 @@
+{
+  "pipeline_stage": "feature_engineering",
+  "data_leakage_policy": "No engineered feature reads any of: ['ckd_affected', 'ckd_binary_label', 'ckd_label', 'ckd_stage_label']. All features are deterministic row-wise transforms of existing columns - nothing is fit or estimated from the data, so there is no possibility of train/validation leakage at this stage, and UAE is never merged with or statistically influenced by UCI/Kaggle.",
+  "provenance_handling": "['original_row_id', 'source_dataset'] were dropped from every engineered dataset and saved separately as <dataset>_provenance.csv, row-order aligned via an explicit row_position column.",
+  "leakage_audit": {
+    "policy": "Two layers of protection: (1) columns in LEAKAGE_PRONE_COLUMNS are physically removed before feature creation and saved to <dataset>_excluded_leakage_columns.csv for auditability (see 'excluded_columns' below, with rationale per column); (2) a generic statistical screen flags any other low-cardinality column with high normalized mutual information against the target for human review (see 'statistical_screen_flags' below) - this screen is informational only and never triggers automatic removal, since strong association from a genuine clinical biomarker is expected and desirable, not a leakage signal.",
+    "nmi_flag_threshold": 0.5,
+    "max_cardinality_screened": 10,
+    "datasets": {
+      "uci": {
+        "excluded_columns": [],
+        "statistical_screen_flags": []
+      },
+      "kaggle": {
+        "excluded_columns": [
+          {
+            "column": "ckd_binary_label",
+            "dataset": "kaggle",
+            "rationale": "Confirmed target proxy: crosstab against ckd_stage_label shows 100% class purity for stages s3 and s5 (and near-total purity for s4), consistent with this column being a disease-status field derived alongside the target rather than an independent clinical measurement. Including it would artificially inflate Accuracy/F1/AUC/Balanced Accuracy.",
+            "n_values_excluded": 200
+          },
+          {
+            "column": "ckd_affected",
+            "dataset": "kaggle",
+            "rationale": "Likely target proxy: column name denotes disease-affectation status itself (structurally identical in kind to ckd_binary_label, which was confirmed via crosstab). Excluded by the same domain reasoning; see this dataset's leakage_audit.statistical_screen in feature_summary.json for the measured association on the actual data, which should be used to confirm or contest this decision.",
+            "n_values_excluded": 200
+          }
+        ],
+        "statistical_screen_flags": [
+          {
+            "column": "egfr",
+            "dataset": "kaggle",
+            "target_column": "ckd_stage_label",
+            "normalized_mutual_info": 0.6159,
+            "n_unique_values": 9,
+            "note": "Flagged for human/domain review only - NOT auto-removed. High association can mean genuine strong clinical signal OR a target proxy; this screen cannot distinguish the two on its own."
+          }
+        ]
+      },
+      "uae": {
+        "excluded_columns": [],
+        "statistical_screen_flags": []
+      }
+    }
+  },
+  "clinical_reference_values_used": {
+    "hemoglobin_normal_g_dl": 15.0,
+    "pcv_normal_pct": 45.0,
+    "rbc_normal_million_per_ul": 5.0,
+    "bmi_obesity_threshold": 30.0,
+    "cholesterol_borderline_high_mg_dl": 200.0
+  },
+  "datasets": {
+    "uci": {
+      "rows_processed": 400,
+      "original_feature_count": 27,
+      "engineered_feature_count": 9,
+      "total_feature_count_after_engineering": 36,
+      "features_created": [
+        {
+          "feature_name": "bun_creatinine_ratio",
+          "dataset": "uci",
+          "created": true,
+          "reason": "created",
+          "source_columns_used": [
+            "blood_urea",
+            "serum_creatinine"
+          ],
+          "n_values_computed": 400,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "sodium_potassium_ratio",
+          "dataset": "uci",
+          "created": true,
+          "reason": "created",
+          "source_columns_used": [
+            "sodium",
+            "potassium"
+          ],
+          "n_values_computed": 400,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "bp_risk_score",
+          "dataset": "uci",
+          "created": true,
+          "reason": "created",
+          "source_columns_used": [
+            "blood_pressure"
+          ],
+          "n_values_computed": 400,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "anemia_risk_score",
+          "dataset": "uci",
+          "created": true,
+          "reason": "created",
+          "source_columns_used": [
+            "hemoglobin",
+            "packed_cell_volume",
+            "red_blood_cell_count"
+          ],
+          "n_values_computed": 400,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "cardiovascular_burden_score",
+          "dataset": "uci",
+          "created": true,
+          "reason": "created",
+          "source_columns_used": [
+            "hypertension",
+            "coronary_artery_disease",
+            "diabetes_mellitus"
+          ],
+          "n_values_computed": 400,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "age_creatinine_interaction",
+          "dataset": "uci",
+          "created": true,
+          "reason": "created",
+          "source_columns_used": [
+            "age",
+            "serum_creatinine"
+          ],
+          "n_values_computed": 400,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "urea_creatinine_product",
+          "dataset": "uci",
+          "created": true,
+          "reason": "created",
+          "source_columns_used": [
+            "blood_urea",
+            "serum_creatinine"
+          ],
+          "n_values_computed": 400,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "hemoglobin_creatinine_ratio",
+          "dataset": "uci",
+          "created": true,
+          "reason": "created",
+          "source_columns_used": [
+            "hemoglobin",
+            "serum_creatinine"
+          ],
+          "n_values_computed": 400,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "albumin_specific_gravity_interaction",
+          "dataset": "uci",
+          "created": true,
+          "reason": "created",
+          "source_columns_used": [
+            "albumin",
+            "specific_gravity"
+          ],
+          "n_values_computed": 400,
+          "n_values_null_after_compute": 0
+        }
+      ],
+      "features_skipped": [
+        {
+          "feature_name": "kidney_dysfunction_score",
+          "dataset": "uci",
+          "created": false,
+          "reason": "missing required column(s): ['egfr']",
+          "source_columns_used": [],
+          "n_values_computed": 0,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "metabolic_risk_score",
+          "dataset": "uci",
+          "created": false,
+          "reason": "missing required column(s): ['bmi', 'cholesterol', 'history_diabetes', 'history_dyslipidemia', 'history_obesity']",
+          "source_columns_used": [],
+          "n_values_computed": 0,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "egfr_age_ratio",
+          "dataset": "uci",
+          "created": false,
+          "reason": "missing required column(s): ['egfr']",
+          "source_columns_used": [],
+          "n_values_computed": 0,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "pulse_pressure",
+          "dataset": "uci",
+          "created": false,
+          "reason": "missing required column(s): ['diastolic_bp', 'systolic_bp']",
+          "source_columns_used": [],
+          "n_values_computed": 0,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "comorbidity_count",
+          "dataset": "uci",
+          "created": false,
+          "reason": "missing required column(s): ['history_chd', 'history_diabetes', 'history_dyslipidemia', 'history_hypertension', 'history_obesity', 'history_smoking', 'history_vascular']",
+          "source_columns_used": [],
+          "n_values_computed": 0,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "medication_burden",
+          "dataset": "uci",
+          "created": false,
+          "reason": "missing required column(s): ['acei_arb', 'diabetes_meds', 'dld_meds', 'hypertension_meds']",
+          "source_columns_used": [],
+          "n_values_computed": 0,
+          "n_values_null_after_compute": 0
+        }
+      ]
+    },
+    "kaggle": {
+      "rows_processed": 200,
+      "original_feature_count": 31,
+      "engineered_feature_count": 11,
+      "total_feature_count_after_engineering": 42,
+      "features_created": [
+        {
+          "feature_name": "bun_creatinine_ratio",
+          "dataset": "kaggle",
+          "created": true,
+          "reason": "created",
+          "source_columns_used": [
+            "blood_urea",
+            "serum_creatinine"
+          ],
+          "n_values_computed": 200,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "sodium_potassium_ratio",
+          "dataset": "kaggle",
+          "created": true,
+          "reason": "created",
+          "source_columns_used": [
+            "sodium",
+            "potassium"
+          ],
+          "n_values_computed": 200,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "kidney_dysfunction_score",
+          "dataset": "kaggle",
+          "created": true,
+          "reason": "created",
+          "source_columns_used": [
+            "serum_creatinine",
+            "egfr"
+          ],
+          "n_values_computed": 200,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "bp_risk_score",
+          "dataset": "kaggle",
+          "created": true,
+          "reason": "created",
+          "source_columns_used": [
+            "blood_pressure_diastolic"
+          ],
+          "n_values_computed": 200,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "anemia_risk_score",
+          "dataset": "kaggle",
+          "created": true,
+          "reason": "created",
+          "source_columns_used": [
+            "hemoglobin",
+            "packed_cell_volume",
+            "red_blood_cell_count"
+          ],
+          "n_values_computed": 200,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "cardiovascular_burden_score",
+          "dataset": "kaggle",
+          "created": true,
+          "reason": "created",
+          "source_columns_used": [
+            "hypertension",
+            "coronary_artery_disease",
+            "diabetes_mellitus"
+          ],
+          "n_values_computed": 200,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "age_creatinine_interaction",
+          "dataset": "kaggle",
+          "created": true,
+          "reason": "created",
+          "source_columns_used": [
+            "age",
+            "serum_creatinine"
+          ],
+          "n_values_computed": 200,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "urea_creatinine_product",
+          "dataset": "kaggle",
+          "created": true,
+          "reason": "created",
+          "source_columns_used": [
+            "blood_urea",
+            "serum_creatinine"
+          ],
+          "n_values_computed": 200,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "hemoglobin_creatinine_ratio",
+          "dataset": "kaggle",
+          "created": true,
+          "reason": "created",
+          "source_columns_used": [
+            "hemoglobin",
+            "serum_creatinine"
+          ],
+          "n_values_computed": 200,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "albumin_specific_gravity_interaction",
+          "dataset": "kaggle",
+          "created": true,
+          "reason": "created",
+          "source_columns_used": [
+            "albumin",
+            "specific_gravity"
+          ],
+          "n_values_computed": 200,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "egfr_age_ratio",
+          "dataset": "kaggle",
+          "created": true,
+          "reason": "created",
+          "source_columns_used": [
+            "egfr",
+            "age"
+          ],
+          "n_values_computed": 200,
+          "n_values_null_after_compute": 0
+        }
+      ],
+      "features_skipped": [
+        {
+          "feature_name": "metabolic_risk_score",
+          "dataset": "kaggle",
+          "created": false,
+          "reason": "missing required column(s): ['bmi', 'cholesterol', 'history_diabetes', 'history_dyslipidemia', 'history_obesity']",
+          "source_columns_used": [],
+          "n_values_computed": 0,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "pulse_pressure",
+          "dataset": "kaggle",
+          "created": false,
+          "reason": "missing required column(s): ['diastolic_bp', 'systolic_bp']",
+          "source_columns_used": [],
+          "n_values_computed": 0,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "comorbidity_count",
+          "dataset": "kaggle",
+          "created": false,
+          "reason": "missing required column(s): ['history_chd', 'history_diabetes', 'history_dyslipidemia', 'history_hypertension', 'history_obesity', 'history_smoking', 'history_vascular']",
+          "source_columns_used": [],
+          "n_values_computed": 0,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "medication_burden",
+          "dataset": "kaggle",
+          "created": false,
+          "reason": "missing required column(s): ['acei_arb', 'diabetes_meds', 'dld_meds', 'hypertension_meds']",
+          "source_columns_used": [],
+          "n_values_computed": 0,
+          "n_values_null_after_compute": 0
+        }
+      ]
+    },
+    "uae": {
+      "rows_processed": 491,
+      "original_feature_count": 24,
+      "engineered_feature_count": 10,
+      "total_feature_count_after_engineering": 34,
+      "features_created": [
+        {
+          "feature_name": "kidney_dysfunction_score",
+          "dataset": "uae",
+          "created": true,
+          "reason": "created",
+          "source_columns_used": [
+            "serum_creatinine",
+            "egfr"
+          ],
+          "n_values_computed": 491,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "bp_risk_score",
+          "dataset": "uae",
+          "created": true,
+          "reason": "created",
+          "source_columns_used": [
+            "systolic_bp",
+            "diastolic_bp"
+          ],
+          "n_values_computed": 491,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "metabolic_risk_score",
+          "dataset": "uae",
+          "created": true,
+          "reason": "created",
+          "source_columns_used": [
+            "history_diabetes",
+            "history_obesity",
+            "history_dyslipidemia",
+            "bmi",
+            "cholesterol"
+          ],
+          "n_values_computed": 491,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "cardiovascular_burden_score",
+          "dataset": "uae",
+          "created": true,
+          "reason": "created",
+          "source_columns_used": [
+            "history_hypertension",
+            "history_chd",
+            "history_diabetes"
+          ],
+          "n_values_computed": 491,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "cardiovascular_burden_score_extended",
+          "dataset": "uae",
+          "created": true,
+          "reason": "created",
+          "source_columns_used": [
+            "history_hypertension",
+            "history_chd",
+            "history_diabetes",
+            "history_vascular",
+            "history_smoking"
+          ],
+          "n_values_computed": 491,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "age_creatinine_interaction",
+          "dataset": "uae",
+          "created": true,
+          "reason": "created",
+          "source_columns_used": [
+            "age",
+            "serum_creatinine"
+          ],
+          "n_values_computed": 491,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "egfr_age_ratio",
+          "dataset": "uae",
+          "created": true,
+          "reason": "created",
+          "source_columns_used": [
+            "egfr",
+            "age"
+          ],
+          "n_values_computed": 491,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "pulse_pressure",
+          "dataset": "uae",
+          "created": true,
+          "reason": "created",
+          "source_columns_used": [
+            "systolic_bp",
+            "diastolic_bp"
+          ],
+          "n_values_computed": 491,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "comorbidity_count",
+          "dataset": "uae",
+          "created": true,
+          "reason": "created",
+          "source_columns_used": [
+            "history_diabetes",
+            "history_chd",
+            "history_vascular",
+            "history_smoking",
+            "history_hypertension",
+            "history_dyslipidemia",
+            "history_obesity"
+          ],
+          "n_values_computed": 491,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "medication_burden",
+          "dataset": "uae",
+          "created": true,
+          "reason": "created",
+          "source_columns_used": [
+            "dld_meds",
+            "diabetes_meds",
+            "hypertension_meds",
+            "acei_arb"
+          ],
+          "n_values_computed": 491,
+          "n_values_null_after_compute": 0
+        }
+      ],
+      "features_skipped": [
+        {
+          "feature_name": "bun_creatinine_ratio",
+          "dataset": "uae",
+          "created": false,
+          "reason": "missing required column(s): ['blood_urea']",
+          "source_columns_used": [],
+          "n_values_computed": 0,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "sodium_potassium_ratio",
+          "dataset": "uae",
+          "created": false,
+          "reason": "missing required column(s): ['potassium', 'sodium']",
+          "source_columns_used": [],
+          "n_values_computed": 0,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "anemia_risk_score",
+          "dataset": "uae",
+          "created": false,
+          "reason": "missing required column(s): ['hemoglobin', 'packed_cell_volume', 'red_blood_cell_count']",
+          "source_columns_used": [],
+          "n_values_computed": 0,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "urea_creatinine_product",
+          "dataset": "uae",
+          "created": false,
+          "reason": "missing required column(s): ['blood_urea']",
+          "source_columns_used": [],
+          "n_values_computed": 0,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "hemoglobin_creatinine_ratio",
+          "dataset": "uae",
+          "created": false,
+          "reason": "missing required column(s): ['hemoglobin']",
+          "source_columns_used": [],
+          "n_values_computed": 0,
+          "n_values_null_after_compute": 0
+        },
+        {
+          "feature_name": "albumin_specific_gravity_interaction",
+          "dataset": "uae",
+          "created": false,
+          "reason": "missing required column(s): ['albumin', 'specific_gravity']",
+          "source_columns_used": [],
+          "n_values_computed": 0,
+          "n_values_null_after_compute": 0
+        }
+      ]
+    }
+  },
+  "feature_definitions": {
+    "bun_creatinine_ratio": {
+      "formula": "blood_urea / serum_creatinine",
+      "clinical_rationale": "BUN/creatinine ratio helps distinguish pre-renal azotemia (high ratio) from intrinsic renal disease (normal/low ratio) and is a standard, widely used renal-function indicator.",
+      "datasets_created_in": [
+        "kaggle",
+        "uci"
+      ]
+    },
+    "sodium_potassium_ratio": {
+      "formula": "sodium / potassium",
+      "clinical_rationale": "Electrolyte imbalance is a hallmark of declining renal function; the Na/K ratio condenses two correlated electrolyte signals into a single interpretable feature.",
+      "datasets_created_in": [
+        "kaggle",
+        "uci"
+      ]
+    },
+    "kidney_dysfunction_score": {
+      "formula": "serum_creatinine / egfr",
+      "clinical_rationale": "Creatinine rises and eGFR falls as kidney function declines, so their ratio amplifies the renal-impairment signal beyond either marker alone (both move in the same direction).",
+      "datasets_created_in": [
+        "kaggle",
+        "uae"
+      ]
+    },
+    "bp_risk_score": {
+      "formula": "blood_pressure (single unsplit reading - no systolic/diastolic split in this dataset)",
+      "clinical_rationale": "UCI's classic CKD dataset records a single blood pressure value rather than systolic/diastolic components; used directly as the dataset's BP risk indicator for cross-dataset feature-name consistency.",
+      "datasets_created_in": [
+        "kaggle",
+        "uae",
+        "uci"
+      ]
+    },
+    "metabolic_risk_score": {
+      "formula": "(history_diabetes + history_obesity + history_dyslipidemia) + (bmi / 30.0) + (cholesterol / 200.0)",
+      "clinical_rationale": "Composite of metabolic comorbidity flags, BMI normalized against the WHO obesity threshold, and total cholesterol normalized against the ATP III borderline-high cutoff. Metabolic syndrome components are well-established accelerators of CKD progression. This is an engineered heuristic for ML use, not a validated clinical score.",
+      "datasets_created_in": [
+        "uae"
+      ]
+    },
+    "anemia_risk_score": {
+      "formula": "sum over {hemoglobin, packed_cell_volume, red_blood_cell_count} of max(0, 1 - value / normal_reference)",
+      "clinical_rationale": "Anemia of chronic kidney disease is a well-documented complication driven by reduced erythropoietin production; combining the three principal red-cell markers into a single shortfall-based score captures this signal more robustly than any one marker alone.",
+      "datasets_created_in": [
+        "kaggle",
+        "uci"
+      ]
+    },
+    "cardiovascular_burden_score": {
+      "formula": "hypertension + coronary_artery_disease + diabetes_mellitus",
+      "clinical_rationale": "Simple comorbidity count (0-3) of the three classic cardiovascular/metabolic risk factors most strongly associated with CKD progression in the nephrology literature.",
+      "datasets_created_in": [
+        "kaggle",
+        "uae",
+        "uci"
+      ]
+    },
+    "age_creatinine_interaction": {
+      "formula": "age * serum_creatinine",
+      "clinical_rationale": "Renal impairment from a given creatinine elevation carries more clinical weight in older patients (age-related decline in baseline renal reserve); this interaction lets tree-based models split on the combined effect directly.",
+      "datasets_created_in": [
+        "kaggle",
+        "uae",
+        "uci"
+      ]
+    },
+    "urea_creatinine_product": {
+      "formula": "blood_urea * serum_creatinine",
+      "clinical_rationale": "Captures overall nitrogenous-waste retention burden as a joint magnitude, complementing the BUN/creatinine RATIO (which captures their relative balance, not their combined severity).",
+      "datasets_created_in": [
+        "kaggle",
+        "uci"
+      ]
+    },
+    "hemoglobin_creatinine_ratio": {
+      "formula": "hemoglobin / serum_creatinine",
+      "clinical_rationale": "Links anemia severity to renal impairment in a single feature - both worsen together in progressive CKD due to reduced erythropoietin production, so their ratio tends to fall faster than either marker individually.",
+      "datasets_created_in": [
+        "kaggle",
+        "uci"
+      ]
+    },
+    "albumin_specific_gravity_interaction": {
+      "formula": "albumin * specific_gravity",
+      "clinical_rationale": "Urinary albumin and specific gravity are both glomerular/tubular function indicators on urinalysis; their product highlights cases where proteinuria co-occurs with abnormal urine concentrating ability.",
+      "datasets_created_in": [
+        "kaggle",
+        "uci"
+      ]
+    },
+    "egfr_age_ratio": {
+      "formula": "egfr / age",
+      "clinical_rationale": "Normalizes kidney filtration capacity by age, since eGFR naturally declines with normal aging; a low ratio flags filtration loss beyond what age alone would predict.",
+      "datasets_created_in": [
+        "kaggle",
+        "uae"
+      ]
+    },
+    "pulse_pressure": {
+      "formula": "systolic_bp - diastolic_bp",
+      "clinical_rationale": "Widened pulse pressure is a well-established marker of arterial stiffness and independently associated with cardiovascular and renal outcomes.",
+      "datasets_created_in": [
+        "uae"
+      ]
+    },
+    "comorbidity_count": {
+      "formula": "sum of all history_* comorbidity flags",
+      "clinical_rationale": "Overall comorbidity burden is one of the strongest general predictors of disease progression and mortality risk in cohort studies, independent of any single condition.",
+      "datasets_created_in": [
+        "uae"
+      ]
+    },
+    "medication_burden": {
+      "formula": "dld_meds + diabetes_meds + hypertension_meds + acei_arb",
+      "clinical_rationale": "Number of distinct medication classes a patient is on is a practical proxy for disease-management intensity and multimorbidity, and ACEI/ARB use in particular is directly relevant to renal hemodynamics.",
+      "datasets_created_in": [
+        "uae"
+      ]
+    },
+    "cardiovascular_burden_score_extended": {
+      "formula": "history_hypertension + history_chd + history_diabetes + history_vascular + history_smoking",
+      "clinical_rationale": "UAE-only extended cardiovascular burden score that additionally incorporates vascular disease and smoking history, both available in this cohort and clinically relevant but absent from UCI/Kaggle.",
+      "datasets_created_in": [
+        "uae"
+      ]
+    }
+  }
+}

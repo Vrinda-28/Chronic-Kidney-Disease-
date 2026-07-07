@@ -1,0 +1,484 @@
+2026-07-06 11:45:57 | INFO     | ckd_explainability | ======================================================================
+2026-07-06 11:45:57 | INFO     | ckd_explainability | CKD EXPLAINABILITY MODULE
+2026-07-06 11:45:57 | INFO     | ckd_explainability | Models : ['LogisticRegression', 'RandomForest', 'XGBoost', 'LightGBM', 'CatBoost']
+2026-07-06 11:45:57 | INFO     | ckd_explainability | Output : artifacts/explainability/uci
+2026-07-06 11:45:57 | INFO     | ckd_explainability | ======================================================================
+2026-07-06 11:45:57 | INFO     | ckd_explainability | --------------------------------------------------
+2026-07-06 11:45:57 | INFO     | ckd_explainability | [LogisticRegression] Starting...
+2026-07-06 11:45:57 | INFO     | ckd_explainability | [Load] LogisticRegression ← calibrated_model.joblib
+2026-07-06 11:45:57 | WARNING  | ckd_explainability | [LogisticRegression] Skipping (data load): Test split not found: data/splits/uci/test.csv. Run train_test_split.py.
+2026-07-06 11:45:57 | INFO     | ckd_explainability | --------------------------------------------------
+2026-07-06 11:45:57 | INFO     | ckd_explainability | [RandomForest] Starting...
+2026-07-06 11:45:57 | INFO     | ckd_explainability | [Load] RandomForest ← calibrated_model.joblib
+2026-07-06 11:45:57 | WARNING  | ckd_explainability | [RandomForest] Skipping (data load): Test split not found: data/splits/uci/test.csv. Run train_test_split.py.
+2026-07-06 11:45:57 | INFO     | ckd_explainability | --------------------------------------------------
+2026-07-06 11:45:57 | INFO     | ckd_explainability | [XGBoost] Starting...
+2026-07-06 11:45:57 | INFO     | ckd_explainability | [Load] XGBoost ← calibrated_model.joblib
+2026-07-06 11:45:57 | WARNING  | ckd_explainability | [XGBoost] Skipping (data load): Test split not found: data/splits/uci/test.csv. Run train_test_split.py.
+2026-07-06 11:45:57 | INFO     | ckd_explainability | --------------------------------------------------
+2026-07-06 11:45:57 | INFO     | ckd_explainability | [LightGBM] Starting...
+2026-07-06 11:45:57 | INFO     | ckd_explainability | [Load] LightGBM ← calibrated_model.joblib
+2026-07-06 11:45:57 | WARNING  | ckd_explainability | [LightGBM] Skipping (data load): Test split not found: data/splits/uci/test.csv. Run train_test_split.py.
+2026-07-06 11:45:57 | INFO     | ckd_explainability | --------------------------------------------------
+2026-07-06 11:45:57 | INFO     | ckd_explainability | [CatBoost] Starting...
+2026-07-06 11:45:57 | INFO     | ckd_explainability | [Load] CatBoost ← calibrated_model.joblib
+2026-07-06 11:45:57 | WARNING  | ckd_explainability | [CatBoost] Skipping (data load): Test split not found: data/splits/uci/test.csv. Run train_test_split.py.
+2026-07-06 11:45:57 | INFO     | ckd_explainability | ======================================================================
+2026-07-06 11:45:57 | INFO     | ckd_explainability | EXPLAINABILITY COMPLETE → /Users/vrinda/Desktop/Mom Kidney CKD/artifacts/explainability/uci
+2026-07-06 11:45:57 | INFO     | ckd_explainability | ======================================================================
+2026-07-06 12:16:17 | INFO     | ckd_explainability | ======================================================================
+2026-07-06 12:16:17 | INFO     | ckd_explainability | CKD EXPLAINABILITY MODULE
+2026-07-06 12:16:17 | INFO     | ckd_explainability | Models : ['LogisticRegression', 'RandomForest', 'XGBoost', 'LightGBM', 'CatBoost']
+2026-07-06 12:16:17 | INFO     | ckd_explainability | Output : artifacts/explainability/uci
+2026-07-06 12:16:17 | INFO     | ckd_explainability | ======================================================================
+2026-07-06 12:16:17 | INFO     | ckd_explainability | --------------------------------------------------
+2026-07-06 12:16:17 | INFO     | ckd_explainability | [LogisticRegression] Starting...
+2026-07-06 12:16:17 | INFO     | ckd_explainability | [Load] LogisticRegression ← calibrated_model.joblib
+2026-07-06 12:16:17 | INFO     | ckd_explainability | [Data] Test CSV loaded: data/splits/uci_test.csv  (80 rows, 34 cols)
+2026-07-06 12:16:17 | INFO     | ckd_explainability | [LogisticRegression] Feature matrix: 80 rows × 24 features
+2026-07-06 12:16:17 | DEBUG    | ckd_explainability | [LogisticRegression] Background sample: 100 rows from data/splits/uci_train.csv
+2026-07-06 12:16:17 | INFO     | ckd_explainability | [LogisticRegression] SHAP shape: (80, 24)
+2026-07-06 12:16:17 | INFO     | ckd_explainability | [LogisticRegression] Beeswarm...
+2026-07-06 12:16:17 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/shap_beeswarm.png
+2026-07-06 12:16:17 | INFO     | ckd_explainability | [LogisticRegression] Dependence plots...
+2026-07-06 12:16:18 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/dependence_plots/dep_01_white_blood_cell_count.png
+2026-07-06 12:16:18 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/dependence_plots/dep_02_blood_glucose_random.png
+2026-07-06 12:16:18 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/dependence_plots/dep_03_urea_creatinine_product.png
+2026-07-06 12:16:18 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/dependence_plots/dep_04_blood_urea.png
+2026-07-06 12:16:18 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/dependence_plots/dep_05_age_creatinine_interaction.png
+2026-07-06 12:16:18 | INFO     | ckd_explainability | [LogisticRegression] Waterfall plots...
+2026-07-06 12:16:18 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/waterfall/true-positive_01.png
+2026-07-06 12:16:18 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/waterfall/true-positive_02.png
+2026-07-06 12:16:18 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/waterfall/false-positive_01.png
+2026-07-06 12:16:18 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/waterfall/false-positive_02.png
+2026-07-06 12:16:18 | INFO     | ckd_explainability | [LogisticRegression] Clinician report...
+2026-07-06 12:16:18 | INFO     | ckd_explainability | [Report] Clinician report → artifacts/explainability/uci/LogisticRegression/clinician_explanation_report.md
+2026-07-06 12:16:18 | INFO     | ckd_explainability | [LogisticRegression] LIME explanations...
+2026-07-06 12:16:18 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/lime/most_confident_CKD.png
+2026-07-06 12:16:18 | INFO     | ckd_explainability | [LIME] LogisticRegression / most_confident_CKD → artifacts/explainability/uci/LogisticRegression/lime
+2026-07-06 12:16:18 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/lime/most_confident_notCKD.png
+2026-07-06 12:16:18 | INFO     | ckd_explainability | [LIME] LogisticRegression / most_confident_notCKD → artifacts/explainability/uci/LogisticRegression/lime
+2026-07-06 12:16:18 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/lime/boundary_case.png
+2026-07-06 12:16:18 | INFO     | ckd_explainability | [LIME] LogisticRegression / boundary_case → artifacts/explainability/uci/LogisticRegression/lime
+2026-07-06 12:16:18 | INFO     | ckd_explainability | [LogisticRegression] SHAP values CSV saved.
+2026-07-06 12:16:18 | INFO     | ckd_explainability | --------------------------------------------------
+2026-07-06 12:16:18 | INFO     | ckd_explainability | [RandomForest] Starting...
+2026-07-06 12:16:18 | INFO     | ckd_explainability | [Load] RandomForest ← calibrated_model.joblib
+2026-07-06 12:16:18 | INFO     | ckd_explainability | [Data] Test CSV loaded: data/splits/uci_test.csv  (80 rows, 34 cols)
+2026-07-06 12:16:18 | INFO     | ckd_explainability | [RandomForest] Feature matrix: 80 rows × 24 features
+2026-07-06 12:16:18 | DEBUG    | ckd_explainability | [RandomForest] Background sample: 100 rows from data/splits/uci_train.csv
+2026-07-06 12:16:18 | WARNING  | ckd_explainability | [SHAP] RandomForest: primary explainer failed (Model type not yet supported by TreeExplainer: <class 'sklearn.frozen._frozen.FrozenEstimator'>) — retrying with KernelExplainer.
+2026-07-06 12:16:22 | INFO     | ckd_explainability | [RandomForest] SHAP shape: (80, 24, 2)
+2026-07-06 12:16:22 | INFO     | ckd_explainability | [RandomForest] Beeswarm...
+2026-07-06 12:16:22 | WARNING  | ckd_explainability | [Beeswarm] RandomForest: Buffer has wrong number of dimensions (expected 1, got 2)
+2026-07-06 12:16:22 | INFO     | ckd_explainability | [RandomForest] Dependence plots...
+2026-07-06 12:29:04 | INFO     | ckd_explainability | ======================================================================
+2026-07-06 12:29:04 | INFO     | ckd_explainability | CKD EXPLAINABILITY MODULE
+2026-07-06 12:29:04 | INFO     | ckd_explainability | Models : ['LogisticRegression', 'RandomForest', 'XGBoost', 'LightGBM', 'CatBoost']
+2026-07-06 12:29:04 | INFO     | ckd_explainability | Output : artifacts/explainability/uci
+2026-07-06 12:29:04 | INFO     | ckd_explainability | ======================================================================
+2026-07-06 12:29:04 | INFO     | ckd_explainability | --------------------------------------------------
+2026-07-06 12:29:04 | INFO     | ckd_explainability | [LogisticRegression] Starting...
+2026-07-06 12:29:04 | INFO     | ckd_explainability | [Load] LogisticRegression ← calibrated_model.joblib
+2026-07-06 12:29:04 | INFO     | ckd_explainability | [Data] Test CSV loaded: data/splits/uci_test.csv  (80 rows, 34 cols)
+2026-07-06 12:29:04 | INFO     | ckd_explainability | [LogisticRegression] Feature matrix: 80 rows × 24 features
+2026-07-06 12:29:04 | DEBUG    | ckd_explainability | [LogisticRegression] Background sample: 100 rows from data/splits/uci_train.csv
+2026-07-06 12:29:04 | INFO     | ckd_explainability | [LogisticRegression] SHAP shape: (80, 24)
+2026-07-06 12:29:04 | INFO     | ckd_explainability | [LogisticRegression] Beeswarm...
+2026-07-06 12:29:04 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/shap_beeswarm.png
+2026-07-06 12:29:04 | INFO     | ckd_explainability | [LogisticRegression] Dependence plots...
+2026-07-06 12:29:04 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/dependence_plots/dep_01_white_blood_cell_count.png
+2026-07-06 12:29:04 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/dependence_plots/dep_02_blood_glucose_random.png
+2026-07-06 12:29:04 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/dependence_plots/dep_03_urea_creatinine_product.png
+2026-07-06 12:29:05 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/dependence_plots/dep_04_blood_urea.png
+2026-07-06 12:29:05 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/dependence_plots/dep_05_age_creatinine_interaction.png
+2026-07-06 12:29:05 | INFO     | ckd_explainability | [LogisticRegression] Waterfall plots...
+2026-07-06 12:29:05 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/waterfall/true-positive_01.png
+2026-07-06 12:29:05 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/waterfall/true-positive_02.png
+2026-07-06 12:29:05 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/waterfall/false-positive_01.png
+2026-07-06 12:29:05 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/waterfall/false-positive_02.png
+2026-07-06 12:29:05 | INFO     | ckd_explainability | [LogisticRegression] Clinician report...
+2026-07-06 12:29:05 | INFO     | ckd_explainability | [Report] Clinician report → artifacts/explainability/uci/LogisticRegression/clinician_explanation_report.md
+2026-07-06 12:29:05 | INFO     | ckd_explainability | [LogisticRegression] LIME explanations...
+2026-07-06 12:29:05 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/lime/most_confident_CKD.png
+2026-07-06 12:29:05 | INFO     | ckd_explainability | [LIME] LogisticRegression / most_confident_CKD → artifacts/explainability/uci/LogisticRegression/lime
+2026-07-06 12:29:05 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/lime/most_confident_notCKD.png
+2026-07-06 12:29:05 | INFO     | ckd_explainability | [LIME] LogisticRegression / most_confident_notCKD → artifacts/explainability/uci/LogisticRegression/lime
+2026-07-06 12:29:05 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/lime/boundary_case.png
+2026-07-06 12:29:05 | INFO     | ckd_explainability | [LIME] LogisticRegression / boundary_case → artifacts/explainability/uci/LogisticRegression/lime
+2026-07-06 12:29:05 | INFO     | ckd_explainability | [LogisticRegression] SHAP values CSV saved.
+2026-07-06 12:29:05 | INFO     | ckd_explainability | --------------------------------------------------
+2026-07-06 12:29:05 | INFO     | ckd_explainability | [RandomForest] Starting...
+2026-07-06 12:29:05 | INFO     | ckd_explainability | [Load] RandomForest ← calibrated_model.joblib
+2026-07-06 12:29:05 | INFO     | ckd_explainability | [Data] Test CSV loaded: data/splits/uci_test.csv  (80 rows, 34 cols)
+2026-07-06 12:29:05 | INFO     | ckd_explainability | [RandomForest] Feature matrix: 80 rows × 24 features
+2026-07-06 12:29:05 | DEBUG    | ckd_explainability | [RandomForest] Background sample: 100 rows from data/splits/uci_train.csv
+2026-07-06 12:29:05 | WARNING  | ckd_explainability | [SHAP] RandomForest: primary explainer failed (Model type not yet supported by TreeExplainer: <class 'sklearn.frozen._frozen.FrozenEstimator'>) — retrying with KernelExplainer.
+2026-07-06 12:29:08 | INFO     | ckd_explainability | [RandomForest] SHAP shape: (80, 24, 2)
+2026-07-06 12:29:08 | INFO     | ckd_explainability | [RandomForest] Beeswarm...
+2026-07-06 12:29:08 | WARNING  | ckd_explainability | [Beeswarm] RandomForest: Buffer has wrong number of dimensions (expected 1, got 2)
+2026-07-06 12:29:08 | INFO     | ckd_explainability | [RandomForest] Dependence plots...
+2026-07-06 12:29:08 | WARNING  | ckd_explainability | [Dependence] RandomForest / anemia_risk_score: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 1, the array at index 0 has size 2 and the array at index 1 has size 8
+2026-07-06 12:29:08 | WARNING  | ckd_explainability | [Dependence] RandomForest / specific_gravity: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 1, the array at index 0 has size 2 and the array at index 1 has size 8
+2026-07-06 12:29:08 | WARNING  | ckd_explainability | [Dependence] RandomForest / cardiovascular_burden_score: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 1, the array at index 0 has size 2 and the array at index 1 has size 8
+2026-07-06 12:29:08 | WARNING  | ckd_explainability | [Dependence] RandomForest / hemoglobin_creatinine_ratio: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 1, the array at index 0 has size 2 and the array at index 1 has size 8
+2026-07-06 12:29:08 | WARNING  | ckd_explainability | [Dependence] RandomForest / hemoglobin: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 1, the array at index 0 has size 2 and the array at index 1 has size 8
+2026-07-06 12:29:08 | INFO     | ckd_explainability | [RandomForest] Waterfall plots...
+2026-07-07 12:48:08 | INFO     | ckd_explainability | ======================================================================
+2026-07-07 12:48:08 | INFO     | ckd_explainability | CKD EXPLAINABILITY MODULE
+2026-07-07 12:48:08 | INFO     | ckd_explainability | Models : ['LogisticRegression', 'RandomForest', 'XGBoost', 'LightGBM', 'CatBoost']
+2026-07-07 12:48:08 | INFO     | ckd_explainability | Output : artifacts/explainability/uci
+2026-07-07 12:48:08 | INFO     | ckd_explainability | ======================================================================
+2026-07-07 12:48:08 | INFO     | ckd_explainability | --------------------------------------------------
+2026-07-07 12:48:08 | INFO     | ckd_explainability | [LogisticRegression] Starting...
+2026-07-07 12:48:08 | INFO     | ckd_explainability | [Load] LogisticRegression ← calibrated_model.joblib
+2026-07-07 12:48:08 | INFO     | ckd_explainability | [Data] Test CSV loaded: data/splits/uci_test.csv  (80 rows, 34 cols)
+2026-07-07 12:48:08 | INFO     | ckd_explainability | [LogisticRegression] Feature matrix: 80 rows × 24 features
+2026-07-07 12:48:08 | DEBUG    | ckd_explainability | [LogisticRegression] Background: 100 rows from data/splits/uci_train.csv
+2026-07-07 12:48:08 | DEBUG    | ckd_explainability | [LogisticRegression] Trying LinearExplainer on LogisticRegression
+2026-07-07 12:48:09 | DEBUG    | ckd_explainability | [LogisticRegression] LinearExplainer succeeded.
+2026-07-07 12:48:09 | INFO     | ckd_explainability | [LogisticRegression] SHAP computed — shape (80, 24), E[f(x)] = 454.5346
+2026-07-07 12:48:09 | INFO     | ckd_explainability | [LogisticRegression] Beeswarm...
+2026-07-07 12:48:09 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/shap_beeswarm.png
+2026-07-07 12:48:09 | INFO     | ckd_explainability | [LogisticRegression] Dependence plots...
+2026-07-07 12:48:09 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/dependence_plots/dep_01_white_blood_cell_count.png
+2026-07-07 12:48:09 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/dependence_plots/dep_02_blood_glucose_random.png
+2026-07-07 12:48:09 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/dependence_plots/dep_03_urea_creatinine_product.png
+2026-07-07 12:48:09 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/dependence_plots/dep_04_hemoglobin_creatinine_ratio.png
+2026-07-07 12:48:09 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/dependence_plots/dep_05_blood_urea.png
+2026-07-07 12:48:09 | INFO     | ckd_explainability | [LogisticRegression] Waterfall plots...
+2026-07-07 12:48:09 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/waterfall/true-positive_01.png
+2026-07-07 12:48:09 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/waterfall/true-positive_02.png
+2026-07-07 12:48:09 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/waterfall/false-positive_01.png
+2026-07-07 12:48:09 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/waterfall/false-positive_02.png
+2026-07-07 12:48:09 | INFO     | ckd_explainability | [LogisticRegression] Clinician report...
+2026-07-07 12:48:09 | INFO     | ckd_explainability | [Report] Clinician report → artifacts/explainability/uci/LogisticRegression/clinician_explanation_report.md
+2026-07-07 12:48:09 | INFO     | ckd_explainability | [LogisticRegression] LIME explanations...
+2026-07-07 12:48:09 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/lime/most_confident_CKD.png
+2026-07-07 12:48:09 | INFO     | ckd_explainability | [LIME] LogisticRegression / most_confident_CKD → artifacts/explainability/uci/LogisticRegression/lime
+2026-07-07 12:48:09 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/lime/most_confident_notCKD.png
+2026-07-07 12:48:09 | INFO     | ckd_explainability | [LIME] LogisticRegression / most_confident_notCKD → artifacts/explainability/uci/LogisticRegression/lime
+2026-07-07 12:48:09 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/lime/boundary_case.png
+2026-07-07 12:48:09 | INFO     | ckd_explainability | [LIME] LogisticRegression / boundary_case → artifacts/explainability/uci/LogisticRegression/lime
+2026-07-07 12:48:09 | INFO     | ckd_explainability | [LogisticRegression] SHAP values CSV → artifacts/explainability/uci/LogisticRegression/shap_values.csv
+2026-07-07 12:48:09 | INFO     | ckd_explainability | --------------------------------------------------
+2026-07-07 12:48:09 | INFO     | ckd_explainability | [RandomForest] Starting...
+2026-07-07 12:48:09 | INFO     | ckd_explainability | [Load] RandomForest ← calibrated_model.joblib
+2026-07-07 12:48:09 | INFO     | ckd_explainability | [Data] Test CSV loaded: data/splits/uci_test.csv  (80 rows, 34 cols)
+2026-07-07 12:48:09 | INFO     | ckd_explainability | [RandomForest] Feature matrix: 80 rows × 24 features
+2026-07-07 12:48:10 | DEBUG    | ckd_explainability | [RandomForest] Background: 100 rows from data/splits/uci_train.csv
+2026-07-07 12:48:10 | DEBUG    | ckd_explainability | [RandomForest] Trying TreeExplainer on RandomForestClassifier
+2026-07-07 12:48:10 | DEBUG    | ckd_explainability | [RandomForest] TreeExplainer succeeded.
+2026-07-07 12:48:10 | INFO     | ckd_explainability | [RandomForest] SHAP computed — shape (80, 24), E[f(x)] = 0.5000
+2026-07-07 12:48:10 | INFO     | ckd_explainability | [RandomForest] Beeswarm...
+2026-07-07 12:48:10 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/RandomForest/shap_beeswarm.png
+2026-07-07 12:48:10 | INFO     | ckd_explainability | [RandomForest] Dependence plots...
+2026-07-07 12:48:10 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/RandomForest/dependence_plots/dep_01_anemia_risk_score.png
+2026-07-07 12:48:10 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/RandomForest/dependence_plots/dep_02_hemoglobin.png
+2026-07-07 12:48:10 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/RandomForest/dependence_plots/dep_03_hemoglobin_creatinine_ratio.png
+2026-07-07 12:48:10 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/RandomForest/dependence_plots/dep_04_specific_gravity.png
+2026-07-07 12:48:10 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/RandomForest/dependence_plots/dep_05_packed_cell_volume.png
+2026-07-07 12:48:10 | INFO     | ckd_explainability | [RandomForest] Waterfall plots...
+2026-07-07 12:48:10 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/RandomForest/waterfall/true-positive_01.png
+2026-07-07 12:48:10 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/RandomForest/waterfall/true-positive_02.png
+2026-07-07 12:48:10 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/RandomForest/waterfall/true-negative_01.png
+2026-07-07 12:48:10 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/RandomForest/waterfall/true-negative_02.png
+2026-07-07 12:48:10 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/RandomForest/waterfall/false-positive_01.png
+2026-07-07 12:48:10 | INFO     | ckd_explainability | [RandomForest] Clinician report...
+2026-07-07 12:48:10 | INFO     | ckd_explainability | [Report] Clinician report → artifacts/explainability/uci/RandomForest/clinician_explanation_report.md
+2026-07-07 12:48:10 | INFO     | ckd_explainability | [RandomForest] LIME explanations...
+2026-07-07 12:48:10 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/RandomForest/lime/most_confident_CKD.png
+2026-07-07 12:48:10 | INFO     | ckd_explainability | [LIME] RandomForest / most_confident_CKD → artifacts/explainability/uci/RandomForest/lime
+2026-07-07 12:48:10 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/RandomForest/lime/most_confident_notCKD.png
+2026-07-07 12:48:10 | INFO     | ckd_explainability | [LIME] RandomForest / most_confident_notCKD → artifacts/explainability/uci/RandomForest/lime
+2026-07-07 12:48:11 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/RandomForest/lime/boundary_case.png
+2026-07-07 12:48:11 | INFO     | ckd_explainability | [LIME] RandomForest / boundary_case → artifacts/explainability/uci/RandomForest/lime
+2026-07-07 12:48:11 | INFO     | ckd_explainability | [RandomForest] SHAP values CSV → artifacts/explainability/uci/RandomForest/shap_values.csv
+2026-07-07 12:48:11 | INFO     | ckd_explainability | --------------------------------------------------
+2026-07-07 12:48:11 | INFO     | ckd_explainability | [XGBoost] Starting...
+2026-07-07 12:48:11 | INFO     | ckd_explainability | [Load] XGBoost ← calibrated_model.joblib
+2026-07-07 12:48:11 | INFO     | ckd_explainability | [Data] Test CSV loaded: data/splits/uci_test.csv  (80 rows, 34 cols)
+2026-07-07 12:48:11 | INFO     | ckd_explainability | [XGBoost] Feature matrix: 80 rows × 23 features
+2026-07-07 12:48:11 | DEBUG    | ckd_explainability | [XGBoost] Background: 100 rows from data/splits/uci_train.csv
+2026-07-07 12:48:11 | DEBUG    | ckd_explainability | [XGBoost] Trying TreeExplainer on XGBClassifier
+2026-07-07 12:48:11 | DEBUG    | ckd_explainability | [XGBoost] TreeExplainer succeeded.
+2026-07-07 12:48:11 | INFO     | ckd_explainability | [XGBoost] SHAP computed — shape (80, 23), E[f(x)] = 0.1255
+2026-07-07 12:48:11 | INFO     | ckd_explainability | [XGBoost] Beeswarm...
+2026-07-07 12:48:11 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/XGBoost/shap_beeswarm.png
+2026-07-07 12:48:11 | INFO     | ckd_explainability | [XGBoost] Dependence plots...
+2026-07-07 12:48:11 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/XGBoost/dependence_plots/dep_01_anemia_risk_score.png
+2026-07-07 12:48:11 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/XGBoost/dependence_plots/dep_02_cardiovascular_burden_score.png
+2026-07-07 12:48:11 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/XGBoost/dependence_plots/dep_03_specific_gravity.png
+2026-07-07 12:48:11 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/XGBoost/dependence_plots/dep_04_hemoglobin_creatinine_ratio.png
+2026-07-07 12:48:11 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/XGBoost/dependence_plots/dep_05_age_creatinine_interaction.png
+2026-07-07 12:48:11 | INFO     | ckd_explainability | [XGBoost] Waterfall plots...
+2026-07-07 12:48:11 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/XGBoost/waterfall/true-positive_01.png
+2026-07-07 12:48:11 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/XGBoost/waterfall/true-positive_02.png
+2026-07-07 12:48:11 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/XGBoost/waterfall/true-negative_01.png
+2026-07-07 12:48:11 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/XGBoost/waterfall/true-negative_02.png
+2026-07-07 12:48:11 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/XGBoost/waterfall/false-negative_01.png
+2026-07-07 12:48:11 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/XGBoost/waterfall/false-positive_01.png
+2026-07-07 12:48:11 | INFO     | ckd_explainability | [XGBoost] Clinician report...
+2026-07-07 12:48:12 | INFO     | ckd_explainability | [Report] Clinician report → artifacts/explainability/uci/XGBoost/clinician_explanation_report.md
+2026-07-07 12:48:12 | INFO     | ckd_explainability | [XGBoost] LIME explanations...
+2026-07-07 12:48:12 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/XGBoost/lime/most_confident_CKD.png
+2026-07-07 12:48:12 | INFO     | ckd_explainability | [LIME] XGBoost / most_confident_CKD → artifacts/explainability/uci/XGBoost/lime
+2026-07-07 12:48:12 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/XGBoost/lime/most_confident_notCKD.png
+2026-07-07 12:48:12 | INFO     | ckd_explainability | [LIME] XGBoost / most_confident_notCKD → artifacts/explainability/uci/XGBoost/lime
+2026-07-07 12:48:12 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/XGBoost/lime/boundary_case.png
+2026-07-07 12:48:12 | INFO     | ckd_explainability | [LIME] XGBoost / boundary_case → artifacts/explainability/uci/XGBoost/lime
+2026-07-07 12:48:12 | INFO     | ckd_explainability | [XGBoost] SHAP values CSV → artifacts/explainability/uci/XGBoost/shap_values.csv
+2026-07-07 12:48:12 | INFO     | ckd_explainability | --------------------------------------------------
+2026-07-07 12:48:12 | INFO     | ckd_explainability | [LightGBM] Starting...
+2026-07-07 12:48:12 | INFO     | ckd_explainability | [Load] LightGBM ← calibrated_model.joblib
+2026-07-07 12:48:12 | INFO     | ckd_explainability | [Data] Test CSV loaded: data/splits/uci_test.csv  (80 rows, 34 cols)
+2026-07-07 12:48:12 | INFO     | ckd_explainability | [LightGBM] Feature matrix: 80 rows × 23 features
+2026-07-07 12:48:12 | DEBUG    | ckd_explainability | [LightGBM] Background: 100 rows from data/splits/uci_train.csv
+2026-07-07 12:48:12 | DEBUG    | ckd_explainability | [LightGBM] Trying TreeExplainer on LGBMClassifier
+2026-07-07 12:48:12 | DEBUG    | ckd_explainability | [LightGBM] TreeExplainer succeeded.
+2026-07-07 12:48:12 | INFO     | ckd_explainability | [LightGBM] SHAP computed — shape (80, 23), E[f(x)] = 1.7371
+2026-07-07 12:48:12 | INFO     | ckd_explainability | [LightGBM] Beeswarm...
+2026-07-07 12:48:12 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LightGBM/shap_beeswarm.png
+2026-07-07 12:48:12 | INFO     | ckd_explainability | [LightGBM] Dependence plots...
+2026-07-07 12:48:12 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LightGBM/dependence_plots/dep_01_anemia_risk_score.png
+2026-07-07 12:48:12 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LightGBM/dependence_plots/dep_02_cardiovascular_burden_score.png
+2026-07-07 12:48:12 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LightGBM/dependence_plots/dep_03_specific_gravity.png
+2026-07-07 12:48:12 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LightGBM/dependence_plots/dep_04_hemoglobin_creatinine_ratio.png
+2026-07-07 12:48:12 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LightGBM/dependence_plots/dep_05_albumin.png
+2026-07-07 12:48:12 | INFO     | ckd_explainability | [LightGBM] Waterfall plots...
+2026-07-07 12:48:12 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LightGBM/waterfall/true-positive_01.png
+2026-07-07 12:48:12 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LightGBM/waterfall/true-positive_02.png
+2026-07-07 12:48:12 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LightGBM/waterfall/true-negative_01.png
+2026-07-07 12:48:12 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LightGBM/waterfall/true-negative_02.png
+2026-07-07 12:48:13 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LightGBM/waterfall/false-negative_01.png
+2026-07-07 12:48:13 | INFO     | ckd_explainability | [LightGBM] Clinician report...
+2026-07-07 12:48:13 | INFO     | ckd_explainability | [Report] Clinician report → artifacts/explainability/uci/LightGBM/clinician_explanation_report.md
+2026-07-07 12:48:13 | INFO     | ckd_explainability | [LightGBM] LIME explanations...
+2026-07-07 12:48:13 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LightGBM/lime/most_confident_CKD.png
+2026-07-07 12:48:13 | INFO     | ckd_explainability | [LIME] LightGBM / most_confident_CKD → artifacts/explainability/uci/LightGBM/lime
+2026-07-07 12:48:13 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LightGBM/lime/most_confident_notCKD.png
+2026-07-07 12:48:13 | INFO     | ckd_explainability | [LIME] LightGBM / most_confident_notCKD → artifacts/explainability/uci/LightGBM/lime
+2026-07-07 12:48:13 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LightGBM/lime/boundary_case.png
+2026-07-07 12:48:13 | INFO     | ckd_explainability | [LIME] LightGBM / boundary_case → artifacts/explainability/uci/LightGBM/lime
+2026-07-07 12:48:13 | INFO     | ckd_explainability | [LightGBM] SHAP values CSV → artifacts/explainability/uci/LightGBM/shap_values.csv
+2026-07-07 12:48:13 | INFO     | ckd_explainability | --------------------------------------------------
+2026-07-07 12:48:13 | INFO     | ckd_explainability | [CatBoost] Starting...
+2026-07-07 12:48:13 | INFO     | ckd_explainability | [Load] CatBoost ← calibrated_model.joblib
+2026-07-07 12:48:13 | INFO     | ckd_explainability | [Data] Test CSV loaded: data/splits/uci_test.csv  (80 rows, 34 cols)
+2026-07-07 12:48:13 | INFO     | ckd_explainability | [CatBoost] Feature matrix: 80 rows × 23 features
+2026-07-07 12:48:13 | DEBUG    | ckd_explainability | [CatBoost] Background: 100 rows from data/splits/uci_train.csv
+2026-07-07 12:48:13 | DEBUG    | ckd_explainability | [CatBoost] Trying TreeExplainer on CatBoostClassifier
+2026-07-07 12:48:13 | DEBUG    | ckd_explainability | [CatBoost] TreeExplainer succeeded.
+2026-07-07 12:48:13 | INFO     | ckd_explainability | [CatBoost] SHAP computed — shape (80, 23), E[f(x)] = -0.3069
+2026-07-07 12:48:13 | INFO     | ckd_explainability | [CatBoost] Beeswarm...
+2026-07-07 12:48:13 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/CatBoost/shap_beeswarm.png
+2026-07-07 12:48:13 | INFO     | ckd_explainability | [CatBoost] Dependence plots...
+2026-07-07 12:48:13 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/CatBoost/dependence_plots/dep_01_anemia_risk_score.png
+2026-07-07 12:48:13 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/CatBoost/dependence_plots/dep_02_specific_gravity.png
+2026-07-07 12:48:13 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/CatBoost/dependence_plots/dep_03_cardiovascular_burden_score.png
+2026-07-07 12:48:13 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/CatBoost/dependence_plots/dep_04_hemoglobin_creatinine_ratio.png
+2026-07-07 12:48:13 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/CatBoost/dependence_plots/dep_05_hemoglobin.png
+2026-07-07 12:48:13 | INFO     | ckd_explainability | [CatBoost] Waterfall plots...
+2026-07-07 12:48:13 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/CatBoost/waterfall/true-positive_01.png
+2026-07-07 12:48:13 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/CatBoost/waterfall/true-positive_02.png
+2026-07-07 12:48:14 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/CatBoost/waterfall/true-negative_01.png
+2026-07-07 12:48:14 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/CatBoost/waterfall/true-negative_02.png
+2026-07-07 12:48:14 | INFO     | ckd_explainability | [CatBoost] Clinician report...
+2026-07-07 12:48:14 | INFO     | ckd_explainability | [Report] Clinician report → artifacts/explainability/uci/CatBoost/clinician_explanation_report.md
+2026-07-07 12:48:14 | INFO     | ckd_explainability | [CatBoost] LIME explanations...
+2026-07-07 12:48:14 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/CatBoost/lime/most_confident_CKD.png
+2026-07-07 12:48:14 | INFO     | ckd_explainability | [LIME] CatBoost / most_confident_CKD → artifacts/explainability/uci/CatBoost/lime
+2026-07-07 12:48:14 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/CatBoost/lime/most_confident_notCKD.png
+2026-07-07 12:48:14 | INFO     | ckd_explainability | [LIME] CatBoost / most_confident_notCKD → artifacts/explainability/uci/CatBoost/lime
+2026-07-07 12:48:14 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/CatBoost/lime/boundary_case.png
+2026-07-07 12:48:14 | INFO     | ckd_explainability | [LIME] CatBoost / boundary_case → artifacts/explainability/uci/CatBoost/lime
+2026-07-07 12:48:14 | INFO     | ckd_explainability | [CatBoost] SHAP values CSV → artifacts/explainability/uci/CatBoost/shap_values.csv
+2026-07-07 12:48:14 | INFO     | ckd_explainability | Plotting global SHAP summary...
+2026-07-07 12:48:14 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/global_shap_summary.png
+2026-07-07 12:48:14 | INFO     | ckd_explainability | [Global SHAP] CSV → artifacts/explainability/uci/global_shap_importance.csv
+2026-07-07 12:48:14 | INFO     | ckd_explainability | Cross-model agreement analysis...
+2026-07-07 12:48:14 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/cross_model/agreement_heatmap.png
+2026-07-07 12:48:14 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/cross_model/disagreement_distribution.png
+2026-07-07 12:48:14 | INFO     | ckd_explainability | [Agreement] Patients: 80 | Any disagreement: 32 | High disagreement (<0.8): 1
+2026-07-07 12:48:14 | INFO     | ckd_explainability | ======================================================================
+2026-07-07 12:48:14 | INFO     | ckd_explainability | EXPLAINABILITY COMPLETE → /Users/vrinda/Desktop/Mom Kidney CKD/artifacts/explainability/uci
+2026-07-07 12:48:14 | INFO     | ckd_explainability | ======================================================================
+2026-07-07 16:14:46 | INFO     | ckd_explainability | ======================================================================
+2026-07-07 16:14:46 | INFO     | ckd_explainability | CKD EXPLAINABILITY MODULE
+2026-07-07 16:14:46 | INFO     | ckd_explainability | Models : ['LogisticRegression', 'RandomForest', 'XGBoost', 'LightGBM', 'CatBoost']
+2026-07-07 16:14:46 | INFO     | ckd_explainability | Output : artifacts/explainability/uci
+2026-07-07 16:14:46 | INFO     | ckd_explainability | ======================================================================
+2026-07-07 16:14:46 | INFO     | ckd_explainability | --------------------------------------------------
+2026-07-07 16:14:46 | INFO     | ckd_explainability | [LogisticRegression] Starting...
+2026-07-07 16:14:46 | INFO     | ckd_explainability | [Load] LogisticRegression ← calibrated_model.joblib
+2026-07-07 16:14:46 | INFO     | ckd_explainability | [Data] Test CSV loaded: data/splits/uci_test.csv  (80 rows, 34 cols)
+2026-07-07 16:14:46 | INFO     | ckd_explainability | [LogisticRegression] Feature matrix: 80 rows × 24 features
+2026-07-07 16:14:46 | DEBUG    | ckd_explainability | [LogisticRegression] Background: 100 rows from data/splits/uci_train.csv
+2026-07-07 16:14:46 | DEBUG    | ckd_explainability | [LogisticRegression] Trying LinearExplainer on LogisticRegression
+2026-07-07 16:14:46 | DEBUG    | ckd_explainability | [LogisticRegression] LinearExplainer succeeded.
+2026-07-07 16:14:46 | INFO     | ckd_explainability | [LogisticRegression] SHAP computed — shape (80, 24), E[f(x)] = 454.5346
+2026-07-07 16:14:46 | INFO     | ckd_explainability | [LogisticRegression] Beeswarm...
+2026-07-07 16:14:47 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/shap_beeswarm.png
+2026-07-07 16:14:47 | INFO     | ckd_explainability | [LogisticRegression] Dependence plots...
+2026-07-07 16:14:47 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/dependence_plots/dep_01_white_blood_cell_count.png
+2026-07-07 16:14:47 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/dependence_plots/dep_02_blood_glucose_random.png
+2026-07-07 16:14:47 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/dependence_plots/dep_03_urea_creatinine_product.png
+2026-07-07 16:14:47 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/dependence_plots/dep_04_hemoglobin_creatinine_ratio.png
+2026-07-07 16:14:47 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/dependence_plots/dep_05_blood_urea.png
+2026-07-07 16:14:47 | INFO     | ckd_explainability | [LogisticRegression] Waterfall plots...
+2026-07-07 16:14:47 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/waterfall/true-positive_01.png
+2026-07-07 16:14:47 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/waterfall/true-positive_02.png
+2026-07-07 16:14:47 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/waterfall/false-positive_01.png
+2026-07-07 16:14:47 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/waterfall/false-positive_02.png
+2026-07-07 16:14:47 | INFO     | ckd_explainability | [LogisticRegression] Clinician report...
+2026-07-07 16:14:47 | INFO     | ckd_explainability | [Report] Clinician report → artifacts/explainability/uci/LogisticRegression/clinician_explanation_report.md
+2026-07-07 16:14:47 | INFO     | ckd_explainability | [LogisticRegression] LIME explanations...
+2026-07-07 16:14:47 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/lime/most_confident_CKD.png
+2026-07-07 16:14:47 | INFO     | ckd_explainability | [LIME] LogisticRegression / most_confident_CKD → artifacts/explainability/uci/LogisticRegression/lime
+2026-07-07 16:14:48 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/lime/most_confident_notCKD.png
+2026-07-07 16:14:48 | INFO     | ckd_explainability | [LIME] LogisticRegression / most_confident_notCKD → artifacts/explainability/uci/LogisticRegression/lime
+2026-07-07 16:14:48 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LogisticRegression/lime/boundary_case.png
+2026-07-07 16:14:48 | INFO     | ckd_explainability | [LIME] LogisticRegression / boundary_case → artifacts/explainability/uci/LogisticRegression/lime
+2026-07-07 16:14:48 | INFO     | ckd_explainability | [LogisticRegression] SHAP values CSV → artifacts/explainability/uci/LogisticRegression/shap_values.csv
+2026-07-07 16:14:48 | INFO     | ckd_explainability | --------------------------------------------------
+2026-07-07 16:14:48 | INFO     | ckd_explainability | [RandomForest] Starting...
+2026-07-07 16:14:48 | INFO     | ckd_explainability | [Load] RandomForest ← calibrated_model.joblib
+2026-07-07 16:14:48 | INFO     | ckd_explainability | [Data] Test CSV loaded: data/splits/uci_test.csv  (80 rows, 34 cols)
+2026-07-07 16:14:48 | INFO     | ckd_explainability | [RandomForest] Feature matrix: 80 rows × 24 features
+2026-07-07 16:14:48 | DEBUG    | ckd_explainability | [RandomForest] Background: 100 rows from data/splits/uci_train.csv
+2026-07-07 16:14:48 | DEBUG    | ckd_explainability | [RandomForest] Trying TreeExplainer on RandomForestClassifier
+2026-07-07 16:14:48 | DEBUG    | ckd_explainability | [RandomForest] TreeExplainer succeeded.
+2026-07-07 16:14:48 | INFO     | ckd_explainability | [RandomForest] SHAP computed — shape (80, 24), E[f(x)] = 0.5000
+2026-07-07 16:14:48 | INFO     | ckd_explainability | [RandomForest] Beeswarm...
+2026-07-07 16:14:48 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/RandomForest/shap_beeswarm.png
+2026-07-07 16:14:48 | INFO     | ckd_explainability | [RandomForest] Dependence plots...
+2026-07-07 16:14:48 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/RandomForest/dependence_plots/dep_01_anemia_risk_score.png
+2026-07-07 16:14:48 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/RandomForest/dependence_plots/dep_02_hemoglobin.png
+2026-07-07 16:14:48 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/RandomForest/dependence_plots/dep_03_hemoglobin_creatinine_ratio.png
+2026-07-07 16:14:48 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/RandomForest/dependence_plots/dep_04_specific_gravity.png
+2026-07-07 16:14:48 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/RandomForest/dependence_plots/dep_05_packed_cell_volume.png
+2026-07-07 16:14:48 | INFO     | ckd_explainability | [RandomForest] Waterfall plots...
+2026-07-07 16:14:48 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/RandomForest/waterfall/true-positive_01.png
+2026-07-07 16:14:48 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/RandomForest/waterfall/true-positive_02.png
+2026-07-07 16:14:48 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/RandomForest/waterfall/true-negative_01.png
+2026-07-07 16:14:49 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/RandomForest/waterfall/true-negative_02.png
+2026-07-07 16:14:49 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/RandomForest/waterfall/false-positive_01.png
+2026-07-07 16:14:49 | INFO     | ckd_explainability | [RandomForest] Clinician report...
+2026-07-07 16:14:49 | INFO     | ckd_explainability | [Report] Clinician report → artifacts/explainability/uci/RandomForest/clinician_explanation_report.md
+2026-07-07 16:14:49 | INFO     | ckd_explainability | [RandomForest] LIME explanations...
+2026-07-07 16:14:49 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/RandomForest/lime/most_confident_CKD.png
+2026-07-07 16:14:49 | INFO     | ckd_explainability | [LIME] RandomForest / most_confident_CKD → artifacts/explainability/uci/RandomForest/lime
+2026-07-07 16:14:49 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/RandomForest/lime/most_confident_notCKD.png
+2026-07-07 16:14:49 | INFO     | ckd_explainability | [LIME] RandomForest / most_confident_notCKD → artifacts/explainability/uci/RandomForest/lime
+2026-07-07 16:14:49 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/RandomForest/lime/boundary_case.png
+2026-07-07 16:14:49 | INFO     | ckd_explainability | [LIME] RandomForest / boundary_case → artifacts/explainability/uci/RandomForest/lime
+2026-07-07 16:14:49 | INFO     | ckd_explainability | [RandomForest] SHAP values CSV → artifacts/explainability/uci/RandomForest/shap_values.csv
+2026-07-07 16:14:49 | INFO     | ckd_explainability | --------------------------------------------------
+2026-07-07 16:14:49 | INFO     | ckd_explainability | [XGBoost] Starting...
+2026-07-07 16:14:49 | INFO     | ckd_explainability | [Load] XGBoost ← calibrated_model.joblib
+2026-07-07 16:14:49 | INFO     | ckd_explainability | [Data] Test CSV loaded: data/splits/uci_test.csv  (80 rows, 34 cols)
+2026-07-07 16:14:49 | INFO     | ckd_explainability | [XGBoost] Feature matrix: 80 rows × 23 features
+2026-07-07 16:14:49 | DEBUG    | ckd_explainability | [XGBoost] Background: 100 rows from data/splits/uci_train.csv
+2026-07-07 16:14:49 | DEBUG    | ckd_explainability | [XGBoost] Trying TreeExplainer on XGBClassifier
+2026-07-07 16:14:49 | DEBUG    | ckd_explainability | [XGBoost] TreeExplainer succeeded.
+2026-07-07 16:14:49 | INFO     | ckd_explainability | [XGBoost] SHAP computed — shape (80, 23), E[f(x)] = 0.1255
+2026-07-07 16:14:49 | INFO     | ckd_explainability | [XGBoost] Beeswarm...
+2026-07-07 16:14:49 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/XGBoost/shap_beeswarm.png
+2026-07-07 16:14:49 | INFO     | ckd_explainability | [XGBoost] Dependence plots...
+2026-07-07 16:14:49 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/XGBoost/dependence_plots/dep_01_anemia_risk_score.png
+2026-07-07 16:14:49 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/XGBoost/dependence_plots/dep_02_cardiovascular_burden_score.png
+2026-07-07 16:14:49 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/XGBoost/dependence_plots/dep_03_specific_gravity.png
+2026-07-07 16:14:49 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/XGBoost/dependence_plots/dep_04_hemoglobin_creatinine_ratio.png
+2026-07-07 16:14:49 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/XGBoost/dependence_plots/dep_05_age_creatinine_interaction.png
+2026-07-07 16:14:49 | INFO     | ckd_explainability | [XGBoost] Waterfall plots...
+2026-07-07 16:14:50 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/XGBoost/waterfall/true-positive_01.png
+2026-07-07 16:14:50 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/XGBoost/waterfall/true-positive_02.png
+2026-07-07 16:14:50 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/XGBoost/waterfall/true-negative_01.png
+2026-07-07 16:14:50 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/XGBoost/waterfall/true-negative_02.png
+2026-07-07 16:14:50 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/XGBoost/waterfall/false-negative_01.png
+2026-07-07 16:14:50 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/XGBoost/waterfall/false-positive_01.png
+2026-07-07 16:14:50 | INFO     | ckd_explainability | [XGBoost] Clinician report...
+2026-07-07 16:14:50 | INFO     | ckd_explainability | [Report] Clinician report → artifacts/explainability/uci/XGBoost/clinician_explanation_report.md
+2026-07-07 16:14:50 | INFO     | ckd_explainability | [XGBoost] LIME explanations...
+2026-07-07 16:14:50 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/XGBoost/lime/most_confident_CKD.png
+2026-07-07 16:14:50 | INFO     | ckd_explainability | [LIME] XGBoost / most_confident_CKD → artifacts/explainability/uci/XGBoost/lime
+2026-07-07 16:14:50 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/XGBoost/lime/most_confident_notCKD.png
+2026-07-07 16:14:50 | INFO     | ckd_explainability | [LIME] XGBoost / most_confident_notCKD → artifacts/explainability/uci/XGBoost/lime
+2026-07-07 16:14:50 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/XGBoost/lime/boundary_case.png
+2026-07-07 16:14:50 | INFO     | ckd_explainability | [LIME] XGBoost / boundary_case → artifacts/explainability/uci/XGBoost/lime
+2026-07-07 16:14:50 | INFO     | ckd_explainability | [XGBoost] SHAP values CSV → artifacts/explainability/uci/XGBoost/shap_values.csv
+2026-07-07 16:14:50 | INFO     | ckd_explainability | --------------------------------------------------
+2026-07-07 16:14:50 | INFO     | ckd_explainability | [LightGBM] Starting...
+2026-07-07 16:14:50 | INFO     | ckd_explainability | [Load] LightGBM ← calibrated_model.joblib
+2026-07-07 16:14:50 | INFO     | ckd_explainability | [Data] Test CSV loaded: data/splits/uci_test.csv  (80 rows, 34 cols)
+2026-07-07 16:14:50 | INFO     | ckd_explainability | [LightGBM] Feature matrix: 80 rows × 23 features
+2026-07-07 16:14:50 | DEBUG    | ckd_explainability | [LightGBM] Background: 100 rows from data/splits/uci_train.csv
+2026-07-07 16:14:50 | DEBUG    | ckd_explainability | [LightGBM] Trying TreeExplainer on LGBMClassifier
+2026-07-07 16:14:50 | DEBUG    | ckd_explainability | [LightGBM] TreeExplainer succeeded.
+2026-07-07 16:14:50 | INFO     | ckd_explainability | [LightGBM] SHAP computed — shape (80, 23), E[f(x)] = 1.7371
+2026-07-07 16:14:50 | INFO     | ckd_explainability | [LightGBM] Beeswarm...
+2026-07-07 16:14:51 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LightGBM/shap_beeswarm.png
+2026-07-07 16:14:51 | INFO     | ckd_explainability | [LightGBM] Dependence plots...
+2026-07-07 16:14:51 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LightGBM/dependence_plots/dep_01_anemia_risk_score.png
+2026-07-07 16:14:51 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LightGBM/dependence_plots/dep_02_cardiovascular_burden_score.png
+2026-07-07 16:14:51 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LightGBM/dependence_plots/dep_03_specific_gravity.png
+2026-07-07 16:14:51 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LightGBM/dependence_plots/dep_04_hemoglobin_creatinine_ratio.png
+2026-07-07 16:14:51 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LightGBM/dependence_plots/dep_05_albumin.png
+2026-07-07 16:14:51 | INFO     | ckd_explainability | [LightGBM] Waterfall plots...
+2026-07-07 16:14:51 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LightGBM/waterfall/true-positive_01.png
+2026-07-07 16:14:51 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LightGBM/waterfall/true-positive_02.png
+2026-07-07 16:14:51 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LightGBM/waterfall/true-negative_01.png
+2026-07-07 16:14:51 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LightGBM/waterfall/true-negative_02.png
+2026-07-07 16:14:52 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LightGBM/waterfall/false-negative_01.png
+2026-07-07 16:14:52 | INFO     | ckd_explainability | [LightGBM] Clinician report...
+2026-07-07 16:14:52 | INFO     | ckd_explainability | [Report] Clinician report → artifacts/explainability/uci/LightGBM/clinician_explanation_report.md
+2026-07-07 16:14:52 | INFO     | ckd_explainability | [LightGBM] LIME explanations...
+2026-07-07 16:14:52 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LightGBM/lime/most_confident_CKD.png
+2026-07-07 16:14:52 | INFO     | ckd_explainability | [LIME] LightGBM / most_confident_CKD → artifacts/explainability/uci/LightGBM/lime
+2026-07-07 16:14:52 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LightGBM/lime/most_confident_notCKD.png
+2026-07-07 16:14:52 | INFO     | ckd_explainability | [LIME] LightGBM / most_confident_notCKD → artifacts/explainability/uci/LightGBM/lime
+2026-07-07 16:14:52 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/LightGBM/lime/boundary_case.png
+2026-07-07 16:14:52 | INFO     | ckd_explainability | [LIME] LightGBM / boundary_case → artifacts/explainability/uci/LightGBM/lime
+2026-07-07 16:14:52 | INFO     | ckd_explainability | [LightGBM] SHAP values CSV → artifacts/explainability/uci/LightGBM/shap_values.csv
+2026-07-07 16:14:52 | INFO     | ckd_explainability | --------------------------------------------------
+2026-07-07 16:14:52 | INFO     | ckd_explainability | [CatBoost] Starting...
+2026-07-07 16:14:52 | INFO     | ckd_explainability | [Load] CatBoost ← calibrated_model.joblib
+2026-07-07 16:14:52 | INFO     | ckd_explainability | [Data] Test CSV loaded: data/splits/uci_test.csv  (80 rows, 34 cols)
+2026-07-07 16:14:52 | INFO     | ckd_explainability | [CatBoost] Feature matrix: 80 rows × 23 features
+2026-07-07 16:14:52 | DEBUG    | ckd_explainability | [CatBoost] Background: 100 rows from data/splits/uci_train.csv
+2026-07-07 16:14:52 | DEBUG    | ckd_explainability | [CatBoost] Trying TreeExplainer on CatBoostClassifier
+2026-07-07 16:14:52 | DEBUG    | ckd_explainability | [CatBoost] TreeExplainer succeeded.
+2026-07-07 16:14:52 | INFO     | ckd_explainability | [CatBoost] SHAP computed — shape (80, 23), E[f(x)] = -0.3069
+2026-07-07 16:14:52 | INFO     | ckd_explainability | [CatBoost] Beeswarm...
+2026-07-07 16:14:52 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/CatBoost/shap_beeswarm.png
+2026-07-07 16:14:52 | INFO     | ckd_explainability | [CatBoost] Dependence plots...
+2026-07-07 16:14:52 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/CatBoost/dependence_plots/dep_01_anemia_risk_score.png
+2026-07-07 16:14:52 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/CatBoost/dependence_plots/dep_02_specific_gravity.png
+2026-07-07 16:14:52 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/CatBoost/dependence_plots/dep_03_cardiovascular_burden_score.png
+2026-07-07 16:14:52 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/CatBoost/dependence_plots/dep_04_hemoglobin_creatinine_ratio.png
+2026-07-07 16:14:52 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/CatBoost/dependence_plots/dep_05_hemoglobin.png
+2026-07-07 16:14:52 | INFO     | ckd_explainability | [CatBoost] Waterfall plots...
+2026-07-07 16:14:52 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/CatBoost/waterfall/true-positive_01.png
+2026-07-07 16:14:53 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/CatBoost/waterfall/true-positive_02.png
+2026-07-07 16:14:53 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/CatBoost/waterfall/true-negative_01.png
+2026-07-07 16:14:53 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/CatBoost/waterfall/true-negative_02.png
+2026-07-07 16:14:53 | INFO     | ckd_explainability | [CatBoost] Clinician report...
+2026-07-07 16:14:53 | INFO     | ckd_explainability | [Report] Clinician report → artifacts/explainability/uci/CatBoost/clinician_explanation_report.md
+2026-07-07 16:14:53 | INFO     | ckd_explainability | [CatBoost] LIME explanations...
+2026-07-07 16:14:53 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/CatBoost/lime/most_confident_CKD.png
+2026-07-07 16:14:53 | INFO     | ckd_explainability | [LIME] CatBoost / most_confident_CKD → artifacts/explainability/uci/CatBoost/lime
+2026-07-07 16:14:53 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/CatBoost/lime/most_confident_notCKD.png
+2026-07-07 16:14:53 | INFO     | ckd_explainability | [LIME] CatBoost / most_confident_notCKD → artifacts/explainability/uci/CatBoost/lime
+2026-07-07 16:14:53 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/CatBoost/lime/boundary_case.png
+2026-07-07 16:14:53 | INFO     | ckd_explainability | [LIME] CatBoost / boundary_case → artifacts/explainability/uci/CatBoost/lime
+2026-07-07 16:14:53 | INFO     | ckd_explainability | [CatBoost] SHAP values CSV → artifacts/explainability/uci/CatBoost/shap_values.csv
+2026-07-07 16:14:53 | INFO     | ckd_explainability | Plotting global SHAP summary...
+2026-07-07 16:14:53 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/global_shap_summary.png
+2026-07-07 16:14:53 | INFO     | ckd_explainability | [Global SHAP] CSV → artifacts/explainability/uci/global_shap_importance.csv
+2026-07-07 16:14:53 | INFO     | ckd_explainability | Cross-model agreement analysis...
+2026-07-07 16:14:53 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/cross_model/agreement_heatmap.png
+2026-07-07 16:14:53 | INFO     | ckd_explainability | [Plot] Saved → artifacts/explainability/uci/cross_model/disagreement_distribution.png
+2026-07-07 16:14:53 | INFO     | ckd_explainability | [Agreement] Patients: 80 | Any disagreement: 32 | High disagreement (<0.8): 1
+2026-07-07 16:14:53 | INFO     | ckd_explainability | ======================================================================
+2026-07-07 16:14:53 | INFO     | ckd_explainability | EXPLAINABILITY COMPLETE → /Users/vrinda/Desktop/Mom Kidney CKD/artifacts/explainability/uci
+2026-07-07 16:14:53 | INFO     | ckd_explainability | ======================================================================

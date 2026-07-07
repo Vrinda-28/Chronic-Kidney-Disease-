@@ -1,0 +1,294 @@
+2026-06-22 18:57:14 | INFO     | ckd_splitter | ======================================================================
+2026-06-22 18:57:14 | INFO     | ckd_splitter | CKD Train/Test Split Pipeline — START
+2026-06-22 18:57:14 | INFO     | ckd_splitter | Random seed: 42
+2026-06-22 18:57:14 | INFO     | ckd_splitter | ======================================================================
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [Step 1] Loading engineered datasets …
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [Step 1] Loaded — UCI: (400, 34) | Kaggle: (200, 38) | UAE: (491, 32)
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [UCI] Starting split …
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [UCI] Full shape: (400, 34) | Target: 'ckd_label' | Distribution: {'1': 250, '0': 150}
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [UCI] Split → train=320 (80%), test=80 (20%)
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [UCI] Train class distribution: {'1': 200, '0': 120}
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [UCI] Test class distribution: {'1': 50, '0': 30}
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [UCI] ✔ Leakage check 1 passed: train/test indices disjoint.
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [UCI] ✔ Leakage check 2 passed: all rows accounted for.
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [UCI] CV: StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [UCI] Generated 5 CV fold(s) (stratified_kfold: n_splits=5, n_repeats=1).
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [UCI] ✔ Leakage check 3 passed: all CV fold indices within train bounds.
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [KAGGLE] Starting split …
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [KAGGLE] Full shape: (200, 38) | Target: 'ckd_stage_label' | Distribution: {'0': 54, '3': 45, '1': 35, '4': 35, '2': 31}
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [KAGGLE] Split → train=160 (80%), test=40 (20%)
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [KAGGLE] Train class distribution: {'0': 43, '3': 36, '4': 28, '1': 28, '2': 25}
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [KAGGLE] Test class distribution: {'0': 11, '3': 9, '1': 7, '4': 7, '2': 6}
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [KAGGLE] ✔ Leakage check 1 passed: train/test indices disjoint.
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [KAGGLE] ✔ Leakage check 2 passed: all rows accounted for.
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [KAGGLE] CV: RepeatedStratifiedKFold(n_splits=5, n_repeats=5, random_state=42)
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [KAGGLE] Generated 25 CV fold(s) (repeated_stratified_kfold: n_splits=5, n_repeats=5).
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [KAGGLE] ✔ Leakage check 3 passed: all CV fold indices within train bounds.
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [UAE] Loading external validation set (no splitting applied) …
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [UAE] External validation set: 491 rows | Class distribution: {'0': 435, '1': 56}
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [UCI] ✔ UAE object-isolation check passed.
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [KAGGLE] ✔ UAE object-isolation check passed.
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [Artifacts] Saved global metadata: artifacts/splits/split_metadata.json
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [UCI] Saved train manifest: artifacts/splits/uci_train_manifest.csv
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [UCI] Saved test manifest: artifacts/splits/uci_test_manifest.csv
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [UCI] Saved CV fold indices (5 folds): artifacts/splits/uci_cv_fold_indices.json
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [KAGGLE] Saved train manifest: artifacts/splits/kaggle_train_manifest.csv
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [KAGGLE] Saved test manifest: artifacts/splits/kaggle_test_manifest.csv
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [KAGGLE] Saved CV fold indices (25 folds): artifacts/splits/kaggle_cv_fold_indices.json
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [UAE] Saved full manifest: artifacts/splits/uae_full_manifest.csv
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [UCI] Saved train (320 rows): data/splits/uci_train.csv
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [UCI] Saved test (80 rows): data/splits/uci_test.csv
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [KAGGLE] Saved train (160 rows): data/splits/kaggle_train.csv
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [KAGGLE] Saved test (40 rows): data/splits/kaggle_test.csv
+2026-06-22 18:57:14 | INFO     | ckd_splitter | [UAE] Saved external validation full DataFrame (491 rows): data/splits/uae_full.csv
+2026-06-22 18:57:14 | INFO     | ckd_splitter | ======================================================================
+2026-06-22 18:57:14 | INFO     | ckd_splitter | CKD Train/Test Split Pipeline — COMPLETE
+2026-06-22 18:57:14 | INFO     | ckd_splitter | UCI  → train=320, test=80, CV folds=5
+2026-06-22 18:57:14 | INFO     | ckd_splitter | Kaggle → train=160, test=40, CV folds=25
+2026-06-22 18:57:14 | INFO     | ckd_splitter | UAE  → 491 rows (external validation, never split)
+2026-06-22 18:57:14 | INFO     | ckd_splitter | ======================================================================
+2026-06-22 20:13:44 | INFO     | ckd_splitter | ======================================================================
+2026-06-22 20:13:44 | INFO     | ckd_splitter | CKD Train/Test Split Pipeline — START
+2026-06-22 20:13:44 | INFO     | ckd_splitter | Random seed: 42
+2026-06-22 20:13:44 | INFO     | ckd_splitter | ======================================================================
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [Step 1] Loading engineered datasets …
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [Step 1] Loaded — UCI: (400, 34) | Kaggle: (200, 38) | UAE: (491, 32)
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [UCI] Starting split …
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [UCI] Full shape: (400, 34) | Target: 'ckd_label' | Distribution: {'1': 250, '0': 150}
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [UCI] Split → train=320 (80%), test=80 (20%)
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [UCI] Train class distribution: {'1': 200, '0': 120}
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [UCI] Test class distribution: {'1': 50, '0': 30}
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [UCI] ✔ Leakage check 1 passed: train/test indices disjoint.
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [UCI] ✔ Leakage check 2 passed: all rows accounted for.
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [UCI] CV: StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [UCI] Generated 5 CV fold(s) (stratified_kfold: n_splits=5, n_repeats=1).
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [UCI] ✔ Leakage check 3 passed: all CV fold indices within train bounds.
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [KAGGLE] Starting split …
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [KAGGLE] Full shape: (200, 38) | Target: 'ckd_stage_label' | Distribution: {'0': 54, '3': 45, '1': 35, '4': 35, '2': 31}
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [KAGGLE] Split → train=160 (80%), test=40 (20%)
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [KAGGLE] Train class distribution: {'0': 43, '3': 36, '4': 28, '1': 28, '2': 25}
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [KAGGLE] Test class distribution: {'0': 11, '3': 9, '1': 7, '4': 7, '2': 6}
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [KAGGLE] ✔ Leakage check 1 passed: train/test indices disjoint.
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [KAGGLE] ✔ Leakage check 2 passed: all rows accounted for.
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [KAGGLE] CV: RepeatedStratifiedKFold(n_splits=5, n_repeats=5, random_state=42)
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [KAGGLE] Generated 25 CV fold(s) (repeated_stratified_kfold: n_splits=5, n_repeats=5).
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [KAGGLE] ✔ Leakage check 3 passed: all CV fold indices within train bounds.
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [UAE] Loading external validation set (no splitting applied) …
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [UAE] External validation set: 491 rows | Class distribution: {'0': 435, '1': 56}
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [UCI] ✔ UAE object-isolation check passed.
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [KAGGLE] ✔ UAE object-isolation check passed.
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [Artifacts] Saved global metadata: artifacts/splits/split_metadata.json
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [UCI] Saved train manifest: artifacts/splits/uci_train_manifest.csv
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [UCI] Saved test manifest: artifacts/splits/uci_test_manifest.csv
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [UCI] Saved CV fold indices (5 folds): artifacts/splits/uci_cv_fold_indices.json
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [KAGGLE] Saved train manifest: artifacts/splits/kaggle_train_manifest.csv
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [KAGGLE] Saved test manifest: artifacts/splits/kaggle_test_manifest.csv
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [KAGGLE] Saved CV fold indices (25 folds): artifacts/splits/kaggle_cv_fold_indices.json
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [UAE] Saved full manifest: artifacts/splits/uae_full_manifest.csv
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [UCI] Saved train (320 rows): data/splits/uci_train.csv
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [UCI] Saved test (80 rows): data/splits/uci_test.csv
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [KAGGLE] Saved train (160 rows): data/splits/kaggle_train.csv
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [KAGGLE] Saved test (40 rows): data/splits/kaggle_test.csv
+2026-06-22 20:13:44 | INFO     | ckd_splitter | [UAE] Saved external validation full DataFrame (491 rows): data/splits/uae_full.csv
+2026-06-22 20:13:44 | INFO     | ckd_splitter | ======================================================================
+2026-06-22 20:13:44 | INFO     | ckd_splitter | CKD Train/Test Split Pipeline — COMPLETE
+2026-06-22 20:13:44 | INFO     | ckd_splitter | UCI  → train=320, test=80, CV folds=5
+2026-06-22 20:13:44 | INFO     | ckd_splitter | Kaggle → train=160, test=40, CV folds=25
+2026-06-22 20:13:44 | INFO     | ckd_splitter | UAE  → 491 rows (external validation, never split)
+2026-06-22 20:13:44 | INFO     | ckd_splitter | ======================================================================
+2026-06-24 13:57:54 | INFO     | ckd_splitter | ======================================================================
+2026-06-24 13:57:54 | INFO     | ckd_splitter | CKD Train/Test Split Pipeline — START
+2026-06-24 13:57:54 | INFO     | ckd_splitter | Random seed: 42
+2026-06-24 13:57:54 | INFO     | ckd_splitter | ======================================================================
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [Step 1] Loading engineered datasets …
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [Step 1] Loaded — UCI: (400, 34) | Kaggle: (200, 38) | UAE: (491, 32)
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [UCI] Starting split …
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [UCI] Full shape: (400, 34) | Target: 'ckd_label' | Distribution: {'1': 250, '0': 150}
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [UCI] Split → train=320 (80%), test=80 (20%)
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [UCI] Train class distribution: {'1': 200, '0': 120}
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [UCI] Test class distribution: {'1': 50, '0': 30}
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [UCI] ✔ Leakage check 1 passed: train/test indices disjoint.
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [UCI] ✔ Leakage check 2 passed: all rows accounted for.
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [UCI] CV: StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [UCI] Generated 5 CV fold(s) (stratified_kfold: n_splits=5, n_repeats=1).
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [UCI] ✔ Leakage check 3 passed: all CV fold indices within train bounds.
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [KAGGLE] Starting split …
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [KAGGLE] Full shape: (200, 38) | Target: 'ckd_stage_label' | Distribution: {'0': 54, '3': 45, '1': 35, '4': 35, '2': 31}
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [KAGGLE] Split → train=160 (80%), test=40 (20%)
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [KAGGLE] Train class distribution: {'0': 43, '3': 36, '4': 28, '1': 28, '2': 25}
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [KAGGLE] Test class distribution: {'0': 11, '3': 9, '1': 7, '4': 7, '2': 6}
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [KAGGLE] ✔ Leakage check 1 passed: train/test indices disjoint.
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [KAGGLE] ✔ Leakage check 2 passed: all rows accounted for.
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [KAGGLE] CV: RepeatedStratifiedKFold(n_splits=5, n_repeats=5, random_state=42)
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [KAGGLE] Generated 25 CV fold(s) (repeated_stratified_kfold: n_splits=5, n_repeats=5).
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [KAGGLE] ✔ Leakage check 3 passed: all CV fold indices within train bounds.
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [UAE] Loading external validation set (no splitting applied) …
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [UAE] External validation set: 491 rows | Class distribution: {'0': 435, '1': 56}
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [UCI] ✔ UAE object-isolation check passed.
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [KAGGLE] ✔ UAE object-isolation check passed.
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [Artifacts] Saved global metadata: artifacts/splits/split_metadata.json
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [UCI] Saved train manifest: artifacts/splits/uci_train_manifest.csv
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [UCI] Saved test manifest: artifacts/splits/uci_test_manifest.csv
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [UCI] Saved CV fold indices (5 folds): artifacts/splits/uci_cv_fold_indices.json
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [KAGGLE] Saved train manifest: artifacts/splits/kaggle_train_manifest.csv
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [KAGGLE] Saved test manifest: artifacts/splits/kaggle_test_manifest.csv
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [KAGGLE] Saved CV fold indices (25 folds): artifacts/splits/kaggle_cv_fold_indices.json
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [UAE] Saved full manifest: artifacts/splits/uae_full_manifest.csv
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [UCI] Saved train (320 rows): data/splits/uci_train.csv
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [UCI] Saved test (80 rows): data/splits/uci_test.csv
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [KAGGLE] Saved train (160 rows): data/splits/kaggle_train.csv
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [KAGGLE] Saved test (40 rows): data/splits/kaggle_test.csv
+2026-06-24 13:57:54 | INFO     | ckd_splitter | [UAE] Saved external validation full DataFrame (491 rows): data/splits/uae_full.csv
+2026-06-24 13:57:54 | INFO     | ckd_splitter | ======================================================================
+2026-06-24 13:57:54 | INFO     | ckd_splitter | CKD Train/Test Split Pipeline — COMPLETE
+2026-06-24 13:57:54 | INFO     | ckd_splitter | UCI  → train=320, test=80, CV folds=5
+2026-06-24 13:57:54 | INFO     | ckd_splitter | Kaggle → train=160, test=40, CV folds=25
+2026-06-24 13:57:54 | INFO     | ckd_splitter | UAE  → 491 rows (external validation, never split)
+2026-06-24 13:57:54 | INFO     | ckd_splitter | ======================================================================
+2026-06-24 14:07:16 | INFO     | ckd_splitter | ======================================================================
+2026-06-24 14:07:16 | INFO     | ckd_splitter | CKD Train/Test Split Pipeline — START
+2026-06-24 14:07:16 | INFO     | ckd_splitter | Random seed: 42
+2026-06-24 14:07:16 | INFO     | ckd_splitter | ======================================================================
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [Step 1] Loading engineered datasets …
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [Step 1] Loaded — UCI: (400, 34) | Kaggle: (200, 38) | UAE: (491, 32)
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [UCI] Starting split …
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [UCI] Full shape: (400, 34) | Target: 'ckd_label' | Distribution: {'1': 250, '0': 150}
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [UCI] Split → train=320 (80%), test=80 (20%)
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [UCI] Train class distribution: {'1': 200, '0': 120}
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [UCI] Test class distribution: {'1': 50, '0': 30}
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [UCI] ✔ Leakage check 1 passed: train/test indices disjoint.
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [UCI] ✔ Leakage check 2 passed: all rows accounted for.
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [UCI] CV: StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [UCI] Generated 5 CV fold(s) (stratified_kfold: n_splits=5, n_repeats=1).
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [UCI] ✔ Leakage check 3 passed: all CV fold indices within train bounds.
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [KAGGLE] Starting split …
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [KAGGLE] Full shape: (200, 38) | Target: 'ckd_stage_label' | Distribution: {'0': 54, '3': 45, '1': 35, '4': 35, '2': 31}
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [KAGGLE] Split → train=160 (80%), test=40 (20%)
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [KAGGLE] Train class distribution: {'0': 43, '3': 36, '4': 28, '1': 28, '2': 25}
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [KAGGLE] Test class distribution: {'0': 11, '3': 9, '1': 7, '4': 7, '2': 6}
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [KAGGLE] ✔ Leakage check 1 passed: train/test indices disjoint.
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [KAGGLE] ✔ Leakage check 2 passed: all rows accounted for.
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [KAGGLE] CV: RepeatedStratifiedKFold(n_splits=5, n_repeats=5, random_state=42)
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [KAGGLE] Generated 25 CV fold(s) (repeated_stratified_kfold: n_splits=5, n_repeats=5).
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [KAGGLE] ✔ Leakage check 3 passed: all CV fold indices within train bounds.
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [UAE] Loading external validation set (no splitting applied) …
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [UAE] External validation set: 491 rows | Class distribution: {'0': 435, '1': 56}
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [UCI] ✔ UAE object-isolation check passed.
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [KAGGLE] ✔ UAE object-isolation check passed.
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [Artifacts] Saved global metadata: artifacts/splits/split_metadata.json
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [UCI] Saved train manifest: artifacts/splits/uci_train_manifest.csv
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [UCI] Saved test manifest: artifacts/splits/uci_test_manifest.csv
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [UCI] Saved CV fold indices (5 folds): artifacts/splits/uci_cv_fold_indices.json
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [KAGGLE] Saved train manifest: artifacts/splits/kaggle_train_manifest.csv
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [KAGGLE] Saved test manifest: artifacts/splits/kaggle_test_manifest.csv
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [KAGGLE] Saved CV fold indices (25 folds): artifacts/splits/kaggle_cv_fold_indices.json
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [UAE] Saved full manifest: artifacts/splits/uae_full_manifest.csv
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [UCI] Saved train (320 rows): data/splits/uci_train.csv
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [UCI] Saved test (80 rows): data/splits/uci_test.csv
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [KAGGLE] Saved train (160 rows): data/splits/kaggle_train.csv
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [KAGGLE] Saved test (40 rows): data/splits/kaggle_test.csv
+2026-06-24 14:07:16 | INFO     | ckd_splitter | [UAE] Saved external validation full DataFrame (491 rows): data/splits/uae_full.csv
+2026-06-24 14:07:16 | INFO     | ckd_splitter | ======================================================================
+2026-06-24 14:07:16 | INFO     | ckd_splitter | CKD Train/Test Split Pipeline — COMPLETE
+2026-06-24 14:07:16 | INFO     | ckd_splitter | UCI  → train=320, test=80, CV folds=5
+2026-06-24 14:07:16 | INFO     | ckd_splitter | Kaggle → train=160, test=40, CV folds=25
+2026-06-24 14:07:16 | INFO     | ckd_splitter | UAE  → 491 rows (external validation, never split)
+2026-06-24 14:07:16 | INFO     | ckd_splitter | ======================================================================
+2026-07-06 11:44:37 | INFO     | ckd_splitter | ======================================================================
+2026-07-06 11:44:37 | INFO     | ckd_splitter | CKD Train/Test Split Pipeline — START
+2026-07-06 11:44:37 | INFO     | ckd_splitter | Random seed: 42
+2026-07-06 11:44:37 | INFO     | ckd_splitter | ======================================================================
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [Step 1] Loading engineered datasets …
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [Step 1] Loaded — UCI: (400, 34) | Kaggle: (200, 38) | UAE: (491, 32)
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [UCI] Starting split …
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [UCI] Full shape: (400, 34) | Target: 'ckd_label' | Distribution: {'1': 250, '0': 150}
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [UCI] Split → train=320 (80%), test=80 (20%)
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [UCI] Train class distribution: {'1': 200, '0': 120}
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [UCI] Test class distribution: {'1': 50, '0': 30}
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [UCI] ✔ Leakage check 1 passed: train/test indices disjoint.
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [UCI] ✔ Leakage check 2 passed: all rows accounted for.
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [UCI] CV: StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [UCI] Generated 5 CV fold(s) (stratified_kfold: n_splits=5, n_repeats=1).
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [UCI] ✔ Leakage check 3 passed: all CV fold indices within train bounds.
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [KAGGLE] Starting split …
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [KAGGLE] Full shape: (200, 38) | Target: 'ckd_stage_label' | Distribution: {'0': 54, '3': 45, '1': 35, '4': 35, '2': 31}
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [KAGGLE] Split → train=160 (80%), test=40 (20%)
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [KAGGLE] Train class distribution: {'0': 43, '3': 36, '4': 28, '1': 28, '2': 25}
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [KAGGLE] Test class distribution: {'0': 11, '3': 9, '1': 7, '4': 7, '2': 6}
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [KAGGLE] ✔ Leakage check 1 passed: train/test indices disjoint.
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [KAGGLE] ✔ Leakage check 2 passed: all rows accounted for.
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [KAGGLE] CV: RepeatedStratifiedKFold(n_splits=5, n_repeats=5, random_state=42)
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [KAGGLE] Generated 25 CV fold(s) (repeated_stratified_kfold: n_splits=5, n_repeats=5).
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [KAGGLE] ✔ Leakage check 3 passed: all CV fold indices within train bounds.
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [UAE] Loading external validation set (no splitting applied) …
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [UAE] External validation set: 491 rows | Class distribution: {'0': 435, '1': 56}
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [UCI] ✔ UAE object-isolation check passed.
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [KAGGLE] ✔ UAE object-isolation check passed.
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [Artifacts] Saved global metadata: artifacts/splits/split_metadata.json
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [UCI] Saved train manifest: artifacts/splits/uci_train_manifest.csv
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [UCI] Saved test manifest: artifacts/splits/uci_test_manifest.csv
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [UCI] Saved CV fold indices (5 folds): artifacts/splits/uci_cv_fold_indices.json
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [KAGGLE] Saved train manifest: artifacts/splits/kaggle_train_manifest.csv
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [KAGGLE] Saved test manifest: artifacts/splits/kaggle_test_manifest.csv
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [KAGGLE] Saved CV fold indices (25 folds): artifacts/splits/kaggle_cv_fold_indices.json
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [UAE] Saved full manifest: artifacts/splits/uae_full_manifest.csv
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [UCI] Saved train (320 rows): data/splits/uci_train.csv
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [UCI] Saved test (80 rows): data/splits/uci_test.csv
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [KAGGLE] Saved train (160 rows): data/splits/kaggle_train.csv
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [KAGGLE] Saved test (40 rows): data/splits/kaggle_test.csv
+2026-07-06 11:44:37 | INFO     | ckd_splitter | [UAE] Saved external validation full DataFrame (491 rows): data/splits/uae_full.csv
+2026-07-06 11:44:37 | INFO     | ckd_splitter | ======================================================================
+2026-07-06 11:44:37 | INFO     | ckd_splitter | CKD Train/Test Split Pipeline — COMPLETE
+2026-07-06 11:44:37 | INFO     | ckd_splitter | UCI  → train=320, test=80, CV folds=5
+2026-07-06 11:44:37 | INFO     | ckd_splitter | Kaggle → train=160, test=40, CV folds=25
+2026-07-06 11:44:37 | INFO     | ckd_splitter | UAE  → 491 rows (external validation, never split)
+2026-07-06 11:44:37 | INFO     | ckd_splitter | ======================================================================
+2026-07-07 16:13:05 | INFO     | ckd_splitter | ======================================================================
+2026-07-07 16:13:05 | INFO     | ckd_splitter | CKD Train/Test Split Pipeline — START
+2026-07-07 16:13:05 | INFO     | ckd_splitter | Random seed: 42
+2026-07-07 16:13:05 | INFO     | ckd_splitter | ======================================================================
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [Step 1] Loading engineered datasets …
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [Step 1] Loaded — UCI: (400, 34) | Kaggle: (200, 38) | UAE: (491, 32)
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [UCI] Starting split …
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [UCI] Full shape: (400, 34) | Target: 'ckd_label' | Distribution: {'1': 250, '0': 150}
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [UCI] Split → train=320 (80%), test=80 (20%)
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [UCI] Train class distribution: {'1': 200, '0': 120}
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [UCI] Test class distribution: {'1': 50, '0': 30}
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [UCI] ✔ Leakage check 1 passed: train/test indices disjoint.
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [UCI] ✔ Leakage check 2 passed: all rows accounted for.
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [UCI] CV: StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [UCI] Generated 5 CV fold(s) (stratified_kfold: n_splits=5, n_repeats=1).
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [UCI] ✔ Leakage check 3 passed: all CV fold indices within train bounds.
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [KAGGLE] Starting split …
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [KAGGLE] Full shape: (200, 38) | Target: 'ckd_stage_label' | Distribution: {'0': 54, '3': 45, '1': 35, '4': 35, '2': 31}
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [KAGGLE] Split → train=160 (80%), test=40 (20%)
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [KAGGLE] Train class distribution: {'0': 43, '3': 36, '4': 28, '1': 28, '2': 25}
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [KAGGLE] Test class distribution: {'0': 11, '3': 9, '1': 7, '4': 7, '2': 6}
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [KAGGLE] ✔ Leakage check 1 passed: train/test indices disjoint.
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [KAGGLE] ✔ Leakage check 2 passed: all rows accounted for.
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [KAGGLE] CV: RepeatedStratifiedKFold(n_splits=5, n_repeats=5, random_state=42)
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [KAGGLE] Generated 25 CV fold(s) (repeated_stratified_kfold: n_splits=5, n_repeats=5).
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [KAGGLE] ✔ Leakage check 3 passed: all CV fold indices within train bounds.
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [UAE] Loading external validation set (no splitting applied) …
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [UAE] External validation set: 491 rows | Class distribution: {'0': 435, '1': 56}
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [UCI] ✔ UAE object-isolation check passed.
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [KAGGLE] ✔ UAE object-isolation check passed.
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [Artifacts] Saved global metadata: artifacts/splits/split_metadata.json
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [UCI] Saved train manifest: artifacts/splits/uci_train_manifest.csv
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [UCI] Saved test manifest: artifacts/splits/uci_test_manifest.csv
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [UCI] Saved CV fold indices (5 folds): artifacts/splits/uci_cv_fold_indices.json
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [KAGGLE] Saved train manifest: artifacts/splits/kaggle_train_manifest.csv
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [KAGGLE] Saved test manifest: artifacts/splits/kaggle_test_manifest.csv
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [KAGGLE] Saved CV fold indices (25 folds): artifacts/splits/kaggle_cv_fold_indices.json
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [UAE] Saved full manifest: artifacts/splits/uae_full_manifest.csv
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [UCI] Saved train (320 rows): data/splits/uci_train.csv
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [UCI] Saved test (80 rows): data/splits/uci_test.csv
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [KAGGLE] Saved train (160 rows): data/splits/kaggle_train.csv
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [KAGGLE] Saved test (40 rows): data/splits/kaggle_test.csv
+2026-07-07 16:13:05 | INFO     | ckd_splitter | [UAE] Saved external validation full DataFrame (491 rows): data/splits/uae_full.csv
+2026-07-07 16:13:05 | INFO     | ckd_splitter | ======================================================================
+2026-07-07 16:13:05 | INFO     | ckd_splitter | CKD Train/Test Split Pipeline — COMPLETE
+2026-07-07 16:13:05 | INFO     | ckd_splitter | UCI  → train=320, test=80, CV folds=5
+2026-07-07 16:13:05 | INFO     | ckd_splitter | Kaggle → train=160, test=40, CV folds=25
+2026-07-07 16:13:05 | INFO     | ckd_splitter | UAE  → 491 rows (external validation, never split)
+2026-07-07 16:13:05 | INFO     | ckd_splitter | ======================================================================

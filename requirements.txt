@@ -1,0 +1,27 @@
+# CKD ML Pipeline — Python Dependencies
+# Install with: pip install -r requirements.txt
+
+# Core ML
+numpy>=1.23
+pandas>=1.5
+scikit-learn>=1.2
+xgboost>=1.7
+lightgbm>=3.3
+catboost>=1.2
+
+# Explainability
+shap>=0.41
+lime>=0.2.0.1          # optional — for LIME explanations (--no-lime to skip)
+
+# Plotting
+matplotlib>=3.6
+seaborn>=0.12
+
+# Utilities
+joblib>=1.2
+pyyaml>=6.0
+scipy>=1.9
+statsmodels>=0.13
+
+# Optional — PDF report export
+# weasyprint>=57.0     # pip install weasyprint

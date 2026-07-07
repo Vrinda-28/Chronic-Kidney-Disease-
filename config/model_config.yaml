@@ -1,0 +1,356 @@
+# =============================================================================
+# config/model_config.yaml
+#
+# Central configuration for model_training.py.
+# Nothing is hardcoded in the training module — all hyperparameter grids,
+# model lists, metric definitions, and policies live here.
+#
+# ARCHITECTURE DECISIONS (justified in model_training.py module docstring):
+#
+#  A. SCALING: Not applied to tree ensembles (scale-invariant). Applied
+#     inside each CV fold for Logistic Regression only.
+#
+#  B. SMOTE vs CLASS WEIGHTS: Class weights chosen over SMOTE for both tasks.
+#     Rationale:
+#       - UCI: ~250 CKD vs ~150 notCKD (mild imbalance). class_weight='balanced'
+#         is sufficient and avoids synthetic-sample instability.
+#       - Kaggle: 200 rows / 5 classes → ~32 train rows per class after split.
+#         SMOTE requires k_neighbors+1 = 6 samples per class in each CV fold;
+#         with ~26 training samples per class per fold this is marginal.
+#         class_weight='balanced' is safer and produces comparable results
+#         per ablation studies (Lemaitre et al., 2017, JMLR).
+#       - UAE: NEVER any balancing.
+#
+#  C. FEATURE SELECTION: Mutual Information (MI) used as a filter inside each
+#     CV training fold. MI is non-parametric, handles both linear and
+#     non-linear associations, and is fast enough for 36/40-feature datasets.
+#     Top-k features are selected per fold; the union across folds is used
+#     for the final model fit on the full training set.
+#     SelectKBest(mutual_info_classif, k=20) for UCI; k=25 for Kaggle.
+#
+#  D. HYPERPARAMETER SEARCH: RandomizedSearchCV is NOT used here. Instead,
+#     we use a pre-specified small grid evaluated manually across CV folds.
+#     Reason: with only 320/160 training rows, a nested CV search would
+#     produce high-variance parameter estimates. A literature-informed
+#     fixed grid is more reliable and more interpretable for a paper.
+#
+#  E. MODEL SELECTION: Based on CV macro-F1 (primary) and ROC-AUC (secondary).
+#     Test set is evaluated ONCE after final model is selected.
+#
+#  F. CALIBRATION: Isotonic regression calibration applied to all probability-
+#     outputting models after final training, using a 10% hold-out from the
+#     training set. Calibration is NOT applied using test data.
+# =============================================================================
+
+random_seed: 42
+
+# ---------------------------------------------------------------------------
+# Task definitions
+# ---------------------------------------------------------------------------
+tasks:
+  uci:
+    task_type: "binary"
+    target_col: "ckd_label"
+    positive_class: 1
+    n_classes: 2
+    class_names: ["notckd", "ckd"]
+    splits_dir: "data/splits"
+    train_file: "uci_train.csv"
+    test_file: "uci_test.csv"
+    cv_folds_file: "artifacts/splits/uci_cv_fold_indices.json"
+    artifacts_dir: "artifacts/models/uci"
+    primary_metric: "roc_auc"
+    secondary_metric: "f1"
+    description: "UCI CKD Binary Classification"
+
+  kaggle:
+    task_type: "multiclass"
+    target_col: "ckd_stage_label"
+    positive_class: null
+    n_classes: 5
+    class_names: ["stage1", "stage2", "stage3", "stage4", "stage5"]
+    splits_dir: "data/splits"
+    train_file: "kaggle_train.csv"
+    test_file: "kaggle_test.csv"
+    cv_folds_file: "artifacts/splits/kaggle_cv_fold_indices.json"
+    artifacts_dir: "artifacts/models/kaggle"
+    primary_metric: "balanced_accuracy"
+    secondary_metric: "macro_f1"
+    description: "Kaggle CKD Stage Multi-class Classification"
+
+  uae:
+    task_type: "binary"
+    target_col: "ckd_label"
+    splits_dir: "data/splits"
+    full_file: "uae_full.csv"
+    description: "UAE External Validation (never trained, never split)"
+    role: "external_validation_only"
+    splits_dir: "data/splits"
+    full_file: "uae_full.csv"
+    target_col: "ckd_label"
+
+# ---------------------------------------------------------------------------
+# Models to train — per task
+# Binary task: LR (baseline), RF, XGBoost, LightGBM, CatBoost
+# Multiclass task: RF, XGBoost, LightGBM, CatBoost
+# Logistic Regression excluded from multiclass (poor ordinal performance,
+# not reported in any of the 5 reviewed CKD papers for staging)
+# ---------------------------------------------------------------------------
+models:
+  binary:
+    - name: "LogisticRegression"
+      enabled: true
+      role: "baseline"
+      requires_scaling: true
+      supports_class_weight: true
+      supports_predict_proba: true
+      params:
+        C: 1.0
+        max_iter: 1000
+        solver: "lbfgs"
+        class_weight: "balanced"
+        random_state: 42
+
+    - name: "RandomForest"
+      enabled: true
+      requires_scaling: false
+      supports_class_weight: true
+      supports_predict_proba: true
+      params:
+        n_estimators: 300
+        max_depth: null
+        min_samples_split: 5
+        min_samples_leaf: 2
+        max_features: "sqrt"
+        class_weight: "balanced_subsample"
+        n_jobs: -1
+        random_state: 42
+
+    - name: "XGBoost"
+      enabled: true
+      requires_scaling: false
+      supports_class_weight: false   # uses scale_pos_weight instead
+      supports_predict_proba: true
+      params:
+        n_estimators: 300
+        max_depth: 6
+        learning_rate: 0.05
+        subsample: 0.8
+        colsample_bytree: 0.8
+        reg_alpha: 0.1
+        reg_lambda: 1.0
+        # scale_pos_weight computed at runtime = n_negative / n_positive
+        use_label_encoder: false
+        eval_metric: "logloss"
+        random_state: 42
+
+    - name: "LightGBM"
+      enabled: true
+      requires_scaling: false
+      supports_class_weight: true
+      supports_predict_proba: true
+      params:
+        n_estimators: 300
+        max_depth: -1
+        num_leaves: 31
+        learning_rate: 0.05
+        subsample: 0.8
+        colsample_bytree: 0.8
+        reg_alpha: 0.1
+        reg_lambda: 1.0
+        class_weight: "balanced"
+        n_jobs: -1
+        random_state: 42
+        verbose: -1
+
+    - name: "CatBoost"
+      enabled: true
+      requires_scaling: false
+      supports_class_weight: true
+      supports_predict_proba: true
+      params:
+        iterations: 300
+        depth: 6
+        learning_rate: 0.05
+        l2_leaf_reg: 3.0
+        # auto_class_weights applied at runtime
+        random_seed: 42
+        verbose: 0
+
+  multiclass:
+    - name: "RandomForest"
+      enabled: true
+      requires_scaling: false
+      supports_class_weight: true
+      supports_predict_proba: true
+      params:
+        n_estimators: 300
+        max_depth: null
+        min_samples_split: 5
+        min_samples_leaf: 2
+        max_features: "sqrt"
+        class_weight: "balanced_subsample"
+        n_jobs: -1
+        random_state: 42
+
+    - name: "XGBoost"
+      enabled: true
+      requires_scaling: false
+      supports_class_weight: false
+      supports_predict_proba: true
+      params:
+        n_estimators: 300
+        max_depth: 6
+        learning_rate: 0.05
+        subsample: 0.8
+        colsample_bytree: 0.8
+        reg_alpha: 0.1
+        reg_lambda: 1.0
+        objective: "multi:softprob"
+        eval_metric: "mlogloss"
+        random_state: 42
+
+    - name: "LightGBM"
+      enabled: true
+      requires_scaling: false
+      supports_class_weight: true
+      supports_predict_proba: true
+      params:
+        n_estimators: 300
+        max_depth: -1
+        num_leaves: 31
+        learning_rate: 0.05
+        subsample: 0.8
+        colsample_bytree: 0.8
+        reg_alpha: 0.1
+        reg_lambda: 1.0
+        objective: "multiclass"
+        class_weight: "balanced"
+        n_jobs: -1
+        random_state: 42
+        verbose: -1
+
+    - name: "CatBoost"
+      enabled: true
+      requires_scaling: false
+      supports_class_weight: true
+      supports_predict_proba: true
+      params:
+        iterations: 300
+        depth: 6
+        learning_rate: 0.05
+        l2_leaf_reg: 3.0
+        loss_function: "MultiClass"
+        random_seed: 42
+        verbose: 0
+
+# ---------------------------------------------------------------------------
+# Feature selection — applied inside each CV training fold
+# ---------------------------------------------------------------------------
+feature_selection:
+  enabled: true
+  method: "mutual_info"       # mutual_info | xgb_importance | none
+  binary_k: 20                # top-k features to keep for UCI task
+  multiclass_k: 25            # top-k features for Kaggle task
+  # The union of selected features across all CV folds is used for the
+  # final model refitted on the complete training set.
+  policy: "inside_cv_train_folds_only"
+
+# ---------------------------------------------------------------------------
+# Scaling — only applied to LogisticRegression
+# ---------------------------------------------------------------------------
+scaling:
+  scaler: "StandardScaler"
+  apply_to_models: ["LogisticRegression"]
+  policy: "fit_on_train_fold_transform_val_and_test"
+
+# ---------------------------------------------------------------------------
+# Imbalance handling
+# ---------------------------------------------------------------------------
+class_imbalance:
+  strategy: "class_weights"   # class_weights | smote | none
+  # "class_weights" uses the model's built-in class_weight or scale_pos_weight
+  # SMOTE is not used — see architecture decision B above
+  smote_never_on: ["val_fold", "test", "uae"]
+
+# ---------------------------------------------------------------------------
+# Calibration — applied after final model is trained
+# ---------------------------------------------------------------------------
+calibration:
+  enabled: true
+  method: "isotonic"          # isotonic | sigmoid
+  # Uses a 10% stratified hold-out from the full training set.
+  # This hold-out is taken from training data ONLY. Test data is never used.
+  calibration_holdout_fraction: 0.10
+
+# ---------------------------------------------------------------------------
+# Evaluation metrics
+# ---------------------------------------------------------------------------
+metrics:
+  binary:
+    - accuracy
+    - precision
+    - recall
+    - f1
+    - roc_auc
+    - pr_auc
+    - mcc
+    - sensitivity    # = recall for binary (alias)
+    - specificity
+    - balanced_accuracy
+
+  multiclass:
+    - accuracy
+    - balanced_accuracy
+    - macro_precision
+    - macro_recall
+    - macro_f1
+    - weighted_f1
+    - cohen_kappa
+
+# ---------------------------------------------------------------------------
+# Artifacts to save per model
+# ---------------------------------------------------------------------------
+artifacts:
+  save_model: true              # joblib-serialised trained model
+  save_calibrated_model: true   # joblib-serialised calibrated model
+  save_cv_metrics: true         # per-fold metric arrays (JSON)
+  save_cv_summary: true         # mean ± std across folds (JSON)
+  save_test_metrics: true       # held-out test set metrics (JSON)
+  save_confusion_matrix: true   # numpy array (npy) + JSON
+  save_feature_importance: true # model-native importance (JSON)
+  save_probabilities: true      # predicted probabilities on test set (CSV)
+  save_predictions: true        # predicted labels on test set (CSV)
+  save_selected_features: true  # list of features selected (JSON)
+  save_hyperparameters: true    # model params used (JSON)
+  save_training_metadata: true  # timestamps, versions, fingerprints (JSON)
+  save_best_model_summary: true # best_model.json at top-level artifacts dir
+
+# ---------------------------------------------------------------------------
+# UAE external validation
+# ---------------------------------------------------------------------------
+uae_validation:
+  # UAE is loaded and evaluated ONCE after the best model per task is selected.
+  # No fitting, no SMOTE, no scaling fit, no feature selection.
+  enabled: true
+  # UAE uses UCI's selected features (intersection with UAE's feature set).
+  # For Kaggle's staging model, UAE evaluation is skipped (UAE is binary).
+  apply_uci_model_to_uae: true
+  apply_kaggle_model_to_uae: false   # UAE has no stage labels
+
+# ---------------------------------------------------------------------------
+# Logging
+# ---------------------------------------------------------------------------
+logging:
+  log_dir: "logs"
+  log_filename: "model_training.log"
+  console_level: "INFO"
+  file_level: "DEBUG"
+
+# ---------------------------------------------------------------------------
+# Reproducibility
+# ---------------------------------------------------------------------------
+reproducibility:
+  save_training_fingerprints: true
+  numpy_seed: 42
+  python_hash_seed: "PYTHONHASHSEED=42"

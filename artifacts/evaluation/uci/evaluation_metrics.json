@@ -1,0 +1,151 @@
+{
+  "model_name": "CatBoost",
+  "task": "uci_binary_ckd",
+  "cv_roc_auc": 0.999583,
+  "n_test_samples": 80,
+  "n_features": 23,
+  "features_used": [
+    "blood_pressure",
+    "specific_gravity",
+    "albumin",
+    "blood_glucose_random",
+    "blood_urea",
+    "serum_creatinine",
+    "sodium",
+    "potassium",
+    "hemoglobin",
+    "packed_cell_volume",
+    "white_blood_cell_count",
+    "red_blood_cell_count",
+    "hypertension",
+    "diabetes_mellitus",
+    "bun_creatinine_ratio",
+    "sodium_potassium_ratio",
+    "bp_risk_score",
+    "anemia_risk_score",
+    "cardiovascular_burden_score",
+    "age_creatinine_interaction",
+    "urea_creatinine_product",
+    "hemoglobin_creatinine_ratio",
+    "albumin_specific_gravity_interaction"
+  ],
+  "test_metrics": {
+    "accuracy": {
+      "point": 1.0,
+      "ci_lower": 1.0,
+      "ci_upper": 1.0,
+      "ci_level": 0.95
+    },
+    "balanced_accuracy": {
+      "point": 1.0,
+      "ci_lower": 1.0,
+      "ci_upper": 1.0,
+      "ci_level": 0.95
+    },
+    "precision": {
+      "point": 1.0,
+      "ci_lower": 1.0,
+      "ci_upper": 1.0,
+      "ci_level": 0.95
+    },
+    "recall": {
+      "point": 1.0,
+      "ci_lower": 1.0,
+      "ci_upper": 1.0,
+      "ci_level": 0.95
+    },
+    "sensitivity": {
+      "point": 1.0,
+      "ci_lower": 1.0,
+      "ci_upper": 1.0,
+      "ci_level": 0.95
+    },
+    "specificity": {
+      "point": 1.0,
+      "ci_lower": 1.0,
+      "ci_upper": 1.0,
+      "ci_level": 0.95
+    },
+    "f1": {
+      "point": 1.0,
+      "ci_lower": 1.0,
+      "ci_upper": 1.0,
+      "ci_level": 0.95
+    },
+    "mcc": {
+      "point": 1.0,
+      "ci_lower": 1.0,
+      "ci_upper": 1.0,
+      "ci_level": 0.95
+    },
+    "roc_auc": {
+      "point": 1.0,
+      "ci_lower": 1.0,
+      "ci_upper": 1.0,
+      "ci_level": 0.95
+    },
+    "pr_auc": {
+      "point": 1.0,
+      "ci_lower": 1.0,
+      "ci_upper": 1.0,
+      "ci_level": 0.95
+    },
+    "brier_score": {
+      "point": 8.7e-05,
+      "ci_lower": 0.0,
+      "ci_upper": 0.000261,
+      "ci_level": 0.95
+    },
+    "tp": {
+      "point": 50
+    },
+    "tn": {
+      "point": 30
+    },
+    "fp": {
+      "point": 0
+    },
+    "fn": {
+      "point": 0
+    },
+    "threshold": {
+      "point": 0.5,
+      "ci_lower": 0.5,
+      "ci_upper": 0.5,
+      "ci_level": 0.95
+    },
+    "n_samples": {
+      "point": 80
+    },
+    "n_positive": {
+      "point": 50
+    },
+    "prevalence": {
+      "point": 0.625,
+      "ci_lower": 0.5125,
+      "ci_upper": 0.725,
+      "ci_level": 0.95
+    }
+  },
+  "calibration_metrics": {
+    "ece": 0.00142,
+    "brier_score": 8.7e-05,
+    "n_bins": 10
+  },
+  "threshold_analysis": {
+    "youden": {
+      "threshold": 0.959,
+      "sensitivity": 1.0,
+      "specificity": 1.0,
+      "youden_j": 1.0
+    },
+    "f1_optimal": {
+      "threshold": 0.959,
+      "f1": 1.0
+    },
+    "mcc_optimal": {
+      "threshold": 0.08,
+      "mcc": 1.0
+    }
+  }
+}

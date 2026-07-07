@@ -1,0 +1,294 @@
+# =============================================================================
+# datasets.yaml
+#
+# Central configuration for the CKD data ingestion layer.
+# NOTHING in data_loader.py should hardcode paths or column-name mappings -
+# everything lives here so the loader stays reusable across dataset revisions.
+# =============================================================================
+
+datasets:
+
+  uci:
+    source_name: "UCI"
+    display_name: "UCI Chronic Kidney Disease Dataset"
+    path: "data/raw/uci_ckd.csv"
+    role: "train_candidate"          # train_candidate | external_validation
+    target_column: "ckd_label"       # standardized name, after schema mapping
+    target_type: "binary"            # binary | multiclass
+    id_column: null                  # UCI has no patient identifier column
+    expected_min_rows: 350
+    expected_max_rows: 450
+    # Columns required to exist AFTER standardization for the file to be usable.
+    required_columns:
+      - age
+      - blood_pressure
+      - specific_gravity
+      - albumin
+      - blood_urea
+      - serum_creatinine
+      - sodium
+      - potassium
+      - hemoglobin
+      - hypertension
+      - diabetes_mellitus
+      - ckd_label
+
+  kaggle:
+    source_name: "Kaggle"
+    display_name: "Kaggle CKD Dataset with Stages"
+    path: "data/raw/kaggle_ckd_stages.csv"
+    role: "train_candidate"
+    target_column: "ckd_stage_label"
+    target_type: "multiclass"
+    id_column: "patient_id"          # set to null if the file has none
+    # Updated to match the verified current file (202 rows). Re-widen this
+    # range if a larger revision of the Kaggle dataset is swapped in later.
+    expected_min_rows: 150
+    expected_max_rows: 300
+    required_columns:
+      - age
+      - blood_pressure_diastolic
+      - serum_creatinine
+      - hemoglobin
+      - albumin
+      - blood_urea
+      - sodium
+      - potassium
+      - ckd_stage_label
+
+  uae:
+    source_name: "UAE"
+    display_name: "UAE Hospital CKD Cohort (External Validation)"
+    path: "data/raw/uae_ckd_cohort.csv"
+    role: "external_validation"      # NEVER merged into training data
+    target_column: "ckd_label"
+    target_type: "unknown"           # may be binary or staged - kept as-is
+    id_column: "patient_id"
+    expected_min_rows: 450
+    expected_max_rows: 650
+    required_columns:
+      - age
+      - serum_creatinine
+      - egfr
+      - systolic_bp
+      - diastolic_bp
+      - ckd_label
+
+# =============================================================================
+# Schema mapping: source-specific raw column name -> unified standardized name
+#
+# Lookup keys are normalized before matching (lowercased, stripped, internal
+# whitespace collapsed to a single underscore), so "Blood Pressure", "bp",
+# and "blood_pressure " all resolve correctly regardless of how the raw
+# column literally appears in a given CSV. Add new datasets/variants here -
+# never inside the Python code.
+# =============================================================================
+
+schema_mapping:
+
+  uci:
+    age: age
+    bp: blood_pressure
+    blood_pressure: blood_pressure
+    sg: specific_gravity
+    specific_gravity: specific_gravity
+    al: albumin
+    albumin: albumin
+    su: sugar
+    sugar: sugar
+    rbc: red_blood_cells
+    pc: pus_cell
+    pcc: pus_cell_clumps
+    ba: bacteria
+    bgr: blood_glucose_random
+    bu: blood_urea
+    blood_urea: blood_urea
+    sc: serum_creatinine
+    serum_creatinine: serum_creatinine
+    sod: sodium
+    sodium: sodium
+    pot: potassium
+    potassium: potassium
+    hemo: hemoglobin
+    hemoglobin: hemoglobin
+    pcv: packed_cell_volume
+    wc: white_blood_cell_count
+    wbcc: white_blood_cell_count
+    rc: red_blood_cell_count
+    rbcc: red_blood_cell_count
+    htn: hypertension
+    hypertension: hypertension
+    dm: diabetes_mellitus
+    diabetes: diabetes_mellitus
+    diabetes_mellitus: diabetes_mellitus
+    cad: coronary_artery_disease
+    appet: appetite
+    pe: pedal_edema
+    ane: anemia
+    classification: ckd_label
+    class: ckd_label
+
+  kaggle:
+    age: age
+    "blood_pressure": blood_pressure
+    "bp": blood_pressure
+    "blood_pressure_(mm/hg)": blood_pressure
+    "specific_gravity": specific_gravity
+    "sg": specific_gravity
+    "albumin": albumin
+    "al": albumin
+    "blood_urea": blood_urea
+    "bu": blood_urea
+    "blood_urea_(mg/dl)": blood_urea
+    "serum_creatinine": serum_creatinine
+    "sc": serum_creatinine
+    "serum_creatinine_(mg/dl)": serum_creatinine
+    "sodium": sodium
+    "sod": sodium
+    "sodium_(meq/l)": sodium
+    "potassium": potassium
+    "pot": potassium
+    "potassium_(meq/l)": potassium
+    "hemoglobin": hemoglobin
+    "hemo": hemoglobin
+    "haemoglobin": hemoglobin
+    # FIX (review Issue: schema collision): this was previously mapped to
+    # the generic "blood_pressure" key, which collides with
+    # "blood_pressure_(mm/hg)" above. Two raw columns landing on the same
+    # standardized name is a silent-data-loss / ambiguous-target risk (see
+    # CriticalSchemaError in data_loader.py). Diastolic gets its own column.
+    "bp_(diastolic)": blood_pressure_diastolic
+    "hemoglobin_(gms)": hemoglobin
+    "diabetes": diabetes_mellitus
+    "diabetes_mellitus": diabetes_mellitus
+    "hypertension": hypertension
+    "htn": hypertension
+    "patient_id": patient_id
+    "id": patient_id
+    stage: ckd_stage_label
+    ckd_stage: ckd_stage_label
+    # NOTE: kept distinct from "ckd_stage_label" deliberately. If the Kaggle
+    # CSV ever contains both "Stage" and "class" columns simultaneously,
+    # confirm which one is the authoritative target before using either
+    # downstream - do not assume "class" is redundant with "Stage".
+    class: ckd_binary_label
+    rbc: red_blood_cells
+    su: sugar
+    pc: pus_cell
+    pcc: pus_cell_clumps
+    ba: bacteria
+    bgr: blood_glucose_random
+    pcv: packed_cell_volume
+    wbcc: white_blood_cell_count
+    rbcc: red_blood_cell_count
+    dm: diabetes_mellitus
+    cad: coronary_artery_disease
+    appet: appetite
+    pe: pedal_edema
+    ane: anemia
+    grf: egfr
+    # NOTE: similarly distinct from "ckd_stage_label" - review before use.
+    affected: ckd_affected
+
+  uae:
+    age: age
+    "patient_id": patient_id
+    "mrn": patient_id
+    "blood_pressure": blood_pressure
+    "bp": blood_pressure
+    "specific_gravity": specific_gravity
+    "albumin": albumin
+    "blood_urea": blood_urea
+    "serum_creatinine": serum_creatinine
+    "creatinine": serum_creatinine
+    "sodium": sodium
+    "potassium": potassium
+    "hemoglobin": hemoglobin
+    "haemoglobin": hemoglobin
+    "diabetes": diabetes_mellitus
+    "diabetes_mellitus": diabetes_mellitus
+    "hypertension": hypertension
+    "htn": hypertension
+    "classification": ckd_label
+    "ckd_status": ckd_label
+    "diagnosis": ckd_label
+    agebaseline: age
+    creatininebaseline: serum_creatinine
+    egfrbaseline: egfr
+    sbpbaseline: systolic_bp
+    dbpbaseline: diastolic_bp
+    # NOTE: this is the cohort's actual outcome/event field and is the
+    # primary candidate for "ckd_label" in the real UAE file. If the source
+    # CSV ever contains "EventCKD35" together with "classification" /
+    # "ckd_status" / "diagnosis" in the SAME file, only one of these may be
+    # mapped to "ckd_label" - the loader now raises CriticalSchemaError
+    # instead of silently warning if more than one ends up mapped here.
+    eventckd35: ckd_label
+    historydiabetes: history_diabetes
+    historychd: history_chd
+    historyvascular: history_vascular
+    historysmoking: history_smoking
+    historyhtn: history_hypertension
+    historydld: history_dyslipidemia
+    historyobesity: history_obesity
+    dldmeds: dld_meds
+    dmmeds: diabetes_meds
+    htnmeds: hypertension_meds
+    aceiarb: acei_arb
+    sex: sex
+    cholesterolbaseline: cholesterol
+    bmibaseline: bmi
+    timetoeventmonths: time_to_event_months
+    time_year: followup_years
+
+  # ---------------------------------------------------------------------
+  # Issue 2: "bp limit" (Kaggle) is intentionally left UNMAPPED.
+  #
+  # It is ambiguous whether this represents a clinical blood-pressure
+  # threshold/flag, a data-entry artifact, or something else entirely -
+  # mapping it onto "blood_pressure" (or any existing clinical feature)
+  # without confirming its meaning risks silently corrupting that feature
+  # with unrelated values. It will continue to pass through normalized
+  # (as "bp_limit") and appear in unmapped_raw_columns / schema_warnings
+  # in DatasetMetadata so it stays visible until a domain expert confirms
+  # its meaning and an explicit mapping (or explicit drop decision) is
+  # added here. The loader does not auto-drop unmapped columns.
+  # ---------------------------------------------------------------------
+
+# =============================================================================
+# Logging configuration
+# =============================================================================
+logging:
+  log_dir: "logs"
+  log_filename: "data_loader.log"
+  console_level: "INFO"
+  file_level: "DEBUG"
+
+# Numeric columns considered for the IQR-based outlier report.
+# Kept centralized so it can be extended as new datasets add features.
+numeric_columns_for_outlier_check:
+  - age
+  - blood_pressure
+  - blood_pressure_diastolic
+  - specific_gravity
+  - albumin
+  - sugar
+  - blood_glucose_random
+  - blood_urea
+  - serum_creatinine
+  - sodium
+  - potassium
+  - hemoglobin
+  - packed_cell_volume
+  - white_blood_cell_count
+  - red_blood_cell_count
+  - egfr
+  - systolic_bp
+  - diastolic_bp
+  - cholesterol
+  - bmi
+
+# Threshold for the high-cardinality-column quality check (Issue 6):
+# an object/categorical column is flagged if n_unique / n_rows >= this
+# ratio (default 0.9 = looks almost like a unique identifier).
+high_cardinality_threshold_ratio: 0.9

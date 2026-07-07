@@ -1,0 +1,184 @@
+# =============================================================================
+# config/evaluation_config.yaml
+#
+# Central configuration for evaluate.py and external_validation.py.
+# Nothing is hardcoded in the evaluation modules — all paths, thresholds,
+# CI settings, plot styles, and SHAP parameters live here.
+#
+# Pipeline position:
+#   model_training.py → evaluate.py (THIS CONFIG)
+#                     → external_validation.py (THIS CONFIG)
+# =============================================================================
+
+random_seed: 42
+
+# ---------------------------------------------------------------------------
+# Task evaluation targets
+# ---------------------------------------------------------------------------
+tasks:
+  uci:
+    task_type: "binary"
+    target_col: "ckd_label"
+    n_classes: 2
+    class_names: ["notckd", "ckd"]
+    positive_class: 1
+    # Where model artifacts were saved by model_training.py
+    model_artifacts_dir: "artifacts/models/uci"
+    # Test split (never used during training)
+    splits_dir: "data/splits"
+    test_file: "uci_test.csv"
+    train_file: "uci_train.csv"
+    # Where evaluation outputs will be written
+    eval_output_dir: "artifacts/evaluation/uci"
+    best_model: "CatBoost"            # from best_model.json
+    description: "UCI CKD Binary Classification"
+
+  kaggle:
+    task_type: "multiclass"
+    target_col: "ckd_stage_label"
+    n_classes: 5
+    class_names: ["Stage 1", "Stage 2", "Stage 3", "Stage 4", "Stage 5"]
+    positive_class: null
+    model_artifacts_dir: "artifacts/models/kaggle"
+    splits_dir: "data/splits"
+    test_file: "kaggle_test.csv"
+    train_file: "kaggle_train.csv"
+    eval_output_dir: "artifacts/evaluation/kaggle"
+    best_model: "RandomForest"        # from best_model.json
+    description: "Kaggle CKD Stage Multi-class Classification"
+
+  uae:
+    task_type: "binary"
+    target_col: "ckd_label"
+    n_classes: 2
+    class_names: ["notckd", "ckd"]
+    positive_class: 1
+    # UAE data (NEVER used in training)
+    splits_dir: "data/splits"
+    uae_file: "uae_full.csv"
+    # Track A artifacts saved by model_training.py / uae_validation.py
+    track_a_artifacts_dir: "artifacts/models/uci/uae_validation/track_a"
+    track_a_predictions_csv: "artifacts/models/uci/uae_validation/track_a/track_a_uae_predictions.csv"
+    track_a_model: "artifacts/models/uci/uae_validation/track_a/track_a_reduced_model.joblib"
+    # Supplementary report from model_training
+    uae_full_report: "artifacts/models/uci/uae_validation/uae_validation_full_report.json"
+    eval_output_dir: "artifacts/evaluation/uae"
+    # Epidemiology (used for population shift reporting)
+    uae_ckd_prevalence: 0.114         # 56 / 491 = 11.4%
+    uci_ckd_prevalence: 0.625         # approx from training split
+    description: "UAE External Validation Cohort"
+
+# ---------------------------------------------------------------------------
+# Bootstrap confidence intervals
+# ---------------------------------------------------------------------------
+bootstrap:
+  enabled: true
+  n_iterations: 1000
+  confidence_level: 0.95
+  # Stratified bootstrap (preserves class ratio in each resample)
+  stratified: true
+
+# ---------------------------------------------------------------------------
+# Threshold analysis (for binary / UAE evaluation)
+# ---------------------------------------------------------------------------
+threshold_analysis:
+  enabled: true
+  sweep_range: [0.01, 0.99]       # start, stop
+  sweep_n_steps: 99               # number of thresholds to evaluate
+  # Primary recommended threshold method
+  primary_method: "youden"        # youden | f1 | mcc | fixed
+  # Always also report metrics at this fixed threshold for transparency
+  fixed_comparison_threshold: 0.5
+  # Methods to include in the report
+  methods:
+    - youden                      # argmax(sensitivity + specificity - 1)
+    - f1                          # argmax(F1 score)
+    - mcc                         # argmax(MCC)
+
+# ---------------------------------------------------------------------------
+# Calibration analysis
+# ---------------------------------------------------------------------------
+calibration:
+  enabled: true
+  n_bins: 10                      # reliability diagram bins
+  strategy: "uniform"             # uniform (equal-width) | quantile (equal-count)
+  # Metrics to compute
+  compute_ece: true
+  compute_brier: true
+  compute_reliability: true
+
+# ---------------------------------------------------------------------------
+# SHAP explainability
+# ---------------------------------------------------------------------------
+shap:
+  enabled: true
+  # Maximum number of test samples to use for SHAP (speed/memory tradeoff)
+  max_samples: null               # null = use all test samples
+  # Maximum number of background samples for KernelExplainer fallback
+  background_samples: 100
+  # Number of top features to show in bar/summary plots
+  top_n_features: 20
+  # Plot types to generate
+  plots:
+    - summary                     # beeswarm summary plot
+    - bar                         # mean |SHAP| bar plot
+  # For multiclass: which class to explain (null = explain all)
+  multiclass_class_to_explain: null
+
+# ---------------------------------------------------------------------------
+# Feature importance (model-native)
+# ---------------------------------------------------------------------------
+feature_importance:
+  enabled: true
+  top_n: 20
+
+# ---------------------------------------------------------------------------
+# Plot styling
+# ---------------------------------------------------------------------------
+plots:
+  style: "seaborn-v0_8-whitegrid"
+  figure_dpi: 150
+  figure_format: "png"
+  # Figure sizes (width, height) in inches
+  roc_figsize: [8, 6]
+  pr_figsize: [8, 6]
+  cm_figsize: [8, 7]
+  calibration_figsize: [8, 6]
+  threshold_figsize: [12, 6]
+  shap_summary_figsize: [10, 8]
+  shap_bar_figsize: [10, 6]
+  feature_importance_figsize: [10, 6]
+  roc_ovr_figsize: [10, 8]
+  # Color palette
+  primary_color: "#2196F3"
+  positive_class_color: "#E53935"
+  negative_class_color: "#43A047"
+  # Font
+  font_family: "DejaVu Sans"
+
+# ---------------------------------------------------------------------------
+# Logging
+# ---------------------------------------------------------------------------
+logging:
+  log_dir: "logs"
+  log_filename: "evaluation.log"
+  console_level: "INFO"
+  file_level: "DEBUG"
+
+# ---------------------------------------------------------------------------
+# Output artifacts
+# ---------------------------------------------------------------------------
+artifacts:
+  save_metrics_json: true
+  save_classification_report: true
+  save_confusion_matrix_plot: true
+  save_roc_curve: true
+  save_pr_curve: true
+  save_calibration_plot: true
+  save_threshold_plot: true
+  save_shap_plots: true
+  save_shap_values_npy: true
+  save_feature_importance_plot: true
+  save_summary_report: true
+  # Top-level summary
+  summary_report_path: "artifacts/evaluation/summary_report.md"

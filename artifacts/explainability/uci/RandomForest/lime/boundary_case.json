@@ -1,0 +1,68 @@
+{
+  "case_name": "boundary_case",
+  "patient_index": 12,
+  "y_true": 1,
+  "y_proba": 0.8178622424203589,
+  "lime_features": [
+    [
+      "specific_gravity <= 1.01",
+      0.08177058517876462
+    ],
+    [
+      "cardiovascular_burden_score <= 0.00",
+      -0.06718332797236706
+    ],
+    [
+      "hypertension <= 0.00",
+      -0.06092577325333451
+    ],
+    [
+      "albumin_specific_gravity_interaction <= 0.00",
+      -0.05541272490583925
+    ],
+    [
+      "12.65 < hemoglobin <= 14.30",
+      -0.05239391846243978
+    ],
+    [
+      "diabetes_mellitus <= 0.00",
+      -0.05058314276093554
+    ],
+    [
+      "albumin <= 0.00",
+      -0.04332744662978611
+    ],
+    [
+      "3.18 < hemoglobin_creatinine_ratio <= 9.73",
+      0.04301266286958623
+    ],
+    [
+      "packed_cell_volume > 44.00",
+      -0.04251501110828417
+    ],
+    [
+      "4.57 < red_blood_cell_count <= 4.80",
+      0.03977109616186713
+    ],
+    [
+      "31.36 < sodium_potassium_ratio <= 34.74",
+      -0.022752531463806284
+    ],
+    [
+      "age_creatinine_interaction <= 39.30",
+      -0.02059752536695235
+    ],
+    [
+      "1.30 < serum_creatinine <= 3.32",
+      0.01997649827034488
+    ],
+    [
+      "6800.00 < white_blood_cell_count <= 8000.00",
+      -0.016139325323982042
+    ],
+    [
+      "0.10 < anemia_risk_score <= 0.31",
+      -0.013904443430995431
+    ]
+  ]
+}

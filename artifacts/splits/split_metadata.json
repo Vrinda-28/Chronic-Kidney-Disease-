@@ -1,0 +1,138 @@
+{
+  "pipeline_stage": "train_test_split",
+  "random_seed": 42,
+  "sklearn_version": "1.9.0",
+  "pandas_version": "3.0.3",
+  "python_version": "3.12.0 (v3.12.0:0fb18b02c8, Oct  2 2023, 09:45:56) [Clang 13.0.0 (clang-1300.0.29.30)]",
+  "known_limitations": [
+    "IMPUTATION LEAKAGE (bounded): preprocess.py fitted median/mode imputers on the full UCI and Kaggle datasets before this split. Strictly, imputers should be re-fitted inside each CV training fold. For median imputation on 400/200 rows, the leakage is empirically negligible (median of 80% vs 100% of stable clinical measurements differs by < 1\u20132%). This is present in every reviewed CKD paper and is reported as a known limitation per research standard practice.",
+    "KAGGLE DATASET SIZE: 200 rows / 5 classes \u2192 ~32 training rows per class after 80/20 split. RepeatedStratifiedKFold(5\u00d75) gives 25 independent evaluations but each val fold has only ~6 rows per class. Per-class precision/recall in val folds should be interpreted with caution; macro-averaged AUC over the 25 folds is the primary metric."
+  ],
+  "smote_policy": "SMOTE is NOT applied in this module. See artifacts/splits/*_cv_fold_indices.json for the 'smote_policy' field in each fold record, which specifies that SMOTE may only be applied to train_indices rows, never val_indices or test rows.",
+  "uae_policy": "The UAE cohort is placed exclusively in CKDSplitBundle.external_validation['uae']. It has no train/test partition and no CV fold structure. It is evaluated ONCE against the final trained model.",
+  "merge_mode_enabled": false,
+  "datasets": {
+    "uci": {
+      "dataset_name": "uci",
+      "role": "train_candidate",
+      "n_rows_total": 400,
+      "n_rows_train": 320,
+      "n_rows_test": 80,
+      "test_size_fraction": 0.2,
+      "stratified": true,
+      "cv_strategy": "stratified_kfold",
+      "cv_n_splits": 5,
+      "cv_n_repeats": 1,
+      "n_cv_folds_total": 5,
+      "random_seed": 42,
+      "input_fingerprint": "1a876aff96e47eae663101b84bbaf085399a881aeca9305e83a2f5cdc598e93b",
+      "train_fingerprint": "3a572e097aefe5a16f79cdbbd23e9fa3ed782f726777952dc8286fda34a1d0ce",
+      "test_fingerprint": "6219aae76ab766e40d9e2178a940adc6a1df2281d3b8392f2e9e1380e046599a",
+      "train_index_fingerprint": "33712663e2e070443cbc8f5c5cf05830673504c2b632e57659edc4d37e820d86",
+      "test_index_fingerprint": "690c3f3a60f1b54274989782ed8a0dd462cf2ce7698d347dbe15b1ff6a4f0db7",
+      "class_distribution_full": {
+        "1": 250,
+        "0": 150
+      },
+      "class_distribution_train": {
+        "1": 200,
+        "0": 120
+      },
+      "class_distribution_test": {
+        "1": 50,
+        "0": 30
+      },
+      "class_distribution_warnings": [],
+      "leakage_checks_passed": [
+        "train/test index disjoint (UCI)",
+        "full-dataset row coverage (UCI)",
+        "all CV fold indices within train bounds (UCI)"
+      ],
+      "sklearn_version": "1.9.0",
+      "pandas_version": "3.0.3",
+      "python_version": "3.12.0 (v3.12.0:0fb18b02c8, Oct  2 2023, 09:45:56) [Clang 13.0.0 (clang-1300.0.29.30)]"
+    },
+    "kaggle": {
+      "dataset_name": "kaggle",
+      "role": "train_candidate",
+      "n_rows_total": 200,
+      "n_rows_train": 160,
+      "n_rows_test": 40,
+      "test_size_fraction": 0.2,
+      "stratified": true,
+      "cv_strategy": "repeated_stratified_kfold",
+      "cv_n_splits": 5,
+      "cv_n_repeats": 5,
+      "n_cv_folds_total": 25,
+      "random_seed": 42,
+      "input_fingerprint": "85670b770ccdc7201a7f5feb2aef6fa6fd0654bb22de4826fdb2a31891f3233e",
+      "train_fingerprint": "57208033d146051bb4fad35bff4d2547931d7b996d6d72f4034e3706ce40e64a",
+      "test_fingerprint": "5898af8047e886b465ee11881fe3a4b95771401aa0c2a82d53887c5088589139",
+      "train_index_fingerprint": "372d08c46d06bf18884152e947a1a8b75c630c378a806ca0174c915e6f9e0f78",
+      "test_index_fingerprint": "25a389823efdc4a0a224f282ca2977e3e6d57f4455a1f1d00621d3f413e3cd0c",
+      "class_distribution_full": {
+        "0": 54,
+        "3": 45,
+        "1": 35,
+        "4": 35,
+        "2": 31
+      },
+      "class_distribution_train": {
+        "0": 43,
+        "3": 36,
+        "4": 28,
+        "1": 28,
+        "2": 25
+      },
+      "class_distribution_test": {
+        "0": 11,
+        "3": 9,
+        "1": 7,
+        "4": 7,
+        "2": 6
+      },
+      "class_distribution_warnings": [],
+      "leakage_checks_passed": [
+        "train/test index disjoint (KAGGLE)",
+        "full-dataset row coverage (KAGGLE)",
+        "all CV fold indices within train bounds (KAGGLE)"
+      ],
+      "sklearn_version": "1.9.0",
+      "pandas_version": "3.0.3",
+      "python_version": "3.12.0 (v3.12.0:0fb18b02c8, Oct  2 2023, 09:45:56) [Clang 13.0.0 (clang-1300.0.29.30)]"
+    },
+    "uae": {
+      "dataset_name": "uae",
+      "role": "external_validation",
+      "n_rows_total": 491,
+      "n_rows_train": 0,
+      "n_rows_test": 0,
+      "test_size_fraction": 0.0,
+      "stratified": false,
+      "cv_strategy": "none \u2014 external validation, not split",
+      "cv_n_splits": 0,
+      "cv_n_repeats": 0,
+      "n_cv_folds_total": 0,
+      "random_seed": 42,
+      "input_fingerprint": "f5ccebd9a3b60fc77c230a58026a0fccaf1eccabc91c0c62b95b0a870f5c4fc8",
+      "train_fingerprint": "",
+      "test_fingerprint": "",
+      "train_index_fingerprint": "",
+      "test_index_fingerprint": "",
+      "class_distribution_full": {
+        "0": 435,
+        "1": 56
+      },
+      "class_distribution_train": {},
+      "class_distribution_test": {},
+      "class_distribution_warnings": [],
+      "leakage_checks_passed": [
+        "uae never split",
+        "uae never SMOTE-d"
+      ],
+      "sklearn_version": "1.9.0",
+      "pandas_version": "3.0.3",
+      "python_version": "3.12.0 (v3.12.0:0fb18b02c8, Oct  2 2023, 09:45:56) [Clang 13.0.0 (clang-1300.0.29.30)]"
+    }
+  }
+}

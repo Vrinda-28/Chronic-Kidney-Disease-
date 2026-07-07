@@ -1,0 +1,19 @@
+{
+  "primary_method": "youden",
+  "youden": {
+    "threshold": 0.9891,
+    "sensitivity": 0.75,
+    "specificity": 0.7034,
+    "youden_j": 0.4534,
+    "note": "Youden's J = argmax(sensitivity + specificity - 1). This threshold maximizes the combined sensitivity/specificity tradeoff. This is a retrospective optimization on UAE data \u2014 clearly labeled as post-hoc. The model itself was not modified."
+  },
+  "f1_optimal": {
+    "threshold": 0.9915,
+    "f1": 0.4
+  },
+  "mcc_optimal": {
+    "threshold": 0.99,
+    "mcc": 0.2981
+  },
+  "transparency_note": "BOTH threshold=0.5 and Youden's J results are reported. Neither is hidden. Youden's J represents the clinically optimal operating point for THIS population; threshold=0.5 reflects the default behavior when no population-specific recalibration is done."
+}

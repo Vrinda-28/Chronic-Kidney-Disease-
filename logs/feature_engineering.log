@@ -1,0 +1,338 @@
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | ======================================================================
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | CKD Feature Engineering - START
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | ======================================================================
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [uci] Loaded processed dataset: data/processed/uci_processed.csv -> shape (400, 27)
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [kaggle] Loaded processed dataset: data/processed/kaggle_processed.csv -> shape (200, 31)
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [uae] Loaded processed dataset: data/processed/uae_processed.csv -> shape (491, 24)
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [uci] Starting feature engineering …
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [uci] Created feature 'bun_creatinine_ratio' from ['blood_urea', 'serum_creatinine'] (400 non-null / 400 rows).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [uci] Created feature 'sodium_potassium_ratio' from ['sodium', 'potassium'] (400 non-null / 400 rows).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [uci] Created feature 'bp_risk_score' from ['blood_pressure'] (400 non-null / 400 rows).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [uci] Created feature 'anemia_risk_score' from ['hemoglobin', 'packed_cell_volume', 'red_blood_cell_count'] (400 non-null / 400 rows).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [uci] Created feature 'cardiovascular_burden_score' from ['hypertension', 'coronary_artery_disease', 'diabetes_mellitus'] (400 non-null / 400 rows).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [uci] Created feature 'age_creatinine_interaction' from ['age', 'serum_creatinine'] (400 non-null / 400 rows).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [uci] Created feature 'urea_creatinine_product' from ['blood_urea', 'serum_creatinine'] (400 non-null / 400 rows).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [uci] Created feature 'hemoglobin_creatinine_ratio' from ['hemoglobin', 'serum_creatinine'] (400 non-null / 400 rows).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [uci] Created feature 'albumin_specific_gravity_interaction' from ['albumin', 'specific_gravity'] (400 non-null / 400 rows).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [uci] Feature engineering complete: 9 feature(s) created, final shape (400, 36).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [kaggle] Starting feature engineering …
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'bun_creatinine_ratio' from ['blood_urea', 'serum_creatinine'] (200 non-null / 200 rows).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'sodium_potassium_ratio' from ['sodium', 'potassium'] (200 non-null / 200 rows).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'kidney_dysfunction_score' from ['serum_creatinine', 'egfr'] (200 non-null / 200 rows).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'bp_risk_score' from ['blood_pressure_diastolic'] (200 non-null / 200 rows).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'anemia_risk_score' from ['hemoglobin', 'packed_cell_volume', 'red_blood_cell_count'] (200 non-null / 200 rows).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'cardiovascular_burden_score' from ['hypertension', 'coronary_artery_disease', 'diabetes_mellitus'] (200 non-null / 200 rows).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'age_creatinine_interaction' from ['age', 'serum_creatinine'] (200 non-null / 200 rows).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'urea_creatinine_product' from ['blood_urea', 'serum_creatinine'] (200 non-null / 200 rows).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'hemoglobin_creatinine_ratio' from ['hemoglobin', 'serum_creatinine'] (200 non-null / 200 rows).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'albumin_specific_gravity_interaction' from ['albumin', 'specific_gravity'] (200 non-null / 200 rows).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'egfr_age_ratio' from ['egfr', 'age'] (200 non-null / 200 rows).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [kaggle] Feature engineering complete: 11 feature(s) created, final shape (200, 42).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [uae] Starting feature engineering …
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [uae] Created feature 'kidney_dysfunction_score' from ['serum_creatinine', 'egfr'] (491 non-null / 491 rows).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [uae] Created feature 'bp_risk_score' from ['systolic_bp', 'diastolic_bp'] (491 non-null / 491 rows).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [uae] Created feature 'metabolic_risk_score' from ['history_diabetes', 'history_obesity', 'history_dyslipidemia', 'bmi', 'cholesterol'] (491 non-null / 491 rows).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [uae] Created feature 'cardiovascular_burden_score' from ['history_hypertension', 'history_chd', 'history_diabetes'] (491 non-null / 491 rows).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [uae] Created feature 'cardiovascular_burden_score_extended' from ['history_hypertension', 'history_chd', 'history_diabetes', 'history_vascular', 'history_smoking'] (491 non-null / 491 rows).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [uae] Created feature 'age_creatinine_interaction' from ['age', 'serum_creatinine'] (491 non-null / 491 rows).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [uae] Created feature 'egfr_age_ratio' from ['egfr', 'age'] (491 non-null / 491 rows).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [uae] Created feature 'pulse_pressure' from ['systolic_bp', 'diastolic_bp'] (491 non-null / 491 rows).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [uae] Created feature 'comorbidity_count' from ['history_diabetes', 'history_chd', 'history_vascular', 'history_smoking', 'history_hypertension', 'history_dyslipidemia', 'history_obesity'] (491 non-null / 491 rows).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [uae] Created feature 'medication_burden' from ['dld_meds', 'diabetes_meds', 'hypertension_meds', 'acei_arb'] (491 non-null / 491 rows).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [uae] Feature engineering complete: 10 feature(s) created, final shape (491, 34).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [uci] Saved engineered dataset: data/engineered/uci_engineered.csv (400 rows, 34 cols).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [uci] Saved provenance file: data/engineered/uci_provenance.csv (join key: row_position).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [kaggle] Saved engineered dataset: data/engineered/kaggle_engineered.csv (200 rows, 40 cols).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [kaggle] Saved provenance file: data/engineered/kaggle_provenance.csv (join key: row_position).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [uae] Saved engineered dataset: data/engineered/uae_engineered.csv (491 rows, 32 cols).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | [uae] Saved provenance file: data/engineered/uae_provenance.csv (join key: row_position).
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | Saved feature summary: artifacts/feature_engineering/feature_summary.json
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | Saved feature summary (joblib): artifacts/feature_engineering/feature_summary.joblib
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | ======================================================================
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | CKD Feature Engineering - COMPLETE
+2026-06-21 23:38:31 | INFO     | ckd_feature_engineering | ======================================================================
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | ======================================================================
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | CKD Feature Engineering - START
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | ======================================================================
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [uci] Loaded processed dataset: data/processed/uci_processed.csv -> shape (400, 27)
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [kaggle] Loaded processed dataset: data/processed/kaggle_processed.csv -> shape (200, 31)
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [uae] Loaded processed dataset: data/processed/uae_processed.csv -> shape (491, 24)
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [uci] Starting feature engineering …
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [uci] Created feature 'bun_creatinine_ratio' from ['blood_urea', 'serum_creatinine'] (400 non-null / 400 rows).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [uci] Created feature 'sodium_potassium_ratio' from ['sodium', 'potassium'] (400 non-null / 400 rows).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [uci] Created feature 'bp_risk_score' from ['blood_pressure'] (400 non-null / 400 rows).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [uci] Created feature 'anemia_risk_score' from ['hemoglobin', 'packed_cell_volume', 'red_blood_cell_count'] (400 non-null / 400 rows).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [uci] Created feature 'cardiovascular_burden_score' from ['hypertension', 'coronary_artery_disease', 'diabetes_mellitus'] (400 non-null / 400 rows).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [uci] Created feature 'age_creatinine_interaction' from ['age', 'serum_creatinine'] (400 non-null / 400 rows).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [uci] Created feature 'urea_creatinine_product' from ['blood_urea', 'serum_creatinine'] (400 non-null / 400 rows).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [uci] Created feature 'hemoglobin_creatinine_ratio' from ['hemoglobin', 'serum_creatinine'] (400 non-null / 400 rows).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [uci] Created feature 'albumin_specific_gravity_interaction' from ['albumin', 'specific_gravity'] (400 non-null / 400 rows).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [uci] Feature engineering complete: 9 feature(s) created, final shape (400, 36).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [kaggle] Starting feature engineering …
+2026-06-22 11:16:39 | WARNING  | ckd_feature_engineering | [kaggle] Excluding column 'ckd_binary_label' as a target-leakage risk: Confirmed target proxy: crosstab against ckd_stage_label shows 100% class purity for stages s3 and s5 (and near-total purity for s4), consistent with this column being a disease-status field derived alongside the target rather than an independent clinical measurement. Including it would artificially inflate Accuracy/F1/AUC/Balanced Accuracy.
+2026-06-22 11:16:39 | WARNING  | ckd_feature_engineering | [kaggle] Excluding column 'ckd_affected' as a target-leakage risk: Likely target proxy: column name denotes disease-affectation status itself (structurally identical in kind to ckd_binary_label, which was confirmed via crosstab). Excluded by the same domain reasoning; see this dataset's leakage_audit.statistical_screen in feature_summary.json for the measured association on the actual data, which should be used to confirm or contest this decision.
+2026-06-22 11:16:39 | WARNING  | ckd_feature_engineering | [kaggle] Statistical leakage screen: column 'egfr' has high normalized mutual information (0.616) with target 'ckd_stage_label'. Flagged for human review in feature_summary.json - NOT auto-removed.
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'bun_creatinine_ratio' from ['blood_urea', 'serum_creatinine'] (200 non-null / 200 rows).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'sodium_potassium_ratio' from ['sodium', 'potassium'] (200 non-null / 200 rows).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'kidney_dysfunction_score' from ['serum_creatinine', 'egfr'] (200 non-null / 200 rows).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'bp_risk_score' from ['blood_pressure_diastolic'] (200 non-null / 200 rows).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'anemia_risk_score' from ['hemoglobin', 'packed_cell_volume', 'red_blood_cell_count'] (200 non-null / 200 rows).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'cardiovascular_burden_score' from ['hypertension', 'coronary_artery_disease', 'diabetes_mellitus'] (200 non-null / 200 rows).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'age_creatinine_interaction' from ['age', 'serum_creatinine'] (200 non-null / 200 rows).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'urea_creatinine_product' from ['blood_urea', 'serum_creatinine'] (200 non-null / 200 rows).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'hemoglobin_creatinine_ratio' from ['hemoglobin', 'serum_creatinine'] (200 non-null / 200 rows).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'albumin_specific_gravity_interaction' from ['albumin', 'specific_gravity'] (200 non-null / 200 rows).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'egfr_age_ratio' from ['egfr', 'age'] (200 non-null / 200 rows).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [kaggle] Feature engineering complete: 11 feature(s) created, final shape (200, 40).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [uae] Starting feature engineering …
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [uae] Created feature 'kidney_dysfunction_score' from ['serum_creatinine', 'egfr'] (491 non-null / 491 rows).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [uae] Created feature 'bp_risk_score' from ['systolic_bp', 'diastolic_bp'] (491 non-null / 491 rows).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [uae] Created feature 'metabolic_risk_score' from ['history_diabetes', 'history_obesity', 'history_dyslipidemia', 'bmi', 'cholesterol'] (491 non-null / 491 rows).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [uae] Created feature 'cardiovascular_burden_score' from ['history_hypertension', 'history_chd', 'history_diabetes'] (491 non-null / 491 rows).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [uae] Created feature 'cardiovascular_burden_score_extended' from ['history_hypertension', 'history_chd', 'history_diabetes', 'history_vascular', 'history_smoking'] (491 non-null / 491 rows).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [uae] Created feature 'age_creatinine_interaction' from ['age', 'serum_creatinine'] (491 non-null / 491 rows).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [uae] Created feature 'egfr_age_ratio' from ['egfr', 'age'] (491 non-null / 491 rows).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [uae] Created feature 'pulse_pressure' from ['systolic_bp', 'diastolic_bp'] (491 non-null / 491 rows).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [uae] Created feature 'comorbidity_count' from ['history_diabetes', 'history_chd', 'history_vascular', 'history_smoking', 'history_hypertension', 'history_dyslipidemia', 'history_obesity'] (491 non-null / 491 rows).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [uae] Created feature 'medication_burden' from ['dld_meds', 'diabetes_meds', 'hypertension_meds', 'acei_arb'] (491 non-null / 491 rows).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [uae] Feature engineering complete: 10 feature(s) created, final shape (491, 34).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [uci] Saved engineered dataset: data/engineered/uci_engineered.csv (400 rows, 34 cols).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [uci] Saved provenance file: data/engineered/uci_provenance.csv (join key: row_position).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [kaggle] Saved engineered dataset: data/engineered/kaggle_engineered.csv (200 rows, 38 cols).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [kaggle] Saved provenance file: data/engineered/kaggle_provenance.csv (join key: row_position).
+2026-06-22 11:16:39 | WARNING  | ckd_feature_engineering | [kaggle] Saved EXCLUDED leakage-risk columns to a separate audit file (NOT included in the engineered dataset): data/engineered/kaggle_excluded_leakage_columns.csv (join key: row_position). See feature_summary.json -> leakage_audit.excluded_columns for the rationale.
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [uae] Saved engineered dataset: data/engineered/uae_engineered.csv (491 rows, 32 cols).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | [uae] Saved provenance file: data/engineered/uae_provenance.csv (join key: row_position).
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | Saved feature summary: artifacts/feature_engineering/feature_summary.json
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | Saved feature summary (joblib): artifacts/feature_engineering/feature_summary.joblib
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | ======================================================================
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | CKD Feature Engineering - COMPLETE
+2026-06-22 11:16:39 | INFO     | ckd_feature_engineering | ======================================================================
+2026-06-24 13:57:53 | INFO     | ckd_feature_engineering | ======================================================================
+2026-06-24 13:57:53 | INFO     | ckd_feature_engineering | CKD Feature Engineering - START
+2026-06-24 13:57:53 | INFO     | ckd_feature_engineering | ======================================================================
+2026-06-24 13:57:53 | INFO     | ckd_feature_engineering | [uci] Loaded processed dataset: data/processed/uci_processed.csv -> shape (400, 27)
+2026-06-24 13:57:53 | INFO     | ckd_feature_engineering | [kaggle] Loaded processed dataset: data/processed/kaggle_processed.csv -> shape (200, 31)
+2026-06-24 13:57:53 | INFO     | ckd_feature_engineering | [uae] Loaded processed dataset: data/processed/uae_processed.csv -> shape (491, 24)
+2026-06-24 13:57:53 | INFO     | ckd_feature_engineering | [uci] Starting feature engineering …
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [uci] Created feature 'bun_creatinine_ratio' from ['blood_urea', 'serum_creatinine'] (400 non-null / 400 rows).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [uci] Created feature 'sodium_potassium_ratio' from ['sodium', 'potassium'] (400 non-null / 400 rows).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [uci] Created feature 'bp_risk_score' from ['blood_pressure'] (400 non-null / 400 rows).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [uci] Created feature 'anemia_risk_score' from ['hemoglobin', 'packed_cell_volume', 'red_blood_cell_count'] (400 non-null / 400 rows).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [uci] Created feature 'cardiovascular_burden_score' from ['hypertension', 'coronary_artery_disease', 'diabetes_mellitus'] (400 non-null / 400 rows).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [uci] Created feature 'age_creatinine_interaction' from ['age', 'serum_creatinine'] (400 non-null / 400 rows).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [uci] Created feature 'urea_creatinine_product' from ['blood_urea', 'serum_creatinine'] (400 non-null / 400 rows).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [uci] Created feature 'hemoglobin_creatinine_ratio' from ['hemoglobin', 'serum_creatinine'] (400 non-null / 400 rows).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [uci] Created feature 'albumin_specific_gravity_interaction' from ['albumin', 'specific_gravity'] (400 non-null / 400 rows).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [uci] Feature engineering complete: 9 feature(s) created, final shape (400, 36).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [kaggle] Starting feature engineering …
+2026-06-24 13:57:54 | WARNING  | ckd_feature_engineering | [kaggle] Excluding column 'ckd_binary_label' as a target-leakage risk: Confirmed target proxy: crosstab against ckd_stage_label shows 100% class purity for stages s3 and s5 (and near-total purity for s4), consistent with this column being a disease-status field derived alongside the target rather than an independent clinical measurement. Including it would artificially inflate Accuracy/F1/AUC/Balanced Accuracy.
+2026-06-24 13:57:54 | WARNING  | ckd_feature_engineering | [kaggle] Excluding column 'ckd_affected' as a target-leakage risk: Likely target proxy: column name denotes disease-affectation status itself (structurally identical in kind to ckd_binary_label, which was confirmed via crosstab). Excluded by the same domain reasoning; see this dataset's leakage_audit.statistical_screen in feature_summary.json for the measured association on the actual data, which should be used to confirm or contest this decision.
+2026-06-24 13:57:54 | WARNING  | ckd_feature_engineering | [kaggle] Statistical leakage screen: column 'egfr' has high normalized mutual information (0.616) with target 'ckd_stage_label'. Flagged for human review in feature_summary.json - NOT auto-removed.
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'bun_creatinine_ratio' from ['blood_urea', 'serum_creatinine'] (200 non-null / 200 rows).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'sodium_potassium_ratio' from ['sodium', 'potassium'] (200 non-null / 200 rows).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'kidney_dysfunction_score' from ['serum_creatinine', 'egfr'] (200 non-null / 200 rows).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'bp_risk_score' from ['blood_pressure_diastolic'] (200 non-null / 200 rows).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'anemia_risk_score' from ['hemoglobin', 'packed_cell_volume', 'red_blood_cell_count'] (200 non-null / 200 rows).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'cardiovascular_burden_score' from ['hypertension', 'coronary_artery_disease', 'diabetes_mellitus'] (200 non-null / 200 rows).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'age_creatinine_interaction' from ['age', 'serum_creatinine'] (200 non-null / 200 rows).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'urea_creatinine_product' from ['blood_urea', 'serum_creatinine'] (200 non-null / 200 rows).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'hemoglobin_creatinine_ratio' from ['hemoglobin', 'serum_creatinine'] (200 non-null / 200 rows).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'albumin_specific_gravity_interaction' from ['albumin', 'specific_gravity'] (200 non-null / 200 rows).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'egfr_age_ratio' from ['egfr', 'age'] (200 non-null / 200 rows).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [kaggle] Feature engineering complete: 11 feature(s) created, final shape (200, 40).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [uae] Starting feature engineering …
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [uae] Created feature 'kidney_dysfunction_score' from ['serum_creatinine', 'egfr'] (491 non-null / 491 rows).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [uae] Created feature 'bp_risk_score' from ['systolic_bp', 'diastolic_bp'] (491 non-null / 491 rows).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [uae] Created feature 'metabolic_risk_score' from ['history_diabetes', 'history_obesity', 'history_dyslipidemia', 'bmi', 'cholesterol'] (491 non-null / 491 rows).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [uae] Created feature 'cardiovascular_burden_score' from ['history_hypertension', 'history_chd', 'history_diabetes'] (491 non-null / 491 rows).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [uae] Created feature 'cardiovascular_burden_score_extended' from ['history_hypertension', 'history_chd', 'history_diabetes', 'history_vascular', 'history_smoking'] (491 non-null / 491 rows).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [uae] Created feature 'age_creatinine_interaction' from ['age', 'serum_creatinine'] (491 non-null / 491 rows).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [uae] Created feature 'egfr_age_ratio' from ['egfr', 'age'] (491 non-null / 491 rows).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [uae] Created feature 'pulse_pressure' from ['systolic_bp', 'diastolic_bp'] (491 non-null / 491 rows).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [uae] Created feature 'comorbidity_count' from ['history_diabetes', 'history_chd', 'history_vascular', 'history_smoking', 'history_hypertension', 'history_dyslipidemia', 'history_obesity'] (491 non-null / 491 rows).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [uae] Created feature 'medication_burden' from ['dld_meds', 'diabetes_meds', 'hypertension_meds', 'acei_arb'] (491 non-null / 491 rows).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [uae] Feature engineering complete: 10 feature(s) created, final shape (491, 34).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [uci] Saved engineered dataset: data/engineered/uci_engineered.csv (400 rows, 34 cols).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [uci] Saved provenance file: data/engineered/uci_provenance.csv (join key: row_position).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [kaggle] Saved engineered dataset: data/engineered/kaggle_engineered.csv (200 rows, 38 cols).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [kaggle] Saved provenance file: data/engineered/kaggle_provenance.csv (join key: row_position).
+2026-06-24 13:57:54 | WARNING  | ckd_feature_engineering | [kaggle] Saved EXCLUDED leakage-risk columns to a separate audit file (NOT included in the engineered dataset): data/engineered/kaggle_excluded_leakage_columns.csv (join key: row_position). See feature_summary.json -> leakage_audit.excluded_columns for the rationale.
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [uae] Saved engineered dataset: data/engineered/uae_engineered.csv (491 rows, 32 cols).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | [uae] Saved provenance file: data/engineered/uae_provenance.csv (join key: row_position).
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | Saved feature summary: artifacts/feature_engineering/feature_summary.json
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | Saved feature summary (joblib): artifacts/feature_engineering/feature_summary.joblib
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | ======================================================================
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | CKD Feature Engineering - COMPLETE
+2026-06-24 13:57:54 | INFO     | ckd_feature_engineering | ======================================================================
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | ======================================================================
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | CKD Feature Engineering - START
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | ======================================================================
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [uci] Loaded processed dataset: data/processed/uci_processed.csv -> shape (400, 27)
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [kaggle] Loaded processed dataset: data/processed/kaggle_processed.csv -> shape (200, 31)
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [uae] Loaded processed dataset: data/processed/uae_processed.csv -> shape (491, 24)
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [uci] Starting feature engineering …
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [uci] Created feature 'bun_creatinine_ratio' from ['blood_urea', 'serum_creatinine'] (400 non-null / 400 rows).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [uci] Created feature 'sodium_potassium_ratio' from ['sodium', 'potassium'] (400 non-null / 400 rows).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [uci] Created feature 'bp_risk_score' from ['blood_pressure'] (400 non-null / 400 rows).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [uci] Created feature 'anemia_risk_score' from ['hemoglobin', 'packed_cell_volume', 'red_blood_cell_count'] (400 non-null / 400 rows).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [uci] Created feature 'cardiovascular_burden_score' from ['hypertension', 'coronary_artery_disease', 'diabetes_mellitus'] (400 non-null / 400 rows).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [uci] Created feature 'age_creatinine_interaction' from ['age', 'serum_creatinine'] (400 non-null / 400 rows).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [uci] Created feature 'urea_creatinine_product' from ['blood_urea', 'serum_creatinine'] (400 non-null / 400 rows).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [uci] Created feature 'hemoglobin_creatinine_ratio' from ['hemoglobin', 'serum_creatinine'] (400 non-null / 400 rows).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [uci] Created feature 'albumin_specific_gravity_interaction' from ['albumin', 'specific_gravity'] (400 non-null / 400 rows).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [uci] Feature engineering complete: 9 feature(s) created, final shape (400, 36).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [kaggle] Starting feature engineering …
+2026-06-24 14:07:15 | WARNING  | ckd_feature_engineering | [kaggle] Excluding column 'ckd_binary_label' as a target-leakage risk: Confirmed target proxy: crosstab against ckd_stage_label shows 100% class purity for stages s3 and s5 (and near-total purity for s4), consistent with this column being a disease-status field derived alongside the target rather than an independent clinical measurement. Including it would artificially inflate Accuracy/F1/AUC/Balanced Accuracy.
+2026-06-24 14:07:15 | WARNING  | ckd_feature_engineering | [kaggle] Excluding column 'ckd_affected' as a target-leakage risk: Likely target proxy: column name denotes disease-affectation status itself (structurally identical in kind to ckd_binary_label, which was confirmed via crosstab). Excluded by the same domain reasoning; see this dataset's leakage_audit.statistical_screen in feature_summary.json for the measured association on the actual data, which should be used to confirm or contest this decision.
+2026-06-24 14:07:15 | WARNING  | ckd_feature_engineering | [kaggle] Statistical leakage screen: column 'egfr' has high normalized mutual information (0.616) with target 'ckd_stage_label'. Flagged for human review in feature_summary.json - NOT auto-removed.
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'bun_creatinine_ratio' from ['blood_urea', 'serum_creatinine'] (200 non-null / 200 rows).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'sodium_potassium_ratio' from ['sodium', 'potassium'] (200 non-null / 200 rows).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'kidney_dysfunction_score' from ['serum_creatinine', 'egfr'] (200 non-null / 200 rows).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'bp_risk_score' from ['blood_pressure_diastolic'] (200 non-null / 200 rows).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'anemia_risk_score' from ['hemoglobin', 'packed_cell_volume', 'red_blood_cell_count'] (200 non-null / 200 rows).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'cardiovascular_burden_score' from ['hypertension', 'coronary_artery_disease', 'diabetes_mellitus'] (200 non-null / 200 rows).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'age_creatinine_interaction' from ['age', 'serum_creatinine'] (200 non-null / 200 rows).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'urea_creatinine_product' from ['blood_urea', 'serum_creatinine'] (200 non-null / 200 rows).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'hemoglobin_creatinine_ratio' from ['hemoglobin', 'serum_creatinine'] (200 non-null / 200 rows).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'albumin_specific_gravity_interaction' from ['albumin', 'specific_gravity'] (200 non-null / 200 rows).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'egfr_age_ratio' from ['egfr', 'age'] (200 non-null / 200 rows).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [kaggle] Feature engineering complete: 11 feature(s) created, final shape (200, 40).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [uae] Starting feature engineering …
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [uae] Created feature 'kidney_dysfunction_score' from ['serum_creatinine', 'egfr'] (491 non-null / 491 rows).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [uae] Created feature 'bp_risk_score' from ['systolic_bp', 'diastolic_bp'] (491 non-null / 491 rows).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [uae] Created feature 'metabolic_risk_score' from ['history_diabetes', 'history_obesity', 'history_dyslipidemia', 'bmi', 'cholesterol'] (491 non-null / 491 rows).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [uae] Created feature 'cardiovascular_burden_score' from ['history_hypertension', 'history_chd', 'history_diabetes'] (491 non-null / 491 rows).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [uae] Created feature 'cardiovascular_burden_score_extended' from ['history_hypertension', 'history_chd', 'history_diabetes', 'history_vascular', 'history_smoking'] (491 non-null / 491 rows).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [uae] Created feature 'age_creatinine_interaction' from ['age', 'serum_creatinine'] (491 non-null / 491 rows).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [uae] Created feature 'egfr_age_ratio' from ['egfr', 'age'] (491 non-null / 491 rows).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [uae] Created feature 'pulse_pressure' from ['systolic_bp', 'diastolic_bp'] (491 non-null / 491 rows).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [uae] Created feature 'comorbidity_count' from ['history_diabetes', 'history_chd', 'history_vascular', 'history_smoking', 'history_hypertension', 'history_dyslipidemia', 'history_obesity'] (491 non-null / 491 rows).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [uae] Created feature 'medication_burden' from ['dld_meds', 'diabetes_meds', 'hypertension_meds', 'acei_arb'] (491 non-null / 491 rows).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [uae] Feature engineering complete: 10 feature(s) created, final shape (491, 34).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [uci] Saved engineered dataset: data/engineered/uci_engineered.csv (400 rows, 34 cols).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [uci] Saved provenance file: data/engineered/uci_provenance.csv (join key: row_position).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [kaggle] Saved engineered dataset: data/engineered/kaggle_engineered.csv (200 rows, 38 cols).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [kaggle] Saved provenance file: data/engineered/kaggle_provenance.csv (join key: row_position).
+2026-06-24 14:07:15 | WARNING  | ckd_feature_engineering | [kaggle] Saved EXCLUDED leakage-risk columns to a separate audit file (NOT included in the engineered dataset): data/engineered/kaggle_excluded_leakage_columns.csv (join key: row_position). See feature_summary.json -> leakage_audit.excluded_columns for the rationale.
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [uae] Saved engineered dataset: data/engineered/uae_engineered.csv (491 rows, 32 cols).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | [uae] Saved provenance file: data/engineered/uae_provenance.csv (join key: row_position).
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | Saved feature summary: artifacts/feature_engineering/feature_summary.json
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | Saved feature summary (joblib): artifacts/feature_engineering/feature_summary.joblib
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | ======================================================================
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | CKD Feature Engineering - COMPLETE
+2026-06-24 14:07:15 | INFO     | ckd_feature_engineering | ======================================================================
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | ======================================================================
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | CKD Feature Engineering - START
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | ======================================================================
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [uci] Loaded processed dataset: data/processed/uci_processed.csv -> shape (400, 27)
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [kaggle] Loaded processed dataset: data/processed/kaggle_processed.csv -> shape (200, 31)
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [uae] Loaded processed dataset: data/processed/uae_processed.csv -> shape (491, 24)
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [uci] Starting feature engineering …
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [uci] Created feature 'bun_creatinine_ratio' from ['blood_urea', 'serum_creatinine'] (400 non-null / 400 rows).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [uci] Created feature 'sodium_potassium_ratio' from ['sodium', 'potassium'] (400 non-null / 400 rows).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [uci] Created feature 'bp_risk_score' from ['blood_pressure'] (400 non-null / 400 rows).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [uci] Created feature 'anemia_risk_score' from ['hemoglobin', 'packed_cell_volume', 'red_blood_cell_count'] (400 non-null / 400 rows).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [uci] Created feature 'cardiovascular_burden_score' from ['hypertension', 'coronary_artery_disease', 'diabetes_mellitus'] (400 non-null / 400 rows).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [uci] Created feature 'age_creatinine_interaction' from ['age', 'serum_creatinine'] (400 non-null / 400 rows).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [uci] Created feature 'urea_creatinine_product' from ['blood_urea', 'serum_creatinine'] (400 non-null / 400 rows).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [uci] Created feature 'hemoglobin_creatinine_ratio' from ['hemoglobin', 'serum_creatinine'] (400 non-null / 400 rows).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [uci] Created feature 'albumin_specific_gravity_interaction' from ['albumin', 'specific_gravity'] (400 non-null / 400 rows).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [uci] Feature engineering complete: 9 feature(s) created, final shape (400, 36).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [kaggle] Starting feature engineering …
+2026-07-06 11:44:37 | WARNING  | ckd_feature_engineering | [kaggle] Excluding column 'ckd_binary_label' as a target-leakage risk: Confirmed target proxy: crosstab against ckd_stage_label shows 100% class purity for stages s3 and s5 (and near-total purity for s4), consistent with this column being a disease-status field derived alongside the target rather than an independent clinical measurement. Including it would artificially inflate Accuracy/F1/AUC/Balanced Accuracy.
+2026-07-06 11:44:37 | WARNING  | ckd_feature_engineering | [kaggle] Excluding column 'ckd_affected' as a target-leakage risk: Likely target proxy: column name denotes disease-affectation status itself (structurally identical in kind to ckd_binary_label, which was confirmed via crosstab). Excluded by the same domain reasoning; see this dataset's leakage_audit.statistical_screen in feature_summary.json for the measured association on the actual data, which should be used to confirm or contest this decision.
+2026-07-06 11:44:37 | WARNING  | ckd_feature_engineering | [kaggle] Statistical leakage screen: column 'egfr' has high normalized mutual information (0.616) with target 'ckd_stage_label'. Flagged for human review in feature_summary.json - NOT auto-removed.
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'bun_creatinine_ratio' from ['blood_urea', 'serum_creatinine'] (200 non-null / 200 rows).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'sodium_potassium_ratio' from ['sodium', 'potassium'] (200 non-null / 200 rows).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'kidney_dysfunction_score' from ['serum_creatinine', 'egfr'] (200 non-null / 200 rows).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'bp_risk_score' from ['blood_pressure_diastolic'] (200 non-null / 200 rows).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'anemia_risk_score' from ['hemoglobin', 'packed_cell_volume', 'red_blood_cell_count'] (200 non-null / 200 rows).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'cardiovascular_burden_score' from ['hypertension', 'coronary_artery_disease', 'diabetes_mellitus'] (200 non-null / 200 rows).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'age_creatinine_interaction' from ['age', 'serum_creatinine'] (200 non-null / 200 rows).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'urea_creatinine_product' from ['blood_urea', 'serum_creatinine'] (200 non-null / 200 rows).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'hemoglobin_creatinine_ratio' from ['hemoglobin', 'serum_creatinine'] (200 non-null / 200 rows).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'albumin_specific_gravity_interaction' from ['albumin', 'specific_gravity'] (200 non-null / 200 rows).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'egfr_age_ratio' from ['egfr', 'age'] (200 non-null / 200 rows).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [kaggle] Feature engineering complete: 11 feature(s) created, final shape (200, 40).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [uae] Starting feature engineering …
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [uae] Created feature 'kidney_dysfunction_score' from ['serum_creatinine', 'egfr'] (491 non-null / 491 rows).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [uae] Created feature 'bp_risk_score' from ['systolic_bp', 'diastolic_bp'] (491 non-null / 491 rows).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [uae] Created feature 'metabolic_risk_score' from ['history_diabetes', 'history_obesity', 'history_dyslipidemia', 'bmi', 'cholesterol'] (491 non-null / 491 rows).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [uae] Created feature 'cardiovascular_burden_score' from ['history_hypertension', 'history_chd', 'history_diabetes'] (491 non-null / 491 rows).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [uae] Created feature 'cardiovascular_burden_score_extended' from ['history_hypertension', 'history_chd', 'history_diabetes', 'history_vascular', 'history_smoking'] (491 non-null / 491 rows).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [uae] Created feature 'age_creatinine_interaction' from ['age', 'serum_creatinine'] (491 non-null / 491 rows).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [uae] Created feature 'egfr_age_ratio' from ['egfr', 'age'] (491 non-null / 491 rows).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [uae] Created feature 'pulse_pressure' from ['systolic_bp', 'diastolic_bp'] (491 non-null / 491 rows).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [uae] Created feature 'comorbidity_count' from ['history_diabetes', 'history_chd', 'history_vascular', 'history_smoking', 'history_hypertension', 'history_dyslipidemia', 'history_obesity'] (491 non-null / 491 rows).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [uae] Created feature 'medication_burden' from ['dld_meds', 'diabetes_meds', 'hypertension_meds', 'acei_arb'] (491 non-null / 491 rows).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [uae] Feature engineering complete: 10 feature(s) created, final shape (491, 34).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [uci] Saved engineered dataset: data/engineered/uci_engineered.csv (400 rows, 34 cols).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [uci] Saved provenance file: data/engineered/uci_provenance.csv (join key: row_position).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [kaggle] Saved engineered dataset: data/engineered/kaggle_engineered.csv (200 rows, 38 cols).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [kaggle] Saved provenance file: data/engineered/kaggle_provenance.csv (join key: row_position).
+2026-07-06 11:44:37 | WARNING  | ckd_feature_engineering | [kaggle] Saved EXCLUDED leakage-risk columns to a separate audit file (NOT included in the engineered dataset): data/engineered/kaggle_excluded_leakage_columns.csv (join key: row_position). See feature_summary.json -> leakage_audit.excluded_columns for the rationale.
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [uae] Saved engineered dataset: data/engineered/uae_engineered.csv (491 rows, 32 cols).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | [uae] Saved provenance file: data/engineered/uae_provenance.csv (join key: row_position).
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | Saved feature summary: artifacts/feature_engineering/feature_summary.json
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | Saved feature summary (joblib): artifacts/feature_engineering/feature_summary.joblib
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | ======================================================================
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | CKD Feature Engineering - COMPLETE
+2026-07-06 11:44:37 | INFO     | ckd_feature_engineering | ======================================================================
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | ======================================================================
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | CKD Feature Engineering - START
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | ======================================================================
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | [uci] Loaded processed dataset: data/processed/uci_processed.csv -> shape (400, 27)
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | [kaggle] Loaded processed dataset: data/processed/kaggle_processed.csv -> shape (200, 31)
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | [uae] Loaded processed dataset: data/processed/uae_processed.csv -> shape (491, 24)
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | [uci] Starting feature engineering …
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | [uci] Created feature 'bun_creatinine_ratio' from ['blood_urea', 'serum_creatinine'] (400 non-null / 400 rows).
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | [uci] Created feature 'sodium_potassium_ratio' from ['sodium', 'potassium'] (400 non-null / 400 rows).
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | [uci] Created feature 'bp_risk_score' from ['blood_pressure'] (400 non-null / 400 rows).
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | [uci] Created feature 'anemia_risk_score' from ['hemoglobin', 'packed_cell_volume', 'red_blood_cell_count'] (400 non-null / 400 rows).
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | [uci] Created feature 'cardiovascular_burden_score' from ['hypertension', 'coronary_artery_disease', 'diabetes_mellitus'] (400 non-null / 400 rows).
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | [uci] Created feature 'age_creatinine_interaction' from ['age', 'serum_creatinine'] (400 non-null / 400 rows).
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | [uci] Created feature 'urea_creatinine_product' from ['blood_urea', 'serum_creatinine'] (400 non-null / 400 rows).
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | [uci] Created feature 'hemoglobin_creatinine_ratio' from ['hemoglobin', 'serum_creatinine'] (400 non-null / 400 rows).
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | [uci] Created feature 'albumin_specific_gravity_interaction' from ['albumin', 'specific_gravity'] (400 non-null / 400 rows).
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | [uci] Feature engineering complete: 9 feature(s) created, final shape (400, 36).
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | [kaggle] Starting feature engineering …
+2026-07-07 16:13:02 | WARNING  | ckd_feature_engineering | [kaggle] Excluding column 'ckd_binary_label' as a target-leakage risk: Confirmed target proxy: crosstab against ckd_stage_label shows 100% class purity for stages s3 and s5 (and near-total purity for s4), consistent with this column being a disease-status field derived alongside the target rather than an independent clinical measurement. Including it would artificially inflate Accuracy/F1/AUC/Balanced Accuracy.
+2026-07-07 16:13:02 | WARNING  | ckd_feature_engineering | [kaggle] Excluding column 'ckd_affected' as a target-leakage risk: Likely target proxy: column name denotes disease-affectation status itself (structurally identical in kind to ckd_binary_label, which was confirmed via crosstab). Excluded by the same domain reasoning; see this dataset's leakage_audit.statistical_screen in feature_summary.json for the measured association on the actual data, which should be used to confirm or contest this decision.
+2026-07-07 16:13:02 | WARNING  | ckd_feature_engineering | [kaggle] Statistical leakage screen: column 'egfr' has high normalized mutual information (0.616) with target 'ckd_stage_label'. Flagged for human review in feature_summary.json - NOT auto-removed.
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'bun_creatinine_ratio' from ['blood_urea', 'serum_creatinine'] (200 non-null / 200 rows).
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'sodium_potassium_ratio' from ['sodium', 'potassium'] (200 non-null / 200 rows).
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'kidney_dysfunction_score' from ['serum_creatinine', 'egfr'] (200 non-null / 200 rows).
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'bp_risk_score' from ['blood_pressure_diastolic'] (200 non-null / 200 rows).
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'anemia_risk_score' from ['hemoglobin', 'packed_cell_volume', 'red_blood_cell_count'] (200 non-null / 200 rows).
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'cardiovascular_burden_score' from ['hypertension', 'coronary_artery_disease', 'diabetes_mellitus'] (200 non-null / 200 rows).
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'age_creatinine_interaction' from ['age', 'serum_creatinine'] (200 non-null / 200 rows).
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'urea_creatinine_product' from ['blood_urea', 'serum_creatinine'] (200 non-null / 200 rows).
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'hemoglobin_creatinine_ratio' from ['hemoglobin', 'serum_creatinine'] (200 non-null / 200 rows).
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'albumin_specific_gravity_interaction' from ['albumin', 'specific_gravity'] (200 non-null / 200 rows).
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | [kaggle] Created feature 'egfr_age_ratio' from ['egfr', 'age'] (200 non-null / 200 rows).
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | [kaggle] Feature engineering complete: 11 feature(s) created, final shape (200, 40).
+2026-07-07 16:13:02 | INFO     | ckd_feature_engineering | [uae] Starting feature engineering …
+2026-07-07 16:13:03 | INFO     | ckd_feature_engineering | [uae] Created feature 'kidney_dysfunction_score' from ['serum_creatinine', 'egfr'] (491 non-null / 491 rows).
+2026-07-07 16:13:03 | INFO     | ckd_feature_engineering | [uae] Created feature 'bp_risk_score' from ['systolic_bp', 'diastolic_bp'] (491 non-null / 491 rows).
+2026-07-07 16:13:03 | INFO     | ckd_feature_engineering | [uae] Created feature 'metabolic_risk_score' from ['history_diabetes', 'history_obesity', 'history_dyslipidemia', 'bmi', 'cholesterol'] (491 non-null / 491 rows).
+2026-07-07 16:13:03 | INFO     | ckd_feature_engineering | [uae] Created feature 'cardiovascular_burden_score' from ['history_hypertension', 'history_chd', 'history_diabetes'] (491 non-null / 491 rows).
+2026-07-07 16:13:03 | INFO     | ckd_feature_engineering | [uae] Created feature 'cardiovascular_burden_score_extended' from ['history_hypertension', 'history_chd', 'history_diabetes', 'history_vascular', 'history_smoking'] (491 non-null / 491 rows).
+2026-07-07 16:13:03 | INFO     | ckd_feature_engineering | [uae] Created feature 'age_creatinine_interaction' from ['age', 'serum_creatinine'] (491 non-null / 491 rows).
+2026-07-07 16:13:03 | INFO     | ckd_feature_engineering | [uae] Created feature 'egfr_age_ratio' from ['egfr', 'age'] (491 non-null / 491 rows).
+2026-07-07 16:13:03 | INFO     | ckd_feature_engineering | [uae] Created feature 'pulse_pressure' from ['systolic_bp', 'diastolic_bp'] (491 non-null / 491 rows).
+2026-07-07 16:13:03 | INFO     | ckd_feature_engineering | [uae] Created feature 'comorbidity_count' from ['history_diabetes', 'history_chd', 'history_vascular', 'history_smoking', 'history_hypertension', 'history_dyslipidemia', 'history_obesity'] (491 non-null / 491 rows).
+2026-07-07 16:13:03 | INFO     | ckd_feature_engineering | [uae] Created feature 'medication_burden' from ['dld_meds', 'diabetes_meds', 'hypertension_meds', 'acei_arb'] (491 non-null / 491 rows).
+2026-07-07 16:13:03 | INFO     | ckd_feature_engineering | [uae] Feature engineering complete: 10 feature(s) created, final shape (491, 34).
+2026-07-07 16:13:03 | INFO     | ckd_feature_engineering | [uci] Saved engineered dataset: data/engineered/uci_engineered.csv (400 rows, 34 cols).
+2026-07-07 16:13:03 | INFO     | ckd_feature_engineering | [uci] Saved provenance file: data/engineered/uci_provenance.csv (join key: row_position).
+2026-07-07 16:13:03 | INFO     | ckd_feature_engineering | [kaggle] Saved engineered dataset: data/engineered/kaggle_engineered.csv (200 rows, 38 cols).
+2026-07-07 16:13:03 | INFO     | ckd_feature_engineering | [kaggle] Saved provenance file: data/engineered/kaggle_provenance.csv (join key: row_position).
+2026-07-07 16:13:03 | WARNING  | ckd_feature_engineering | [kaggle] Saved EXCLUDED leakage-risk columns to a separate audit file (NOT included in the engineered dataset): data/engineered/kaggle_excluded_leakage_columns.csv (join key: row_position). See feature_summary.json -> leakage_audit.excluded_columns for the rationale.
+2026-07-07 16:13:03 | INFO     | ckd_feature_engineering | [uae] Saved engineered dataset: data/engineered/uae_engineered.csv (491 rows, 32 cols).
+2026-07-07 16:13:03 | INFO     | ckd_feature_engineering | [uae] Saved provenance file: data/engineered/uae_provenance.csv (join key: row_position).
+2026-07-07 16:13:03 | INFO     | ckd_feature_engineering | Saved feature summary: artifacts/feature_engineering/feature_summary.json
+2026-07-07 16:13:03 | INFO     | ckd_feature_engineering | Saved feature summary (joblib): artifacts/feature_engineering/feature_summary.joblib
+2026-07-07 16:13:03 | INFO     | ckd_feature_engineering | ======================================================================
+2026-07-07 16:13:03 | INFO     | ckd_feature_engineering | CKD Feature Engineering - COMPLETE
+2026-07-07 16:13:03 | INFO     | ckd_feature_engineering | ======================================================================

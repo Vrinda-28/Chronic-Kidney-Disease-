@@ -1,0 +1,13 @@
+{
+  "n_patients": 80,
+  "n_any_disagreement": 32,
+  "n_high_disagreement": 1,
+  "mean_agreement": 0.9175000000000001,
+  "models_compared": [
+    "LogisticRegression",
+    "RandomForest",
+    "XGBoost",
+    "LightGBM",
+    "CatBoost"
+  ]
+}

@@ -1,0 +1,416 @@
+2026-06-21 22:59:48 | INFO     | ckd_preprocessor | ======================================================================
+2026-06-21 22:59:48 | INFO     | ckd_preprocessor | CKD Preprocessing Pipeline – START
+2026-06-21 22:59:48 | INFO     | ckd_preprocessor | ======================================================================
+2026-06-21 22:59:48 | INFO     | ckd_preprocessor | [Step 1] Loading datasets via data_loader.py …
+2026-06-21 23:00:06 | INFO     | ckd_preprocessor | ======================================================================
+2026-06-21 23:00:06 | INFO     | ckd_preprocessor | CKD Preprocessing Pipeline – START
+2026-06-21 23:00:06 | INFO     | ckd_preprocessor | ======================================================================
+2026-06-21 23:00:06 | INFO     | ckd_preprocessor | [Step 1] Loading datasets via data_loader.py …
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | ======================================================================
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | CKD Preprocessing Pipeline – START
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | ======================================================================
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 1] Loading datasets via data_loader.py …
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 1] Loaded – UCI: (400, 27) | Kaggle: (202, 31) | UAE: (491, 24)
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 2] Removing invalid Kaggle rows …
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 2] Rows with invalid label ('discrete', etc.): 1 (0.50%)
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 2] Rows with NaN target: 1 (0.50%)
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 2] Kaggle rows: 202 → 200  (removed 2 total)
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 3] Cleaning UCI target labels …
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 3] UCI target: 2 label(s) cleaned (whitespace/tab stripped).
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 3] UCI target value counts: {'ckd': 250, 'notckd': 150}
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 4] Standardising missing values for UCI …
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 4] UCI: 0 cell(s) replaced with NaN.
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 4] Standardising missing values for Kaggle …
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 4] Kaggle: 0 cell(s) replaced with NaN.
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 4] Standardising missing values for UAE …
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 4] UAE: 0 cell(s) replaced with NaN.
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 5] Parsing interval/threshold strings …
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 5] UCI interval conversions: {'age': 0, 'blood_pressure': 0, 'specific_gravity': 0, 'albumin': 0, 'sugar': 0, 'blood_glucose_random': 0, 'blood_urea': 0, 'serum_creatinine': 0, 'sodium': 0, 'potassium': 0, 'hemoglobin': 0, 'packed_cell_volume': 0, 'white_blood_cell_count': 0, 'red_blood_cell_count': 0}
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 5] Kaggle interval conversions: {'age': 190, 'blood_pressure_diastolic': 0, 'specific_gravity': 159, 'albumin': 187, 'sugar': 199, 'blood_glucose_random': 197, 'blood_urea': 199, 'serum_creatinine': 199, 'sodium': 199, 'potassium': 199, 'hemoglobin': 185, 'packed_cell_volume': 181, 'white_blood_cell_count': 199, 'red_blood_cell_count': 199, 'egfr': 197}
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 6] Type conversion for 'uci' …
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 6] uci: converted 14 column(s) to float64.
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 6] Type conversion for 'kaggle' …
+2026-06-21 23:01:19 | WARNING  | ckd_preprocessor | [Step 6][KAGGLE] Column 'blood_pressure' not found – skipped.
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 6] kaggle: converted 16 column(s) to float64.
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 6] Type conversion for 'uae' …
+2026-06-21 23:01:19 | WARNING  | ckd_preprocessor | [Step 6][UAE] Column 'blood_pressure' not found – skipped.
+2026-06-21 23:01:19 | WARNING  | ckd_preprocessor | [Step 6][UAE] Column 'sodium' not found – skipped.
+2026-06-21 23:01:19 | WARNING  | ckd_preprocessor | [Step 6][UAE] Column 'potassium' not found – skipped.
+2026-06-21 23:01:19 | WARNING  | ckd_preprocessor | [Step 6][UAE] Column 'hemoglobin' not found – skipped.
+2026-06-21 23:01:19 | WARNING  | ckd_preprocessor | [Step 6][UAE] Column 'blood_urea' not found – skipped.
+2026-06-21 23:01:19 | WARNING  | ckd_preprocessor | [Step 6][UAE] Column 'albumin' not found – skipped.
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 6] uae: converted 15 column(s) to float64.
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 7] Categorical standardisation for 'uci' …
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 7] uci: 0 total cell(s) remapped across 0 column(s).
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 7] Categorical standardisation for 'kaggle' …
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 7] kaggle: 0 total cell(s) remapped across 0 column(s).
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 7] Categorical standardisation for 'uae' …
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 7] uae: 0 total cell(s) remapped across 0 column(s).
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 8] Imputation …
+2026-06-21 23:01:19 | DEBUG    | ckd_preprocessor | [Step 8][uci] Numeric cols to impute: 14 | Categorical: 0
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 8][uci] Fitted numeric imputer (median) on 14 column(s).
+2026-06-21 23:01:19 | DEBUG    | ckd_preprocessor | [Step 8][kaggle] Numeric cols to impute: 15 | Categorical: 0
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 8][kaggle] Fitted numeric imputer (median) on 15 column(s).
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 8] Transforming UAE using UCI-fitted imputers (no fitting on UAE).
+2026-06-21 23:01:19 | DEBUG    | ckd_preprocessor | [Step 8][uae] Numeric cols to impute: 9 | Categorical: 0
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 8][uae] Applied external numeric imputer stats to 2 column(s).
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 8][uae] Fallback self-fitted median imputer on 7 uncovered column(s): ['cholesterol', 'egfr', 'systolic_bp', 'diastolic_bp', 'bmi', 'time_to_event_months', 'followup_years']
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 9] Encoding features and targets …
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 9] UCI: encoded 10 feature column(s).
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 9] Kaggle: encoded 13 feature column(s).
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 9] UAE: encoded 12 feature column(s).
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 10] Validating processed datasets …
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 10][UCI] ✔ No NaN targets.
+2026-06-21 23:01:19 | WARNING  | ckd_preprocessor | [UCI] Column 'red_blood_cells' contains unexpected value(s) after encoding: ['0.0', '1.0']
+2026-06-21 23:01:19 | WARNING  | ckd_preprocessor | [UCI] Column 'pus_cell' contains unexpected value(s) after encoding: ['0.0', '1.0']
+2026-06-21 23:01:19 | WARNING  | ckd_preprocessor | [UCI] Column 'pus_cell_clumps' contains unexpected value(s) after encoding: ['0.0', '1.0']
+2026-06-21 23:01:19 | WARNING  | ckd_preprocessor | [UCI] Column 'bacteria' contains unexpected value(s) after encoding: ['0.0', '1.0']
+2026-06-21 23:01:19 | WARNING  | ckd_preprocessor | [UCI] Column 'hypertension' contains unexpected value(s) after encoding: ['0.0', '1.0']
+2026-06-21 23:01:19 | WARNING  | ckd_preprocessor | [UCI] Column 'diabetes_mellitus' contains unexpected value(s) after encoding: ['0.0', '1.0']
+2026-06-21 23:01:19 | WARNING  | ckd_preprocessor | [UCI] Column 'coronary_artery_disease' contains unexpected value(s) after encoding: ['0.0', '1.0']
+2026-06-21 23:01:19 | WARNING  | ckd_preprocessor | [UCI] Column 'appetite' contains unexpected value(s) after encoding: ['0.0', '1.0']
+2026-06-21 23:01:19 | WARNING  | ckd_preprocessor | [UCI] Column 'pedal_edema' contains unexpected value(s) after encoding: ['0.0', '1.0']
+2026-06-21 23:01:19 | WARNING  | ckd_preprocessor | [UCI] Column 'anemia' contains unexpected value(s) after encoding: ['0.0', '1.0']
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 10][UCI] Shape after preprocessing: (400, 27) | NaN count: 234
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 10][Kaggle] ✔ No NaN targets.
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 10][Kaggle] ✔ No 'discrete' rows.
+2026-06-21 23:01:19 | WARNING  | ckd_preprocessor | [Kaggle] Column 'bp_limit' contains unexpected value(s) after encoding: ['2']
+2026-06-21 23:01:19 | WARNING  | ckd_preprocessor | [Kaggle] Column 'ckd_binary_label' contains unexpected value(s) after encoding: ['ckd', 'notckd']
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 10][Kaggle] Shape after preprocessing: (200, 31) | NaN count: 0
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 10][UAE] ✔ No NaN targets.
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 10][UAE] Shape after preprocessing: (491, 24) | NaN count: 0
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 10] All validation checks passed.
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 11] Saving preprocessing artifacts …
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 11] Artifacts saved to: /Users/vrinda/Desktop/Mom Kidney CKD/artifacts/preprocessing
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 12] Saving processed datasets …
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 12] Saved: /Users/vrinda/Desktop/Mom Kidney CKD/data/processed/uci_processed.csv  (400 rows)
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 12] Saved: /Users/vrinda/Desktop/Mom Kidney CKD/data/processed/kaggle_processed.csv  (200 rows)
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 12] Saved: /Users/vrinda/Desktop/Mom Kidney CKD/data/processed/uae_processed.csv  (491 rows)
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 13] Writing preprocessing report …
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | [Step 13] Report saved to: /Users/vrinda/Desktop/Mom Kidney CKD/artifacts/preprocessing/preprocessing_summary.json
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | ======================================================================
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | CKD Preprocessing Pipeline – COMPLETE
+2026-06-21 23:01:19 | INFO     | ckd_preprocessor | ======================================================================
+2026-06-21 23:15:06 | INFO     | ckd_preprocessor | ======================================================================
+2026-06-21 23:15:06 | INFO     | ckd_preprocessor | CKD Preprocessing Pipeline – START
+2026-06-21 23:15:06 | INFO     | ckd_preprocessor | ======================================================================
+2026-06-21 23:15:06 | INFO     | ckd_preprocessor | [Step 1] Loading datasets via data_loader.py …
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | ======================================================================
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | CKD Preprocessing Pipeline – START
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | ======================================================================
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 1] Loading datasets via data_loader.py …
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 1] Loaded – UCI: (400, 27) | Kaggle: (202, 31) | UAE: (491, 24)
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 2] Removing invalid Kaggle rows …
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 2] Rows with invalid label ('discrete', etc.): 1 (0.50%)
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 2] Rows with NaN target: 1 (0.50%)
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 2] Kaggle rows: 202 → 200  (removed 2 total)
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 3] Cleaning UCI target labels …
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 3] UCI target: 2 label(s) cleaned (whitespace/tab stripped).
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 3] UCI target value counts: {'ckd': 250, 'notckd': 150}
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 4] Standardising missing values for UCI …
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 4] UCI: 0 cell(s) replaced with NaN.
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 4] Standardising missing values for Kaggle …
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 4] Kaggle: 0 cell(s) replaced with NaN.
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 4] Standardising missing values for UAE …
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 4] UAE: 0 cell(s) replaced with NaN.
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 5] Parsing interval/threshold strings …
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 5] UCI interval conversions: {'age': 0, 'blood_pressure': 0, 'specific_gravity': 0, 'albumin': 0, 'sugar': 0, 'blood_glucose_random': 0, 'blood_urea': 0, 'serum_creatinine': 0, 'sodium': 0, 'potassium': 0, 'hemoglobin': 0, 'packed_cell_volume': 0, 'white_blood_cell_count': 0, 'red_blood_cell_count': 0}
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 5] Kaggle interval conversions: {'age': 190, 'blood_pressure_diastolic': 0, 'specific_gravity': 159, 'albumin': 187, 'sugar': 199, 'blood_glucose_random': 197, 'blood_urea': 199, 'serum_creatinine': 199, 'sodium': 199, 'potassium': 199, 'hemoglobin': 185, 'packed_cell_volume': 181, 'white_blood_cell_count': 199, 'red_blood_cell_count': 199, 'egfr': 197}
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 6] Type conversion for 'uci' …
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 6] uci: converted 14 column(s) to float64.
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 6] Type conversion for 'kaggle' …
+2026-06-21 23:15:51 | WARNING  | ckd_preprocessor | [Step 6][KAGGLE] Column 'blood_pressure' not found – skipped.
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 6] kaggle: converted 16 column(s) to float64.
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 6] Type conversion for 'uae' …
+2026-06-21 23:15:51 | WARNING  | ckd_preprocessor | [Step 6][UAE] Column 'blood_pressure' not found – skipped.
+2026-06-21 23:15:51 | WARNING  | ckd_preprocessor | [Step 6][UAE] Column 'sodium' not found – skipped.
+2026-06-21 23:15:51 | WARNING  | ckd_preprocessor | [Step 6][UAE] Column 'potassium' not found – skipped.
+2026-06-21 23:15:51 | WARNING  | ckd_preprocessor | [Step 6][UAE] Column 'hemoglobin' not found – skipped.
+2026-06-21 23:15:51 | WARNING  | ckd_preprocessor | [Step 6][UAE] Column 'blood_urea' not found – skipped.
+2026-06-21 23:15:51 | WARNING  | ckd_preprocessor | [Step 6][UAE] Column 'albumin' not found – skipped.
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 6] uae: converted 15 column(s) to float64.
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 7] Categorical standardisation for 'uci' …
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 7] uci: 0 total cell(s) remapped across 0 column(s).
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 7] Categorical standardisation for 'kaggle' …
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 7] kaggle: 0 total cell(s) remapped across 0 column(s).
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 7] Categorical standardisation for 'uae' …
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 7] uae: 0 total cell(s) remapped across 0 column(s).
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 8] Imputation …
+2026-06-21 23:15:51 | DEBUG    | ckd_preprocessor | [Step 8][uci] Numeric cols to impute: 14 | Categorical: 10
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 8][uci] Fitted numeric imputer (median) on 14 column(s).
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 8][uci] Fitted categorical imputer (most_frequent) on 10 column(s).
+2026-06-21 23:15:51 | DEBUG    | ckd_preprocessor | [Step 8][kaggle] Numeric cols to impute: 15 | Categorical: 13
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 8][kaggle] Fitted numeric imputer (median) on 15 column(s).
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 8][kaggle] Fitted categorical imputer (most_frequent) on 13 column(s).
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 8] Transforming UAE using UCI-fitted imputers (no fitting on UAE).
+2026-06-21 23:15:51 | DEBUG    | ckd_preprocessor | [Step 8][uae] Numeric cols to impute: 9 | Categorical: 0
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 8][uae] Applied external numeric imputer stats to 2 column(s).
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 8][uae] Fallback self-fitted median imputer on 7 uncovered column(s): ['cholesterol', 'egfr', 'systolic_bp', 'diastolic_bp', 'bmi', 'time_to_event_months', 'followup_years']
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 9] Encoding features and targets …
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 9] UCI: encoded 10 feature column(s).
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 9] Kaggle: encoded 13 feature column(s).
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 9] UAE: encoded 12 feature column(s).
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 10] Validating processed datasets …
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 10][UCI] ✔ No NaN targets.
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 10][UCI] Shape after preprocessing: (400, 27) | NaN count: 0
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 10][Kaggle] ✔ No NaN targets.
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 10][Kaggle] ✔ No 'discrete' rows.
+2026-06-21 23:15:51 | WARNING  | ckd_preprocessor | [Kaggle] Column 'bp_limit' contains unexpected value(s) after encoding: ['2']
+2026-06-21 23:15:51 | WARNING  | ckd_preprocessor | [Kaggle] Column 'ckd_binary_label' contains unexpected value(s) after encoding: ['ckd', 'notckd']
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 10][Kaggle] Shape after preprocessing: (200, 31) | NaN count: 0
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 10][UAE] ✔ No NaN targets.
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 10][UAE] Shape after preprocessing: (491, 24) | NaN count: 0
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 10] All validation checks passed.
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 11] Saving preprocessing artifacts …
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 11] Artifacts saved to: /Users/vrinda/Desktop/Mom Kidney CKD/artifacts/preprocessing
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 12] Saving processed datasets …
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 12] Saved: /Users/vrinda/Desktop/Mom Kidney CKD/data/processed/uci_processed.csv  (400 rows)
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 12] Saved: /Users/vrinda/Desktop/Mom Kidney CKD/data/processed/kaggle_processed.csv  (200 rows)
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 12] Saved: /Users/vrinda/Desktop/Mom Kidney CKD/data/processed/uae_processed.csv  (491 rows)
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 13] Writing preprocessing report …
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | [Step 13] Report saved to: /Users/vrinda/Desktop/Mom Kidney CKD/artifacts/preprocessing/preprocessing_summary.json
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | ======================================================================
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | CKD Preprocessing Pipeline – COMPLETE
+2026-06-21 23:15:51 | INFO     | ckd_preprocessor | ======================================================================
+2026-06-24 13:57:53 | INFO     | ckd_preprocessor | ======================================================================
+2026-06-24 13:57:53 | INFO     | ckd_preprocessor | CKD Preprocessing Pipeline – START
+2026-06-24 13:57:53 | INFO     | ckd_preprocessor | ======================================================================
+2026-06-24 13:57:53 | INFO     | ckd_preprocessor | [Step 1] Loading datasets via data_loader.py …
+2026-06-24 14:03:57 | INFO     | ckd_preprocessor | ======================================================================
+2026-06-24 14:03:57 | INFO     | ckd_preprocessor | CKD Preprocessing Pipeline – START
+2026-06-24 14:03:57 | INFO     | ckd_preprocessor | ======================================================================
+2026-06-24 14:03:57 | INFO     | ckd_preprocessor | [Step 1] Loading datasets via data_loader.py …
+2026-06-24 14:06:32 | INFO     | ckd_preprocessor | ======================================================================
+2026-06-24 14:06:32 | INFO     | ckd_preprocessor | CKD Preprocessing Pipeline – START
+2026-06-24 14:06:32 | INFO     | ckd_preprocessor | ======================================================================
+2026-06-24 14:06:32 | INFO     | ckd_preprocessor | [Step 1] Loading datasets via data_loader.py …
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 1] Loaded – UCI: (400, 27) | Kaggle: (202, 31) | UAE: (491, 24)
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 2] Removing invalid Kaggle rows …
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 2] Rows with invalid label ('discrete', etc.): 1 (0.50%)
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 2] Rows with NaN target: 1 (0.50%)
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 2] Kaggle rows: 202 → 200  (removed 2 total)
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 3] Cleaning UCI target labels …
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 3] UCI target: 2 label(s) cleaned (whitespace/tab stripped).
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 3] UCI target value counts: {'ckd': 250, 'notckd': 150}
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 4] Standardising missing values for UCI …
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 4] UCI: 0 cell(s) replaced with NaN.
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 4] Standardising missing values for Kaggle …
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 4] Kaggle: 0 cell(s) replaced with NaN.
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 4] Standardising missing values for UAE …
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 4] UAE: 0 cell(s) replaced with NaN.
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 5] Parsing interval/threshold strings …
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 5] UCI interval conversions: {'age': 0, 'blood_pressure': 0, 'specific_gravity': 0, 'albumin': 0, 'sugar': 0, 'blood_glucose_random': 0, 'blood_urea': 0, 'serum_creatinine': 0, 'sodium': 0, 'potassium': 0, 'hemoglobin': 0, 'packed_cell_volume': 0, 'white_blood_cell_count': 0, 'red_blood_cell_count': 0}
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 5] Kaggle interval conversions: {'age': 190, 'blood_pressure_diastolic': 0, 'specific_gravity': 159, 'albumin': 187, 'sugar': 199, 'blood_glucose_random': 197, 'blood_urea': 199, 'serum_creatinine': 199, 'sodium': 199, 'potassium': 199, 'hemoglobin': 185, 'packed_cell_volume': 181, 'white_blood_cell_count': 199, 'red_blood_cell_count': 199, 'egfr': 197}
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 6] Type conversion for 'uci' …
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 6] uci: converted 14 column(s) to float64.
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 6] Type conversion for 'kaggle' …
+2026-06-24 14:06:33 | WARNING  | ckd_preprocessor | [Step 6][KAGGLE] Column 'blood_pressure' not found – skipped.
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 6] kaggle: converted 16 column(s) to float64.
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 6] Type conversion for 'uae' …
+2026-06-24 14:06:33 | WARNING  | ckd_preprocessor | [Step 6][UAE] Column 'blood_pressure' not found – skipped.
+2026-06-24 14:06:33 | WARNING  | ckd_preprocessor | [Step 6][UAE] Column 'sodium' not found – skipped.
+2026-06-24 14:06:33 | WARNING  | ckd_preprocessor | [Step 6][UAE] Column 'potassium' not found – skipped.
+2026-06-24 14:06:33 | WARNING  | ckd_preprocessor | [Step 6][UAE] Column 'hemoglobin' not found – skipped.
+2026-06-24 14:06:33 | WARNING  | ckd_preprocessor | [Step 6][UAE] Column 'blood_urea' not found – skipped.
+2026-06-24 14:06:33 | WARNING  | ckd_preprocessor | [Step 6][UAE] Column 'albumin' not found – skipped.
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 6] uae: converted 15 column(s) to float64.
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 6b] UAE serum_creatinine converted µmol/L → mg/dL (÷ 88.4): median 66.0 µmol/L → 0.747 mg/dL.
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 7] Categorical standardisation for 'uci' …
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 7] uci: 0 total cell(s) remapped across 0 column(s).
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 7] Categorical standardisation for 'kaggle' …
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 7] kaggle: 0 total cell(s) remapped across 0 column(s).
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 7] Categorical standardisation for 'uae' …
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 7] uae: 0 total cell(s) remapped across 0 column(s).
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 8] Imputation …
+2026-06-24 14:06:33 | DEBUG    | ckd_preprocessor | [Step 8][uci] Numeric cols to impute: 14 | Categorical: 10
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 8][uci] Fitted numeric imputer (median) on 14 column(s).
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 8][uci] Fitted categorical imputer (most_frequent) on 10 column(s).
+2026-06-24 14:06:33 | DEBUG    | ckd_preprocessor | [Step 8][kaggle] Numeric cols to impute: 15 | Categorical: 13
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 8][kaggle] Fitted numeric imputer (median) on 15 column(s).
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 8][kaggle] Fitted categorical imputer (most_frequent) on 13 column(s).
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 8] Transforming UAE using UCI-fitted imputers (no fitting on UAE).
+2026-06-24 14:06:33 | DEBUG    | ckd_preprocessor | [Step 8][uae] Numeric cols to impute: 9 | Categorical: 0
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 8][uae] Applied external numeric imputer stats to 2 column(s).
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 8][uae] Fallback self-fitted median imputer on 7 uncovered column(s): ['cholesterol', 'egfr', 'systolic_bp', 'diastolic_bp', 'bmi', 'time_to_event_months', 'followup_years']
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 9] Encoding features and targets …
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 9] UCI: encoded 10 feature column(s).
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 9] Kaggle: encoded 13 feature column(s).
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 9] UAE: encoded 12 feature column(s).
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 10] Validating processed datasets …
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 10][UCI] ✔ No NaN targets.
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 10][UCI] Shape after preprocessing: (400, 27) | NaN count: 0
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 10][Kaggle] ✔ No NaN targets.
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 10][Kaggle] ✔ No 'discrete' rows.
+2026-06-24 14:06:33 | WARNING  | ckd_preprocessor | [Kaggle] Column 'bp_limit' contains unexpected value(s) after encoding: ['2']
+2026-06-24 14:06:33 | WARNING  | ckd_preprocessor | [Kaggle] Column 'ckd_binary_label' contains unexpected value(s) after encoding: ['ckd', 'notckd']
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 10][Kaggle] Shape after preprocessing: (200, 31) | NaN count: 0
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 10][UAE] ✔ No NaN targets.
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 10][UAE] Shape after preprocessing: (491, 24) | NaN count: 0
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 10] All validation checks passed.
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 11] Saving preprocessing artifacts …
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 11] Artifacts saved to: /Users/vrinda/Desktop/Mom Kidney CKD/artifacts/preprocessing
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 12] Saving processed datasets …
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 12] Saved: /Users/vrinda/Desktop/Mom Kidney CKD/data/processed/uci_processed.csv  (400 rows)
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 12] Saved: /Users/vrinda/Desktop/Mom Kidney CKD/data/processed/kaggle_processed.csv  (200 rows)
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 12] Saved: /Users/vrinda/Desktop/Mom Kidney CKD/data/processed/uae_processed.csv  (491 rows)
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 13] Writing preprocessing report …
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | [Step 13] Report saved to: /Users/vrinda/Desktop/Mom Kidney CKD/artifacts/preprocessing/preprocessing_summary.json
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | ======================================================================
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | CKD Preprocessing Pipeline – COMPLETE
+2026-06-24 14:06:33 | INFO     | ckd_preprocessor | ======================================================================
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | ======================================================================
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | CKD Preprocessing Pipeline – START
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | ======================================================================
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 1] Loading datasets via data_loader.py …
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 1] Loaded – UCI: (400, 27) | Kaggle: (202, 31) | UAE: (491, 24)
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 2] Removing invalid Kaggle rows …
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 2] Rows with invalid label ('discrete', etc.): 1 (0.50%)
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 2] Rows with NaN target: 1 (0.50%)
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 2] Kaggle rows: 202 → 200  (removed 2 total)
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 3] Cleaning UCI target labels …
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 3] UCI target: 2 label(s) cleaned (whitespace/tab stripped).
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 3] UCI target value counts: {'ckd': 250, 'notckd': 150}
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 4] Standardising missing values for UCI …
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 4] UCI: 0 cell(s) replaced with NaN.
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 4] Standardising missing values for Kaggle …
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 4] Kaggle: 0 cell(s) replaced with NaN.
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 4] Standardising missing values for UAE …
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 4] UAE: 0 cell(s) replaced with NaN.
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 5] Parsing interval/threshold strings …
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 5] UCI interval conversions: {'age': 0, 'blood_pressure': 0, 'specific_gravity': 0, 'albumin': 0, 'sugar': 0, 'blood_glucose_random': 0, 'blood_urea': 0, 'serum_creatinine': 0, 'sodium': 0, 'potassium': 0, 'hemoglobin': 0, 'packed_cell_volume': 0, 'white_blood_cell_count': 0, 'red_blood_cell_count': 0}
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 5] Kaggle interval conversions: {'age': 190, 'blood_pressure_diastolic': 0, 'specific_gravity': 159, 'albumin': 187, 'sugar': 199, 'blood_glucose_random': 197, 'blood_urea': 199, 'serum_creatinine': 199, 'sodium': 199, 'potassium': 199, 'hemoglobin': 185, 'packed_cell_volume': 181, 'white_blood_cell_count': 199, 'red_blood_cell_count': 199, 'egfr': 197}
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 6] Type conversion for 'uci' …
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 6] uci: converted 14 column(s) to float64.
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 6] Type conversion for 'kaggle' …
+2026-07-06 11:44:24 | WARNING  | ckd_preprocessor | [Step 6][KAGGLE] Column 'blood_pressure' not found – skipped.
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 6] kaggle: converted 16 column(s) to float64.
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 6] Type conversion for 'uae' …
+2026-07-06 11:44:24 | WARNING  | ckd_preprocessor | [Step 6][UAE] Column 'blood_pressure' not found – skipped.
+2026-07-06 11:44:24 | WARNING  | ckd_preprocessor | [Step 6][UAE] Column 'sodium' not found – skipped.
+2026-07-06 11:44:24 | WARNING  | ckd_preprocessor | [Step 6][UAE] Column 'potassium' not found – skipped.
+2026-07-06 11:44:24 | WARNING  | ckd_preprocessor | [Step 6][UAE] Column 'hemoglobin' not found – skipped.
+2026-07-06 11:44:24 | WARNING  | ckd_preprocessor | [Step 6][UAE] Column 'blood_urea' not found – skipped.
+2026-07-06 11:44:24 | WARNING  | ckd_preprocessor | [Step 6][UAE] Column 'albumin' not found – skipped.
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 6] uae: converted 15 column(s) to float64.
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 6b] UAE serum_creatinine converted µmol/L → mg/dL (÷ 88.4): median 66.0 µmol/L → 0.747 mg/dL.
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 7] Categorical standardisation for 'uci' …
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 7] uci: 0 total cell(s) remapped across 0 column(s).
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 7] Categorical standardisation for 'kaggle' …
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 7] kaggle: 0 total cell(s) remapped across 0 column(s).
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 7] Categorical standardisation for 'uae' …
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 7] uae: 0 total cell(s) remapped across 0 column(s).
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 8] Imputation …
+2026-07-06 11:44:24 | DEBUG    | ckd_preprocessor | [Step 8][uci] Numeric cols to impute: 14 | Categorical: 10
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 8][uci] Fitted numeric imputer (median) on 14 column(s).
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 8][uci] Fitted categorical imputer (most_frequent) on 10 column(s).
+2026-07-06 11:44:24 | DEBUG    | ckd_preprocessor | [Step 8][kaggle] Numeric cols to impute: 15 | Categorical: 13
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 8][kaggle] Fitted numeric imputer (median) on 15 column(s).
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 8][kaggle] Fitted categorical imputer (most_frequent) on 13 column(s).
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 8] Transforming UAE using UCI-fitted imputers (no fitting on UAE).
+2026-07-06 11:44:24 | DEBUG    | ckd_preprocessor | [Step 8][uae] Numeric cols to impute: 9 | Categorical: 0
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 8][uae] Applied external numeric imputer stats to 2 column(s).
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 8][uae] Fallback self-fitted median imputer on 7 uncovered column(s): ['cholesterol', 'egfr', 'systolic_bp', 'diastolic_bp', 'bmi', 'time_to_event_months', 'followup_years']
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 9] Encoding features and targets …
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 9] UCI: encoded 10 feature column(s).
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 9] Kaggle: encoded 13 feature column(s).
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 9] UAE: encoded 12 feature column(s).
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 10] Validating processed datasets …
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 10][UCI] ✔ No NaN targets.
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 10][UCI] Shape after preprocessing: (400, 27) | NaN count: 0
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 10][Kaggle] ✔ No NaN targets.
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 10][Kaggle] ✔ No 'discrete' rows.
+2026-07-06 11:44:24 | WARNING  | ckd_preprocessor | [Kaggle] Column 'bp_limit' contains unexpected value(s) after encoding: ['2']
+2026-07-06 11:44:24 | WARNING  | ckd_preprocessor | [Kaggle] Column 'ckd_binary_label' contains unexpected value(s) after encoding: ['ckd', 'notckd']
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 10][Kaggle] Shape after preprocessing: (200, 31) | NaN count: 0
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 10][UAE] ✔ No NaN targets.
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 10][UAE] Shape after preprocessing: (491, 24) | NaN count: 0
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 10] All validation checks passed.
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 11] Saving preprocessing artifacts …
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 11] Artifacts saved to: /Users/vrinda/Desktop/Mom Kidney CKD/artifacts/preprocessing
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 12] Saving processed datasets …
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 12] Saved: /Users/vrinda/Desktop/Mom Kidney CKD/data/processed/uci_processed.csv  (400 rows)
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 12] Saved: /Users/vrinda/Desktop/Mom Kidney CKD/data/processed/kaggle_processed.csv  (200 rows)
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 12] Saved: /Users/vrinda/Desktop/Mom Kidney CKD/data/processed/uae_processed.csv  (491 rows)
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 13] Writing preprocessing report …
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | [Step 13] Report saved to: /Users/vrinda/Desktop/Mom Kidney CKD/artifacts/preprocessing/preprocessing_summary.json
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | ======================================================================
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | CKD Preprocessing Pipeline – COMPLETE
+2026-07-06 11:44:24 | INFO     | ckd_preprocessor | ======================================================================
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | ======================================================================
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | CKD Preprocessing Pipeline – START
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | ======================================================================
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 1] Loading datasets via data_loader.py …
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 1] Loaded – UCI: (400, 27) | Kaggle: (202, 31) | UAE: (491, 24)
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 2] Removing invalid Kaggle rows …
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 2] Rows with invalid label ('discrete', etc.): 1 (0.50%)
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 2] Rows with NaN target: 1 (0.50%)
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 2] Kaggle rows: 202 → 200  (removed 2 total)
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 3] Cleaning UCI target labels …
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 3] UCI target: 2 label(s) cleaned (whitespace/tab stripped).
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 3] UCI target value counts: {'ckd': 250, 'notckd': 150}
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 4] Standardising missing values for UCI …
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 4] UCI: 0 cell(s) replaced with NaN.
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 4] Standardising missing values for Kaggle …
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 4] Kaggle: 0 cell(s) replaced with NaN.
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 4] Standardising missing values for UAE …
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 4] UAE: 0 cell(s) replaced with NaN.
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 5] Parsing interval/threshold strings …
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 5] UCI interval conversions: {'age': 0, 'blood_pressure': 0, 'specific_gravity': 0, 'albumin': 0, 'sugar': 0, 'blood_glucose_random': 0, 'blood_urea': 0, 'serum_creatinine': 0, 'sodium': 0, 'potassium': 0, 'hemoglobin': 0, 'packed_cell_volume': 0, 'white_blood_cell_count': 0, 'red_blood_cell_count': 0}
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 5] Kaggle interval conversions: {'age': 190, 'blood_pressure_diastolic': 0, 'specific_gravity': 159, 'albumin': 187, 'sugar': 199, 'blood_glucose_random': 197, 'blood_urea': 199, 'serum_creatinine': 199, 'sodium': 199, 'potassium': 199, 'hemoglobin': 185, 'packed_cell_volume': 181, 'white_blood_cell_count': 199, 'red_blood_cell_count': 199, 'egfr': 197}
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 6] Type conversion for 'uci' …
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 6] uci: converted 14 column(s) to float64.
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 6] Type conversion for 'kaggle' …
+2026-07-07 16:13:00 | WARNING  | ckd_preprocessor | [Step 6][KAGGLE] Column 'blood_pressure' not found – skipped.
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 6] kaggle: converted 16 column(s) to float64.
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 6] Type conversion for 'uae' …
+2026-07-07 16:13:00 | WARNING  | ckd_preprocessor | [Step 6][UAE] Column 'blood_pressure' not found – skipped.
+2026-07-07 16:13:00 | WARNING  | ckd_preprocessor | [Step 6][UAE] Column 'sodium' not found – skipped.
+2026-07-07 16:13:00 | WARNING  | ckd_preprocessor | [Step 6][UAE] Column 'potassium' not found – skipped.
+2026-07-07 16:13:00 | WARNING  | ckd_preprocessor | [Step 6][UAE] Column 'hemoglobin' not found – skipped.
+2026-07-07 16:13:00 | WARNING  | ckd_preprocessor | [Step 6][UAE] Column 'blood_urea' not found – skipped.
+2026-07-07 16:13:00 | WARNING  | ckd_preprocessor | [Step 6][UAE] Column 'albumin' not found – skipped.
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 6] uae: converted 15 column(s) to float64.
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 6b] UAE serum_creatinine converted µmol/L → mg/dL (÷ 88.4): median 66.0 µmol/L → 0.747 mg/dL.
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 7] Categorical standardisation for 'uci' …
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 7] uci: 0 total cell(s) remapped across 0 column(s).
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 7] Categorical standardisation for 'kaggle' …
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 7] kaggle: 0 total cell(s) remapped across 0 column(s).
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 7] Categorical standardisation for 'uae' …
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 7] uae: 0 total cell(s) remapped across 0 column(s).
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 8] Imputation …
+2026-07-07 16:13:00 | DEBUG    | ckd_preprocessor | [Step 8][uci] Numeric cols to impute: 14 | Categorical: 10
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 8][uci] Fitted numeric imputer (median) on 14 column(s).
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 8][uci] Fitted categorical imputer (most_frequent) on 10 column(s).
+2026-07-07 16:13:00 | DEBUG    | ckd_preprocessor | [Step 8][kaggle] Numeric cols to impute: 15 | Categorical: 13
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 8][kaggle] Fitted numeric imputer (median) on 15 column(s).
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 8][kaggle] Fitted categorical imputer (most_frequent) on 13 column(s).
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 8] Transforming UAE using UCI-fitted imputers (no fitting on UAE).
+2026-07-07 16:13:00 | DEBUG    | ckd_preprocessor | [Step 8][uae] Numeric cols to impute: 9 | Categorical: 0
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 8][uae] Applied external numeric imputer stats to 2 column(s).
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 8][uae] Fallback self-fitted median imputer on 7 uncovered column(s): ['cholesterol', 'egfr', 'systolic_bp', 'diastolic_bp', 'bmi', 'time_to_event_months', 'followup_years']
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 9] Encoding features and targets …
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 9] UCI: encoded 10 feature column(s).
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 9] Kaggle: encoded 13 feature column(s).
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 9] UAE: encoded 12 feature column(s).
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 10] Validating processed datasets …
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 10][UCI] ✔ No NaN targets.
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 10][UCI] Shape after preprocessing: (400, 27) | NaN count: 0
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 10][Kaggle] ✔ No NaN targets.
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 10][Kaggle] ✔ No 'discrete' rows.
+2026-07-07 16:13:00 | WARNING  | ckd_preprocessor | [Kaggle] Column 'bp_limit' contains unexpected value(s) after encoding: ['2']
+2026-07-07 16:13:00 | WARNING  | ckd_preprocessor | [Kaggle] Column 'ckd_binary_label' contains unexpected value(s) after encoding: ['ckd', 'notckd']
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 10][Kaggle] Shape after preprocessing: (200, 31) | NaN count: 0
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 10][UAE] ✔ No NaN targets.
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 10][UAE] Shape after preprocessing: (491, 24) | NaN count: 0
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 10] All validation checks passed.
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 11] Saving preprocessing artifacts …
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 11] Artifacts saved to: /Users/vrinda/Desktop/Mom Kidney CKD/artifacts/preprocessing
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 12] Saving processed datasets …
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 12] Saved: /Users/vrinda/Desktop/Mom Kidney CKD/data/processed/uci_processed.csv  (400 rows)
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 12] Saved: /Users/vrinda/Desktop/Mom Kidney CKD/data/processed/kaggle_processed.csv  (200 rows)
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 12] Saved: /Users/vrinda/Desktop/Mom Kidney CKD/data/processed/uae_processed.csv  (491 rows)
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 13] Writing preprocessing report …
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | [Step 13] Report saved to: /Users/vrinda/Desktop/Mom Kidney CKD/artifacts/preprocessing/preprocessing_summary.json
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | ======================================================================
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | CKD Preprocessing Pipeline – COMPLETE
+2026-07-07 16:13:00 | INFO     | ckd_preprocessor | ======================================================================

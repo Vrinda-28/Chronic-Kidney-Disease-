@@ -1,0 +1,16 @@
+{
+  "test_accuracy": 0.9875,
+  "test_balanced_accuracy": 0.983333,
+  "test_precision": 0.980392,
+  "test_recall": 1.0,
+  "test_sensitivity": 1.0,
+  "test_specificity": 0.966667,
+  "test_f1": 0.990099,
+  "test_mcc": 0.973505,
+  "test_tp": 50,
+  "test_tn": 29,
+  "test_fp": 1,
+  "test_fn": 0,
+  "test_roc_auc": 0.983,
+  "test_pr_auc": 0.980008
+}

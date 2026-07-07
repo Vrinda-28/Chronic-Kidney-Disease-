@@ -1,0 +1,229 @@
+# =============================================================================
+# config/split_config.yaml
+#
+# Centralised configuration for train_test_split.py.
+# Nothing in the splitting module hardcodes proportions, seeds, or paths —
+# everything is read from here, so experiments can be varied without touching
+# source code.
+#
+# DESIGN DECISIONS (justifications in train_test_split.py module docstring):
+#   * UCI   → StratifiedKFold(n_splits=5)  — 400 rows, binary
+#   * Kaggle → RepeatedStratifiedKFold(n_splits=5, n_repeats=5) — 200 rows, 5-class
+#   * UAE   → never split; role = external_validation only
+#   * Merge → disabled by default (Kaggle has no notCKD rows, so merging
+#              for binary detection creates severe artificial imbalance)
+# =============================================================================
+
+# ---------------------------------------------------------------------------
+# Global random seed — propagated to ALL sklearn splitter objects.
+# Change this only when intentionally testing seed sensitivity.
+# ---------------------------------------------------------------------------
+random_seed: 42
+
+# ---------------------------------------------------------------------------
+# UCI CKD dataset (binary: 0=notckd, 1=ckd)
+# ---------------------------------------------------------------------------
+uci:
+  # Proportion of the full dataset reserved as the final, locked test set.
+  # Applied BEFORE any CV — the test set is never touched during training.
+  test_size: 0.20
+
+  # Whether to use stratified sampling in the train/test split.
+  # Must be true for a class-imbalanced binary target.
+  stratify: true
+
+  # CV strategy used on the training portion (not on the test set).
+  # "stratified_kfold"          → StratifiedKFold (default for binary tasks)
+  # "repeated_stratified_kfold" → RepeatedStratifiedKFold (for tiny datasets)
+  cv_strategy: "stratified_kfold"
+
+  # Number of CV folds.
+  # 5-fold: each val fold ≈ 64 rows (≈40 CKD, ≈24 notCKD). Sufficient.
+  # 10-fold is equally valid; 5 is the consensus default for this size.
+  cv_n_splits: 5
+
+  # Number of CV repetitions (only used for repeated_stratified_kfold).
+  # Set to 1 for plain StratifiedKFold.
+  cv_n_repeats: 1
+
+  # Minimum number of samples required in each class within the training set
+  # for CV to be stratifiable. Pipeline raises CKDSplitError if violated.
+  # Rule of thumb: at least n_splits × 2 to guarantee all folds have ≥ 2.
+  min_samples_per_class_for_cv: 10
+
+  # Human-readable label for logs and metadata.
+  description: "UCI CKD Dataset — Binary Detection (0=notckd, 1=ckd)"
+
+# ---------------------------------------------------------------------------
+# Kaggle CKD staged dataset (multiclass: 0=s1 … 4=s5)
+# ---------------------------------------------------------------------------
+kaggle:
+  test_size: 0.20
+
+  stratify: true
+
+  # RepeatedStratifiedKFold is chosen over plain StratifiedKFold because:
+  #   1. Only ~200 rows total → ~160 train rows → ~32 per class.
+  #   2. A single 5-fold partition of 160 rows has high variance; repeating
+  #      it 5 times and averaging gives a variance-reduced estimate that is
+  #      more trustworthy for a paper's results table.
+  #   3. This mirrors what Gogoi & Valan (2025, NMD) used for comparability.
+  cv_strategy: "repeated_stratified_kfold"
+
+  # 5 folds × 5 repeats = 25 model fits per model per metric.
+  # Each val fold ≈ 32 rows (≈6–8 per class). Tight, but workable.
+  # Do NOT reduce to 3 folds — that would leave only ~4 val samples per
+  # class per fold, which makes per-class metrics unreliable.
+  cv_n_splits: 5
+  cv_n_repeats: 5
+
+  min_samples_per_class_for_cv: 10
+
+  description: "Kaggle CKD Stages Dataset — Multi-class Staging (0=s1 … 4=s5)"
+
+# ---------------------------------------------------------------------------
+# UAE hospital cohort — EXTERNAL VALIDATION ONLY
+# ---------------------------------------------------------------------------
+uae:
+  # The UAE dataset is structurally isolated. It is:
+  #   - Never split into train/test.
+  #   - Never used to fit any splitter, imputer, scaler, or SMOTE.
+  #   - Never included in any CV fold (train or val).
+  #   - Loaded as a complete DataFrame and placed in a separate field in the
+  #     CKDSplitBundle with a role tag of "external_validation".
+  # This mirrors how Ghosh & Khandoker (Sci. Reports 2024) treated their
+  # independent hospital cohort.
+  role: "external_validation"
+  never_split: true
+  never_smote: true
+  description: "UAE Hospital CKD Cohort — External Validation Only (491 rows)"
+
+# ---------------------------------------------------------------------------
+# Dataset merge options
+# ---------------------------------------------------------------------------
+merge:
+  # Disabled by default. Merging UCI + Kaggle for the binary task is
+  # misleading: Kaggle contains only CKD-positive patients (stages 1–5),
+  # so merging would create an artificially imbalanced dataset
+  # (~450 CKD vs. ~150 notCKD from UCI alone) with no corresponding
+  # improvement in real-world generalisability.
+  # Set to true only for an explicit ablation study, with the imbalance
+  # consequence clearly reported.
+  enabled: false
+
+  # "binary_merged": collapse Kaggle stages → CKD=1, add to UCI.
+  # Only meaningful if you want to test whether the larger merged CKD
+  # training set improves the binary model vs. UCI-only — but note the
+  # Kaggle contribution would be 100% CKD=1.
+  mode: "binary_merged"
+
+  # If merging is enabled, this column name is used for the merged binary
+  # target. Kaggle rows get ckd_label=1 (all are CKD patients).
+  merged_target_column: "ckd_label"
+
+# ---------------------------------------------------------------------------
+# SMOTE policy — enforced at the split level, not applied here
+# ---------------------------------------------------------------------------
+smote:
+  # This module does NOT apply SMOTE. SMOTE belongs inside CV training folds
+  # in the model training stage. This section documents the policy so it is
+  # not silently violated by the training module.
+  #
+  # Rule: For each CV fold, apply SMOTE ONLY to train_fold rows.
+  #       NEVER apply it to val_fold, test, or UAE rows.
+  #
+  # The split manifests include a per-fold "smote_applicable" flag to make
+  # this constraint machine-readable for the training module.
+  policy: "train_folds_only"
+  note: >
+    SMOTE is not applied in train_test_split.py. The training module must
+    apply SMOTE only inside each CV training fold after iterating cv_fold_indices.
+    Recommended alternative for this dataset size: class_weight='balanced' in
+    sklearn models or scale_pos_weight in XGBoost, which avoids the k-neighbours
+    instability SMOTE suffers when minority class has < 6 samples per fold.
+
+# ---------------------------------------------------------------------------
+# Feature selection policy
+# ---------------------------------------------------------------------------
+feature_selection:
+  # Feature selection must be fitted exclusively on each CV training fold.
+  # It must never see val_fold or test data.
+  # This module provides no feature selection — it only provides the indices
+  # required for the training module to implement this correctly.
+  policy: "inside_cv_train_folds_only"
+
+# ---------------------------------------------------------------------------
+# Scaling policy
+# ---------------------------------------------------------------------------
+scaling:
+  # Scalers (StandardScaler, MinMaxScaler, etc.) must be fitted on each CV
+  # training fold and only applied (transform-only) to val and test data.
+  # Tree-ensemble models (RF, XGBoost, LightGBM, CatBoost) do not require
+  # scaling, but if a linear baseline (LR, SVM) is added, this policy applies.
+  policy: "inside_cv_train_folds_only"
+  note: >
+    Tree-ensemble models used in this project (RF, XGBoost, LightGBM, CatBoost)
+    are scale-invariant. Scaling is only needed for LR/SVM baselines.
+
+# ---------------------------------------------------------------------------
+# Imbalance handling recommendation (informational — not enforced here)
+# ---------------------------------------------------------------------------
+class_imbalance:
+  uci_note: >
+    UCI binary: ~250 CKD vs ~150 notCKD (62.5%/37.5%). Mildly imbalanced.
+    Recommended: scale_pos_weight=150/250=0.6 in XGBoost, or
+    class_weight='balanced' in sklearn. SMOTE is optional but adds risk of
+    overfitting with only ~120 minority-class training rows.
+  kaggle_note: >
+    Kaggle 5-class: distribution unknown but expect imbalance across stages.
+    Recommended: class_weight='balanced_subsample' (Random Forest) or
+    class_weight='balanced' (sklearn). SMOTE-NC (for mixed features) is valid
+    but requires ≥ k_neighbors + 1 = 6 samples per class per fold; verify
+    this holds before enabling.
+
+# ---------------------------------------------------------------------------
+# Artifact and output paths
+# ---------------------------------------------------------------------------
+paths:
+  # Input: engineered datasets from feature_engineering.py
+  engineered_dir: "data/engineered"
+
+  # Output: split DataFrames saved here for training module to load directly
+  splits_dir: "data/splits"
+
+  # Artifacts: manifests, CV fold indices, metadata JSON
+  artifacts_dir: "artifacts/splits"
+
+  # Filenames
+  uci_engineered: "uci_engineered.csv"
+  kaggle_engineered: "kaggle_engineered.csv"
+  uae_engineered: "uae_engineered.csv"
+
+  split_metadata_filename: "split_metadata.json"
+
+# ---------------------------------------------------------------------------
+# Logging
+# ---------------------------------------------------------------------------
+logging:
+  log_dir: "logs"
+  log_filename: "train_test_split.log"
+  console_level: "INFO"
+  file_level: "DEBUG"
+
+# ---------------------------------------------------------------------------
+# Reproducibility fingerprinting
+# ---------------------------------------------------------------------------
+reproducibility:
+  # Save a SHA-256 fingerprint of every engineered input DataFrame and every
+  # output split DataFrame to split_metadata.json. Allows a reviewer or future
+  # pipeline run to verify they are using the exact same data splits.
+  save_fingerprints: true
+
+  # Save the complete list of (train_indices, val_indices) per CV fold to
+  # artifacts/splits/{dataset}_cv_fold_indices.json. Allows the training
+  # module to reproduce exact splits even if sklearn's internal implementation
+  # changes across versions.
+  save_cv_fold_indices: true
+
+  # Save per-split manifests (CSV with row_position + target value + split set).
+  save_manifests: true

@@ -1,0 +1,68 @@
+{
+  "case_name": "most_confident_CKD",
+  "patient_index": 1,
+  "y_true": 1,
+  "y_proba": 1.0,
+  "lime_features": [
+    [
+      "specific_gravity <= 1.01",
+      0.06520000579609846
+    ],
+    [
+      "hemoglobin_creatinine_ratio <= 3.18",
+      0.0468066423655749
+    ],
+    [
+      "albumin_specific_gravity_interaction > 1.02",
+      0.04367184381826459
+    ],
+    [
+      "anemia_risk_score > 0.63",
+      0.042565024233931006
+    ],
+    [
+      "hemoglobin <= 10.85",
+      0.041947938908423944
+    ],
+    [
+      "albumin > 1.00",
+      0.041699238089593416
+    ],
+    [
+      "0.00 < hypertension <= 1.00",
+      0.037106316676080914
+    ],
+    [
+      "age_creatinine_interaction > 186.80",
+      0.03582199303532511
+    ],
+    [
+      "diabetes_mellitus > 0.00",
+      0.031629822033187656
+    ],
+    [
+      "cardiovascular_burden_score > 1.00",
+      0.03133807197391295
+    ],
+    [
+      "bp_risk_score > 80.00",
+      0.030709539184732907
+    ],
+    [
+      "4.57 < red_blood_cell_count <= 4.80",
+      -0.028094651377267375
+    ],
+    [
+      "bun_creatinine_ratio <= 20.60",
+      -0.024485499316103623
+    ],
+    [
+      "sugar > 0.00",
+      -0.023854496352768796
+    ],
+    [
+      "6800.00 < white_blood_cell_count <= 8000.00",
+      -0.022149356423516772
+    ]
+  ]
+}

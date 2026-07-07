@@ -1,0 +1,68 @@
+{
+  "case_name": "most_confident_notCKD",
+  "patient_index": 0,
+  "y_true": 0,
+  "y_proba": 0.0,
+  "lime_features": [
+    [
+      "anemia_risk_score <= 0.10",
+      -0.21222458779655257
+    ],
+    [
+      "cardiovascular_burden_score <= 0.00",
+      -0.13656555916186155
+    ],
+    [
+      "albumin <= 0.00",
+      -0.11510496042104196
+    ],
+    [
+      "hemoglobin_creatinine_ratio > 14.90",
+      -0.10477270651687605
+    ],
+    [
+      "hemoglobin > 14.30",
+      -0.09176215008084043
+    ],
+    [
+      "1.01 < specific_gravity <= 1.02",
+      -0.09089683535229874
+    ],
+    [
+      "42.00 < blood_urea <= 69.25",
+      -0.07341739358451571
+    ],
+    [
+      "serum_creatinine <= 0.88",
+      -0.06802118623664301
+    ],
+    [
+      "age_creatinine_interaction <= 39.30",
+      -0.05533612445540052
+    ],
+    [
+      "albumin_specific_gravity_interaction <= 0.00",
+      -0.03583036554007512
+    ],
+    [
+      "bp_risk_score <= 70.00",
+      0.03498153230458247
+    ],
+    [
+      "135.00 < sodium <= 138.00",
+      0.03497912443955731
+    ],
+    [
+      "diabetes_mellitus <= 0.00",
+      -0.031120708536999223
+    ],
+    [
+      "red_blood_cell_count > 5.20",
+      -0.026901900161927388
+    ],
+    [
+      "urea_creatinine_product <= 25.10",
+      -0.02146787761511964
+    ]
+  ]
+}

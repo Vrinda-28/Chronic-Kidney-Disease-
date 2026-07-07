@@ -1,0 +1,107 @@
+{
+  "accuracy": {
+    "mean": 0.9875,
+    "std": 0.011693,
+    "min": 0.96875,
+    "max": 1.0,
+    "n_folds": 5
+  },
+  "balanced_accuracy": {
+    "mean": 0.988333,
+    "std": 0.01219,
+    "min": 0.966667,
+    "max": 1.0,
+    "n_folds": 5
+  },
+  "f1": {
+    "mean": 0.989937,
+    "std": 0.009371,
+    "min": 0.975,
+    "max": 1.0,
+    "n_folds": 5
+  },
+  "fn": {
+    "mean": 0.6,
+    "std": 0.489898,
+    "min": 0.0,
+    "max": 1.0,
+    "n_folds": 5
+  },
+  "fold_num": {
+    "mean": 2.0,
+    "std": 1.414214,
+    "min": 0.0,
+    "max": 4.0,
+    "n_folds": 5
+  },
+  "fp": {
+    "mean": 0.2,
+    "std": 0.4,
+    "min": 0.0,
+    "max": 1.0,
+    "n_folds": 5
+  },
+  "mcc": {
+    "mean": 0.973655,
+    "std": 0.024861,
+    "min": 0.933333,
+    "max": 1.0,
+    "n_folds": 5
+  },
+  "pr_auc": {
+    "mean": 0.999515,
+    "std": 0.000594,
+    "min": 0.998765,
+    "max": 1.0,
+    "n_folds": 5
+  },
+  "precision": {
+    "mean": 0.995,
+    "std": 0.01,
+    "min": 0.975,
+    "max": 1.0,
+    "n_folds": 5
+  },
+  "recall": {
+    "mean": 0.985,
+    "std": 0.012247,
+    "min": 0.975,
+    "max": 1.0,
+    "n_folds": 5
+  },
+  "roc_auc": {
+    "mean": 0.999167,
+    "std": 0.00102,
+    "min": 0.997917,
+    "max": 1.0,
+    "n_folds": 5
+  },
+  "sensitivity": {
+    "mean": 0.985,
+    "std": 0.012247,
+    "min": 0.975,
+    "max": 1.0,
+    "n_folds": 5
+  },
+  "specificity": {
+    "mean": 0.991667,
+    "std": 0.016667,
+    "min": 0.958333,
+    "max": 1.0,
+    "n_folds": 5
+  },
+  "tn": {
+    "mean": 23.8,
+    "std": 0.4,
+    "min": 23.0,
+    "max": 24.0,
+    "n_folds": 5
+  },
+  "tp": {
+    "mean": 39.4,
+    "std": 0.489898,
+    "min": 39.0,
+    "max": 40.0,
+    "n_folds": 5
+  }
+}

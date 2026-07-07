@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CKD Model Comparison Report</title>
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0f1117; color: #e8eaf6;
+    padding: 24px 32px;
+  }
+  h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 6px;
+       background: linear-gradient(90deg,#7c3aed,#3b82f6); -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent; }
+  .subtitle { color: #94a3b8; font-size: 0.9rem; margin-bottom: 28px; }
+  section { margin-bottom: 48px; }
+  h2 { font-size: 1.2rem; color: #818cf8; margin-bottom: 12px;
+       border-left: 3px solid #7c3aed; padding-left: 10px; }
+  .table-wrapper { overflow-x: auto; border-radius: 12px;
+                   box-shadow: 0 4px 24px rgba(0,0,0,0.4); }
+  table { border-collapse: collapse; width: 100%; font-size: 0.82rem; }
+  thead { background: #1e1f2e; }
+  th { padding: 10px 12px; text-align: left; cursor: pointer;
+       user-select: none; white-space: nowrap; color: #a5b4fc;
+       border-bottom: 2px solid #312e81; transition: background 0.2s; }
+  th:hover { background: #2e2f44; }
+  td { padding: 8px 12px; border-bottom: 1px solid #1e293b;
+       white-space: nowrap; transition: background 0.15s; }
+  tr:hover td { filter: brightness(1.12); }
+  tr.best-row td { font-weight: 600; outline: 1px solid #7c3aed; }
+  .stats-list { list-style: none; }
+  .stats-list li { margin-bottom: 16px; }
+  .stats-list pre { background:#1e1f2e; border-radius:6px;
+                    padding:10px; font-size:0.75rem; overflow-x:auto;
+                    color:#94a3b8; margin-top:4px; }
+  .legend { display:flex; gap:16px; flex-wrap:wrap;
+            font-size:0.8rem; color:#94a3b8; margin-bottom:20px; }
+  .legend span { display:flex; align-items:center; gap:6px; }
+  .swatch { width:14px; height:14px; border-radius:3px; }
+  footer { margin-top:48px; color:#475569; font-size:0.75rem; text-align:center; }
+</style>
+
+</head>
+<body>
+  <h1>CKD Model Comparison Report</h1>
+  <p class="subtitle">Generated: 2026-07-07 16:15 &nbsp;|&nbsp; Click any column header to sort</p>
+  <div class="legend">
+    <span><span class="swatch" style="background:rgb(120,220,120)"></span> Best in column</span>
+    <span><span class="swatch" style="background:rgb(220,120,120)"></span> Worst in column</span>
+    <span><span class="swatch" style="outline:1px solid #7c3aed;background:transparent"></span> Best model (overall)</span>
+  </div>
+  <section><h2>UCI_BINARY_CKD — Binary Classification</h2><div class="table-wrapper"><table id="table_UCI_Binary_CKD"><thead><tr><th onclick="sortTable(this)">Model ↕</th><th onclick="sortTable(this)">Best ↕</th><th onclick="sortTable(this)">CV ROC-AUC ↕</th><th onclick="sortTable(this)">Test ROC-AUC ↕</th><th onclick="sortTable(this)">F1 ↕</th><th onclick="sortTable(this)">MCC ↕</th><th onclick="sortTable(this)">Bal. Acc ↕</th><th onclick="sortTable(this)">Sensitivity ↕</th><th onclick="sortTable(this)">Specificity ↕</th><th onclick="sortTable(this)">ECE ↕</th><th onclick="sortTable(this)">Threshold ↕</th><th onclick="sortTable(this)">Train Time (s) ↕</th><th onclick="sortTable(this)">Infer (ms) ↕</th><th onclick="sortTable(this)"># Features ↕</th><th onclick="sortTable(this)">Size (KB) ↕</th></tr></thead><tbody><tr><td style="">LogisticRegression</td><td style="">False</td><td style="background-color:rgb(131,208,120);color:#111;">0.9994</td><td style="background-color:rgb(120,220,120);color:#111;">1.0000</td><td style="background-color:rgb(120,220,120);color:#111;">1.0000</td><td style="background-color:rgb(120,220,120);color:#111;">1.0000</td><td style="background-color:rgb(120,220,120);color:#111;">1.0000</td><td style="background-color:rgb(120,220,120);color:#111;">1.0000</td><td style="background-color:rgb(120,220,120);color:#111;">1.0000</td><td style="">—</td><td style="background-color:rgb(220,120,120);color:#111;">0.5000</td><td style="background-color:rgb(120,220,120);color:#111;">0.1300</td><td style="background-color:rgb(120,220,120);color:#111;">0.2270</td><td style="background-color:rgb(120,220,120);color:#111;">24</td><td style="background-color:rgb(120,220,120);color:#111;">1.8000</td></tr><tr><td style="">RandomForest</td><td style="">False</td><td style="background-color:rgb(167,172,120);color:#111;">0.9988</td><td style="background-color:rgb(220,120,120);color:#111;">0.9830</td><td style="background-color:rgb(169,170,120);color:#111;">0.9901</td><td style="background-color:rgb(169,170,120);color:#111;">0.9735</td><td style="background-color:rgb(182,157,120);color:#111;">0.9833</td><td style="background-color:rgb(120,220,120);color:#111;">1.0000</td><td style="background-color:rgb(220,120,120);color:#111;">0.9667</td><td style="">—</td><td style="background-color:rgb(220,120,120);color:#111;">0.5000</td><td style="background-color:rgb(220,120,120);color:#111;">1.3800</td><td style="background-color:rgb(220,120,120);color:#111;">13.3930</td><td style="background-color:rgb(120,220,120);color:#111;">24</td><td style="background-color:rgb(220,120,120);color:#111;">568.3000</td></tr><tr><td style="">XGBoost</td><td style="">False</td><td style="background-color:rgb(220,120,120);color:#111;">0.9979</td><td style="background-color:rgb(220,120,120);color:#111;">0.9830</td><td style="background-color:rgb(220,120,120);color:#111;">0.9800</td><td style="background-color:rgb(220,120,120);color:#111;">0.9467</td><td style="background-color:rgb(220,120,120);color:#111;">0.9733</td><td style="background-color:rgb(220,120,120);color:#111;">0.9800</td><td style="background-color:rgb(220,120,120);color:#111;">0.9667</td><td style="">—</td><td style="background-color:rgb(220,120,120);color:#111;">0.5000</td><td style="background-color:rgb(200,139,120);color:#111;">1.1400</td><td style="background-color:rgb(121,218,120);color:#111;">0.4180</td><td style="background-color:rgb(220,120,120);color:#111;">23</td><td style="background-color:rgb(162,177,120);color:#111;">245.1000</td></tr><tr><td style="">LightGBM</td><td style="">False</td><td style="background-color:rgb(143,196,120);color:#111;">0.9992</td><td style="background-color:rgb(178,161,120);color:#111;">0.9900</td><td style="background-color:rgb(170,169,120);color:#111;">0.9899</td><td style="background-color:rgb(168,171,120);color:#111;">0.9739</td><td style="background-color:rgb(157,182,120);color:#111;">0.9900</td><td style="background-color:rgb(220,120,120);color:#111;">0.9800</td><td style="background-color:rgb(120,220,120);color:#111;">1.0000</td><td style="">—</td><td style="background-color:rgb(220,120,120);color:#111;">0.5000</td><td style="background-color:rgb(219,120,120);color:#111;">1.3700</td><td style="background-color:rgb(121,218,120);color:#111;">0.4750</td><td style="background-color:rgb(220,120,120);color:#111;">23</td><td style="background-color:rgb(155,184,120);color:#111;">200.1000</td></tr><tr class="best-row"><td style="">CatBoost</td><td style="">True</td><td style="background-color:rgb(120,220,120);color:#111;">0.9996</td><td style="background-color:rgb(120,220,120);color:#111;">1.0000</td><td style="background-color:rgb(120,220,120);color:#111;">1.0000</td><td style="background-color:rgb(120,220,120);color:#111;">1.0000</td><td style="background-color:rgb(120,220,120);color:#111;">1.0000</td><td style="background-color:rgb(120,220,120);color:#111;">1.0000</td><td style="background-color:rgb(120,220,120);color:#111;">1.0000</td><td style="">0.0014</td><td style="background-color:rgb(120,220,120);color:#111;">0.9590</td><td style="background-color:rgb(183,156,120);color:#111;">0.9200</td><td style="background-color:rgb(120,219,120);color:#111;">0.3000</td><td style="background-color:rgb(220,120,120);color:#111;">23</td><td style="background-color:rgb(178,161,120);color:#111;">333.9000</td></tr></tbody></table></div></section><section><h2>KAGGLE_MULTICLASS_CKD_STAGING — Multiclass Classification</h2><div class="table-wrapper"><table id="table_Kaggle_Multiclass_CKD_Staging"><thead><tr><th onclick="sortTable(this)">Model ↕</th><th onclick="sortTable(this)">Best ↕</th><th onclick="sortTable(this)">CV Bal.Acc ↕</th><th onclick="sortTable(this)">Test Bal.Acc ↕</th><th onclick="sortTable(this)">Macro F1 ↕</th><th onclick="sortTable(this)">Weighted F1 ↕</th><th onclick="sortTable(this)">Kappa ↕</th><th onclick="sortTable(this)">Macro ROC-AUC ↕</th><th onclick="sortTable(this)">Train Time (s) ↕</th><th onclick="sortTable(this)">Infer (ms) ↕</th><th onclick="sortTable(this)"># Features ↕</th><th onclick="sortTable(this)">Size (KB) ↕</th></tr></thead><tbody><tr class="best-row"><td style="">RandomForest</td><td style="">True</td><td style="background-color:rgb(120,220,120);color:#111;">0.8419</td><td style="background-color:rgb(171,168,120);color:#111;">0.7810</td><td style="background-color:rgb(174,165,120);color:#111;">0.7895</td><td style="background-color:rgb(171,168,120);color:#111;">0.8143</td><td style="background-color:rgb(169,170,120);color:#111;">0.7753</td><td style="background-color:rgb(164,175,120);color:#111;">0.9528</td><td style="background-color:rgb(125,214,120);color:#111;">5.9400</td><td style="background-color:rgb(220,120,120);color:#111;">13.3970</td><td style="background-color:rgb(220,120,120);color:#111;">34</td><td style="background-color:rgb(220,120,120);color:#111;">1339.7000</td></tr><tr><td style="">XGBoost</td><td style="">False</td><td style="background-color:rgb(180,159,120);color:#111;">0.8229</td><td style="background-color:rgb(220,120,120);color:#111;">0.7238</td><td style="background-color:rgb(220,120,120);color:#111;">0.7344</td><td style="background-color:rgb(220,120,120);color:#111;">0.7604</td><td style="background-color:rgb(220,120,120);color:#111;">0.7097</td><td style="background-color:rgb(220,120,120);color:#111;">0.9432</td><td style="background-color:rgb(220,120,120);color:#111;">28.4100</td><td style="background-color:rgb(122,217,120);color:#111;">0.6850</td><td style="background-color:rgb(170,170,120);color:#111;">35</td><td style="background-color:rgb(213,126,120);color:#111;">1310.1000</td></tr><tr><td style="">LightGBM</td><td style="">False</td><td style="background-color:rgb(220,120,120);color:#111;">0.8106</td><td style="background-color:rgb(162,177,120);color:#111;">0.7921</td><td style="background-color:rgb(159,180,120);color:#111;">0.8086</td><td style="background-color:rgb(164,175,120);color:#111;">0.8228</td><td style="background-color:rgb(169,170,120);color:#111;">0.7758</td><td style="background-color:rgb(120,220,120);color:#111;">0.9605</td><td style="background-color:rgb(188,151,120);color:#111;">21.0400</td><td style="background-color:rgb(122,217,120);color:#111;">0.6490</td><td style="background-color:rgb(120,220,120);color:#111;">36</td><td style="background-color:rgb(120,220,120);color:#111;">859.2000</td></tr><tr><td style="">CatBoost</td><td style="">False</td><td style="background-color:rgb(123,216,120);color:#111;">0.8409</td><td style="background-color:rgb(120,220,120);color:#111;">0.8429</td><td style="background-color:rgb(120,220,120);color:#111;">0.8565</td><td style="background-color:rgb(120,220,120);color:#111;">0.8719</td><td style="background-color:rgb(120,220,120);color:#111;">0.8401</td><td style="background-color:rgb(150,189,120);color:#111;">0.9552</td><td style="background-color:rgb(120,220,120);color:#111;">4.7100</td><td style="background-color:rgb(120,220,120);color:#111;">0.3740</td><td style="background-color:rgb(170,170,120);color:#111;">35</td><td style="background-color:rgb(135,204,120);color:#111;">931.7000</td></tr></tbody></table></div></section>
+  <section><h2>Statistical Significance Tests</h2><ul class="stats-list"><li><code>mcnemar</code>: <pre>[
+  {
+    &quot;test&quot;: &quot;McNemar&quot;,
+    &quot;model_a&quot;: &quot;CatBoost&quot;,
+    &quot;model_b&quot;: &quot;LogisticRegression&quot;,
+    &quot;b&quot;: 0,
+    &quot;c&quot;: 0,
+    &quot;statistic&quot;: null,
+    &quot;p_value&quot;: null,
+    &quot;significant_p005&quot;: null,
+    &quot;note&quot;: &quot;McNemar test not reliable: only 0 discordant pairs (minimum 10 recommended). Result omitted to avoid fabricating significance.&quot;
+  },
+  {
+    &quot;test&quot;: &quot;McNemar&quot;,
+    &quot;model_a&quot;: &quot;CatBoost&quot;,
+    &quot;model_b&quot;: &quot;RandomForest&quot;,
+    &quot;b&quot;: 1,
+    &quot;c&quot;: 0,
+    &quot;statistic&quot;: null,
+    &quot;p_value&quot;: null,
+    &quot;significant_p005&quot;: null,
+    &quot;note&quot;: &quot;McNemar test not reliable: only 1 discordant pairs (minimum 10 recommended). Result omitted to avoid fabricating significance.&quot;
+  },
+  {
+    &quot;test&quot;: &quot;McNemar&quot;,
+    &quot;model_a&quot;: &quot;CatBoost&quot;,
+    &quot;model_b&quot;: &quot;XGBoost&quot;,
+    &quot;b&quot;: 2,
+    &quot;c&quot;: 0,
+    &quot;statistic&quot;: null,
+    &quot;p_value&quot;: null,
+    &quot;significant_p005&quot;: null,
+    &quot;note&quot;: &quot;McNemar test not reliable: only 2 discordant pairs (minimum 10 recommended). Result omitted to avoid fabricating significance.&quot;
+  },
+  {
+    &quot;test&quot;: &quot;McNemar&quot;,
+    &quot;model_a&quot;: &quot;CatBoost&quot;,
+    &quot;model_b&quot;: &quot;LightGBM&quot;,
+    &quot;b&quot;: 1,
+    &quot;c&quot;: 0,
+    &quot;statistic&quot;: null,
+    &quot;p_value&quot;: null,
+    &quot;significant_p005&quot;: null,
+    &quot;note&quot;: &quot;McNemar test not reliable: only 1 discordant pairs (minimum 10 recommended). Result omitted to avoid fabricating significance.&quot;
+  }
+]</pre></li>
+<li><code>delong</code>: <pre>[
+  {
+    &quot;test&quot;: &quot;DeLong ROC&quot;,
+    &quot;model_a&quot;: &quot;CatBoost&quot;,
+    &quot;model_b&quot;: &quot;LogisticRegression&quot;,
+    &quot;auc_a&quot;: 1.0,
+    &quot;auc_b&quot;: 1.0,
+    &quot;auc_diff&quot;: 0.0,
+    &quot;z_statistic&quot;: null,
+    &quot;p_value&quot;: null,
+    &quot;significant_p005&quot;: null,
+    &quot;note&quot;: &quot;Variance of AUC difference is non-positive (likely both models achieve ceiling AUC \u2248 1.0 with identical rankings). No meaningful statistical difference can be computed \u2014 this is a ceiling effect, not a test failure.&quot;
+  },
+  {
+    &quot;test&quot;: &quot;DeLong (1988)&quot;,
+    &quot;model_a&quot;: &quot;CatBoost&quot;,
+    &quot;model_b&quot;: &quot;RandomForest&quot;,
+    &quot;auc_a&quot;: 1.0,
+    &quot;auc_b&quot;: 0.983,
+    &quot;auc_diff&quot;: 0.017,
+    &quot;z_statistic&quot;: 0.9998,
+    &quot;p_value&quot;: 0.317404,
+    &quot;significant_p005&quot;: false,
+    &quot;note&quot;: &quot;&quot;,
+    &quot;p_value_bonferroni&quot;: 1.0,
+    &quot;significant_bonferroni&quot;: false
+  },
+  {
+    &quot;test&quot;: &quot;DeLong (1988)&quot;,
+    &quot;model_a&quot;: &quot;CatBoost&quot;,
+    &quot;model_b&quot;: &quot;XGBoost&quot;,
+    &quot;auc_a&quot;: 1.0,
+    &quot;auc_b&quot;: 0.983,
+    &quot;auc_diff&quot;: 0.017,
+    &quot;z_statistic&quot;: 0.9998,
+    &quot;p_value&quot;: 0.317404,
+    &quot;significant_p005&quot;: false,
+    &quot;note&quot;: &quot;&quot;,
+    &quot;p_value_bonferroni&quot;: 1.0,
+    &quot;significant_bonferroni&quot;: false
+  },
+  {
+    &quot;test&quot;: &quot;DeLong (1988)&quot;,
+    &quot;model_a&quot;: &quot;CatBoost&quot;,
+    &quot;model_b&quot;: &quot;LightGBM&quot;,
+    &quot;auc_a&quot;: 1.0,
+    &quot;auc_b&quot;: 0.99,
+    &quot;auc_diff&quot;: 0.01,
+    &quot;z_statistic&quot;: 1.0,
+    &quot;p_value&quot;: 0.317311,
+    &quot;significant_p005&quot;: false,
+    &quot;note&quot;: &quot;&quot;,
+    &quot;p_value_bonferroni&quot;: 1.0,
+    &quot;significant_bonferroni&quot;: false
+  }
+]</pre></li>
+<li><code>bootstrap_ci</code>: <pre>[
+  {
+    &quot;test&quot;: &quot;Bootstrap Paired AUC CI&quot;,
+    &quot;model_a&quot;: &quot;CatBoost&quot;,
+    &quot;model_b&quot;: &quot;LogisticRegression&quot;,
+    &quot;auc_a&quot;: 1.0,
+    &quot;auc_b&quot;: 1.0,
+    &quot;observed_diff&quot;: 0.0,
+    &quot;ci_lower&quot;: 0.0,
+    &quot;ci_upper&quot;: 0.0,
+    &quot;ci_level&quot;: 0.95,
+    &quot;n_bootstrap&quot;: 1000,
+    &quot;significant&quot;: false,
+    &quot;note&quot;: &quot;CI does NOT include 0 \u2192 no difference at 95% confidence.&quot;
+  },
+  {
+    &quot;test&quot;: &quot;Bootstrap Paired AUC CI&quot;,
+    &quot;model_a&quot;: &quot;CatBoost&quot;,
+    &quot;model_b&quot;: &quot;RandomForest&quot;,
+    &quot;auc_a&quot;: 1.0,
+    &quot;auc_b&quot;: 0.983,
+    &quot;observed_diff&quot;: 0.017,
+    &quot;ci_lower&quot;: 0.0,
+    &quot;ci_upper&quot;: 0.052,
+    &quot;ci_level&quot;: 0.95,
+    &quot;n_bootstrap&quot;: 1000,
+    &quot;significant&quot;: false,
+    &quot;note&quot;: &quot;CI does NOT include 0 \u2192 no difference at 95% confidence.&quot;
+  },
+  {
+    &quot;test&quot;: &quot;Bootstrap Paired AUC CI&quot;,
+    &quot;model_a&quot;: &quot;CatBoost&quot;,
+    &quot;model_b&quot;: &quot;XGBoost&quot;,
+    &quot;auc_a&quot;: 1.0,
+    &quot;auc_b&quot;: 0.983,
+    &quot;observed_diff&quot;: 0.017,
+    &quot;ci_lower&quot;: 0.0,
+    &quot;ci_upper&quot;: 0.051025,
+    &quot;ci_level&quot;: 0.95,
+    &quot;n_bootstrap&quot;: 1000,
+    &quot;significant&quot;: false,
+    &quot;note&quot;: &quot;CI does NOT include 0 \u2192 no difference at 95% confidence.&quot;
+  },
+  {
+    &quot;test&quot;: &quot;Bootstrap Paired AUC CI&quot;,
+    &quot;model_a&quot;: &quot;CatBoost&quot;,
+    &quot;model_b&quot;: &quot;LightGBM&quot;,
+    &quot;auc_a&quot;: 1.0,
+    &quot;auc_b&quot;: 0.99,
+    &quot;observed_diff&quot;: 0.01,
+    &quot;ci_lower&quot;: 0.0,
+    &quot;ci_upper&quot;: 0.03,
+    &quot;ci_level&quot;: 0.95,
+    &quot;n_bootstrap&quot;: 1000,
+    &quot;significant&quot;: false,
+    &quot;note&quot;: &quot;CI does NOT include 0 \u2192 no difference at 95% confidence.&quot;
+  }
+]</pre></li>
+<li><code>permutation</code>: <pre>[
+  {
+    &quot;test&quot;: &quot;Permutation AUC&quot;,
+    &quot;model&quot;: &quot;LogisticRegression&quot;,
+    &quot;observed_auc&quot;: 1.0,
+    &quot;p_value&quot;: null,
+    &quot;note&quot;: &quot;Permutation test not informative: observed AUC = 1.0000 is at ceiling. All permutations will yield p &lt; 0.001 trivially. This result is not reported to avoid uninformative significance inflation.&quot;
+  },
+  {
+    &quot;test&quot;: &quot;Permutation AUC (H0: AUC = 0.5)&quot;,
+    &quot;model&quot;: &quot;RandomForest&quot;,
+    &quot;observed_auc&quot;: 0.983,
+    &quot;null_auc_mean&quot;: 0.499359,
+    &quot;null_auc_std&quot;: 0.056768,
+    &quot;n_permutations&quot;: 1000,
+    &quot;p_value&quot;: 0.0,
+    &quot;significant_p005&quot;: true,
+    &quot;note&quot;: &quot;&quot;
+  },
+  {
+    &quot;test&quot;: &quot;Permutation AUC (H0: AUC = 0.5)&quot;,
+    &quot;model&quot;: &quot;XGBoost&quot;,
+    &quot;observed_auc&quot;: 0.983,
+    &quot;null_auc_mean&quot;: 0.501754,
+    &quot;null_auc_std&quot;: 0.05695,
+    &quot;n_permutations&quot;: 1000,
+    &quot;p_value&quot;: 0.0,
+    &quot;significant_p005&quot;: true,
+    &quot;note&quot;: &quot;&quot;
+  },
+  {
+    &quot;test&quot;: &quot;Permutation AUC (H0: AUC = 0.5)&quot;,
+    &quot;model&quot;: &quot;LightGBM&quot;,
+    &quot;observed_auc&quot;: 0.99,
+    &quot;null_auc_mean&quot;: 0.499093,
+    &quot;null_auc_std&quot;: 0.057465,
+    &quot;n_permutations&quot;: 1000,
+    &quot;p_value&quot;: 0.0,
+    &quot;significant_p005&quot;: true,
+    &quot;note&quot;: &quot;&quot;
+  },
+  {
+    &quot;test&quot;: &quot;Permutation AUC&quot;,
+    &quot;model&quot;: &quot;CatBoost&quot;,
+    &quot;observed_auc&quot;: 1.0,
+    &quot;p_value&quot;: null,
+    &quot;note&quot;: &quot;Permutation test not informative: observed AUC = 1.0000 is at ceiling. All permutations will yield p &lt; 0.001 trivially. This result is not reported to avoid uninformative significance inflation.&quot;
+  }
+]</pre></li>
+<li><code>bonferroni_n_comparisons</code>: <pre>4</pre></li>
+<li><code>note</code>: <pre>&quot;Bonferroni correction applied: p_value_bonferroni = min(p * n_comparisons, 1.0). Interpret with caution: UCI test set n=80 provides limited statistical power.&quot;</pre></li></ul></section>
+  <footer>CKD ML Pipeline &mdash; Model Comparison Report &mdash; 2026-07-07 16:15</footer>
+
+<script>
+function sortTable(th) {
+  const table = th.closest('table');
+  const tbody = table.querySelector('tbody');
+  const rows  = Array.from(tbody.querySelectorAll('tr'));
+  const idx   = Array.from(th.parentNode.children).indexOf(th);
+  const asc   = th.dataset.sort !== 'asc';
+  th.parentNode.querySelectorAll('th').forEach(t => delete t.dataset.sort);
+  th.dataset.sort = asc ? 'asc' : 'desc';
+  rows.sort((a, b) => {
+    const va = a.cells[idx].textContent.trim();
+    const vb = b.cells[idx].textContent.trim();
+    const na = parseFloat(va), nb = parseFloat(vb);
+    if (!isNaN(na) && !isNaN(nb)) return asc ? na - nb : nb - na;
+    return asc ? va.localeCompare(vb) : vb.localeCompare(va);
+  });
+  rows.forEach(r => tbody.appendChild(r));
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,391 @@
+{
+  "datasets": {
+    "uci": {
+      "rows_before": 400,
+      "rows_after": 400,
+      "rows_removed": 0,
+      "rows_removed_reasons": {},
+      "missing_values_before": 1012,
+      "missing_values_after": 0,
+      "class_distribution_before": {
+        "ckd": 248,
+        "notckd": 150,
+        "ckd\t": 2
+      },
+      "class_distribution_after": {
+        "1": 250,
+        "0": 150
+      },
+      "interval_conversions": {
+        "age": 0,
+        "blood_pressure": 0,
+        "specific_gravity": 0,
+        "albumin": 0,
+        "sugar": 0,
+        "blood_glucose_random": 0,
+        "blood_urea": 0,
+        "serum_creatinine": 0,
+        "sodium": 0,
+        "potassium": 0,
+        "hemoglobin": 0,
+        "packed_cell_volume": 0,
+        "white_blood_cell_count": 0,
+        "red_blood_cell_count": 0
+      },
+      "encoding_statistics": {
+        "red_blood_cells": 400,
+        "pus_cell": 400,
+        "pus_cell_clumps": 400,
+        "bacteria": 400,
+        "hypertension": 400,
+        "diabetes_mellitus": 400,
+        "coronary_artery_disease": 400,
+        "appetite": 400,
+        "pedal_edema": 400,
+        "anemia": 400
+      },
+      "numeric_conversion_log": {
+        "age": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "blood_pressure": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "specific_gravity": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "albumin": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "sugar": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "blood_glucose_random": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "blood_urea": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "serum_creatinine": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "sodium": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "potassium": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "hemoglobin": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "packed_cell_volume": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "white_blood_cell_count": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "red_blood_cell_count": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        }
+      },
+      "categorical_remap_counts": {
+        "red_blood_cells": 0,
+        "pus_cell": 0,
+        "pus_cell_clumps": 0,
+        "bacteria": 0,
+        "hypertension": 0,
+        "diabetes_mellitus": 0,
+        "coronary_artery_disease": 0,
+        "appetite": 0,
+        "pedal_edema": 0,
+        "anemia": 0
+      },
+      "validation_issues": []
+    },
+    "kaggle": {
+      "rows_before": 202,
+      "rows_after": 200,
+      "rows_removed": 2,
+      "rows_removed_reasons": {
+        "invalid_label_values": 1,
+        "nan_target": 1
+      },
+      "missing_values_before": 27,
+      "missing_values_after": 0,
+      "class_distribution_before": {
+        "s1": 54,
+        "s4": 45,
+        "s2": 35,
+        "s5": 35,
+        "s3": 31,
+        "discrete": 1,
+        "NaN": 1
+      },
+      "class_distribution_after": {
+        "0": 54,
+        "3": 45,
+        "1": 35,
+        "4": 35,
+        "2": 31
+      },
+      "interval_conversions": {
+        "age": 190,
+        "blood_pressure_diastolic": 0,
+        "specific_gravity": 159,
+        "albumin": 187,
+        "sugar": 199,
+        "blood_glucose_random": 197,
+        "blood_urea": 199,
+        "serum_creatinine": 199,
+        "sodium": 199,
+        "potassium": 199,
+        "hemoglobin": 185,
+        "packed_cell_volume": 181,
+        "white_blood_cell_count": 199,
+        "red_blood_cell_count": 199,
+        "egfr": 197
+      },
+      "encoding_statistics": {
+        "bp_limit": 0,
+        "ckd_binary_label": 0,
+        "red_blood_cells": 0,
+        "pus_cell": 0,
+        "pus_cell_clumps": 0,
+        "bacteria": 0,
+        "hypertension": 0,
+        "diabetes_mellitus": 0,
+        "coronary_artery_disease": 0,
+        "appetite": 0,
+        "pedal_edema": 0,
+        "anemia": 0,
+        "ckd_affected": 0
+      },
+      "numeric_conversion_log": {
+        "age": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "blood_pressure": {
+          "skipped": 1
+        },
+        "blood_pressure_diastolic": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "specific_gravity": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "albumin": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "sugar": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "blood_glucose_random": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "blood_urea": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "serum_creatinine": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "sodium": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "potassium": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "hemoglobin": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "packed_cell_volume": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "white_blood_cell_count": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "red_blood_cell_count": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "egfr": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        }
+      },
+      "categorical_remap_counts": {
+        "bp_limit": 0,
+        "ckd_binary_label": 0,
+        "red_blood_cells": 0,
+        "pus_cell": 0,
+        "pus_cell_clumps": 0,
+        "bacteria": 0,
+        "hypertension": 0,
+        "diabetes_mellitus": 0,
+        "coronary_artery_disease": 0,
+        "appetite": 0,
+        "pedal_edema": 0,
+        "anemia": 0,
+        "ckd_affected": 0
+      },
+      "validation_issues": [
+        "Unexpected encoded values in: {'bp_limit': ['2'], 'ckd_binary_label': ['ckd', 'notckd']}"
+      ]
+    },
+    "uae": {
+      "rows_before": 491,
+      "rows_after": 491,
+      "rows_removed": 0,
+      "rows_removed_reasons": {},
+      "missing_values_before": 0,
+      "missing_values_after": 0,
+      "class_distribution_before": {
+        "0": 435,
+        "1": 56
+      },
+      "class_distribution_after": {
+        "0": 435,
+        "1": 56
+      },
+      "interval_conversions": {},
+      "encoding_statistics": {
+        "sex": 0,
+        "history_diabetes": 0,
+        "history_chd": 0,
+        "history_vascular": 0,
+        "history_smoking": 0,
+        "history_hypertension": 0,
+        "history_dyslipidemia": 0,
+        "history_obesity": 0,
+        "dld_meds": 0,
+        "diabetes_meds": 0,
+        "hypertension_meds": 0,
+        "acei_arb": 0
+      },
+      "numeric_conversion_log": {
+        "age": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "serum_creatinine": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "egfr": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "systolic_bp": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "diastolic_bp": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "blood_pressure": {
+          "skipped": 1
+        },
+        "sodium": {
+          "skipped": 1
+        },
+        "potassium": {
+          "skipped": 1
+        },
+        "hemoglobin": {
+          "skipped": 1
+        },
+        "blood_urea": {
+          "skipped": 1
+        },
+        "albumin": {
+          "skipped": 1
+        },
+        "cholesterol": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "bmi": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "time_to_event_months": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        },
+        "followup_years": {
+          "already_numeric": 1,
+          "converted": 0,
+          "coerced_to_nan": 0
+        }
+      },
+      "categorical_remap_counts": {},
+      "validation_issues": []
+    }
+  },
+  "pipeline_version": "1.0.0",
+  "config_file": "config/preprocessing.yaml"
+}

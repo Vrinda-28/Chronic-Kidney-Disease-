@@ -1,0 +1,35 @@
+{
+  "reduced_features_in_uci_training": [
+    "serum_creatinine",
+    "age",
+    "cardiovascular_burden_score",
+    "age_creatinine_interaction",
+    "bp_risk_score",
+    "hypertension",
+    "diabetes_mellitus",
+    "coronary_artery_disease"
+  ],
+  "features_actually_used_for_uae": [
+    "serum_creatinine",
+    "age",
+    "cardiovascular_burden_score",
+    "age_creatinine_interaction",
+    "bp_risk_score",
+    "hypertension",
+    "diabetes_mellitus",
+    "coronary_artery_disease"
+  ],
+  "features_unavailable_in_uae": [],
+  "feature_mapping_applied": {
+    "hypertension": "history_hypertension",
+    "diabetes_mellitus": "history_diabetes",
+    "coronary_artery_disease": "history_chd"
+  },
+  "caveats": {
+    "cardiovascular_burden_score": "UCI: uses current binary flags (hypertension, CAD, DM). UAE: uses history flags (history_hypertension, history_chd, history_diabetes). Semantically equivalent comorbidity counts; noted as limitation.",
+    "bp_risk_score": "UCI: derived from single blood_pressure reading. UAE: derived as (systolic_bp + diastolic_bp) / 2. Both are mean BP proxies; formula difference noted as limitation.",
+    "hypertension": "UCI: current binary hypertension flag. UAE: history_hypertension (past diagnosis). Mapped as semantic equivalent.",
+    "diabetes_mellitus": "UCI: current binary diabetes flag. UAE: history_diabetes (past diagnosis). Mapped as semantic equivalent.",
+    "coronary_artery_disease": "UCI: current binary CAD flag. UAE: history_chd (past diagnosis). Mapped as semantic equivalent."
+  }
+}

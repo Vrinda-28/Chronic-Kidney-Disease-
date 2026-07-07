@@ -1,0 +1,15 @@
+{
+  "uae_cohort": {
+    "n_patients": 491,
+    "n_ckd": 56,
+    "n_non_ckd": 435,
+    "ckd_prevalence": 0.1141,
+    "ckd_prevalence_pct": 11.41
+  },
+  "uci_train_reference": {
+    "ckd_prevalence": 0.625,
+    "ckd_prevalence_pct": 62.5
+  },
+  "prevalence_ratio": 5.48,
+  "interpretation": "The UCI training prevalence (~62% CKD) is 5.5\u00d7 higher than the UAE population (11.4% CKD). This prevalence mismatch explains why the default threshold of 0.5 \u2014 calibrated implicitly for the training prevalence \u2014 produces excessive false positives on UAE. ROC-AUC (threshold-free) is the appropriate primary discrimination metric."
+}

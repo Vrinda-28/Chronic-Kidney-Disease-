@@ -1,0 +1,193 @@
+# =============================================================================
+# config/preprocessing.yaml
+#
+# Central configuration for the CKD preprocessing pipeline (preprocess.py).
+# All thresholds, column lists, and label mappings live here so that
+# preprocess.py contains zero hardcoded clinical constants.
+# =============================================================================
+
+# ---------------------------------------------------------------------------
+# Missing-value sentinel strings
+# All of these will be converted to np.nan during Step 4.
+# ---------------------------------------------------------------------------
+missing_value_sentinels:
+  - "?"
+  - "NA"
+  - "N/A"
+  - "NULL"
+  - "null"
+  - "na"
+  - "n/a"
+  - "none"
+  - "None"
+  - "NONE"
+  - "-"
+  - "--"
+  - "nan"
+  - "NaN"
+
+# ---------------------------------------------------------------------------
+# Step 2 – Kaggle invalid-row filter
+# Rows where ckd_stage_label equals any value in this list are removed.
+# NaN targets are also always removed (handled in code).
+# ---------------------------------------------------------------------------
+kaggle_invalid_label_values:
+  - "discrete"
+
+# ---------------------------------------------------------------------------
+# Step 3 – UCI valid target classes (after whitespace stripping)
+# ---------------------------------------------------------------------------
+uci_valid_classes:
+  - "ckd"
+  - "notckd"
+
+# ---------------------------------------------------------------------------
+# Step 5 – Interval / threshold parsing
+# Handled generically by regex in code; no per-column config needed.
+# ---------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------
+# Step 6 – Numeric column lists per dataset
+# Only columns listed here are cast to float64.  Columns NOT listed here
+# are left as object for categorical treatment.
+# ---------------------------------------------------------------------------
+numeric_columns:
+  uci:
+    - age
+    - blood_pressure
+    - specific_gravity
+    - albumin
+    - sugar
+    - blood_glucose_random
+    - blood_urea
+    - serum_creatinine
+    - sodium
+    - potassium
+    - hemoglobin
+    - packed_cell_volume
+    - white_blood_cell_count
+    - red_blood_cell_count
+
+  kaggle:
+    - age
+    - blood_pressure
+    - blood_pressure_diastolic
+    - specific_gravity
+    - albumin
+    - sugar
+    - blood_glucose_random
+    - blood_urea
+    - serum_creatinine
+    - sodium
+    - potassium
+    - hemoglobin
+    - packed_cell_volume
+    - white_blood_cell_count
+    - red_blood_cell_count
+    - egfr
+
+  uae:
+    - age
+    - serum_creatinine
+    - egfr
+    - systolic_bp
+    - diastolic_bp
+    - blood_pressure
+    - sodium
+    - potassium
+    - hemoglobin
+    - blood_urea
+    - albumin
+    - cholesterol
+    - bmi
+    - time_to_event_months
+    - followup_years
+
+# ---------------------------------------------------------------------------
+# Step 7 – Categorical value standardization
+# Map raw values → canonical values.  Keys are case-insensitive (code
+# lower-cases before lookup).  Order of keys does not matter.
+# ---------------------------------------------------------------------------
+categorical_value_map:
+  "yes":          "yes"
+  "no":           "no"
+  "present":      "present"
+  "notpresent":   "notpresent"
+  "not present":  "notpresent"
+  "normal":       "normal"
+  "abnormal":     "abnormal"
+  "good":         "good"
+  "poor":         "poor"
+  "ckd":          "ckd"
+  "notckd":       "notckd"
+  "not ckd":      "notckd"
+
+# ---------------------------------------------------------------------------
+# Step 8 – Imputation strategy
+# ---------------------------------------------------------------------------
+imputation:
+  numeric_strategy: "median"
+  categorical_strategy: "most_frequent"
+
+# ---------------------------------------------------------------------------
+# Step 9 – Binary-feature encoding
+# Maps canonical categorical strings → integer codes.
+# Applied to all non-target categorical columns before saving.
+# ---------------------------------------------------------------------------
+binary_feature_encoding:
+  "yes":        1
+  "no":         0
+  "present":    1
+  "notpresent": 0
+  "normal":     1
+  "abnormal":   0
+  "good":       1
+  "poor":       0
+
+# ---------------------------------------------------------------------------
+# Step 9 – Target label encoding per dataset
+# ---------------------------------------------------------------------------
+target_encoding:
+  uci:
+    "ckd":    1
+    "notckd": 0
+
+  kaggle:
+    "s1": 0
+    "s2": 1
+    "s3": 2
+    "s4": 3
+    "s5": 4
+
+  uae:
+    0: 0
+    1: 1
+    "0": 0
+    "1": 1
+
+# ---------------------------------------------------------------------------
+# Kaggle valid stage labels (after cleaning)
+# ---------------------------------------------------------------------------
+kaggle_valid_stages:
+  - "s1"
+  - "s2"
+  - "s3"
+  - "s4"
+  - "s5"
+
+# ---------------------------------------------------------------------------
+# Artifact / output paths
+# ---------------------------------------------------------------------------
+paths:
+  artifacts_dir: "artifacts/preprocessing"
+  processed_dir: "data/processed"
+  report_path:   "artifacts/preprocessing/preprocessing_summary.json"
+
+# ---------------------------------------------------------------------------
+# Logging
+# ---------------------------------------------------------------------------
+logging:
+  log_dir: "logs"
+  log_filename: "preprocess.log"
+  console_level: "INFO"
+  file_level: "DEBUG"

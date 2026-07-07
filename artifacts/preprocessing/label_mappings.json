@@ -1,0 +1,29 @@
+{
+  "binary_feature_encoding": {
+    "yes": 1,
+    "no": 0,
+    "present": 1,
+    "notpresent": 0,
+    "normal": 1,
+    "abnormal": 0,
+    "good": 1,
+    "poor": 0
+  },
+  "target_encoding": {
+    "uci": {
+      "ckd": 1,
+      "notckd": 0
+    },
+    "kaggle": {
+      "s1": 0,
+      "s2": 1,
+      "s3": 2,
+      "s4": 3,
+      "s5": 4
+    },
+    "uae": {
+      "0": 0,
+      "1": 1
+    }
+  }
+}

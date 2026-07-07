@@ -1,0 +1,68 @@
+{
+  "case_name": "most_confident_notCKD",
+  "patient_index": 0,
+  "y_true": 0,
+  "y_proba": 1.0,
+  "lime_features": [
+    [
+      "blood_pressure <= 70.00",
+      0.0
+    ],
+    [
+      "1.01 < specific_gravity <= 1.02",
+      0.0
+    ],
+    [
+      "albumin <= 0.00",
+      0.0
+    ],
+    [
+      "blood_glucose_random <= 100.00",
+      0.0
+    ],
+    [
+      "42.00 < blood_urea <= 69.25",
+      0.0
+    ],
+    [
+      "serum_creatinine <= 0.88",
+      0.0
+    ],
+    [
+      "135.00 < sodium <= 138.00",
+      0.0
+    ],
+    [
+      "3.98 < potassium <= 4.40",
+      0.0
+    ],
+    [
+      "hemoglobin > 14.30",
+      0.0
+    ],
+    [
+      "packed_cell_volume > 44.00",
+      0.0
+    ],
+    [
+      "6800.00 < white_blood_cell_count <= 8000.00",
+      0.0
+    ],
+    [
+      "red_blood_cell_count > 5.20",
+      0.0
+    ],
+    [
+      "hypertension <= 0.00",
+      0.0
+    ],
+    [
+      "diabetes_mellitus <= 0.00",
+      0.0
+    ],
+    [
+      "appetite <= 1.00",
+      0.0
+    ]
+  ]
+}

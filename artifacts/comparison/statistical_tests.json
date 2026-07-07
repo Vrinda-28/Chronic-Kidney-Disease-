@@ -1,0 +1,213 @@
+{
+  "mcnemar": [
+    {
+      "test": "McNemar",
+      "model_a": "CatBoost",
+      "model_b": "LogisticRegression",
+      "b": 0,
+      "c": 0,
+      "statistic": null,
+      "p_value": null,
+      "significant_p005": null,
+      "note": "McNemar test not reliable: only 0 discordant pairs (minimum 10 recommended). Result omitted to avoid fabricating significance."
+    },
+    {
+      "test": "McNemar",
+      "model_a": "CatBoost",
+      "model_b": "RandomForest",
+      "b": 1,
+      "c": 0,
+      "statistic": null,
+      "p_value": null,
+      "significant_p005": null,
+      "note": "McNemar test not reliable: only 1 discordant pairs (minimum 10 recommended). Result omitted to avoid fabricating significance."
+    },
+    {
+      "test": "McNemar",
+      "model_a": "CatBoost",
+      "model_b": "XGBoost",
+      "b": 2,
+      "c": 0,
+      "statistic": null,
+      "p_value": null,
+      "significant_p005": null,
+      "note": "McNemar test not reliable: only 2 discordant pairs (minimum 10 recommended). Result omitted to avoid fabricating significance."
+    },
+    {
+      "test": "McNemar",
+      "model_a": "CatBoost",
+      "model_b": "LightGBM",
+      "b": 1,
+      "c": 0,
+      "statistic": null,
+      "p_value": null,
+      "significant_p005": null,
+      "note": "McNemar test not reliable: only 1 discordant pairs (minimum 10 recommended). Result omitted to avoid fabricating significance."
+    }
+  ],
+  "delong": [
+    {
+      "test": "DeLong ROC",
+      "model_a": "CatBoost",
+      "model_b": "LogisticRegression",
+      "auc_a": 1.0,
+      "auc_b": 1.0,
+      "auc_diff": 0.0,
+      "z_statistic": null,
+      "p_value": null,
+      "significant_p005": null,
+      "note": "Variance of AUC difference is non-positive (likely both models achieve ceiling AUC \u2248 1.0 with identical rankings). No meaningful statistical difference can be computed \u2014 this is a ceiling effect, not a test failure."
+    },
+    {
+      "test": "DeLong (1988)",
+      "model_a": "CatBoost",
+      "model_b": "RandomForest",
+      "auc_a": 1.0,
+      "auc_b": 0.983,
+      "auc_diff": 0.017,
+      "z_statistic": 0.9998,
+      "p_value": 0.317404,
+      "significant_p005": false,
+      "note": "",
+      "p_value_bonferroni": 1.0,
+      "significant_bonferroni": false
+    },
+    {
+      "test": "DeLong (1988)",
+      "model_a": "CatBoost",
+      "model_b": "XGBoost",
+      "auc_a": 1.0,
+      "auc_b": 0.983,
+      "auc_diff": 0.017,
+      "z_statistic": 0.9998,
+      "p_value": 0.317404,
+      "significant_p005": false,
+      "note": "",
+      "p_value_bonferroni": 1.0,
+      "significant_bonferroni": false
+    },
+    {
+      "test": "DeLong (1988)",
+      "model_a": "CatBoost",
+      "model_b": "LightGBM",
+      "auc_a": 1.0,
+      "auc_b": 0.99,
+      "auc_diff": 0.01,
+      "z_statistic": 1.0,
+      "p_value": 0.317311,
+      "significant_p005": false,
+      "note": "",
+      "p_value_bonferroni": 1.0,
+      "significant_bonferroni": false
+    }
+  ],
+  "bootstrap_ci": [
+    {
+      "test": "Bootstrap Paired AUC CI",
+      "model_a": "CatBoost",
+      "model_b": "LogisticRegression",
+      "auc_a": 1.0,
+      "auc_b": 1.0,
+      "observed_diff": 0.0,
+      "ci_lower": 0.0,
+      "ci_upper": 0.0,
+      "ci_level": 0.95,
+      "n_bootstrap": 1000,
+      "significant": false,
+      "note": "CI does NOT include 0 \u2192 no difference at 95% confidence."
+    },
+    {
+      "test": "Bootstrap Paired AUC CI",
+      "model_a": "CatBoost",
+      "model_b": "RandomForest",
+      "auc_a": 1.0,
+      "auc_b": 0.983,
+      "observed_diff": 0.017,
+      "ci_lower": 0.0,
+      "ci_upper": 0.052,
+      "ci_level": 0.95,
+      "n_bootstrap": 1000,
+      "significant": false,
+      "note": "CI does NOT include 0 \u2192 no difference at 95% confidence."
+    },
+    {
+      "test": "Bootstrap Paired AUC CI",
+      "model_a": "CatBoost",
+      "model_b": "XGBoost",
+      "auc_a": 1.0,
+      "auc_b": 0.983,
+      "observed_diff": 0.017,
+      "ci_lower": 0.0,
+      "ci_upper": 0.051025,
+      "ci_level": 0.95,
+      "n_bootstrap": 1000,
+      "significant": false,
+      "note": "CI does NOT include 0 \u2192 no difference at 95% confidence."
+    },
+    {
+      "test": "Bootstrap Paired AUC CI",
+      "model_a": "CatBoost",
+      "model_b": "LightGBM",
+      "auc_a": 1.0,
+      "auc_b": 0.99,
+      "observed_diff": 0.01,
+      "ci_lower": 0.0,
+      "ci_upper": 0.03,
+      "ci_level": 0.95,
+      "n_bootstrap": 1000,
+      "significant": false,
+      "note": "CI does NOT include 0 \u2192 no difference at 95% confidence."
+    }
+  ],
+  "permutation": [
+    {
+      "test": "Permutation AUC",
+      "model": "LogisticRegression",
+      "observed_auc": 1.0,
+      "p_value": null,
+      "note": "Permutation test not informative: observed AUC = 1.0000 is at ceiling. All permutations will yield p < 0.001 trivially. This result is not reported to avoid uninformative significance inflation."
+    },
+    {
+      "test": "Permutation AUC (H0: AUC = 0.5)",
+      "model": "RandomForest",
+      "observed_auc": 0.983,
+      "null_auc_mean": 0.499359,
+      "null_auc_std": 0.056768,
+      "n_permutations": 1000,
+      "p_value": 0.0,
+      "significant_p005": true,
+      "note": ""
+    },
+    {
+      "test": "Permutation AUC (H0: AUC = 0.5)",
+      "model": "XGBoost",
+      "observed_auc": 0.983,
+      "null_auc_mean": 0.501754,
+      "null_auc_std": 0.05695,
+      "n_permutations": 1000,
+      "p_value": 0.0,
+      "significant_p005": true,
+      "note": ""
+    },
+    {
+      "test": "Permutation AUC (H0: AUC = 0.5)",
+      "model": "LightGBM",
+      "observed_auc": 0.99,
+      "null_auc_mean": 0.499093,
+      "null_auc_std": 0.057465,
+      "n_permutations": 1000,
+      "p_value": 0.0,
+      "significant_p005": true,
+      "note": ""
+    },
+    {
+      "test": "Permutation AUC",
+      "model": "CatBoost",
+      "observed_auc": 1.0,
+      "p_value": null,
+      "note": "Permutation test not informative: observed AUC = 1.0000 is at ceiling. All permutations will yield p < 0.001 trivially. This result is not reported to avoid uninformative significance inflation."
+    }
+  ],
+  "bonferroni_n_comparisons": 4,
+  "note": "Bonferroni correction applied: p_value_bonferroni = min(p * n_comparisons, 1.0). Interpret with caution: UCI test set n=80 provides limited statistical power."
+}
