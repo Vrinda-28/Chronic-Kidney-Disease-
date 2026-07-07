@@ -558,6 +558,3 @@ Learning. JMLR, 18(17), 1–5.
 
 Released under the [MIT License](LICENSE).
 
----
-
-*For questions, open a GitHub issue. For collaboration inquiries, contact the authors.*
